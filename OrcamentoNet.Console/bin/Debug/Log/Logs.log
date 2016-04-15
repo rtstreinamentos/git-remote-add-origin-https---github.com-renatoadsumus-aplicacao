@@ -4895,3 +4895,5 @@ Nome do parâmetro: value
 2016-04-11 12:06:59,481 [7] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - could not initialize a collection: [OrcamentoNet.Entity.Fornecedor.Atributos#98801][SQL: SELECT atributos0_.Cd_Pessoa as Cd1_0_, atributos0_.Condicao as Condicao0_ FROM Fornecedor_Atributo atributos0_ WHERE atributos0_.Cd_Pessoa=?p0]
 2016-04-11 13:59:13,135 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Invalid Cast (check your mapping for property type mismatches); setter of OrcamentoNet.Entity.Fornecedor
 2016-04-11 13:59:22,574 [9] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Invalid Cast (check your mapping for property type mismatches); setter of OrcamentoNet.Entity.Fornecedor
+2016-04-15 17:06:11,822 [7] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index

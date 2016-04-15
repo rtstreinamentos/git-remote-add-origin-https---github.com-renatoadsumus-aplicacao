@@ -189,7 +189,7 @@ namespace OrcamentoNet.LocalService
                 foreach (string atributo in atributos)
                 {
 
-                    if (atributo.Contains("Área") || atributos.Contains("Metros"))
+                    if (atributo.Contains("Área") || atributo.Contains("Metros"))
                     {
                         string[] atributoArea = atributo.Split(':');
                         valorAtributoPedido = int.Parse(atributoArea[1]);
@@ -224,7 +224,7 @@ namespace OrcamentoNet.LocalService
                     {
                         if (!fornecedoresDaCategoria.Contains(fornecedor) && pedidoOrcamento.Categorias.Contains(categoria))
                         {
-                            if (atributosFornecedor.Count > 0)
+                            if (atributosFornecedor != null)
                             {
                                 if (valorAtributoPedido >= atributosFornecedor[0].Condicao)
                                 {
