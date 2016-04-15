@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Categoria" table="Categoria">
+
+    <id name="Id" column="Cd_Categoria">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nome" column="Nm_Categoria" length="45"  />
+    <property name="DetalheExplicativo" column="Detalhe_Explicativo" length="45"  />
+    <property name="Ativo" column="Ativo" />  
+    <property name="Termo" column="Termo" />
+    <property name="UrlMappings" column="Url_Mappings" />   
+
+    <many-to-one name="Pai" column="Cd_Categoria_Pai" class="Categoria" />
+
+    <bag name="SubCategorias" inverse="true" fetch="subselect" cascade="none" order-by="Nm_Categoria ASC">
+      <key column="Cd_Categoria_Pai" />
+      <one-to-many class="Categoria" />
+    </bag>
+
+    <!--<bag name="Termos" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="Categoria_Termo">
+      <key column="Cd_Categoria"  not-null ="true"/>
+      <many-to-many column="Cd_Termo" class="Termo" order-by="Nm_Termo ASC" />
+    </bag>-->
+    
+  </class>
+</hibernate-mapping>

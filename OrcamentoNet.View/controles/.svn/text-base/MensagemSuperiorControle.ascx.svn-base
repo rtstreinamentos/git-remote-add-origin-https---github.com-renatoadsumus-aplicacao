@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MensagemSuperiorControle.ascx.cs" Inherits="OrcamentoNet.View.controles.MensagemSuperiorControle" %>
+<asp:Label ID="uxlblMensagem" runat="server"/>

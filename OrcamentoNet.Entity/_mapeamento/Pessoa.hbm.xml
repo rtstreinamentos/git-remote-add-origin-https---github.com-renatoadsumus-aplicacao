@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Fornecedor" table="Pessoa">
+    <id name="Id" column="Cd_Pessoa">
+      <generator class="identity" />
+    </id>
+
+    <property name="Descricao" column="Descricao"/>
+    <property name="Nome" column="Nm_Pessoa" length="50"  />
+    <property name="TipoPessoaAtendimento" column="Cd_Tipo_Pessoa_Atendimento" length="100"/>
+    <property name="TipoPessoaAtendimentoAlteracao" column="Cd_Tipo_Pessoa_Atendimento_Alteracao" length="100"/>
+    <property name="DataAlteracao" column="Dt_Alteracao" />
+    <property name="DataCadastro" column="Dt_Cadastro" />   
+    <property name="Email" column="Email" length="50"  />
+    <property name="EmailSecundario" column="Email_Secundario" length="50"  />
+    <property name="Telefone" column="Telefone" length="50"  />     
+    <property name="Status" column="Cd_Status" length="50"  />   
+    <property name="WebSite" column="WebSite" length="50"  />
+    <property name="ValorMensalidade" column="Valor_Mensalidade"/>
+    <property name="ValorMensalidadeAlteracao" column="Valor_Mensalidade_Alteracao"/>
+    <property name="Senha" column="Senha"/>
+    <property name="Indicacao" column="Indicacao" length="100"/>
+    <property name="MensagemAutoResposta" column="Auto_Resposta" length="100"/>
+    <property name="EnviadoPorUltimo" column="Enviado_Ultimo" />
+    
+    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Fornecedor_Foto">
+      <key column="Cd_Pessoa"  not-null ="true"/>
+      <many-to-many column="Cd_Fornecedor_Foto" class="Foto"/>
+
+    </bag>
+
+    <bag name="Cidades" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Fornecedor_Cidade">
+      <key column="Cd_Pessoa"  not-null ="true"/>
+      <many-to-many column="Cd_Cidade" class="Cidade"/>
+
+    </bag>
+
+    <!--<set name="Atributos"
+          cascade="all-delete-orphan"
+          inverse="true">
+      <key column="Cd_Pessoa"></key>
+      <one-to-many class="FornecedorAtributo"/>
+    </set>-->
+    
+    <!--<bag name="Atributos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Fornecedor_Atributo">
+      <key column="Cd_Pessoa"  not-null ="true"/>
+     
+      <many-to-many column="Cd_Atributo" class="Atributo"/>
+      
+     
+    </bag>-->
+    
+
+    <bag name="SubCategorias" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="Fornecedor_Categoria">
+      <key column="Cd_Pessoa"  not-null ="true"/>
+      <many-to-many column="Cd_Categoria" class="Categoria" order-by="Nm_Categoria ASC" />
+    </bag>
+    
+    <!---Mapeamento da Classe Fornecedor-->
+    <!--<joined-subclass name="Fornecedor" table="Fornecedor">
+      <key column="Cd_Pessoa"/>      
+
+      <bag name="CategoriasPrioridade" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="Fornecedor_Categoria_Prioridade">
+        <key column="Cd_Pessoa"  not-null ="true"/>
+        <many-to-many column="Cd_Categoria" class="CategoriaPrioridade" />
+      </bag>
+      
+    </joined-subclass>-->
+
+    <!---Mapeamento da Classe Comprador
+    <joined-subclass name="Comprador" table="Comprador">
+      <key column="Cd_Pessoa"/>
+     
+    </joined-subclass>-->
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,605 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MySql.Data.MySqlClient;
+using PortalEscolar.Data;
+using OrcamentoNet.Entity;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Common;
+using System.Xml.Linq;
+using OrcamentoNet.Entity.Enum;
+using System.Data;
+
+namespace OrcamentoNet.LocalService
+{
+    public class CategoriaService : ICategoriaService
+    {
+        private IDataContext context;
+
+
+        #region "Métodos Privados"
+
+        private IList<LinkInterno> ObterLinksCidades(Categoria categoria)
+        {
+            IList<LinkInterno> listaLinksCidades = new List<LinkInterno>();
+
+            try
+            {
+                IList<Cidade> listaCidades = context.Repository<Cidade>().Where(x => x.Uf == UF.RJ || x.Uf == UF.SP || x.Uf == UF.PR || x.Uf == UF.MG || x.Uf == UF.BA).OrderBy(x => x.Uf).ToList();
+
+                foreach (Cidade cidade in listaCidades)
+                {
+                    LinkInterno linkInterno = new LinkInterno();
+                    linkInterno.Nome = cidade.Nome + " - " + cidade.Uf.ToString();
+                    linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " em " + cidade.Nome + " (" + cidade.Uf.ToString() + ").";
+                    linkInterno.UrlAmigavel = "/orcamento-online-" + Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + Common.UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + cidade.Uf.ToString().ToLower() + "-" + categoria.Id.ToString() + "-" + cidade.Id.ToString() + ".aspx";
+                    listaLinksCidades.Add(linkInterno);
+                }
+                listaLinksCidades = listaLinksCidades.OrderBy(l => l.Nome).ToList();
+            }
+
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return listaLinksCidades;
+        }
+
+        private IList<LinkInterno> ObterLinksTermos(Categoria categoria)
+        {
+            IList<LinkInterno> listaLinksTermos = new List<LinkInterno>();
+
+            try
+            {
+                IList<string> listaTermos = categoria.Termo.Split(',');
+                foreach (string termo in listaTermos)
+                {
+                    string termoSemEspacosAoRedor = termo.Trim();
+                    LinkInterno linkInterno = new LinkInterno();
+                    linkInterno.Nome = termoSemEspacosAoRedor;
+                    linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " para " + termoSemEspacosAoRedor + ".";
+                    linkInterno.UrlAmigavel = "/" + Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + categoria.Id.ToString() + "/" + Common.UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                    listaLinksTermos.Add(linkInterno);
+                }
+                listaLinksTermos = listaLinksTermos.OrderBy(l => l.Nome).ToList();
+            }
+
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return listaLinksTermos;
+        }
+        #endregion
+
+        #region "Métodos Públicos"
+        public CategoriaService(IDataContext contextData)
+        {
+            context = contextData;
+        }
+
+        public void AtualizarUrlParaSeo()
+        {
+            IList<Categoria> categorias = new List<Categoria>();
+
+            try
+            {
+                categorias = context.Repository<Categoria>().Where(c => c.Ativo == true).ToList();
+                foreach (Categoria categoria in categorias)
+                {
+                    string sufixoUrl = Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + categoria.Id.ToString() + ".aspx";
+                    categoria.Url = "orcamento-online-" + sufixoUrl;
+                    categoria.UrlFornecedores = "cadastro-" + sufixoUrl;
+                    categoria.UrlSEO = sufixoUrl;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+        }
+
+        ////public string GerarUrlParaSeo(string nomeSemTratamento)
+        ////{
+        ////    if (String.IsNullOrEmpty(nomeSemTratamento)) return String.Empty;
+
+        ////    string nomeAmigavel = nomeSemTratamento.Replace(",", String.Empty);
+
+        ////    string[] listaNomesCategorias = nomeAmigavel.Split(' ');
+
+        ////    List<string> listaNomesCategoriasModificadas = new List<string>();
+        ////    for (int i = 0; i < listaNomesCategorias.Length; i++)
+        ////    {
+        ////        if (listaNomesCategorias[i].Length > 1) listaNomesCategoriasModificadas.Add(listaNomesCategorias[i]);
+        ////    }
+
+        ////    nomeAmigavel = String.Join("-", listaNomesCategoriasModificadas.ToArray());
+        ////    nomeAmigavel = nomeAmigavel.ToLower();
+        ////    nomeAmigavel = UtilString.RemoverAcentos(nomeAmigavel);
+
+        ////    return nomeAmigavel;
+        ////}
+
+        public Categoria Obter(int id, bool montarLinkInterno)
+        {
+            Categoria categoria = new Categoria();
+
+            try
+            {
+                categoria = context.Repository<Categoria>().Where(x => x.Id == id).FirstOrDefault();
+
+                if (montarLinkInterno)
+                    categoria.LinksInternos = this.ObterLinksCidades(categoria).Concat(this.ObterLinksTermos(categoria)).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return categoria;
+        }
+
+        public IList<Categoria> ObterCategoriasAtivas()
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>().ToList();
+                subCategorias = subCategorias.Where(x => x.Pai.Id == 0 && x.Ativo == true).OrderBy(y => y.Nome).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return subCategorias;
+        }
+
+        public IList<Categoria> ObterSubCategoriasDeUmaCategoria(IList<string> categorias)
+        {
+            IList<Categoria> subCategoriasResultado = new List<Categoria>();
+
+            foreach (string categoria in categorias)
+            {
+                subCategoriasResultado.Add(Obter(Convert.ToInt32(categoria), false));
+            }
+            return subCategoriasResultado;
+
+        }
+
+        public string MontarHTMLDeTermo(IList<string> categorias, IList<Termo> termos)
+        {
+            string htmlRetorno = String.Empty;
+
+            foreach (string itemCategoria in categorias)
+            {
+                Categoria categoria = Obter(int.Parse(itemCategoria), false);
+
+                string termaCategoriaHtml = categoria.Nome;
+
+                string termoHtml = String.Empty;
+                foreach (Termo itemTermo in termos.Where(x => x.IdCategoria == categoria.Id).ToList())
+                {
+                    if (!String.IsNullOrEmpty(termoHtml))
+                    {
+                        termoHtml += ", " + itemTermo.Nome;
+                    }
+                    else
+                    {
+                        termoHtml = itemTermo.Nome;
+                    }
+                }
+
+                htmlRetorno += termaCategoriaHtml + ": " + termoHtml + Environment.NewLine;
+            }
+
+            return htmlRetorno;
+        }
+
+        public IList<Categoria> ObterSubCategorias()
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>().ToList();
+                subCategorias.Where(x => x.Pai.Id != 0).OrderBy(y => y.Nome).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return subCategorias;
+        }
+
+        public IList<Categoria> ObterSubCategoriasAtivas()
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>()
+                    .Where(x => x.Pai.Id != 0 && x.Ativo == true)
+                    .OrderBy(y => y.Nome).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return subCategorias;
+        }
+
+        public IList<Categoria> ObterTemasAtivos()
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>()
+                    .Where(x => x.Pai.Id == 0 && x.Ativo == true)
+                    .OrderBy(y => y.Nome).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return subCategorias;
+        }
+
+        public IList<Categoria> ObterCategoriasComFornecedoresCadastrados()
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+            IList<Categoria> resultado = new List<Categoria>();
+            IList<Categoria> resultadoFilhos = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>().ToList();
+                subCategorias = subCategorias.Where(x => x.Pai.Id == 0).OrderBy(y => y.Nome).ToList();
+
+                Categoria pai;
+                Categoria filho;
+
+                foreach (Categoria item in subCategorias)
+                {
+                    pai = new Categoria();
+                    pai = item;
+                    resultadoFilhos = new List<Categoria>();
+
+                    foreach (Categoria item2 in item.SubCategorias)
+                    {
+                        if (item2.Ativo)
+                        {
+                            filho = new Categoria();
+                            filho = item2;
+                            resultadoFilhos.Add(filho);
+                        }
+                    }
+                    pai.SubCategorias = resultadoFilhos;
+                    resultado.Add(pai);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return resultado;
+        }
+
+        public IEnumerable<XElement> ObterXMLCategoria(int idCategoria)
+        {
+            XElement xml = XElement.Load(Config.CaminhoFisico + "Categoria.xml");
+
+            var categoria = from p in xml.Elements("categoria")
+                            where (int)p.Element("id") == idCategoria
+                            select p;
+            return categoria;
+        }
+
+
+        public void Inserir(Categoria categoria)
+        {
+            categoria.Ativo = true;
+            context.Insert(categoria);
+        }
+        #endregion
+
+        /// <summary>
+        /// Retorna todas as subcategorias de uma categoria que tenha fornecedor cadastrado
+        /// /// </summary>
+        /// <param name="cidade"></param>
+        /// <param name="categoriaPai"></param>
+        /// <returns></returns>
+        public IList<Categoria> ObterSubCategoriasComFornecedorPorCidade(Cidade cidade, int categoriaPai)
+        {
+            IList<Categoria> categoriasComFornecedor = new List<Categoria>();
+
+            IList<Fornecedor> fornecedoresCidade = context.Repository<Fornecedor>().Where(x => x.Cidades.Contains(cidade) && x.Status != Status.Inativo).ToList();
+
+            var categorias = (from c in fornecedoresCidade select c.SubCategorias).Distinct();
+
+            foreach (var item in categorias)
+            {
+                for (int i = 0; i < item.Count(); i++)
+                {
+                    if (item[i].Pai.Id == categoriaPai && !categoriasComFornecedor.Contains(item[i]))
+                    {
+                        item[i].Termos = ObterTermos(item[i].Id);
+
+                        categoriasComFornecedor.Add(item[i]);
+                    }
+                }
+            }
+
+            return categoriasComFornecedor.OrderBy(x => x.Nome).ToList(); ;
+        }
+
+
+        public IList<Categoria> ObterCategoriasDeUmTema(int idCategoriaPai)
+        {
+            IList<Categoria> subCategorias = new List<Categoria>();
+
+            try
+            {
+                subCategorias = context.Repository<Categoria>().ToList();
+                subCategorias = subCategorias.Where(x => x.Pai.Id == idCategoriaPai && x.Ativo == true).OrderBy(y => y.Nome).ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return subCategorias;
+        }
+
+        public IList<Termo> ObterTermos(int idCategoria)
+        {
+
+            IList<string> listaTermos = new List<string>();
+
+            #region Festas e Eventos
+
+            if (idCategoria == 53)
+            {
+                listaTermos.Add("auditórios, centro de convenções ou salas para palestras");
+                listaTermos.Add("churrasqueira");
+                listaTermos.Add("espaço aberto (ambiente externo)");
+                listaTermos.Add("espaço fechado (ambiente interno)");
+                listaTermos.Add("palco para banda ou músicos");
+                listaTermos.Add("piscina, quadras de esportes ou salão de jogos");
+                listaTermos.Add("sítio ou pousada");
+            }
+
+            if (idCategoria == 54)
+            {
+                listaTermos.Add("decoração típica japonesa (barcos, pontes, etc.)");
+                listaTermos.Add("entradas (gyoza, harumaki, etc.)");
+                listaTermos.Add("pratos quentes (tempura, yakisoba, etc.)");
+                listaTermos.Add("sashimi (peixe crú)");
+                listaTermos.Add("sushi com peixe (atum, salmão, etc.)");
+                listaTermos.Add("sushi enrolado (california, makimono, etc.)");
+                listaTermos.Add("sushi hot roll ou hot filadelfia (sushi frito)");
+                listaTermos.Add("sushiman no local");
+                listaTermos.Add("temaki (cones)");
+            }
+
+            if (idCategoria == 123)
+            {
+<<<<<<< .mine
+                listaTermos.Add("bebidas alcóolicas (cerveja, vinho, drinks e whisky)");
+                listaTermos.Add("bebidas não-alcóolicas (água, sucos e refrigerantes)");
+                listaTermos.Add("brunch");
+                listaTermos.Add("chá da tarde");
+                listaTermos.Add("cocktail / coquetel");
+                listaTermos.Add("coffee break / café da manhã");
+                listaTermos.Add("jantar (entrada, prato principal e sobremesa)");
+                listaTermos.Add("crepes (salgados e doces)");
+                listaTermos.Add("escalopinho (molho madeira / carne seca)");
+                listaTermos.Add("feijoada");
+                listaTermos.Add("festa junina");
+                listaTermos.Add("kit festa");
+                listaTermos.Add("massas (farfale, penne, raviolli, etc)");
+                listaTermos.Add("medalhão de filé mignon ao molho madeira");
+                listaTermos.Add("salada");
+                listaTermos.Add("salgadinhos");
+                listaTermos.Add("strogonoff (carne, frango, camarão)");
+=======
+				listaTermos.Add("bebidas alcóolicas (cerveja, vinho, drinks e whisky)");
+				listaTermos.Add("bebidas não-alcóolicas (água, sucos e refrigerantes)");
+				listaTermos.Add("almoço (entrada, prato principal e sobremesa)");
+				listaTermos.Add("brunch");
+				listaTermos.Add("chá da tarde");
+				listaTermos.Add("café da manhã / coffee break");
+				listaTermos.Add("coquetel / cocktail");
+				listaTermos.Add("jantar (entrada, prato principal e sobremesa)");
+				listaTermos.Add("crepes (salgados e doces)");
+				listaTermos.Add("escalopinho (molho madeira / carne seca)");
+				listaTermos.Add("feijoada");
+				listaTermos.Add("festa junina");
+				listaTermos.Add("kit festa");
+				listaTermos.Add("massas (farfale, penne, raviolli, etc)");
+				listaTermos.Add("medalhão de filé mignon ao molho madeira");
+				listaTermos.Add("salada");
+				listaTermos.Add("salgadinhos");
+				listaTermos.Add("strogonoff (carne, frango, camarão)");
+>>>>>>> .r1671
+            }
+
+            if (idCategoria == 126)
+            {
+                listaTermos.Add("evento infantil");
+                listaTermos.Add("evento social");
+            }
+
+            if (idCategoria == 129)
+            {
+                listaTermos.Add("mpb");
+                listaTermos.Add("pop rock nacional");
+                listaTermos.Add("pop rock internacional");
+                listaTermos.Add("samba e pagode");
+            }
+
+            if (idCategoria == 171)
+            {
+                listaTermos.Add("mini hamburguer");
+                listaTermos.Add("mini pizza");
+                listaTermos.Add("mini hot dog");
+                listaTermos.Add("salgados(empada,esfiha,bolinho queijo,risole e etc.)");
+                listaTermos.Add("churros");
+                listaTermos.Add("sorvete");
+                listaTermos.Add("mesa doces");
+            }
+
+            if (idCategoria == 175)
+            {
+                listaTermos.Add("piscina de bolinha");
+                listaTermos.Add("pula-pula");
+                listaTermos.Add("cama-elástica");
+                listaTermos.Add("escorregador");
+                listaTermos.Add("gangorra");
+                listaTermos.Add("kit área baby");
+            }
+
+            #endregion
+
+            #region Obras e Reformas
+            if (idCategoria == 25)
+            {
+                listaTermos.Add("cimento queimado");
+                listaTermos.Add("pastilhas ou ladrilhos");
+                listaTermos.Add("pisos de madeira (assoalho, taboão, taco, parquet)");
+                listaTermos.Add("pisos elevados / flutuantes (carpete, carpete de madeira, fórmica, laminado, tábua corrida)");
+                listaTermos.Add("pisos frios (cerâmica, granito, mármore, porcelanato ou pisos de pedra)");
+                listaTermos.Add("pisos vinílicos / PVC (borracha)");
+                listaTermos.Add("rejunte");
+                listaTermos.Add("synteko");
+            }
+
+            if (idCategoria == 33)
+            {
+                listaTermos.Add("ar-condicionado (troca ou instalação)");
+                listaTermos.Add("carga elétrica (aumento ou distribuição)");
+                listaTermos.Add("fiação elétrica (troca ou manutenção)");
+                listaTermos.Add("máquinas industriais e equipamentos elétricos (instalação ou manutenção)");
+                listaTermos.Add("relógios, quadros elétricos, fusíveis ou disjuntores (troca ou manutenção)");
+                listaTermos.Add("tomadas, interruptores, luminárias ou lustres (troca ou instalação)");
+            }
+
+            if (idCategoria == 34)
+            {
+                listaTermos.Add("conserto de vazamento (água, esgoto ou gás)");
+                listaTermos.Add("troca de tubulação (água, esgoto ou gás)");
+            }
+
+            if (idCategoria == 39)
+            {
+                listaTermos.Add("calçadas");
+                listaTermos.Add("manilhas");
+                listaTermos.Add("muros, paredes ou lajes");
+                listaTermos.Add("pias ou louças de banheiro");
+            }
+
+            if (idCategoria == 40)
+            {
+                listaTermos.Add("grafiato ou textura");
+                listaTermos.Add("pintura externa");
+                listaTermos.Add("pintura interna comum");
+            }
+
+            if (idCategoria == 155)
+            {
+                listaTermos.Add("design e decoração de interiores");
+                listaTermos.Add("projeto comercial");
+                listaTermos.Add("projeto residencial");
+                listaTermos.Add("paisagismo ou urbanismo");
+            }
+
+            if (idCategoria == 168)
+            {
+                listaTermos.Add("dry wall (paredes, divisórias, etc.)");
+                listaTermos.Add("forro comum ou removível");
+                listaTermos.Add("molduras");
+                listaTermos.Add("revestimentos (gesso liso)");
+                listaTermos.Add("sancas");
+                listaTermos.Add("teto rebaixado");
+            }
+
+
+            if (idCategoria == 186)
+            {
+                listaTermos.Add("construção ou reformas em geral");
+                listaTermos.Add("galpão (construção ou reforma)");
+                listaTermos.Add("gerenciamento de obras");
+                listaTermos.Add("licitações");
+                listaTermos.Add("telhas ou telhados");
+            }
+            #endregion
+
+            IList<Termo> termos = new List<Termo>();
+            Termo termo;
+
+            foreach (String item in listaTermos)
+            {
+                termo = new Termo();
+                termo.IdCategoria = idCategoria;
+                termo.Nome = item;
+                termos.Add(termo);
+            }
+            return termos;
+        }
+
+        private string ObterTootip(int idCategoria)
+        {
+            string tooltip = "";
+
+            if (idCategoria == 25)
+            {
+                tooltip = "colocação de azulejos mármores ardósia porcelanato banheiros, cozinha, área de serviço área de lazer azulejos";
+
+            }
+
+            if (idCategoria == 33)
+            {
+
+            }
+
+            if (idCategoria == 34)
+            {
+
+            }
+
+            if (idCategoria == 39)
+            {
+
+            }
+
+            if (idCategoria == 40)
+            {
+
+            }
+
+            if (idCategoria == 155)
+            {
+
+            }
+            if (idCategoria == 168)
+            {
+
+            }
+
+            if (idCategoria == 186)
+            {
+
+            }
+            return tooltip;
+        }
+    }
+}

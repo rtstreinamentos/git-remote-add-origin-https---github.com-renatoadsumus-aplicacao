@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá,
+                    <!--NOME-->
+                    !</p>
+                <p>
+                    Obrigado pela confiança e por seu tempo para realizar seu cadastro no Orçamento
+                    Online.</p>
+                    
+                <p>
+                    <strong>POR FAVOR, LEIA ABAIXO INSTRUÇÕES IMPORTANTES</strong></p>
+                <p>
+                    <strong>1) Suas categorias</strong></p>
+                <p>
+                    <!--CATEGORIAS-->
+                </p>
+                <p>
+                    <strong>2) Evitar nossos e-mails no SPAM</strong></p>
+                <p>
+                    Adicione os endereços webmaster@orcamentosgratis.net.br e orcamentos.net@gmail.com em
+                    seu catálogo de contatos, para evitar que nossas mensagens fiquem no SPAM.</p>
+                <p>
+                    <strong>3) Como funciona?</strong></p>
+                <p>
+                    Nós encontramos clientes para você. Eles entram em nosso site e solicitam um orçamento
+                    de seu serviço/produto. Enviamos um e-mail com os detalhes e os dados de contato
+                    do cliente, e você negocia diretamente. Não cobramos comissão, nem participação
+                    na sua venda.</p>
+                <p>
+                    <strong>4) Conhecer o sistema</strong></p>
+                <p>
+                    Uma vez cadastrado, você receberá todos os pedidos de orçamento de seu perfil. O
+                    detalhe é que não terão os dados de contato dos clientes. Mesmo assim, você consegue
+                    ter uma boa ideia de quantos e como são os pedidos que recebemos.</p>
+                <p>
+                    <strong>5) Participar das cotações</strong></p>
+                <p>
+                    Para responder aos clientes, você tem duas opções: mensalista (R$
+                    <!--VALOR_MENSALIDADE-->
+                    ) ou compra avulsa (pagamento por cotação). É só escolher a melhor e fazer o pagamento
+                    através dos links que enviamos em todos os pedidos de orçamento. O pagamento pode
+                    ser feito por boleto bancário, cartão de crédito ou transferência eletrônica.</p>
+                <p>
+                    <strong>6) Painel de Controle</strong></p>
+                <p>
+                    Acesse agora mesmo nosso painel de controle e já participe das últimas oportunidades
+                    de négocio recebidas em nosso site!
+                    <br />
+                    <br />
+                    Para acessar o painel basta clicar no link: <a href="http://orcamentosgratis.net.br/LoginNovo.aspx">
+                        http://orcamentosgratis.net.br/UltimosPedidosOrcamento.aspx</a>
+                    <br />
+                    Seus dados de acesso:
+                    <br />
+                    <b>Email:</b> <!--EMAIL-->
+                    <br />
+                    <b>Senha:</b> <!--SENHA-->
+                </p>
+                <p>
+                    <strong>7) Conferir sua página personalizada</strong></p>
+                <p>
+                    <a href="<!--FICHA_TECNICA-->">Clique aqui</a> e veja como ela ficou. Fale conosco
+                    se desejar alterar alguma coisa.</p>
+                <p>
+                    <strong>8) Enviar suas fotos</strong></p>
+                <p>
+                    Caso não tenha cadastrado fotos do seu trabalho, você pode enviar para orcamentos.net@gmail.com.</p>
+                <p>
+                    <strong>9) Enviar suas opiniões</strong></p>
+                <p>
+                    De vez em quando, faremos contatos para sabermos sua opinião. É importante que você
+                    indique o que está bom e o que pode ser melhorado, tudo bem?</p>
+                <p>
+                    <strong>10) SPAM é proibido</strong></p>
+                <p>
+                    Respeite os clientes e não faça SPAM. Se detectarmos irregularidades, você será
+                    descadastrado sem direito a aviso prévio e/ou ressarcimentos.</p>
+                <p>
+                    <strong>11) Vídeo para novos fornecedores</strong></p>
+                <p>
+                    Se você ainda não assistiu, confira o nosso vídeo para novos fornecedores. Temos
+                    orientações importantes para você.</p>
+                <p>
+                    <iframe width="560" height="315" src="http://www.youtube.com/embed/zDU-2c2WhTM?rel=0"
+                        frameborder="0" allowfullscreen></iframe>
+                    <br />
+                    <strong>Caso não visualize o vídeo, <a href="http://youtu.be/zDU-2c2WhTM">assista no
+                        YouTube</a></strong>.
+                </p>
+                <p>
+                    <strong>12) FAQ</strong></p>
+                <p>
+                    Consulte nossa FAQ, através dela você entenderá mais o <a href="http://orcamentosgratis.net.br/Faq.aspx">funcionamento do nosso sistema</a>.
+                    É uma ótima fonte de estudo e capacitação.</p>
+                <!--<p>
+                    Confira também <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">os vídeos sobre nosso sistema</a> e faça o download grátis de nosso
+                    <a href="http://orcamentosgratis.net.br/pdf/white-paper-como-montar-proposta-comercial.pdf">
+                        guia prático para escrever propostas comerciais que vendem</a>.</p>-->
+				
+				<h3>
+                    <!--H3_PEDIDOS_COMPRA_AVULSA-->
+                </h3>
+                <p>
+                    <!--BOX_PEDIDOS_COMPRA_AVULSA-->
+                </p>
+                <p>
+                    Telefone:
+                    <!--TELEFONE-->
+                </p>
+				<p>
+					Atenciosamente,<br />
+					<strong>Renato Coutinho</strong><br />
+					Telefones de atendimento: 21-97933-4941<br />
+					<a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+						Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+							Veja nossos vídeos no YouTube</a></p>
+			</td>
+        </tr>
+    </table>
+</body>
+</html>

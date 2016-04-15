@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>CadastroDadosBasicosPF_ValidacaoServerSideNomeTamanhoMinimo</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CadastroDadosBasicosPF_ValidacaoServerSideNomeTamanhoMinimo</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/CadastroDadosBasicos.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrdbTipoPessoa_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtCnpjCpf</td>
+	<td>01401969780</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtNome</td>
+	<td>Fa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtEmail</td>
+	<td>fabriciofuji@yahoo.com.br</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtDDD</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtTelefone</td>
+	<td>81249484</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlCidade</td>
+	<td>label=Rio de Janeiro</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//option[@value='3631']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtSenha</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtSenha2</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtEndereco</td>
+	<td>R. Marechal Jofre, 154 apto 301</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtBairro</td>
+	<td>Grajaú</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtWebSite</td>
+	<td>http://cozinhajaponesa.com.br/</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Não foi possível salvar os dados.</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

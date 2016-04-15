@@ -1,0 +1,410 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using NHibernate.Burrow;
+using NUnit.Framework;
+using OrcamentoNet.Entity;
+using OrcamentoNet.Entity.Enum;
+using OrcamentoNet.ILocalService;
+
+namespace OrcamentoNet.LocalServiceTest
+{
+    public class PedidoOrcamentoServiceTest
+    {
+        private StandardKernel injectionService;
+
+        [Inject]
+        public ICidadeService cidadeService { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService { get; set; }
+
+        [Inject]
+        public IFornecedorService fornecedorService { get; set; }
+
+        [Inject]
+        public IPedidoOrcamentoService pedidoOrcamentoService { get; set; }
+
+        Categoria categoria;
+        IList<Categoria> categorias;
+        Pessoa comprador;
+        Fornecedor fornecedorRJ;
+        Fornecedor fornecedorDuqueCaxias;
+        Fornecedor fornecedorSP;
+        Fornecedor fornecedorSantoAndre;
+
+        public void Inicializar()
+        {
+            injectionService = new StandardKernel(new CustomModule());
+            injectionService.Inject(this);
+        }
+
+        [SetUp]
+        public void Setup()
+        {
+            //Preparando Base de Dados
+            BaseDados.BaseDados baseDados = new BaseDados.BaseDados();
+            baseDados.ExcluirDados();
+            Inicializar();
+            PrepararTest();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            new BurrowFramework().CloseWorkSpace();
+        }
+
+		[Test]
+		public void AutorizarAcesso() {
+			Pessoa comprador = new Pessoa();
+			comprador.Nome = "Comprador Cidade Sao Paulo - SP";
+			comprador.Email = "renatoadsumus@gmail.com";
+			comprador.Telefone = "21-226776912";
+			string camposInvalidos = String.Empty;
+			PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categorias, "observação", "título", ref camposInvalidos, cidadeService.Obter(5213));
+			Assert.IsTrue(pedidoOrcamento.Id > 0, "Verifica se criou pedido de orçamento com sucesso.");
+
+			Assert.IsTrue(pedidoOrcamentoService.AutorizarAcesso(pedidoOrcamento.Id, comprador.Email), "O autor do pedido pode acessar.");
+			Assert.IsFalse(pedidoOrcamentoService.AutorizarAcesso(pedidoOrcamento.Id, comprador.Email + "string_diferente"), "Pessoas que não sejam o autor do pedido não podem acessar.");
+
+			Assert.AreSame(pedidoOrcamento, pedidoOrcamentoService.ObterPedidoOrcamentoPorEmailId(comprador.Email, pedidoOrcamento.Id), "Verifico que o pedido de orçamento gravado está correto.");
+		}
+		[Ignore]
+        public void C_ConsultarPedidosOrcamentoExistentesParaUmFornecedor()
+        {
+            //PedidoOrcamento pedidoOrcamento = IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            //IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoPorSubCategoria(fornecedorRJ.SubCategorias);
+            //Assert.IsTrue(pedidosOrcamento.Count == 1);
+        }
+
+        [Ignore]
+        public void D_RetornarTodosPedidosOrcamentoParaUmaDataValidaPorCategoria_e_Cidades_de_Atuacao_do_Fornecedor()
+        {
+            //Dado que tenho os seguintes pedidos
+            //                  02 Rio de Janeiro com a data atual
+            //                  01 Rio de Janeiro com a data de dois dias atrás
+            //                  01
+            //Então verifico que existem 02 pedidos do Rio de Janeiro com a data atual
+
+            //IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            //IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            //IncluirPedidoOrcamentoValido(categoria, comprador, 1);
+
+            //PedidoOrcamento pedidoForaData = IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            //pedidoForaData.Data = DateTime.Today.AddDays(-2);
+
+            //IList<Categoria> subCategorias = categoriaService.ObterSubCategorias();
+            //IList<Cidade> cidades = cidadeService.ObterCidades(OrcamentoNet.Entity.Enum.UF.RJ);
+
+            //IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoPorSubCategoriaPorDataCriacao(subCategorias, DateTime.Now, cidades);
+
+            //Assert.IsTrue(subCategorias.Count > 0);
+            //Assert.IsTrue(pedidosOrcamento.Count == 2);
+        }
+
+        [Test]
+        public void D_RetornarPedidosOrcamentoSelecionadoNaTela()
+        {
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Obter(1);
+
+            Assert.IsTrue(pedidoOrcamento.Id > 0);
+        }
+
+        [Test]
+        public void CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro()
+        {
+            Pessoa comprador = new Pessoa();
+            comprador.Nome = "Comprador Cidade Santa Maria Madalena - RJ";
+            comprador.Email = "renatoadsumus@gmail.com";
+            comprador.Telefone = "21-226776912";
+            string camposInvalidos = String.Empty;
+            IList<Categoria> categorias = new List<Categoria>();
+            categorias.Add(categoria);
+
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categorias, "observação", "título", ref camposInvalidos, cidadeService.Obter(3631));
+            Assert.IsTrue(pedidoOrcamento.Id > 0, "Verifica se criou pedido de orçamento com sucesso.");
+
+            IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresParaUmPedidoDeOrcamento(pedidoOrcamento);
+
+            Assert.IsTrue(fornecedores.Count == 1);
+
+        }
+
+        [Test]
+        public void CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeSaoPaulo()
+        {
+            Pessoa comprador = new Pessoa();
+            comprador.Nome = "Comprador Cidade Sao Paulo - SP";
+            comprador.Email = "renatoadsumus@gmail.com";
+            comprador.Telefone = "21-226776912";
+            string camposInvalidos = String.Empty;
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categorias, "observação", "título", ref camposInvalidos, cidadeService.Obter(5213));
+            Assert.IsTrue(pedidoOrcamento.Id > 0, "Verifica se criou pedido de orçamento com sucesso.");
+
+            IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresParaUmPedidoDeOrcamento(pedidoOrcamento);
+
+            Assert.IsTrue(fornecedores.Count == 1);
+        }
+
+
+        [Test]
+        public void RetornarUltimosPedidosOrcamentos()
+        {
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamento(2, String.Empty);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 2);
+        }
+
+        [Test]
+        public void RetornarUltimosPedidosOrcamentosPorCategoria()
+        {
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            this.categoria = categoriaService.Obter(7, false);
+
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamentoPorCategoria(2, 54, String.Empty);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 2);
+        }
+
+        [Test]
+        public void RetornarUltimosPedidosOrcamentosPorCategoria_e_PorCidade()
+        {
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            this.categoria = categoriaService.Obter(7, false);
+
+            IncluirPedidoOrcamentoValido(categoria, comprador, 4328);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamentoPorCategoriaPorCidade(2, 7, 4328, String.Empty);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 1);
+        }
+
+        [Test]
+        public void RetornarPedidosOrcamentoUltimaHora()
+        {
+
+            //criar pedidos de orçamento
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+
+            DateTime dataHoraExecucaoServico = DateTime.Parse("2011/01/01 14:00:00");
+
+            //Alterar a data do primeiro pedido para ontem (mas fica com a mesma hora)
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Obter(1);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddDays(-1);
+
+            //Alterar a hora do segundo pedido para duas horas atrás (mas fica com o mesmo dia)
+            pedidoOrcamento = pedidoOrcamentoService.Obter(2);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddHours(-2);
+
+            //Alterar a hora do terceiro pedido para 1 hora atrás (mas fica com o mesmo dia)
+            pedidoOrcamento = pedidoOrcamentoService.Obter(3);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddHours(-1);
+
+            //Alterar a hora do quarto pedido para 1 hora atrás (mas fica com o mesmo dia)
+            pedidoOrcamento = pedidoOrcamentoService.Obter(4);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddHours(-1);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterPedidosOrcamentoUltimaHora(dataHoraExecucaoServico);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 2, "Verifica tamanho da lista retorno");
+            Assert.IsTrue(pedidosOrcamentos[0].Data.DayOfYear == dataHoraExecucaoServico.DayOfYear, "Verifica se a data do primeiro pedido da lista de retorno é a data da execução do serviço");
+            Assert.IsTrue(pedidosOrcamentos[0].Data.Hour == dataHoraExecucaoServico.AddHours(-1).Hour, "Verifica se a hora do primeiro pedido da lista de retorno é igual a 1 hora antes da hora da execução do serviço");
+        }
+
+        [Test]
+        public void RetornarPedidosOrcamentoUltimaHoraQuandoForMeiaNoite()
+        {
+
+            //criar pedidos de orçamento
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+
+            DateTime dataHoraExecucaoServico = DateTime.Parse("2011/01/01 00:00:00");
+
+            //Alterar a data do primeiro pedido para ontem (mas fica com a mesma hora)
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Obter(1);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddDays(-1);
+
+            //Alterar a hora do segundo pedido para duas horas atrás (fica com a data 2010/12/31)
+            pedidoOrcamento = pedidoOrcamentoService.Obter(2);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddHours(-2);
+
+            //Alterar a hora do terceiro pedido para 1 hora atrás (fica com o a data 2010/12/31)
+            pedidoOrcamento = pedidoOrcamentoService.Obter(2);
+            pedidoOrcamento.Data = dataHoraExecucaoServico.AddHours(-1);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterPedidosOrcamentoUltimaHora(dataHoraExecucaoServico);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 1, "Verifica tamanho da lista retorno");
+            Assert.IsTrue(pedidosOrcamentos[0].Data.DayOfYear == dataHoraExecucaoServico.AddDays(-1).DayOfYear, "Verifica se a data do primeiro pedido da lista de retorno é a 2010/12/31");
+            Assert.IsTrue(pedidosOrcamentos[0].Data.Hour == 23, "Verifica se a hora do primeiro pedido da lista de retorno é igual a 23");
+        }
+
+        [Test]
+        public void RetornarPedidosOrcamentoPorDataCriacao()
+        {
+
+            //criar tres pedidos de orçamento
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+            this.CriarPedidoPedidoOrcamentoParaFornecedoresDaCidadeRioDeJaneiro();
+
+
+            //Alterar a data do primeiro pedido para ontem
+            PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Obter(1);
+            pedidoOrcamento.Data = DateTime.Now.AddDays(-1);
+
+            IList<PedidoOrcamento> pedidosOrcamentos = pedidoOrcamentoService.ObterPedidosOrcamentoPorData(DateTime.Now);
+
+            Assert.IsTrue(pedidosOrcamentos.Count == 2, "Verifica tamanho da lista retorno");
+            Assert.IsTrue(pedidosOrcamentos[1].Data.DayOfYear == DateTime.Now.DayOfYear, "Verifica se a data do primeiro pedido da lista de retorno é hoje");
+            Assert.IsTrue(pedidoOrcamento.Data.DayOfYear != DateTime.Now.DayOfYear, "Verifica se a data do primeiro pedido não é hoje");
+        }
+
+
+        [Test]
+        public void ObterPedidosDeOrçamentoDoMesAnterior()
+        {
+            //Dado que tenho os seguintes pedidos
+            //                  01 Rio de Janeiro com a data atual de buffet japonês
+            //                  01 São Paulo com a data atual de buffet japonês
+
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 5213);
+
+            //Dado que tenho os seguintes pedidos
+            //                  01 Rio de Janeiro com a data atual de buffet
+            //                  01 São Paulo com a data atual de buffet
+
+            this.categoria = categoriaService.Obter(123, false);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 5213);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            this.categoria = categoriaService.Obter(54, false);
+            //Dado que tenho os seguintes pedidos
+            //                  01 Rio de Janeiro com a data de 30 dias atrás de buffet japonês
+            //                  01 São Paulo com a data de 30 dias de buffet japonês
+            //                  01 Belo Horizonte com a data de 30 dias de buffet japonês
+
+            PedidoOrcamento pedidoForaData = IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            pedidoForaData.Data = DateTime.Today.AddDays(-30);
+
+            pedidoForaData = IncluirPedidoOrcamentoValido(categoria, comprador, 5213);
+            pedidoForaData.Data = DateTime.Today.AddDays(-30);
+
+            pedidoForaData = IncluirPedidoOrcamentoValido(categoria, comprador, 1606);
+            pedidoForaData.Data = DateTime.Today.AddDays(-30);
+
+            //Então verifico que existem 03 pedidos com a data atual
+
+            IList<PedidoOrcamento> pedidosApartirDeUmaData = pedidoOrcamentoService.ObterPedidosOrcamentoDoMesAnterior();
+            Assert.IsTrue(pedidosApartirDeUmaData.Count() == 3);
+        }
+
+        [Test]
+        public void RetornarTodosPedidosOrcamentoParaUmaDataUmaDeAtualizacao()
+        {
+            //Dado que tenho os seguintes pedidos
+            //                  02 Rio de Janeiro com a data atual
+            //                  01 Rio de Janeiro com a data de um dia atrás
+            //                  01 São Paulo com a data atual
+            //Então verifico que existem 01 pedidos do Rio de Janeiro com a data atual
+
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+
+            PedidoOrcamento pedidoForaData = IncluirPedidoOrcamentoValido(categoria, comprador, 3631);
+            pedidoForaData.DataAlteracao = DateTime.Today.AddDays(-1);
+
+            IncluirPedidoOrcamentoValido(categoria, comprador, 5213);
+
+            IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoPorDataAlteracao(DateTime.Now.AddDays(-1));
+
+            Assert.IsTrue(pedidosOrcamento.Count == 1);
+        }
+
+        [Test]
+        public void IncluirPedidoOrcamento()
+        {
+            IList<Fornecedor> forncedores = new List<Fornecedor>();
+            forncedores.Add(this.fornecedorSP);
+            forncedores.Add(this.fornecedorSantoAndre);
+
+            this.categoria = categoriaService.Obter(123, false);
+            categorias.Add(categoria);
+
+            Cidade cidade = cidadeService.Obter(3631);
+
+            PedidoOrcamento pedidoOrcamento = new PedidoOrcamento();
+            pedidoOrcamento.Categorias = categorias;
+            pedidoOrcamento.Fornecedores = forncedores;
+            pedidoOrcamento.Email = "comprador@hotmail.com";
+            pedidoOrcamento.Cidade = cidade;           
+            pedidoOrcamento.Titulo = "Novo Pedido";
+            pedidoOrcamento.Telefone = "21-2222-2222";
+            pedidoOrcamento.NomeComprador = "Nome Comprador";
+            pedidoOrcamento.Observacao = "Festa de anos a noite";
+
+          Assert.NotNull(pedidoOrcamentoService.Inserir(pedidoOrcamento));
+        }
+
+		[Test]
+		public void ResponderPesquisaSatisfacaoSucesso() {
+			Pessoa comprador = new Pessoa();
+			comprador.Nome = "Comprador Cidade Sao Paulo - SP";
+			comprador.Email = "renatoadsumus@gmail.com";
+			comprador.Telefone = "21-226776912";
+			string camposInvalidos = String.Empty;
+			PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categorias, "observação", "título", ref camposInvalidos, cidadeService.Obter(5213));
+			Assert.IsTrue(pedidoOrcamento.Id > 0, "Verifica se criou pedido de orçamento com sucesso.");
+
+			Assert.IsTrue(pedidoOrcamentoService.ResponderPesquisaSatisfacao(ref camposInvalidos, comprador.Email, pedidoOrcamento.Id, 0, "gostei da rapidez do serviço", "quantidade de pedidos de orçamento pode melhorar", 1), "Verifico que gravei a pesquisa com sucesso.");
+			Assert.IsTrue(pedidoOrcamento.PesquisaRespondida, "Verifico que o pedido foi marcado com a flag PesquisaRespondida.");
+		}
+
+		#region Métodos Privados
+        private PedidoOrcamento IncluirPedidoOrcamentoValido(Categoria categoria, Pessoa comprador, int idCidade)
+        {
+            BasePedidoOrcamento basePedidoOrcamento = new BasePedidoOrcamento(pedidoOrcamentoService);
+
+            Cidade cidade = cidadeService.Obter(idCidade);
+
+            return basePedidoOrcamento.IncluirPedidoOrcamentoValido(categoria, comprador, cidade);
+        }
+
+        private void PrepararTest()
+        {
+            BaseFornecedor baseFornecedor = new BaseFornecedor(fornecedorService, cidadeService, categoriaService);
+            this.fornecedorRJ = baseFornecedor.IncluirFornecedorValido(3631, "");
+            this.fornecedorSP = baseFornecedor.IncluirFornecedorValido(5213, "renato@rcmsolucoes.com");
+            this.fornecedorDuqueCaxias = baseFornecedor.IncluirFornecedorValido(3589, "emailParaExclusao@orcamentos.net.br");
+            this.fornecedorSantoAndre = baseFornecedor.IncluirFornecedorValido(5185, "fabriciofuji@yahoo.com.br");
+            this.categoria = categoriaService.Obter(54, false);
+
+            categorias = new List<Categoria>();
+            categorias.Add(categoria);
+
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\OrcamentoNet.CommonTest.nunit</TopNode>
+  <SelectedNode>[0-1001]OrcamentoNet.CommonTest.ValidadorTest</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\OrcamentoNet.CommonTest.nunit" Expanded="true" />
+    <Node UniqueName="[0-1041]D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\bin\Debug\OrcamentoNet.CommonTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1042]OrcamentoNet" Expanded="true" />
+    <Node UniqueName="[0-1043]OrcamentoNet.CommonTest" Expanded="true" />
+    <Node UniqueName="[0-1001]OrcamentoNet.CommonTest.ValidadorTest" Expanded="true" />
+  </Nodes>
+</VisualState>

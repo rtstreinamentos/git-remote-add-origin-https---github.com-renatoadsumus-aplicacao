@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Entity.Enum;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class CidadeDropDownControlePresenter
+    {
+        public ICidadeDropDownControle View { get; set; }
+
+        [Inject]
+        public ICidadeService cidadeService { get; set; }
+
+        [Inject]
+        public IFornecedorService fornecedorService { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService { get; set; }
+
+
+        public void OnViewInitialized()
+        {
+            InicializarServico();
+        }
+
+        private void InicializarServico()
+        {
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        //Carrega Cidades Somente que existam Fornecedor para Atender
+        public void CarregarCidades()
+        {
+            UF uf = ((UF)Enum.Parse(typeof(UF), View.Estado));
+
+            IList<Cidade> cidades = new List<Cidade>();
+            cidades = cidadeService.ObterCidades(uf);
+
+            //Categoria categoria = categoriaService.Obter(View.IdCategoria);
+
+            //foreach (Cidade cidade in cidadeService.ObterCidades(uf))
+            //{
+            //    if (fornecedorService.ObterFornecedoresParaUmPedidoDeOrcamento(cidade, categoria).Count > 0)
+            //    {
+            //        cidades.Add(cidade);
+            //    }
+            //}
+
+            View.CarregarCidades(cidades);
+
+        }
+
+        public void CarregarEstados()
+        {
+            IList<string> estados = new List<string>();            
+
+            if (View.IdCategoria != 0)
+            {
+                Categoria categoria = categoriaService.Obter(View.IdCategoria);
+                estados.Add("Selecione");
+
+                IList<Fornecedor> fornecedoresAtivosPorCategoria = fornecedorService.ObterFornecedoresAtivosPorCategoria(categoria);
+
+                foreach (string estado in Enum.GetNames(typeof(OrcamentoNet.Entity.Enum.UF)))
+                {
+                    UF uf = (UF)Enum.Parse(typeof(UF), estado);
+                    if (fornecedoresAtivosPorCategoria.Where(x => x.Cidade.Uf == uf).Count() > 0)
+                    {
+                        estados.Add(estado);
+                    }
+                }
+            }
+            else
+            {
+                estados = Enum.GetNames(typeof(OrcamentoNet.Entity.Enum.UF));
+            }
+
+            if (estados.Count == 1)
+                View.ExibirMensagem("Desculpe, mas neste momento não possuimos fornecedor cadastrado!");
+
+            View.CarregarEstados(estados);
+        }
+    }
+}

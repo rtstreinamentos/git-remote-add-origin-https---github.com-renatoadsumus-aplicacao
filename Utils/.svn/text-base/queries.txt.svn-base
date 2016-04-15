@@ -1,0 +1,339 @@
+SELECT 		COUNT(CD_PEDIDO_ORCAMENTO)
+		, C.NM_CATEGORIA 
+FROM 		PEDIDO_ORCAMENTO P 
+INNER JOIN 	CATEGORIA C 
+	ON 	C.CD_CATEGORIA = P.CD_CATEGORIA 
+WHERE		C.ATIVO = 1
+GROUP BY 	C.NM_CATEGORIA 
+ORDER BY 	1 DESC
+
+
+/*** PROJEÇÃO DE PAGAMENTO DOS CLIENTES ATIVOS NOS PRÓXIMOS 30 DIAS ***/
+SELECT		SUM(VALOR_MENSALIDADE)
+FROM		PESSOA PESS
+INNER JOIN	CLIENTE CLIE
+	ON	CLIE.CD_PESSOA = PESS.CD_PESSOA
+WHERE		PESS.CD_STATUS = 1
+  AND		PESS.DT_ALTERACAO <= DATE_ADD(CURDATE(), INTERVAL 30 DAY)
+
+/*** PEDIDOS DE ORÇAMENTO DUPLICADOS ***/
+DELETE FROM	PEDIDO_ORCAMENTO
+WHERE 		CD_PEDIDO_ORCAMENTO IN
+(
+SELECT 		CD_PEDIDO_ORCAMENTO
+FROM
+(
+SELECT		CD_PEDIDO_ORCAMENTO
+FROM		PEDIDO_ORCAMENTO
+GROUP BY	DATE(DT_CADASTRO)
+		, NM_COMPRADOR
+		, EMAIL
+		, TITULO
+		, OBSERVACAO
+		, CD_CATEGORIA
+HAVING		COUNT(CD_PEDIDO_ORCAMENTO)>=2
+) AS PEDIDO_ORCAMENTO_TEMP
+);
+
+/*** PEDIDOS DE ORCAMENTO DE UMA DADA CATEGORIA/CIDADE NOS ÚLTIMOS N DIAS***/
+SELECT * FROM Pedido_Orcamento
+WHERE Cd_Categoria IN (40)
+  AND Cd_Cidade = 1473
+  AND DATEDIFF(CURDATE(), Dt_Cadastro) <=10
+
+
+/*** EXCLUI PEDIDOS DE ORÇAMENTO DO SISTEMA ***/
+DELETE FROM Pedido_Orcamento WHERE Email = 'fabriciofuji@yahoo.com.br';
+DELETE FROM Pedido_Orcamento WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br';
+DELETE FROM Pedido_Orcamento WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br';
+
+/*** EXCLUI USUÁRIO DO SISTEMA ***/
+DELETE FROM Fornecedor_Categoria WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br');
+DELETE FROM Fornecedor_Cidade WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br');
+DELETE FROM Orcamento WHERE Cd_Fornecedor IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br');
+/*DELETE FROM Pedido_Orcamento WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br');*/
+DELETE FROM Fornecedor WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br');
+DELETE FROM Pessoa WHERE Email = 'emailCompradorNaoExiste@orcamentos.net.br';
+
+/*** EXCLUI USUÁRIO DO SISTEMA ***/
+DELETE FROM Fornecedor_Categoria WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br');
+DELETE FROM Fornecedor_Cidade WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br');
+DELETE FROM Orcamento WHERE Cd_Fornecedor IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br');
+/*DELETE FROM Pedido_Orcamento WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br');*/
+DELETE FROM Fornecedor WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br');
+DELETE FROM Pessoa WHERE Email = 'emailFornecedorNaoExiste@orcamentos.net.br';
+
+/*** EXCLUI USUÁRIO DO SISTEMA ***/
+DELETE FROM Fornecedor_Categoria WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'fabriciofuji@yahoo.com.br');
+DELETE FROM Fornecedor_Cidade WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'fabriciofuji@yahoo.com.br');
+DELETE FROM Orcamento WHERE Cd_Fornecedor IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'fabriciofuji@yahoo.com.br');
+DELETE FROM Pedido_Orcamento WHERE Email = 'fabriciofuji@yahoo.com.br';
+DELETE FROM Fornecedor WHERE Cd_Pessoa IN (SELECT Cd_Pessoa FROM Pessoa WHERE Email = 'fabriciofuji@yahoo.com.br');
+DELETE FROM Pessoa WHERE Email = 'fabriciofuji@yahoo.com.br';
+
+
+/*** QUANTIDADE DE CADASTROS DE COMPRADORES POR DIA ***/
+SELECT 		COUNT(PESS.Cd_Pessoa)
+		, DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d')
+FROM		Pessoa PESS
+INNER JOIN	Comprador COMP
+	ON	COMP.Cd_Pessoa = PESS.Cd_Pessoa
+GROUP BY	DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d')
+ORDER BY	DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d') DESC	
+
+
+/*** QUANTIDADE DE CADASTROS DE FORNECEDORES POR DIA ***/
+SELECT 		COUNT(PESS.Cd_Pessoa)
+		, DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d')
+FROM		Pessoa PESS
+INNER JOIN	Fornecedor FORN
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+GROUP BY	DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d')
+ORDER BY	DATE_FORMAT(PESS.Dt_Cadastro, '%Y/%m/%d') DESC	
+
+
+/*** QUANTIDADE DE ACESSOS DE FORNECEDORES POR DATA DO ÚLTIMO ACESSO ***/
+SELECT 		COUNT(PESS.Cd_Pessoa)
+		, DATE_FORMAT(PESS.Dt_Ultimo_Acesso, '%Y/%m/%d')
+FROM		Pessoa PESS
+INNER JOIN	Fornecedor FORN
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+GROUP BY	DATE_FORMAT(PESS.Dt_Ultimo_Acesso, '%Y/%m/%d')
+ORDER BY	DATE_FORMAT(PESS.Dt_Ultimo_Acesso, '%Y/%m/%d') DESC	
+
+/*** QUANTIDADE DE CLIENTES CADASTRADOS POR CATEGORIA/CIDADE ***/
+SELECT 		CATE.Nm_Categoria
+		, CIDA.Nm_Cidade
+		, PESS.*
+FROM		Fornecedor_Categoria FOCA
+INNER JOIN	Categoria CATE
+	ON	CATE.Cd_Categoria = FOCA.Cd_Categoria
+INNER JOIN	Fornecedor_Cidade FOCI
+	ON	FOCI.Cd_Pessoa = FOCA.Cd_Pessoa
+INNER JOIN	Cidade CIDA
+	ON	CIDA.Cd_Cidade = FOCI.Cd_Cidade
+INNER JOIN	Pessoa PESS
+	ON	PESS.Cd_Pessoa = FOCA.Cd_Pessoa
+INNER JOIN	Cliente CLIE
+	ON	CLIE.Cd_Pessoa = PESS.Cd_Pessoa
+WHERE		PESS.Cd_Status = 1
+GROUP BY	CATE.Nm_Categoria
+ORDER BY	COUNT(FOCA.Cd_Pessoa) DESC
+LIMIT		0, 1000;
+
+HAVING		COUNT(FOCA.Cd_Pessoa) > 0
+
+
+/*** ATUALIZA LISTA DE CATEGORIAS DISPONÍVEIS PARA PEDIDOS DE ORÇAMENTO ***/
+Update Categoria set Ativo = 1 where Cd_Categoria in (SELECT distinct Cd_Categoria FROM Fornecedor_Categoria);
+
+/*** LOCALIZA REGISTROS ÓRFÃOS EM TABELAS RELACIONADAS ***/
+SELECT * FROM	Pedido_Orcamento PEOR
+WHERE		PEOR.Cd_Categoria NOT IN (SELECT Cd_Categoria FROM Categoria);
+
+SELECT * FROM	Fornecedor_Categoria FOCA
+INNER JOIN	Pessoa PESS
+	ON	PESS.Cd_Pessoa = FOCA.Cd_Pessoa
+WHERE		FOCA.Cd_Categoria NOT IN (SELECT Cd_Categoria FROM Categoria)
+ORDER BY	FOCA.Cd_Categoria DESC;
+
+SELECT * FROM	Fornecedor_Cidade FOCI
+INNER JOIN	Pessoa PESS
+	ON	PESS.Cd_Pessoa = FOCI.Cd_Pessoa
+WHERE		FOCI.Cd_Cidade NOT IN (SELECT Cd_Cidade FROM Cidade)
+ORDER BY	FOCI.Cd_Cidade DESC;
+
+SELECT * FROM	Fornecedor FORN
+WHERE		FORN.Cd_Pessoa NOT IN (SELECT Cd_Pessoa FROM Pessoa);
+
+SELECT * FROM	Comprador COMP
+WHERE		COMP.Cd_Pessoa NOT IN (SELECT Cd_Pessoa FROM Pessoa);
+
+		
+/*** ATUALIZA DATAS DOS PEDIDOS DE ORÇAMENTO SEM FORNECEDOR CADASTRADO ***/
+UPDATE Pedido_Orcamento SET Dt_Cadastro = '2011-06-24 01:00:00'
+WHERE		Cd_Pedido_Orcamento
+IN (3,9,11,17,18,26,27,28,29,30,31)
+
+/*** LOCALIZA PEDIDOS DE ORÇAMENTO SEM FORNECEDOR CADASTRADO ***/
+SELECT 		  PEOR.Cd_Pedido_Orcamento
+		, CATE.Nm_Categoria
+		, CIDA.Nm_Cidade
+		, ESTA.Sg_Estado
+		, PEOR.Titulo
+		, PEOR.Observacao
+		, CONCAT(CATE.Nm_Categoria,'|','|',CIDA.Cd_Cidade,'|',CATE.Cd_Categoria,'|',CIDA.Cd_Cidade)
+FROM		Pedido_Orcamento PEOR
+INNER JOIN	Cidade CIDA
+	ON	CIDA.Cd_Cidade = PEOR.Cd_Cidade
+INNER JOIN	Estado ESTA
+	ON	CIDA.Cd_Estado = ESTA.Cd_Estado
+INNER JOIN	Categoria CATE
+	ON	CATE.Cd_Categoria = PEOR.Cd_Categoria
+WHERE NOT EXISTS (
+SELECT		  FORN.Cd_Pessoa
+		, PESS.Nm_Pessoa
+FROM		Pessoa PESS
+INNER JOIN 	Fornecedor FORN
+	ON 	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+INNER JOIN	Fornecedor_Categoria FOCA
+	ON	FOCA.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Fornecedor_Cidade FOCI
+	ON	FOCI.Cd_Pessoa = FORN.Cd_Pessoa
+WHERE		FOCI.Cd_Cidade = PEOR.Cd_Cidade
+  AND		FOCA.Cd_Categoria = PEOR.Cd_Categoria
+)
+ORDER BY CD_PEDIDO_ORCAMENTO DESC;
+
+/*** ESTATÍSTICAS PARA A NEWSLETTER ***/
+/*** CONTA FORNECEDORES CADASTRADOS A PARTIR DE UMA DATA ***/
+SELECT 		COUNT(FORN.Cd_Pessoa)
+FROM		Fornecedor FORN
+INNER JOIN	Pessoa PESS
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+WHERE		PESS.Dt_Cadastro >= '2011/07/15';
+
+/*** QTDE DE PEDIDOS DE ORÇAMENTO NUM PERÍODO ***/
+SELECT 		COUNT(Cd_Pedido_Orcamento)
+FROM		Pedido_Orcamento 
+WHERE		Dt_Cadastro >= '2011/07/01'
+  AND		Dt_Cadastro <= '2011/07/31'
+  AND		Cd_Categoria = 54
+
+
+
+/*** LOCALIZA FORNECEDORES CADASTRADOS NOS ÚLTIMOS 3 DIAS ***/
+SELECT 		  FORN.Cd_Pessoa
+		, PESS.Nm_Pessoa
+		, PESS.Dt_Cadastro
+		, CATE.Nm_Categoria
+		, ESTA.Sg_Estado
+		, CIDA.Nm_Cidade
+FROM		Fornecedor FORN
+INNER JOIN	Pessoa PESS
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+INNER JOIN	Fornecedor_Categoria FOCA
+	ON	FOCA.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Categoria CATE
+	ON	FOCA.Cd_Categoria = CATE.Cd_Categoria
+INNER JOIN	Fornecedor_Cidade FOCI
+	ON	FOCI.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Cidade CIDA
+	ON	CIDA.Cd_Cidade = FOCI.Cd_Cidade
+INNER JOIN	Estado ESTA
+	ON	CIDA.Cd_Estado = ESTA.Cd_Estado
+WHERE		DATEDIFF(CURDATE(), PESS.Dt_Cadastro) <=3
+ORDER BY	  PESS.Cd_Pessoa DESC
+		, CATE.Nm_Categoria
+LIMIT 0, 1000;
+
+/*** GERA PALAVRAS-CHAVES PARA ADWORDS - FORNECEDORES CADASTRADOS NOS ÚLTIMOS 10 DIAS ***/
+SELECT 		CONCAT('orçamento ', CATE.Nm_Categoria, ' ', CIDA.Nm_Cidade)
+FROM		Fornecedor FORN
+INNER JOIN	Pessoa PESS
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+INNER JOIN	Fornecedor_Categoria FOCA
+	ON	FOCA.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Categoria CATE
+	ON	FOCA.Cd_Categoria = CATE.Cd_Categoria
+INNER JOIN	Fornecedor_Cidade FOCI
+	ON	FOCI.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Cidade CIDA
+	ON	CIDA.Cd_Cidade = FOCI.Cd_Cidade
+INNER JOIN	Estado ESTA
+	ON	CIDA.Cd_Estado = ESTA.Cd_Estado
+WHERE		DATEDIFF(CURDATE(), PESS.Dt_Cadastro) <=20
+  AND		CATE.Nm_Categoria <> 'Outros' 
+ORDER BY	  PESS.Cd_Pessoa DESC
+		, CATE.Nm_Categoria;
+
+/*** LISTA AS CATEGORIAS E A QUANTIDADE DE FORNECEDORES ***/
+SELECT 		CATE.NM_CATEGORIA, 
+		Count(FOCA.CD_CATEGORIA) 
+FROM 		CATEGORIA CATE 
+INNER JOIN 	FORNECEDOR_CATEGORIA FOCA 
+	ON 	CATE.CD_CATEGORIA = FOCA.CD_CATEGORIA 
+GROUP BY 	CATE.NM_CATEGORIA 
+ORDER BY 	CATE.NM_CATEGORIA
+
+/*** LOCALIZA FORNECEDORES DE UMA DADA CATEGORIA E ESTADO ***/
+SELECT DISTINCT PESS.Email
+FROM		Pessoa PESS
+INNER JOIN	Fornecedor FORN
+	ON	FORN.Cd_Pessoa = PESS.Cd_Pessoa
+INNER JOIN	Fornecedor_Categoria FOCA
+	ON	FOCA.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Fornecedor_Cidade FOCI
+	ON	FOCI.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	Cidade CIDA
+	ON	CIDA.Cd_Cidade = FOCI.Cd_Cidade
+INNER JOIN	Estado ESTA
+	ON	ESTA.Cd_Estado = CIDA.Cd_Estado
+WHERE		ESTA.Cd_Estado = (SELECT CIDA.Cd_Estado FROM Pedido_Orcamento PEOR INNER JOIN Cidade CIDA ON PEOR.Cd_Cidade = CIDA.Cd_Cidade WHERE Cd_Pedido_Orcamento = 1521)
+  AND		FOCA.Cd_Categoria = (SELECT Cd_Categoria FROM Pedido_Orcamento WHERE Cd_Pedido_Orcamento = 1521)
+  AND		PESS.Cd_Status = 1
+
+SELECT * FROM `Cidade` WHERE nm_cidade='Joinville'
+
+Academias e Esportes
+SELECT * FROM `Categoria` WHERE Cd_Categoria_Pai=116
+2,3,4,6
+
+Autopeças
+110,111,113
+
+Construção e Manutenção 
+SELECT * FROM  `Categoria` WHERE Cd_Categoria_Pai =27
+28,29,30,31,32,33,34,35,36,37,39,40,41,42,133
+
+Fisioterapeutas e Terapias Alternativas
+84,90
+
+Viagens e Turismo
+SELECT * FROM `Categoria` WHERE Cd_Categoria_Pai=116
+117,118,119,120,121,138
+
+
+
+SELECT CATE.NM_CATEGORIA, CIDA.Nm_Cidade, COUNT( CIDA.CD_CIDADE ) 
+FROM Cidade CIDA, Fornecedor_Cidade FOCI, Categoria CATE, Fornecedor_Categoria FOCA
+WHERE CIDA.Cd_Cidade = FOCI.Cd_Cidade
+and CATE.Cd_Categoria = FOCA.Cd_Categoria
+GROUP BY CATE.NM_CATEGORIA, CIDA.NM_CIDADE
+HAVING COUNT(CIDA.CD_CIDADE)>=10
+
+SELECT 		  CATE_PAI.NM_CATEGORIA
+		, CATE.NM_CATEGORIA
+		, CIDA.NM_CIDADE
+		, COUNT( CIDA.CD_CIDADE ) 
+FROM 		  Categoria CATE_PAI
+INNER JOIN	  Categoria CATE
+	ON	  CATE_PAI.Cd_Categoria = CATE.Cd_Categoria_Pai
+INNER JOIN 	  Fornecedor_Categoria FOCA
+	ON	  CATE.Cd_Categoria = FOCA.Cd_Categoria
+INNER JOIN	  Fornecedor FORN
+	ON	  FORN.Cd_Pessoa = FOCA.Cd_Pessoa
+INNER JOIN	  Fornecedor_Cidade FOCI
+ 	ON	  FOCI.Cd_Pessoa = FORN.Cd_Pessoa
+INNER JOIN	  Cidade CIDA
+	ON	  CIDA.CD_CIDADE = FOCI.CD_CIDADE
+GROUP BY 	  CATE.NM_CATEGORIA
+		, CIDA.NM_CIDADE
+HAVING 		  COUNT( CIDA.CD_CIDADE ) >= 50
+ORDER BY	  CATE_PAI.NM_CATEGORIA
+		, CATE.NM_CATEGORIA
+		, CIDA.NM_CIDADE
+LIMIT 		  0, 300
+
+
+SELECT 		  CATE.NM_CATEGORIA
+		, COUNT( CATE.Cd_Categoria ) 
+FROM 		  Categoria CATE_PAI
+INNER JOIN	  Categoria CATE
+	ON	  CATE_PAI.Cd_Categoria = CATE.Cd_Categoria_Pai
+INNER JOIN 	  Fornecedor_Categoria FOCA
+	ON	  CATE.Cd_Categoria = FOCA.Cd_Categoria
+GROUP BY 	  CATE.NM_CATEGORIA
+HAVING 		  COUNT(CATE.Cd_Categoria) >= 50
+ORDER BY	  CATE.NM_CATEGORIA
+LIMIT		  0, 300

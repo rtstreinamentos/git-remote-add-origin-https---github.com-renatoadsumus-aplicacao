@@ -1,0 +1,97 @@
+/******************************* Product Heading Styles *******************************/
+div.productHeadingType1 ul.checkList li, div.productHeadingType2 ul.checkList li {
+	width: 150px;
+	margin-left: 10px;
+	font-size: 13px;
+}
+
+
+/******************************* Footer Section Styles *******************************/
+div#footerInformation {
+	margin-top: 40px;
+}
+
+.ie6InputFix {
+	border: 1px solid #d3d6d9;
+	width: 240px;
+	height: 26px;
+	padding: 12px 10px 0px 10px;
+	background-color: #e7ebed;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 12px;
+    font-family: "Droid Sans", "Arial", sans-serif;
+}
+
+	.ie6InputFix:hover {
+		border: 1px solid #b2b8be;
+		background-color: #f1f5f7;
+	}
+	
+	
+/******************************* Product Heading Type 3 Styles *******************************/
+.ie6SubmitFix {
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	background: url('../img/buttonBGOut.png') repeat-x 0 0;
+	font-family: "Droid Sans", "Arial", sans-serif;
+		font-size: 18px;
+		color: white;
+		padding: 10px;
+		text-decoration: none;
+		width: 130px;
+ 
+    	-moz-border-radius: 5px;
+    	-webkit-border-radius: 5px;
+    	-khtml-border-radius: 5px;
+    	border-radius: 5px;
+    	cursor: pointer;
+    
+    	position: relative;
+	top: 4px;
+	left: 0px;
+}
+
+	.ie6SubmitFix:hover {
+		background: url("../img/buttonBGOver.png") 0 0 repeat-x;
+	}
+
+
+/******************************* Product Heading Type 4 Styles *******************************/
+.ie6WhiteInputFix {
+	border: 1px solid #d3d6d9;
+	width: 220px;
+	height: 26px;
+	padding: 12px 10px 0px 10px;
+	background-color: white;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 12px;
+    font-family: "Droid Sans", "Arial", sans-serif;
+}
+
+	.ie6WhiteInputFix:hover {
+	}
+
+
+/******************************* Product Tabs Styles *******************************/
+div.tabHeading {
+	padding: 0;
+	height: 68px;
+}
+
+ul.tabs li {
+	float: left;
+    padding: 20px;
+    margin-top: 15px;
+    margin-right: -30px;   
+}

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{706E86D6-C2A2-4820-8FE3-30415AF57C00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrcamentoNet.IView</RootNamespace>
+    <AssemblyName>OrcamentoNet.IView</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InfoGlobo.InjectionFramework.Core, Version=1.1.3467.26836, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\InfoGlobo.InjectionFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Burrow, Version=1.0.0.4000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NHibernate.Burrow.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Owasp.Esapi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\Owasp.Esapi.dll</HintPath>
+    </Reference>
+    <Reference Include="PortalEscolar.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\PortalEscolar.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Services">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICadastroPedidoOrcamentoSimples2.cs" />
+    <Compile Include="ICriarPedido.cs" />
+    <Compile Include="IHistoricoPedidosOrcamentoOnline.cs" />
+    <Compile Include="IGuia.cs" />
+    <Compile Include="IGuiaTemas.cs" />
+    <Compile Include="IDepoimentoOrcamentoOnlineSite.cs" />
+    <Compile Include="IEstatisticaPedidos.cs" />
+    <Compile Include="ILinksInternosTemaCategoria.cs" />
+    <Compile Include="IMeusDados.cs" />
+    <Compile Include="IMeusPedidos.cs" />
+    <Compile Include="Iorcamento-online-termo.cs" />
+    <Compile Include="Iorcamento_online_preco.cs" />
+    <Compile Include="IPedidosNaoRespondidos.cs" />
+    <Compile Include="IPesquisaPerfilFornecedor.cs" />
+    <Compile Include="IPostBlogForm.cs" />
+    <Compile Include="IResultadoPesquisaSatisfcao.cs" />
+    <Compile Include="IUltimosPedidosOrcamento.cs" />
+    <Compile Include="Iorcamento-online-pedido-historico.cs" />
+    <Compile Include="IOrcamento_Online_Comentarios.cs" />
+    <Compile Include="Iorcamento_online_comprador.cs" />
+    <Compile Include="IOrcamento_Online_Mapa_Site.cs" />
+    <Compile Include="IOrcamento_Online_Notificacao_Pagamento.cs" />
+    <Compile Include="IOrcamento_Online_Pagamento.cs" />
+    <Compile Include="IOrcamento_Online_Tipo_Servico.cs" />
+    <Compile Include="IPesquisaSatisfacaoComprador.cs" />
+    <Compile Include="IAdminAlterarDados.cs" />
+    <Compile Include="IAdminPedidoOrcamento.cs" />
+    <Compile Include="ICidadeListBoxControle.cs" />
+    <Compile Include="IConfirmacaoEmail.cs" />
+    <Compile Include="ICusto_Anunciar_Parceiro.cs" />
+    <Compile Include="IFicha_Tecnica.cs" />
+    <Compile Include="ILogin.cs" />
+    <Compile Include="ILinksInternosControle.cs" />
+    <Compile Include="ICadastroCategoria.cs" />
+    <Compile Include="ICadastroFornecedoresOrcamentoOnline.cs" />
+    <Compile Include="ICadastroPedidoOrcamentoSimples.cs" />
+    <Compile Include="ICadastroDadosBasicos.cs" />
+    <Compile Include="ICategoriaListaControle.cs" />
+    <Compile Include="ICategoriasControle.cs" />
+    <Compile Include="ICategoriasTemaCheckBoxControle.cs" />
+    <Compile Include="ICidadeDropDownControle.cs" />
+    <Compile Include="IConsultaPedidoOrcamento.cs" />
+    <Compile Include="IFornecedorPorCategoriaControle.cs" />
+    <Compile Include="IOrcamento_Online_Opiniao.cs" />
+    <Compile Include="IOrcamento_Online_Pedido.cs" />
+    <Compile Include="IOrcamento_Online_Temas.cs" />
+    <Compile Include="IRodapeControle.cs" />
+    <Compile Include="IOrcamentoOnline.cs" />
+    <Compile Include="IPedidosOrcamentoControle.cs" />
+    <Compile Include="Presenter\AdminAlterarDadosPresenter.cs" />
+    <Compile Include="Presenter\AdminPedidoOrcamentoPresenter.cs" />
+    <Compile Include="Presenter\CadastroFornecedoresOrcamentoOnlinePresenter.cs" />
+    <Compile Include="Presenter\CadastroCategoriaPresenter.cs" />
+    <Compile Include="Presenter\CategoriaListaControlePresenter.cs" />
+    <Compile Include="Presenter\CategoriasControlePresenter.cs" />
+    <Compile Include="Presenter\CategoriasTemaCheckBoxControlePresenter.cs" />
+    <Compile Include="Presenter\CidadeDropDownControlePresenter.cs" />
+    <Compile Include="Presenter\CadastroPedidoOrcamentoSimplesPresenter.cs" />
+    <Compile Include="Presenter\CidadeListBoxControlePresenter.cs" />
+    <Compile Include="Presenter\CadastroPedidoOrcamentoSimplesPresenter2.cs" />
+    <Compile Include="Presenter\CriarPedidoPresenter.cs" />
+    <Compile Include="Presenter\HistoricoPedidosOrcamentoOnlinePresenter.cs" />
+    <Compile Include="Presenter\GuiaPresenter.cs" />
+    <Compile Include="Presenter\GuiaTemasPresenter.cs" />
+    <Compile Include="Presenter\ConfirmacaoEmailPresenter.cs" />
+    <Compile Include="Presenter\DepoimentoOrcamentoOnlineSitePresenter.cs" />
+    <Compile Include="Presenter\EstatisticaPedidosPresenter.cs" />
+    <Compile Include="Presenter\MalaDiretaPresenter.cs" />
+    <Compile Include="Presenter\MeusDadosPresenter.cs" />
+    <Compile Include="Presenter\MeusPedidosPresenter.cs" />
+    <Compile Include="Presenter\orcamento-online-termoPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_Notificacao_PagamentoPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_Pedido_HistoricoPresenter.cs" />
+    <Compile Include="Presenter\LinksInternosTemaCategoriaPresenter.cs" />
+    <Compile Include="Presenter\orcamento_online_compradorPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_Mapa_SitePresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_PagamentoPresenter.cs" />
+    <Compile Include="Presenter\orcamento_online_precoPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_Tipo_ServicoPresenter.cs" />
+    <Compile Include="Presenter\PedidosNaoRespondidosPresenter.cs" />
+    <Compile Include="Presenter\PesquisaPerfilFornecedorPresenter.cs" />
+    <Compile Include="Presenter\PesquisaSatisfacaoCompradorPresenter.cs" />
+    <Compile Include="Presenter\Custo_Anunciar_ParceiroPresenter.cs" />
+    <Compile Include="Presenter\Ficha_TecnicaPresenter.cs" />
+    <Compile Include="Presenter\LinksInternosControlePresenter.cs" />
+    <Compile Include="Presenter\FornecedoresControlePresenter.cs" />
+    <Compile Include="IFornecedoresControle.cs" />
+    <Compile Include="Presenter\LoginPresenter.cs" />
+    <Compile Include="Presenter\OrcamentoOnlinePresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_OpiniaoPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_PedidoPresenter.cs" />
+    <Compile Include="Presenter\Orcamento_Online_TemasPresenter.cs" />
+    <Compile Include="Presenter\PostBlogFormPresenter.cs" />
+    <Compile Include="Presenter\ResultadoPesquisaSatisfcaoPresenter.cs" />
+    <Compile Include="Presenter\RodapeControlePresenter.cs" />
+    <Compile Include="Presenter\FornecedorPorCategoriaControlePresenter.cs" />
+    <Compile Include="Presenter\CadastroDadosBasicosPresenter.cs" />
+    <Compile Include="Custom\CustomModule.cs" />
+    <Compile Include="ICadastroFornecedor.cs" />
+    <Compile Include="Presenter\CadastroFornecedorPresenter.cs" />
+    <Compile Include="Presenter\PedidosOrcamentoControlePresenter.cs" />
+    <Compile Include="Presenter\ServicoNotificarFornecedorPresenter.cs" />
+    <Compile Include="Presenter\UltimosPedidosOrcamentoPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrcamentoNet.Common\OrcamentoNet.Common.csproj">
+      <Project>{106E7B95-079A-441F-B443-83543793A49E}</Project>
+      <Name>OrcamentoNet.Common %28OrcamentoNet.Common\OrcamentoNet.Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoNet.Entity\OrcamentoNet.Entity.csproj">
+      <Project>{8A38B797-B22D-402A-AD10-BFCE6DED0098}</Project>
+      <Name>OrcamentoNet.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoNet.ILocalService\OrcamentoNet.ILocalService.csproj">
+      <Project>{AC1F95E9-F244-4F42-ADC6-9726E4B4B790}</Project>
+      <Name>OrcamentoNet.ILocalService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoNet.LocalService\OrcamentoNet.LocalService.csproj">
+      <Project>{CBDB82D6-BA64-4AC1-B666-F79EEE324FB2}</Project>
+      <Name>OrcamentoNet.LocalService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Obrigado por registrar seu cadastro no Orçamento Online!</p>             
+                <p>
+                    O Orçamento Online coloca em contato compradores e fornecedores (lojas, empresas,
+                    prestadores de serviços profissionais, autônomos) de diversos ramos de atividade.
+                    É a forma mais rápida de comparar preços para a compra e venda de produtos e serviços,
+                    contatando diversos fornecedores ao mesmo tempo.
+                </p>
+                <p>
+                    Como parte da rede de negócios do Orçamento Online, gostaríamos de fazer um convite.
+                    Venha fazer parte das <strong>empresas e profissionais premium do site Você Conhece</strong>:
+                    <a href="http://voceconhece.com/" target="_blank">http://voceconhece.com/</a>.</p>
+                <p>
+                    É uma vitrine formada por empresas e profissionais selecionados, reconhecidamente
+                    competentes, com garantia de um serviço de melhor qualidade. Cada fornecedor tem
+                    uma página no site, como este exemplo: <a href="http://voceconhece.com/kaminari/"
+                        target="_blank">http://voceconhece.com/kaminari/</a>.</p>
+                <p>
+                    Por favor, envie-nos seu perfil profissional, descrição, fotos de trabalhos e depoimentos
+                    de clientes. Também gostaríamos de fazer um contato telefônico para esclarecer possíveis
+                    dúvidas (informe-nos um número de contato e também a quem devemos procurar para
+                    tratar deste assunto).</p>
+                <p>
+                E tenho mais algumas outras surpresas para você, se possível, me responda
+este email para lhe passar todos os detalhes ok?
+                </p>
+                 <p>
+                    Bons negócios!</p>
+                <p>
+                    Atenciosamente,<br />
+                    <strong> Renato Coutinho</strong><br />
+                    Telefones de atendimento: 21-97933-4941<br />
+					<a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">Curta nossa página no Facebook</a> - 
+					<a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">Veja nossos vídeos no YouTube</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

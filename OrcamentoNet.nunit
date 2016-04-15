@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="OrcamentoNet.CommonTest\bin\Debug\OrcamentoNet.CommonTest.dll" />
+    <assembly path="OrcamentoNet.LocalServiceTest\bin\Debug\OrcamentoNet.LocalServiceTest.dll" />
+    <assembly path="OrcamentoNet.PresenterTest\bin\Debug\OrcamentoNet.PresenterTest.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>

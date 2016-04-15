@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Relatório Quinzenal do Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://multicotacao.orcamentos.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá
+                    <!--NOME-->
+                    ,</p>
+                <p>
+                    Segue abaixo o resumo da quantidade de pedidos de acordo com seu perfil recebidos
+                    pelo orçamento online referente ao período de <!--PERIODO-->.</p>
+                <p>
+                    <!--QUANTIDADE_PEDIDOS-->
+                    <p>
+                        <br />
+                        <br />
+                        <b>Alguns depoimentos de pessoas que solicitaram orçamento através do nosso sistema</b>
+                        <br />
+                        <p>
+                            Dra Joana Monica - SP</p>
+                        <p>
+                            <span style="color: rgb(34, 34, 34); font-family: 'bookman old style', 'new york', times, serif;
+                                font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal;
+                                letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto;
+                                text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;
+                                -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.917969);
+                                display: inline !important; float: none;">Achei muito bom, mas obtive somente 3
+                                retornos! E já retornei a todos os fornecedores que entraram em contato comigo.
+                                MUITO OBRIGADA!!</span></p>
+                        <span style="color: rgb(34, 34, 34); font-family: 'bookman old style', 'new york', times, serif;
+                                font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal;
+                                letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto;
+                                text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;
+                                -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.917969);
+                                display: inline !important; float: none;">
+                <p>
+                            &nbsp;</p>
+                <p>
+                            Kelly Silva - RJ</p>
+                        </span>
+                        <p>
+                            <span style="color: rgb(34, 34, 34); font-family: 'bookman old style', 'new york', times, serif;
+                                font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal;
+                                letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto;
+                                text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;
+                                -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.917969);
+                                display: inline !important; float: none;">descuple nao poder ajudar,fiz sim
+                            um orçamento para culinaria japonesa e não tive o retorno,entao resolvi fazer por
+                            conta propia,espero q d certo!!!!!!!!!</p>
+                        <br />                      
+                       
+                        <p>
+                            Iris - SP</p>
+                        <span style="color: rgb(34, 34, 34); font-family: 'bookman old style', 'new york', times, serif;
+                            font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal;
+                            letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto;
+                            text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;
+                            -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.917969);
+                            display: inline !important; float: none;">Olá Fabricio. Gostei da agilidade que
+                            tive com o retorno dos orçamentos, porém, ainda não decidimos ao certo o que fazer.
+                            Vou responder às empresas que me passaram um orçamento, para dar ao menos uma satisfação.
+                            Muito obrigada Iris </span>
+                    </p>
+                   
+                    <br />
+                    <br />
+                    Abraços!<br />
+                    <br />
+                    <strong>Fabrício Fujikawa & Renato Coutinho</strong><br />
+                    Cel: 21-8124-9484 e 21-7933-4941<br />
+                    Orçamento Online <a href='http://multicotacao.orcamentos.net.br/'>http://multicotacao.orcamentos.net.br/</a><br />
+                    Indique parceiros e fornecedores para nosso site. <a href='http://voceconhece.com/cadastro-de-fornecedor/'
+                        target="_blank">Você Conhece?</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

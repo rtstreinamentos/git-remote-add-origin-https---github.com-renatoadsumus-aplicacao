@@ -1,0 +1,154 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.IO;
+using System.Threading;
+
+namespace OrcamentoNet.Common
+{
+    public class Email
+    {
+        static int sequencialDoEmail = 0;
+
+        #region Métodos Públicos
+        public static bool EnviarEmail(string from, string replyTo, string to, string mensagem, string assunto, bool notificarAdministracao, bool usarSmtpDefault, Attachment anexoDocEmail, string emailCopia)
+        {
+            AlternateView view = AlternateView.CreateAlternateViewFromString(mensagem, null, MediaTypeNames.Text.Html);
+            bool enviouMensagem = true;
+
+            try
+            {
+                if (!String.IsNullOrEmpty(to))
+                {
+                    MailMessage _email = new MailMessage();
+                    _email.From = new MailAddress(from);
+                    _email.ReplyTo = new MailAddress(replyTo);
+
+                    if (mensagem.StartsWith("<!DOCTYPE"))
+                    {
+                        _email.AlternateViews.Add(view);
+                    }
+                    else
+                    {
+                        _email.Body = mensagem;
+                    }
+
+                    _email.Subject = assunto;
+                    _email.IsBodyHtml = true;
+
+                    _email.To.Add(to);
+
+                    if (notificarAdministracao)
+                        _email.Bcc.Add(Config.EmailsNotificacao);
+
+                    if (emailCopia != "")
+                        _email.CC.Add(emailCopia);
+
+                    if (anexoDocEmail != null)
+                        _email.Attachments.Add(anexoDocEmail);
+
+                    SmtpClient SmtpServer = new SmtpClient();
+                    
+                    ConfigurarSMTP(SmtpServer, usarSmtpDefault);
+                    SmtpServer.Send(_email);
+                    
+                    SmtpServer = null;
+                    //Thread.Sleep(400);
+                }
+            }
+            catch (Exception ex)
+            {
+                enviouMensagem = false;
+                Log.GravarLog(ex.Message);
+            }
+            finally
+            {
+                sequencialDoEmail++;
+            }
+
+            return enviouMensagem;
+        }
+
+        public static void NotificarAdministracao(string assunto, string texto)
+        {
+            try
+            {
+                Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, Config.EmailsNotificacao, texto, assunto, false, true, null, "");
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+        }
+
+        public static string ObterHTML(Dictionary<string, string> chavesValores, string caminhoHTML)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader(caminhoHTML);
+                string linha = string.Empty;
+                string htmlEmail = string.Empty;
+                while ((linha = sr.ReadLine()) != null)
+                {
+                    htmlEmail = htmlEmail + linha;
+                }
+
+                foreach (KeyValuePair<string, string> item in chavesValores)
+                {
+                    htmlEmail = htmlEmail.Replace(item.Key, item.Value);
+                }
+
+                sr.Close();
+                sr.Dispose();
+                return htmlEmail;
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+                return String.Empty;
+            }
+        }
+        #endregion
+
+        #region Métodos Privados
+        private static void ConfigurarSMTP(SmtpClient SmtpServer, bool usarSmtpDefault)
+        {
+            try
+            {
+                //método criado devido às políticas Anti-SPAM dos provedores, que limitam a quantidade de mensagens por hora 
+                const int nomeDoServidor = 0;
+                const int portaDoServidor = 1;
+                const int emailDeLogin = 2;
+                const int senhaDoLogin = 3;
+                int qualSmtp;
+
+                if (usarSmtpDefault)
+                {
+                    qualSmtp = 0;
+                }
+                else
+                {
+                    qualSmtp = 1;
+                }
+
+                SmtpServer.Host = Config.ServidoresSmtp[qualSmtp, nomeDoServidor];
+                
+                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.Port = Int16.Parse(Config.ServidoresSmtp[qualSmtp, portaDoServidor]);
+                SmtpServer.Credentials = new System.Net.NetworkCredential(Config.ServidoresSmtp[qualSmtp, emailDeLogin], Config.ServidoresSmtp[qualSmtp, senhaDoLogin]);
+                
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+        }
+
+
+        #endregion
+    }
+}

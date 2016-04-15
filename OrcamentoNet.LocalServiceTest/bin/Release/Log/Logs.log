@@ -1,0 +1,139 @@
+2012-08-25 11:16:01,400 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:01,421 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:02,859 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:03,209 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:03,391 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:03,397 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:03,567 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:03,575 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:04,026 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:04,038 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:04,260 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:04,268 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:04,406 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:04,412 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:04,541 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:04,795 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:04,955 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:04,966 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:05,161 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:05,170 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:05,309 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:11,488 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:11,959 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:11,971 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:12,172 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:12,185 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:12,685 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:12,696 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:12,893 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:12,905 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,199 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,208 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,325 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,332 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,461 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,470 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,629 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,639 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,809 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,823 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:13,984 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:13,995 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:14,138 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:14,146 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:14,295 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:14,303 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:14,593 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:14,607 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:14,807 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:14,819 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:14,961 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:14,969 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:15,117 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:15,126 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:16,016 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:16:16,033 [TestRunnerThread] ERROR LogInFile null id in OrcamentoNet.Entity.Fornecedor entry (don't flush the Session after an exception occurs)
+2012-08-25 11:16:20,001 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:20,857 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:21,713 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:22,562 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:24,421 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:25,262 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:27,054 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:28,184 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:29,266 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:31,991 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:36,603 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:41,478 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:42,327 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:47,713 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:49,456 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:50,307 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:51,149 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:52,000 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:52,868 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:53,718 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:54,567 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:55,412 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:16:56,266 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:01,771 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:04,918 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:05,801 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:06,651 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:07,509 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:09,358 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:13,104 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:13,992 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:14,842 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:15,701 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:16,550 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:17,421 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:22,781 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:23,632 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:24,488 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:25,340 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:26,211 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:27,940 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:28,803 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:29,673 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:31,523 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:32,377 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:33,245 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:34,511 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:35,363 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:36,222 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:37,076 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:38,767 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:39,855 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:40,714 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:41,564 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:43,368 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:44,216 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:45,069 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:46,813 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:50,417 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:51,271 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:52,121 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:52,981 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:53,818 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:54,657 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:55,511 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:56,362 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:58,058 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:58,908 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:17:59,766 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:00,611 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:01,456 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:03,260 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:04,996 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:06,298 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:07,322 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:08,708 [TestRunnerThread] ERROR LogInFile Referência de objeto não definida para uma instância de um objeto.
+2012-08-25 11:18:38,463 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-08-25 11:20:10,410 [TestRunnerThread] ERROR LogInFile could not insert: [OrcamentoNet.Entity.Fornecedor][SQL: INSERT INTO Pessoa (Nm_Pessoa, Dt_Alteracao, Dt_Cadastro, Email, Telefone, Cd_Status, WebSite, Valor_Mensalidade, Descricao, Indicacao, Auto_Resposta) VALUES (?p0, ?p1, ?p2, ?p3, ?p4, ?p5, ?p6, ?p7, ?p8, ?p9, ?p10)]
+2012-12-13 13:17:00,895 [TestRunnerThread] ERROR LogInFile Já foi adicionado um item com a mesma chave.
+2012-12-13 13:17:45,475 [TestRunnerThread] ERROR LogInFile Não foi possível localizar uma parte do caminho 'E:\_sites\OrcamentoOnline\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2012-12-13 13:19:25,385 [TestRunnerThread] ERROR LogInFile Não foi possível localizar uma parte do caminho 'E:\_sites\OrcamentoOnline\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2012-12-13 13:20:40,268 [TestRunnerThread] ERROR LogInFile Não foi possível localizar uma parte do caminho 'E:\_sites\OrcamentoOnline\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2012-12-13 13:25:40,415 [TestRunnerThread] ERROR LogInFile Não foi possível localizar uma parte do caminho 'E:\_sites\OrcamentoOnline\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.

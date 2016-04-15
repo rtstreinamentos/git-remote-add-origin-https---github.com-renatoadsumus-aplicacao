@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="gecko firefox2  win" xml:lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+lang="pt-BR">
+<head id="Head">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="text/javascript" http-equiv="Content-Script-Type">
+    <meta content="text/css" http-equiv="Content-Style-Type">
+    <meta id="MetaDescription" name="DESCRIPTION" content="Curso de Automação de Teste – Conceitos e Ferramenta Selenium Webdriver, Cumcuber, Jenkins">
+    <meta id="MetaKeywords" name="KEYWORDS" content="Curso  Automação de Teste, Ferramenta Selenium, Webdriver, Cumcuber, Jenkins">
+    <meta id="MetaCopyright" name="COPYRIGHT" content="Treinamento em Automação de Testes Funcionais no RJ">
+    <meta id="MetaAuthor" name="AUTHOR" content="RCM Soluções">
+    <meta name="RESOURCE-TYPE" content="DOCUMENT">
+    <meta name="DISTRIBUTION" content="GLOBAL">
+    <meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW">
+    <meta name="REVISIT-AFTER" content="1 DAYS">
+    <meta name="RATING" content="GENERAL">
+    <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)">
+    <style id="StylePlaceholder" type="text/css">
+        </style>
+    <link id="APortals__default_" rel="stylesheet" type="text/css" href="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/default.css">
+    <link id="APortals__default_Containers_MinimalExtropy_" rel="stylesheet" type="text/css"
+        href="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/container.css">
+    <link id="APortals__default_Containers_MinimalExtropy_Title_Grey_css" rel="stylesheet"
+        type="text/css" href="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/Title_Grey.css">
+    <link id="APortals_0_" rel="stylesheet" type="text/css" href="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/portal.css">
+    <link id="style" rel="stylesheet" type="text/css" href="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/style.css">
+    <!--[if IE 6]><link id="styleIE6" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/iTeste2010BrancoAzul/style.ie6.css" /><![endif]-->
+    <!--[if IE 7]><link id="styleIE7" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/iTeste2010BrancoAzul/style.ie7.css" /><![endif]-->
+    <title>Treinamento em Automação de Testes Funcionais no RJ</title>
+</head>
+<body id="Body">
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-12168084-2");
+            pageTracker._trackPageview();
+        } catch (err) { }
+		
+    </script>
+
+    <div id="_GPL_e6a00_parent_div" style="position: absolute; top: 0px; left: 0px; width: 1px;
+        height: 1px; z-index: 2147483647;">
+    </div>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/WebResource.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/dnncore.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/script.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/ScriptResource.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/ScriptResource_002.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/dnn_003.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/dnn.js"
+        type="text/javascript"></script>
+
+    <script src="Automa%C3%A7%C3%A3o%20de%20Teste%20%E2%80%93%20Conceitos%20e%20Ferramenta%20Selenium2_files/dnn_002.js"
+        type="text/javascript"></script>
+
+    <div id="art-main">
+        <div class="art-sheet">
+            <div class="art-sheet-cc">
+            </div>
+            <div class="art-sheet-body">
+                <div id="dnn_ControlPanel">
+                </div>
+                <div class="art-nav">
+                    <div class="l">
+                    </div>
+                    <div class="r">
+                    </div>
+                    <div class="art-nav-center">
+                        </li> </ul></div>
+                </div>
+                <div class="art-header">
+                    <div class="art-header-jpeg">
+                    </div>
+                    <img alt="JUnit e Selenium Webdriver" src="http://arquivo.devmedia.com.br/artigos/Bruno_Firmino/Testes_Junit_Selenium/Testes_Junit_Selenium1.jpg"
+                        class="imagem_artigo" style="width: 70%;">
+                </div>
+                <table class="position" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr valign="top">
+                            <td id="dnn_Top1" class="DNNEmptyPane" width="33%">
+                            </td>
+                            <td id="dnn_Top2" class="DNNEmptyPane" width="33%">
+                            </td>
+                            <td id="dnn_Top3" class="DNNEmptyPane">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content-wide">
+                            <table class="position" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr valign="top">
+                                        <td id="dnn_User1" class="DNNEmptyPane" width="50%">
+                                        </td>
+                                        <td id="dnn_User2" class="DNNEmptyPane">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="dnn_ContentPane">
+                                <div class="c_head title_grey">
+                                    <div class="Head title">
+                                        &nbsp;<br />
+                                        <span id="dnn_ctr1228_dnnTITLE_lblTitle" class="Head">Treinamento em Automação de Testes
+                                            Funcionais no RJ</span><br />
+                                        <br />
+                                    </div>
+                                    <div class="Head title_vis">
+                                    </div>
+                                    <div class="clear_float">
+                                    </div>
+                                </div>
+                                <div class="c_content">
+                                    <div id="dnn_ctr1228_ContentPane" class="Normal c_contentpane DNNAlignleft">
+                                        <!-- Start_Module_1228 -->
+                                        <div id="dnn_ctr1228_ModuleContent" class="DNN_HTMLContent">
+                                            <div id="dnn_ctr1228_HtmlModule_lblContent" class="Normal">
+                                                <div id="dnn_ctr767_ModuleContent" class="DNN_HTMLContent">
+                                                    <div class="Normal LabelEditOverClassML">
+                                                        <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                            font-size: 12px;">
+                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                <span style="font-family: Tahoma; color: rgb(0, 0, 128)"><strong><font size="2">Objetivo</font></strong></span></p>
+                                                        </div>
+                                                        <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                            font-size: 12px; text-align: justify;">
+                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                <font face="Tahoma" size="2">Apresentar os principais conceitos associados à automação
+                                                                    de testes de software, abordando as ferramentas open source mais utilizadas do mercado.
+                                                                    Você vai ver assuntos como: Agile Testing, BDD, TDD, jUnit, Cucumber, Selenium Webdriver,
+                                                                    PageObjects, Integração Contínua (Jenkins) e ATDD .</font></p>
+                                                        </div>
+                                                        <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                            font-size: 12px;">
+                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                <font face="Tahoma" size="2">
+                                                                    <br>
+                                                                </font>
+                                                                <div class="Normal LabelEditOverClassML">
+                                                                    <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                        font-size: 12px;">
+                                                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                                            <span style="font-family: Tahoma; color: rgb(0, 0, 128)"><strong><font size="2">Formato</font></strong></span></p>
+                                                                    </div>
+                                                                    <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                        font-size: 12px; text-align: justify;">
+                                                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                                            <font face="Tahoma" size="2">O treinamento é realizado utilizando a técnica de <a
+                                                                                href="http://pet.inf.ufsc.br/dojo/o-que-eh-dojo/">Dojo</a> e conceitos sobre o tema.
+                                                                                Os exemplos abordados são baseados em casos reais e todo o conteúdo produzido durante
+                                                                                a aula estará disponível no repositório do GitHub. Implementação dos testes automatizados
+                                                                                será feita em JAVA. </font>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                        font-size: 12px;">
+                                                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                                            <font face="Tahoma" size="2">
+                                                                                <br>
+                                                                            </font><strong><span style="font-family: Tahoma; color: rgb(0, 0, 128)"><font size="2">
+                                                                                Público Alvo</font></span></strong><font face="Tahoma" size="2"><strong><span style="color: rgb(0, 0, 128);"><br>
+                                                                                </span></strong></font><font face="Tahoma" size="2">Analistas de testes, pessoas relacionadas
+                                                                                    a área de teste de software, desenvolvedores ou pessoas interessadas em aprender
+                                                                                    ferramentas de automatização. </font>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                        font-size: 12px; text-align: justify;">
+                                                                        &nbsp;</div>
+                                                                    <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                        font-size: 12px; text-align: justify;">
+                                                                        <div class="Normal LabelEditOverClassML">
+                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                <font color="#000080" face="Tahoma" size="2"><b>Conteúdo Programático</b></font><font
+                                                                                    face="Tahoma" size="2"><strong><span style="color: rgb(0, 0, 128);"><br>
+                                                                                        &nbsp;</span></strong></font></p>
+                                                                            <font face="Tahoma" size="2">
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>1. Agile Testing</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Introdução ao Desenvolvimento ágil</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Transição entre Testes Tradicionais e Testes Ágeis</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        O que é Agile Testing?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Apresentar Agile Testing Quadrants</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Apresentar os princípios Agile Testing</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Qual é o perfil necessário para trabalhar com Agile Testing?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Melhorando sua estratégia de teste automatizados</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        &nbsp;</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>2. TDD</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Dojo 1: Criando meus primeiros testes automatizados</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        O que é TDD?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Como é o fluxo de trabalho com TDD?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Benefícios em usar Baby steps</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        &nbsp;</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>3. BDD + ATDD</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Dojo 2: Criando meu primeiro caso de teste no formato BDD</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        O que é BDD?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        O que é ATDD?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Como eu escrevo um caso de teste com BDD?</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        &nbsp;</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>4. Cucumber:</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Dojo 3: Primeiro teste usando o cucumber</p>
+                                                                                    <ul>
+                                                                                        <span style="color: rgb(0, 51, 102);">
+                                                                                            <li>Criação da feature</li>
+                                                                                            <li>Criação dos Steps (De-Para)</li>
+                                                                                            <li>Implementação dos testes</li>
+                                                                                        </span>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Como funciona</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Gherkin</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Palavras chave
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        &nbsp;</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>5. Selenium Webdriver + PageObjects</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Dojo 4: Primeiro teste com Cucumber + Selenium WebDriver</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Arquitetura do projeto de teste
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Selenium WebDriver
+                                                                                    </p>
+                                                                                </div>
+                                                                                <ul>
+                                                                                    <span style="color: rgb(0, 51, 102);">
+                                                                                        <li>Introdução</li>
+                                                                                        <li>Principais Funcionalidade</li>
+                                                                                        <ul>
+                                                                                            <span style="color: rgb(0, 51, 102);">
+                                                                                                <li>Localização de elementos (ByName, ById, ByXpath)</li>
+                                                                                                <li>Proxy</li>
+                                                                                                <li>Injeção de JavaScript</li>
+                                                                                                <li>Cookies</li>
+                                                                                                <li>Principais métodos do framework</li>
+                                                                                            </span>
+                                                                                        </ul>
+                                                                                        <li>Realizando em testes em diferentes browsers</li>
+                                                                                    </span>
+                                                                                </ul>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Arquitetura do projeto de teste</p>
+                                                                                </div>
+                                                                                <ul>
+                                                                                    <span style="color: rgb(0, 51, 102);">
+                                                                                        <li>Organização do Projeto</li>
+                                                                                        <li>PageObject</li>
+                                                                                        <li>Reuso de Steps</li>
+                                                                                    </span>
+                                                                                </ul>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Dojo 5: Refatoração do primeiro teste para o padrão PageObject + Novos casos de
+                                                                                        teste</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <font face="Tahoma" size="2">&nbsp;</font></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 51, 102);"><strong>6. Integração Contínua (Jenkins)</strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Instalação</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Criação de Jobs</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Principais plugins</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        Execução/Agendamento de Jobs</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        &nbsp;</p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 0, 128);"><strong><span style="font-family: Tahoma"><font
+                                                                                            size="2">Instrutor</font></span></strong></span> <u><span style="color: rgb(0, 0, 128);">
+                                                                                                <strong><span style="font-family: Tahoma"><font size="2">
+                                                                                                    <br>
+                                                                                                </font></span></strong></span></u><u><font face="Tahoma" size="2"><a href="http://www.linkedin.com/profile/view?id=87389594&goback=.nmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=spm_pic"
+                                                                                                    target="_blank">Renato Coutinho </a></font></u><font face="Tahoma" size="2">: 10 anos
+                                                                                                        de experiência em desenvolvimento de software, com MBA em Engenharia de Software
+                                                                                                        pela Poli-UFRJ, participação direta na criação e estruração dos processos da célula
+                                                                                                        de qualidade da InfoGlobo. Atuação nos principais projetos da empresa como: site
+                                                                                                        O Globo, Extra, Rio Show, Clube do Assinante, Classificados do Rio entre outros.
+                                                                                                        Conhecimento em ferramentas de testes: testlink, jmeter, selenium webdriver e IDE,
+                                                                                                        badboy, junit, nunit, dbunit, jenkins, cobertura de teste, page objetc, framework
+                                                                                                        de mock, cumcuber e mantis.Experiência em outras áreas da engenharia de software,
+                                                                                                        como análise de requisito e gerência de configuração. Experiência de mais 4 anos
+                                                                                                        com metodologias ágeis(scrum,kanban e XP)..
+                                                                                                        <br>
+                                                                                                    </font>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <br />
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 0, 128);"><strong><span style="font-family: Tahoma"><font
+                                                                                            size="2">Instrutor</font></span></strong></span> <u><span style="color: rgb(0, 0, 128);">
+                                                                                                <strong><span style="font-family: Tahoma"><font size="2">
+                                                                                                    <br>
+                                                                                                </font></span></strong></span></u><u><font face="Tahoma" size="2"><a href="http://www.linkedin.com/profile/view?id=109114164&locale=pt_BR&trk=tyah&trkInfo=tarId%3A1397143083514%2Ctas%3Asamanta%2Cidx%3A1-1-1"
+                                                                                                    target="_blank">Samanta Cicilia</a> </font></u><font face="Tahoma" size="2">: Trabalhando
+                                                                                                        com Scrum na Infoglobo desde 2011, cursando MBA em Garantia de Qualidade de Software
+                                                                                                        na Poli-UFRJ. Palestrante do Brateste 2013 e parte da organização do Agile in Rio
+                                                                                                        e dos encontros do Rio Agile.<br>
+                                                                                                    </font><font face="Tahoma" size="2">&nbsp;<br>
+                                                                                                    </font>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="color: rgb(0, 0, 128);"><strong><span style="font-family: Tahoma"><font
+                                                                                            size="2">Instrutor</font></span></strong></span> <u><span style="color: rgb(0, 0, 128);">
+                                                                                                <strong><span style="font-family: Tahoma"><font size="2">
+                                                                                                    <br>
+                                                                                                </font></span></strong></span></u><u><font face="Tahoma" size="2"><a href="http://www.linkedin.com/profile/view?id=309335573&locale=pt_BR&trk=tyah2&trkInfo=tarId%3A1397143200005%2Ctas%3Athiago%20castr%2Cidx%3A1-5-5"
+                                                                                                    target="_blank">Thiago Castro </a></font></u><font face="Tahoma" size="2">: Formado
+                                                                                                        em Análise de Sistemas, com 10 anos de experiência em desenvolvimento de software,
+                                                                                                        sendo 4 desses utilizando metodologias ágeis. Atuou em empresas do segmento de Varejo,
+                                                                                                        Petróleo, Seguros, Financeiro e de Mídia. Atualmente trabalha na Infoglobo como
+                                                                                                        analista de QA atuando nos principais projetos, fazendo coaching das equipes de
+                                                                                                        desenvolvimento. Possui experiência em diversas linguagens, frameworks, treinamentos,
+                                                                                                        desenvolvimento, testes ágeis e práticas XP.<br>
+                                                                                                    </font><font face="Tahoma" size="2">&nbsp;<br>
+                                                                                                    </font><span style="font-family: Tahoma; color: rgb(0, 0, 128)"><strong><font size="2">
+                                                                                                        Carga Horária</font></strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="font-family: Tahoma; font-size: larger;">16 horas<br>
+                                                                                        </span><font face="Tahoma" size="2">
+                                                                                            <br>
+                                                                                        </font><span style="color: rgb(0, 0, 128);"><strong><span style="font-family: Tahoma">
+                                                                                            <font size="2">Data&nbsp;</font></span></strong></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <font face="Tahoma" size="2">Dias&nbsp;</font><span style="color: rgb(0, 0, 128);
+                                                                                            font-family: Tahoma, sans-serif; font-size: small; text-align: center;">10 e 17/05/2014 => Vagas Encerradas</span></p>
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <font face="Tahoma" size="2">Dias&nbsp;</font><span style="color: rgb(0, 0, 128);
+                                                                                            font-family: Tahoma, sans-serif; font-size: small; text-align: center;">07 e 14/06/2014=>Inscrições Abertas</span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <span style="font-family: Tahoma;"><font size="2">das 09h às 18h</font></span></p>
+                                                                                </div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px; text-align: justify;">
+                                                                                    &nbsp;</div>
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <strong><span style="font-family: Tahoma; color: rgb(0, 0, 128)"><font size="2">Investimento</font></span></strong></p>
+                                                                                    <font face="Tahoma" size="2">
+                                                                                        <div class="Normal LabelEditOverClassML">
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                <span style="font-size: 12px; line-height: 18px;"><font size="2">R$ 650,00 à vista ou 2x R$ 340,00</font>
+                                                                                                </span>
+                                                                                            </p>
+                                                                                        </div>
+                                                                                        <div class="Normal LabelEditOverClassML">
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                <span style="text-align: justify"><b>PROMOÇÃO.</b> Indique três amigos e pague somente:
+                                                                                                    <b>R$ 550,00 à vista ou 2x R$ 290,00</b>. Basta indicar para ganhar o desconto!</span><br style="color: rgb(65, 91, 104);">
+                                                                                            </p>
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                &nbsp;</p>
+                                                                                        </div>
+                                                                                        <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                            font-size: 12px;">
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                <strong><span style="font-family: Tahoma; color: rgb(0, 0, 128)"><font size="2">Turma</font></span></strong></p>
+                                                                                            <font face="Tahoma" size="2">
+                                                                                                <div class="Normal LabelEditOverClassML">
+                                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                        <span style="font-size: 12px; line-height: 18px;"><font size="2">Mínimo de 5 e máximo
+                                                                                                            de 10 alunos</font></span></p>
+                                                                                                </div>
+                                                                                                <span style="font-size: 10pt; line-height: 14px;">&nbsp;</span><span style="line-height: 18px;"></span></div>
+                                                                                        <div class="Normal LabelEditOverClassML">
+                                                                                            <p style="margin-top: 0; margin-bottom: 0">
+                                                                                                <strong style="font-family: Arial, Verdana, sans-serif;"><span style="font-family: Tahoma;
+                                                                                                    color: rgb(0, 0, 128)">Local</span></strong></p>
+                                                                                        </div>
+                                                                                    </font>
+                                                                                </div>
+                                                                                <span style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif; font-size: 12px;">
+                                                                                    <div class="Normal LabelEditOverClassML">
+                                                                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                                                            <font face="Tahoma" size="2">Centro, Rio de janeiro</font></p>
+                                                                                    </div>
+                                                                                </span>
+                                                                                <br />
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <strong><span style="font-family: Tahoma"><font size="2">Inscrições / Informações</font></span></strong><span
+                                                                                            style="font-family: Tahoma"><font size="2">:&nbsp;</font></span><span style="font-family: Tahoma;"><font
+                                                                                                size="2">contato@rcmsolucoes.com - (21) 979334941 / (21) 991049729 / (21) 9979998725
+                                                                                                <br />
+                                                                                                <a href="https://docs.google.com/forms/d/1uNLULC-TpbBSoOeiT7l8dKQ5bOLBxD7pJ4e_Gk4rJbQ/viewform"
+                                                                                                    target="_blank">Formulário de Inscrição</a> </font></span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <br />
+                                                                                <div class="Normal LabelEditOverClassML" style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif;
+                                                                                    font-size: 12px;">
+                                                                                    <p style="margin-top: 0; margin-bottom: 0">
+                                                                                        <strong><span style="font-family: Tahoma"><font size="2">O pagamento poderá ser realizado
+                                                                                            através do Pagseguro com cartão de crédito - débito - boleto bancário. </font></span>
+                                                                                        </strong><span style="font-family: Tahoma"><font size="2">&nbsp;</font></span></p>
+                                                                                </div>
+                                                                                <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="8261C472A7A7561AA4C05FB5895755D7" />
+<input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-pagar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                                                                                <br />
+                                                                                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frcmsolucoes.com%2FTreinamento%2Ftreinamento-em-automacao-de-testes-funcionais-no-rj.htm&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80"
+                                                                                    scrolling="no" frameborder="0" style="border: none; overflow: hidden; height: 80px;"
+                                                                                    allowtransparency="true"></iframe>
+                                                                                <div class="art-footer">
+                                                                                    <div class="art-footer-inner">
+                                                                                        <div class="art-footer-text">
+                                                                                            <p>
+                                                                                                <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="#">Termos de Uso</a>
+                                                                                                | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="#">Política
+                                                                                                    de Privacidade</a><br>
+                                                                                                <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">RCM Solucões em TI - Rio
+                                                                                                    de Janeiro (21) 97933-4941 / (21)99104-9729 (21) 997999-8725 </span>
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="art-footer-background">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="cleared">
+                                                                                </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="cleared">
+                                                                    </div>
+                                                                    <p class="art-page-footer">
+                                                                    </p>
+                                                                </div>
+                                                                <input value="0" name="ScrollTop" id="ScrollTop" type="hidden"><input name="__dnnVariable"
+                                                                    id="__dnnVariable" value="{&quot;__scdoff&quot;:&quot;1&quot;}" type="hidden">
+</body>
+</html>

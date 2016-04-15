@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="PostBlog" table="PostBlog">
+    <id name="Id" column="Cd_PostBlog">
+      <generator class="identity" />
+    </id>
+
+    <property name="Conteudo" column="Conteudo" length="50"  />
+    <property name="Titulo" column="Titulo" length="50"  />
+    <property name="DataCadastro" column="Dt_Cadastro" length="50"  />
+    <property name="FotoPrincipal" column="Foto_Principal" length="500"  />
+
+    <many-to-one name="Categoria" column="Cd_Categoria" class="Categoria" />
+
+  </class>
+</hibernate-mapping>

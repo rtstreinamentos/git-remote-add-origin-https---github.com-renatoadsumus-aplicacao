@@ -1,0 +1,1 @@
+msbuild ..\OrcamentoNet.View\OrcamentoNet.View.csproj /p:Configuration=Release /target:Publish

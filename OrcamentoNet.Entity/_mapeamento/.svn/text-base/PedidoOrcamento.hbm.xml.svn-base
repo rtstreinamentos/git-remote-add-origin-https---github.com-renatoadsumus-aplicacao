@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="PedidoOrcamento" table="Pedido_Orcamento">
+    <id name="Id" column="Cd_Pedido_Orcamento">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Cidade" column="Cd_Cidade" class="Cidade" />
+
+    <property name="Email" column="Email" length="100"  />
+    <property name="Data" column="Dt_Cadastro" />
+    <property name="Observacao" column="Observacao" type="StringClob" />
+    <property name="NomeComprador" column="Nm_Comprador" length="50"  />
+    <property name="Titulo" column="Titulo" length="100"  />
+    <property name="Telefone" column="Telefone" length="50"  />
+    <property name="TelefoneOperadora" column="Telefone_Operadora" length="50"  />
+    <property name="StatusPedidoComprador" column="Status_Pedido_Comprador" length="100"  />
+    <property name="DataAlteracao" column="Dt_Alteracao" />
+    <property name="OpiniaoComprador" column="Opiniao_Comprador" length="500"  />
+    <property name="PontosMelhoria" column="Pontos_Melhoria" length="500"  />
+    <property name="Gostou" column="Gostou" />
+    <property name="Status" column="Cd_Status" />
+    <property name="PesquisaRespondida" column="Pesquisa_Respondida" />
+    <property name="PesquisaRevisada" column="Pesquisa_Revisada" />
+    <property name="PretensaoServico" column="Cd_Pretensao_Servico" />
+    <property name="FotoPrincipal" column="Foto_Principal" />
+    <property name="AprovadoParaSite" column="Aprovado_Para_Site" />
+    <property name="Ano" column="Ano" />
+    <property name="Mes" column="Mes" />
+    
+    <bag name="Categorias" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Pedido_Orcamento_Categoria">
+      <key column="Cd_Pedido_Orcamento" />
+      <many-to-many column="Cd_Categoria" class="Categoria"/>
+    </bag>
+
+    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Pedido_Orcamento_Foto">
+      <key column="Cd_Pedido_Orcamento" />
+      <element column="url" type="string" />
+    </bag>   
+  </class>
+
+
+
+</hibernate-mapping>

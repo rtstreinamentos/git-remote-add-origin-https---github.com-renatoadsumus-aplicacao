@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>CadastroFornecedor</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CadastroFornecedor</td></tr>
+</thead><tbody>
+<tr>
+	<td>pause</td>
+	<td>15000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_ubxbtnHabilitarEdicao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl00_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl01_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl02_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl03_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl04_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrptCidades_ctl66_uxchkCidade</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrptCidades_ctl46_uxchkCidade</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrptCidades_ctl45_uxchkCidade</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Bons negócios!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

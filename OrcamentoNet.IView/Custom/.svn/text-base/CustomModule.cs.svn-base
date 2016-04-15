@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.LocalService;
+using NHibernate.Burrow;
+using PortalEscolar.Data;
+
+namespace OrcamentoNet.IView
+{
+    public class CustomModule : StandardModule
+    {
+        public override void Load()
+        {
+            Bind<IDataContext>().To<NHibernateContext>();
+            Bind<ICategoriaService>().To<CategoriaService>();
+            Bind<ICidadeService>().To<CidadeService>();
+            Bind<IFornecedorService>().To<FornecedorService>();
+            Bind<IPedidoOrcamentoService>().To<PedidoOrcamentoService>();
+            Bind<ISiteMapService>().To<SiteMapService>();
+            Bind<IOpiniaoService>().To<OpiniaoService>();
+            Bind<IFotoService>().To<FotoService>();
+            Bind<ILinkInternoService>().To<LinkInternoService>();
+            Bind<IEstadoService>().To<EstadoService>();
+            Bind<IPedidoEstatisticaService>().To<PedidoEstatisticaService>();
+            Bind<IFornecedorCategoriaService>().To<FornecedorCategoriaService>();
+            Bind<IOrcamentoService>().To<OrcamentoService>();
+            Bind<ICompraAvulsaService>().To<CompraAvulsaService>();
+            Bind<IMensalidadeService>().To<MensalidadeService>();
+            Bind<IPostBlogService>().To<PostBlogService>();
+            Bind<IOrcamentoFornecedorService>().To<OrcamentoFornecedorService>();
+            Bind<IPedidoOrcamentoFornecedorService>().To<PedidoOrcamentoFornecedorService>(); 
+        }
+    }
+}

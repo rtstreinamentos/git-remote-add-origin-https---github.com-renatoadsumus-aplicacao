@@ -1,0 +1,522 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Entity;
+using OrcamentoNet.Common;
+using OrcamentoNet.Entity.Enum;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class ServicoNotificarFornecedorPresenter
+    {
+        #region Propriedades
+
+        [Inject]
+        public ICategoriaService categoriaService { get; set; }
+
+        [Inject]
+        public IFornecedorService fornecedorService { get; set; }
+
+        [Inject]
+        public IPedidoOrcamentoService pedidoOrcamentoService { get; set; }
+
+        [Inject]
+        public ISiteMapService siteMapService { get; set; }
+
+        public log4net.ILog Log4Net { get; set; }
+        #endregion
+
+        #region Métodos Públicos
+        public void InicializarServico()
+        {
+            this.Log4Net.Debug("Início");
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        public void AtualizarSiteMap()
+        {
+            this.Log4Net.Debug("Início");
+            try
+            {
+                IList<Categoria> listaCategorias = new List<Categoria>();
+                siteMapService.Gravar(listaCategorias);
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        public void AtualizarUrlCategoriasParaSeo()
+        {
+            this.Log4Net.Debug("Início");
+            try
+            {
+                categoriaService.AtualizarUrlParaSeo();
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        public ServicoNotificarFornecedorPresenter()
+        {
+            log4net.Config.XmlConfigurator.Configure();
+            this.Log4Net = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+
+        public void OnViewInitialized()
+        {
+            try
+            {
+                this.Log4Net.Debug("Início");
+                this.InicializarServico();
+
+<<<<<<< .mine
+                //// às 9h da manhã roda os serviços de frequência diária
+                //if (DateTime.Now.Hour == 9)
+                //{
+                //    this.EnviarEmailPesquisaSatisfacaoComprador();
+                //    this.EnviarEmailInformativoNovosFornecedores();
+                //    //Envia um Email de Pesquisa de Satisfação para fornecedores cadastrados há 7 dias
+                //    this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-7));
+                //    //Envia um Email de Pesquisa de Satisfação para fornecedores cadastrados há 45 dias
+                //    this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-45));
+                //    //Envia um Email de Pesquisa de Satisfação para fornecedores cadastrados há 120 dias
+                //    this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-120));
+                //    //Envia um Email de Lembrança com 4 dias antencedência
+                //    this.EnviarEmailLembreteVencimentoFornecedor(DateTime.Now.AddDays(4));
+                //    //Envia um Email de Lembrança com 2 dias antencedência
+                //    this.EnviarEmailLembreteVencimentoFornecedor(DateTime.Now.AddDays(2));
+                //    //Envia um Email para Fornecedor não identificando o pagamento
+                //    this.EnviarEmailPagamentoNaoIdentificado();
+                //    //Atualiza as URLs das categorias
+                //    this.AtualizarUrlCategoriasParaSeo();
+                //    //Atualiza o SiteMap
+                //    this.AtualizarSiteMap();
+=======
+                // às 9h da manhã roda os serviços de frequência diária
+                if (DateTime.Now.Hour == 9)
+                {
+                    this.EnviarEmailPesquisaSatisfacaoComprador();
+                    this.EnviarEmailInformativoNovosFornecedores();
+                    //Envia um Email de Pesquisa de Satisfação para fornecedores cadastrados há 7, 37, 97 e 187 dias
+                    this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-7));
+					this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-37));
+					this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-97));
+					this.EnviarEmailPesquisaSatisfacaoFornecedor(DateTime.Now.AddDays(-187));
+                    //Envia um Email de Lembrança com 7 dias antencedência
+                    this.EnviarEmailLembreteVencimentoFornecedor(DateTime.Now.AddDays(7));
+                    //Envia um Email de Lembrança com 2 dias antencedência
+                    this.EnviarEmailLembreteVencimentoFornecedor(DateTime.Now.AddDays(2));
+                    //Atualiza as URLs das categorias
+                    this.AtualizarUrlCategoriasParaSeo();
+                    //Atualiza o SiteMap
+                    this.AtualizarSiteMap();
+>>>>>>> .r1158
+
+<<<<<<< .mine
+                //if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+                //{
+                ////Envia um Email para Renato e Fabricio com os indicadores de negocio da Semana
+                this.EnviarEmailIndicadoresNegocio();
+                // }
+=======
+					if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+					{
+						//Primeira Segunda Feira do Mes
+						if ((DateTime.Now.Day >= 1 && DateTime.Now.Day <= 6) || (DateTime.Now.Day > 15 && DateTime.Now.Day < 20))
+							//Envia a quantidade de pedidos quinzenal para os fornecedores
+							this.EnviarEmailResumoPedidosQuinzenal();
+					}
+					if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+					{
+						//Envia um Email para Fornecedor não identificando o pagamento e desativa
+						this.EnviarEmailPagamentoNaoIdentificado();
+					}
+					if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+					{
+						//Envia um Email para Renato e Fabricio com os indicadores de negocio da Semana
+						this.EnviarEmailIndicadoresNegocio();
+					}
+				}
+>>>>>>> .r1158
+
+<<<<<<< .mine
+                //if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+                //{
+                //    //Primeira Segunda Feira do Mes
+                //    if ((DateTime.Now.Day >= 1 && DateTime.Now.Day <= 6) || (DateTime.Now.Day > 15 && DateTime.Now.Day < 20))
+                //        //Envia a quantidade de pedidos quinzenal para os fornecedores
+                //        this.EnviarEmailResumoPedidosQuinzenal();
+                //}
+                //}
+
+=======
+>>>>>>> .r1158
+                //// estes são rodados de acordo com o agendamento do serviço
+                //this.RemoverPedidosOrcamentoDuplicados();
+                //this.EnviarIntegracoesEmail();
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        private void EnviarEmailIndicadoresNegocio()
+        {
+            DateTime dataFim = new DateTime(DateTime.Now.Year, DateTime.Now.AddDays(-2).Month, DateTime.Now.AddDays(-2).Day, 23, 59, 59);
+
+            DateTime dataIncio = new DateTime(DateTime.Now.Year, DateTime.Now.AddDays(-8).Month, DateTime.Now.AddDays(-8).Day, 00, 00, 00);
+
+            IList<Fornecedor> novosFornecedoresCadastrados = fornecedorService.ObterFornecedoresPorIntervaloDeData(dataIncio, dataFim);
+
+            IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeData(dataIncio, dataFim);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetJaponesRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 3631, 54);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetJaponesSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 5213, 54);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 3631, 123);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 5213, 123);
+
+            IList<PedidoOrcamento> pedidosOrcamentoAcessoriaRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 3631, 181);
+
+            IList<PedidoOrcamento> pedidosOrcamentoAcessoriaSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 5213, 181);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetInfantilRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 3631, 171);
+
+            IList<PedidoOrcamento> pedidosOrcamentoBuffetInfantilSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 5213, 171);
+
+            IList<PedidoOrcamento> pedidosOrcamentoPintorPinturaSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 5213, 40);
+
+            IList<PedidoOrcamento> pedidosOrcamentoPintorPinturaRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataCidadeCategoria(dataIncio, dataFim, 3631, 40);
+
+            IList<PedidoOrcamento> pedidosOrcamentoFestasEventosSP = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataEstadoCategoriaPai(dataIncio, dataFim, UF.SP, 52);
+
+            IList<PedidoOrcamento> pedidosOrcamentoFestasEventosRJ = pedidoOrcamentoService.ObterPedidosOrcamentoPorIntervaloDeDataEstadoCategoriaPai(dataIncio, dataFim, UF.RJ, 52);
+
+            IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresPorIntervaloDataVencimento(dataFim, dataIncio);
+            int totalFornecedores = fornecedores.Count();
+            int totalClientes = fornecedores.Where(x => x.EhCliente == true).Count();
+
+            double retencaoFornecedor = 0.0;
+
+            if (totalClientes != 0)
+            {
+                retencaoFornecedor = totalClientes / totalFornecedores;
+            }
+
+            int valorBuffetRJ = CalcularValorRecebidoPorCategoriaCidade(3631, 123) / 4;
+            int valorBuffetSP = CalcularValorRecebidoPorCategoriaCidade(5213, 123) / 4;
+            int valorBuffetJaponesRJ = CalcularValorRecebidoPorCategoriaCidade(3631, 54) / 4;
+            int valorBuffetJaponesSP = CalcularValorRecebidoPorCategoriaCidade(5213, 54) / 4;
+            int valorBuffetInfantilRJ = CalcularValorRecebidoPorCategoriaCidade(3631, 171) / 4;
+            int valorBuffetInfantilSP = CalcularValorRecebidoPorCategoriaCidade(5213, 171) / 4;
+            int valorPintorPinturaSP = CalcularValorRecebidoPorCategoriaCidade(5213, 40) / 4;
+            int valorPintorPinturaRJ = CalcularValorRecebidoPorCategoriaCidade(3631, 40) / 4;
+
+
+            string htmlEmail = "<p><b>Relatório Semanal Data Inicío:</b>" + dataIncio.ToShortDateString() + " Data Fim:" + dataFim.ToShortDateString() + "</p>" +
+                "<p>Novos Fornecedores: " + novosFornecedoresCadastrados.Count + "</p>" +
+                "<p>Quantidade Pedidos: " + pedidosOrcamento.Count + "</p>" +
+                "<p>Quantidade Pedidos Japonês RJ: " + pedidosOrcamentoBuffetJaponesRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Japonês SP: " + pedidosOrcamentoBuffetJaponesSP.Count + "</p>" +
+                "<p>Quantidade Pedidos Buffet RJ: " + pedidosOrcamentoBuffetRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Buffet SP: " + pedidosOrcamentoBuffetSP.Count + "</p>" +
+                "<p>Quantidade Pedidos Buffet Infantil RJ: " + pedidosOrcamentoBuffetInfantilRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Buffet Infantil SP: " + pedidosOrcamentoBuffetInfantilSP.Count + "</p>" +
+                "<p>Quantidade Pedidos Acessoria RJ: " + pedidosOrcamentoAcessoriaRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Acessoria SP: " + pedidosOrcamentoAcessoriaSP.Count + "</p>" +
+                "<p>Quantidade Pedidos Eventos Festas Estado de SP: " + pedidosOrcamentoFestasEventosSP.Count + "</p>" +
+                "<p>Quantidade Pedidos Eventos Festas Estado de RJ: " + pedidosOrcamentoFestasEventosRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Pintor Pintura RJ: " + pedidosOrcamentoPintorPinturaRJ.Count + "</p>" +
+                "<p>Quantidade Pedidos Pintor Pintura SP: " + pedidosOrcamentoPintorPinturaSP.Count + "</p>" +
+                "<br/>" +
+                "<p><b>Valor de Clientes Pagando em:</b>" +
+                "<p>Buffet RJ: R$" + valorBuffetRJ + "</p>" +
+                "<p>Buffet SP:R$ " + valorBuffetSP + "</p>" +
+                "<p>Buffet Japones RJ:R$ " + valorBuffetJaponesRJ + "</p>" +
+                "<p>Buffet Japones SP:R$ " + valorBuffetJaponesSP + "</p>" +
+                "<p>Buffet Infantil RJ:R$ " + valorBuffetInfantilRJ + "</p>" +
+                "<p>Buffet Infantil SP:R$ " + valorBuffetInfantilSP + "</p>" +
+                "<p>Pintor Pintura RJ:R$ " + valorPintorPinturaRJ + "</p>" +
+                "<p>Pintor Pintura SP:R$ " + valorPintorPinturaSP + "</p>" +
+                "<br/>" +
+                "<p><b>Fornecedores Data Vencimento Início:</b>" + dataIncio.ToShortDateString() + " Fim:" + dataFim.ToShortDateString() + "</p>" +
+                "<p>Oportunidades: " + totalFornecedores + "</p>" +
+                "<p>Retenção: " + retencaoFornecedor + "%</p>";
+
+            Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, "renatoadsumus@gmail.com", htmlEmail, "Relatório Indicadores de Negócio", true, false, null, "");
+        }
+
+
+        private int CalcularValorRecebidoPorCategoriaCidade(int idCidade, int idCategoria)
+        {
+            IList<Fornecedor> clientes = fornecedorService.ObterClientesPorCidadeCategoria(idCidade, idCategoria);
+
+            int valorRecebido = 0;
+            foreach (Fornecedor fornecedor in clientes)
+            {
+                valorRecebido = valorRecebido + fornecedor.ValorMensalidade;
+            }
+
+            return valorRecebido;
+        }
+
+        private void EnviarEmailResumoPedidosQuinzenal()
+        {
+
+            IList<Fornecedor> fornecedoresAtivos = fornecedorService.ObterFornecedoresAtivos();
+
+            IList<PedidoOrcamento> pedidosMesAnterior = pedidoOrcamentoService.ObterPedidosOrcamentoDaSemana(DateTime.Now.AddDays(-15), DateTime.Now);
+
+            foreach (Fornecedor fornecedor in fornecedoresAtivos)
+            {
+                string htmlQuantidadePedidos = "";
+
+                foreach (Categoria categoriaFornecedor in fornecedor.SubCategorias)
+                {
+                    int quantiadadePedido = pedidosMesAnterior.Where(x => x.SubCategoria == categoriaFornecedor && x.Cidade.Uf == fornecedor.Cidade.Uf).Count();
+                    htmlQuantidadePedidos = htmlQuantidadePedidos + "<br><strong>" + categoriaFornecedor.Nome + "</strong>: " + quantiadadePedido.ToString();
+                }
+
+                string periodo = " Início: " + DateTime.Now.AddDays(-15).ToShortDateString() + "Fim: " + DateTime.Now.ToShortDateString();
+                Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                chavesValores.Add("<!--QUANTIDADE_PEDIDOS-->", htmlQuantidadePedidos);
+                chavesValores.Add("<!--PERIODO-->", periodo);
+
+                string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailRelatorioMensal);
+
+                Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, fornecedor.Email, htmlEmail, "Relatório Mensal do Orçamento Online", true, false, null, "");
+            }
+        }
+
+        public void EnviarEmailPagamentoNaoIdentificado()
+        {
+            IList<Fornecedor> fornecedoresQueNaoPagaram = fornecedorService.ObterFornecedoresQueNaoPagaram(5);
+            int quantidade = fornecedoresQueNaoPagaram.Count;
+            Email.NotificarAdministracao("Início - Pagamento não identificado " + quantidade.ToString() + " fornecedores", String.Empty);
+            foreach (Fornecedor fornecedor in fornecedoresQueNaoPagaram)
+            {
+                try
+                {
+                    Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                    chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                    chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+                    chavesValores.Add("<!--DATA_RENOVACAO-->", fornecedor.DataAlteracao.ToString("dd/MM/yyyy"));
+                    string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailPagamentoFornecedorNaoIdentificado);
+
+                    Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, fornecedor.Email, htmlEmail, "Pagamento não identificado do serviço Orçamento Online", true, false, null, "");
+                }
+                catch (Exception e)
+                {
+                    Erro.Logar(e);
+                }
+            }
+        }
+
+        public void EnviarEmailLembreteVencimentoFornecedor(DateTime dataVencimento)
+        {
+            IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresPorDataVencimento(dataVencimento);
+            int quantidade = fornecedores.Count;
+            Email.NotificarAdministracao("Início - Lembrete Vencimento em " + dataVencimento.ToString("dd/MM/yyyy") + " - " + quantidade.ToString() + " fornecedores", String.Empty);
+            foreach (Fornecedor fornecedor in fornecedores)
+            {
+                try
+                {
+                    Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                    chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                    chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+                    chavesValores.Add("<!--DATA_RENOVACAO-->", fornecedor.DataAlteracao.ToString("dd/MM/yyyy"));
+                    string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailLembreteVencimentoFornecedor);
+
+                    Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, fornecedor.Email, htmlEmail, "Lembrete de renovação do serviço Orçamento Online", false, false, null, "");
+                }
+                catch (Exception e)
+                {
+                    Erro.Logar(e);
+                }
+            }
+        }
+
+        public void EnviarEmailPesquisaSatisfacaoFornecedor(DateTime dataCadastro)
+        {
+            IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresPorDataCriacao(dataCadastro);
+            int quantidade = fornecedores.Count;
+            Email.NotificarAdministracao("Início - Pesquisa Satisfação para " + quantidade.ToString() + " fornecedores", String.Empty);
+            foreach (Fornecedor fornecedor in fornecedores)
+            {
+                try
+                {
+                    Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                    chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                    chavesValores.Add("<!--DATA_CADASTRO-->", fornecedor.DataCadastro.ToString("dd/MM/yyyy"));
+                    string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailPesquisaSatisfacaoFornecedor);
+
+                    Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, fornecedor.Email, htmlEmail, "O que tem achado do Orçamento Online?", false, false, null, "");
+                }
+                catch (Exception e)
+                {
+                    Erro.Logar(e);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Envia um email explicando o funcionamento do serviço do Orçamento
+        /// </summary>
+        public void EnviarEmailInformativoNovosFornecedores()
+        {
+            try
+            {
+                IList<Fornecedor> fornecedores = fornecedorService.ObterFornecedoresPorDataCriacao(DateTime.Now.AddDays(-1));
+                int quantidade = fornecedores.Count;
+                Email.NotificarAdministracao("Início - Informativo para " + quantidade.ToString() + " novos fornecedores", String.Empty);
+                foreach (Fornecedor fornecedor in fornecedores)
+                {
+                    try
+                    {
+                        string listaHtmlDeCategorias = "";
+                        //Montando uma lista HTML li para enviar por email do fornecedor
+                        foreach (Categoria categoria in fornecedor.SubCategorias)
+                        {
+                            listaHtmlDeCategorias = listaHtmlDeCategorias + "<li>" + categoria.Nome + "</li>";
+                        }
+
+                        listaHtmlDeCategorias = "<ul>" + listaHtmlDeCategorias + "</ul>";
+
+                        Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                        chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                        chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+                        chavesValores.Add("<!--DATA_RENOVACAO-->", fornecedor.DataAlteracao.ToString("dd/MM/yyyy"));
+                        chavesValores.Add("<!--CATEGORIAS-->", listaHtmlDeCategorias);
+
+                        string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailInformativoNovosFornecedores);
+
+                        Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, fornecedor.Email, htmlEmail, "Mensagem Importante - instruções do Orçamento Online", false, false, null, "");
+                        pedidoOrcamentoService.AssinarLista(fornecedor.Nome, fornecedor.Email);
+                    }
+                    catch (Exception e)
+                    {
+                        Erro.Logar(e);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        public void EnviarEmailPesquisaSatisfacaoComprador()
+        {
+            try
+            {
+                this.Log4Net.Debug("Início");
+                DateTime dataCriacaoPedido = DateTime.Today.AddDays(-10);
+
+                IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoPorData(dataCriacaoPedido);
+
+                int quantidade = pedidosOrcamento.Count;
+                Email.NotificarAdministracao("Início - Pesquisa de Satisfação para " + quantidade.ToString() + " Compradores", String.Empty);
+
+                IList<string> emails = new List<string>();
+
+                foreach (PedidoOrcamento pedidoOrcamento in pedidosOrcamento)
+                {
+                    try
+                    {
+                        if (!emails.Contains(pedidoOrcamento.Email))
+                        {
+                            emails.Add(pedidoOrcamento.Email);
+
+                            Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                            chavesValores.Add("<!--NOME-->", pedidoOrcamento.NomeComprador);
+                            string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailPesquisaSatisfacaoComprador);
+
+                            Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, pedidoOrcamento.Email, htmlEmail, "O que achou do Orçamento Online?", false, false, null, "");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Erro.Logar(e);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        public void EnviarIntegracoesEmail()
+        {
+            try
+            {
+                DateTime agora = DateTime.Now;
+                IList<PedidoOrcamento> pedidosOrcamento = pedidoOrcamentoService.ObterPedidosOrcamentoUltimaHora(agora);
+                int quantidade = pedidosOrcamento.Count;
+                Email.NotificarAdministracao("Início - Integrações por E-mail " + quantidade.ToString() + " pedidos de orçamento", String.Empty);
+
+                foreach (PedidoOrcamento pedidoOrcamento in pedidosOrcamento)
+                {
+                    try
+                    {
+                        pedidoOrcamentoService.EnviarEmailPedidoOrcamentoParaWordPress(pedidoOrcamento);
+                    }
+                    catch (Exception e)
+                    {
+                        Erro.Logar(e);
+                    }
+                }
+
+                //Envia somente um email para o comprador independentemente da quantidade de pedidos
+                pedidosOrcamento = pedidoOrcamentoService.UnificarPedidosPorComprador(pedidosOrcamento);
+                foreach (PedidoOrcamento pedidoOrcamento in pedidosOrcamento)
+                {
+                    try
+                    {
+                        pedidoOrcamentoService.ObterCategoriasDeUmPedidoDeOrcamento(pedidoOrcamento);
+                        pedidoOrcamentoService.EnviarEmailPedidoOrcamentoSimplificado(pedidoOrcamento);
+                        pedidoOrcamentoService.AssinarLista(pedidoOrcamento.NomeComprador, pedidoOrcamento.Email);
+                        pedidoOrcamentoService.NotificarFornecedorPorEmailNovoPedidoOrcamento(pedidoOrcamento);
+                    }
+                    catch (Exception e)
+                    {
+                        Erro.Logar(e);
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+
+        public void RemoverPedidosOrcamentoDuplicados()
+        {
+            try
+            {
+                pedidoOrcamentoService.RemoverPedidosOrcamentoDuplicados();
+            }
+            catch (Exception e)
+            {
+                Erro.Logar(e);
+            }
+        }
+        #endregion
+    }
+}

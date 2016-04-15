@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OrcamentoNet.IView;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.Entity;
+using OrcamentoNet.Entity.Enum;
+
+namespace OrcamentoNet.View
+{
+    public partial class UltimosPedidosOrcamento : System.Web.UI.Page, IUltimosPedidosOrcamento
+    {
+        UltimosPedidosOrcamentoPresenter presenter;
+        private int idPedido = 0;
+        FornecedorLogado fornecedorLogado;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presenter = new UltimosPedidosOrcamentoPresenter();
+            presenter.View = this;
+            presenter.OnViewInitialized();
+
+            idPedido = (Request.Params["idPedido"] != null) ? Int32.Parse(Request.Params["idPedido"]) : 0;
+            fornecedorLogado = new FornecedorLogado();
+
+            if (!IsPostBack)
+            {
+                if (fornecedorLogado.Fornecedor == null)
+                    Response.Redirect("http://multicotacao.orcamentos.net.br/LoginNovo.aspx");
+
+                if (idPedido == 0)
+                    presenter.CarregarUltimosPedidos();
+                else
+                    presenter.CarregarBoxCompraAvulsa();
+            }
+        }
+        public int IdCidade
+        {
+            get { return int.Parse(uxddlCidades.SelectedValue); }
+        }
+
+        public Fornecedor Fornecedor
+        {
+            get { return fornecedorLogado.Fornecedor; }
+        }
+
+
+        #region Metodos
+
+        public void CarregarPedidosOrcamento(IList<PedidoOrcamento> pedidosOrcamentoResultado, Fornecedor fornecedor)
+        {
+            h3NomeFornecedor.InnerText = "Olá " + fornecedor.Nome;
+
+            if (fornecedor.Status == Status.Degustacao)
+            {
+                uxrptPedidosOrcamentosDegustacao.DataSource = pedidosOrcamentoResultado;
+                uxrptPedidosOrcamentosDegustacao.DataBind();
+            }
+
+            if (fornecedor.Status == Status.Cliente || fornecedor.Status == Status.Cortesia)
+            {
+                uxrptPedidosOrcamentosClienteCortesia.DataSource = pedidosOrcamentoResultado;
+                uxrptPedidosOrcamentosClienteCortesia.DataBind();
+            }
+        }
+
+        public void CarregarPedidosOrcamentoOutrasRegioes(IList<PedidoOrcamento> pedidosOutrasAreas, Fornecedor fornecedor)
+        {
+            h3NomeFornecedor.InnerText = "Olá " + fornecedor.Nome;
+
+            uxrptPedidosOrcamentosDegustacao.DataSource = pedidosOutrasAreas;
+            uxrptPedidosOrcamentosDegustacao.DataBind();
+        }
+
+        public void CarregarCidades(IList<Cidade> cidades)
+        {
+            uxddlCidades.DataValueField = "Id";
+            uxddlCidades.DataTextField = "Nome";
+            uxddlCidades.DataSource = cidades;
+            uxddlCidades.DataBind();
+        }
+
+        public void CarregarBoxCompraAvulsa(Fornecedor fornecedor)
+        {
+            multiview01.SetActiveView(viewBoxCompraAvulsa);
+            uxhplPagSeguro.Text = "Efetuar compra do Pedido - R$" + fornecedor.ValorAvulso;
+            uxhplPagSeguro.NavigateUrl = "/orcamento-online-pagamento.aspx?valor=" + fornecedor.ValorAvulso + "&id=" + fornecedor.Id + "&idPedido=" + this.idPedido.ToString();
+        }
+
+        #endregion
+
+        protected void uxddlCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            presenter.CarregarPedidosOutrasAreas();
+        }
+
+
+    }
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>EnviarOrcamento</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EnviarOrcamento</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>ConsultaPedidoOrcamento.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxrptPedidosOrcamento_ctl00_uximgResponderPedido</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtObservacao</td>
+	<td>Estes são os detalhes do meu orçamento. O pretótipo será útil para dar uma real dimensão do potencial de uso da aplicação.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtValor</td>
+	<td>200,50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtDataValidade</td>
+	<td>01/07/2021</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxbtnEnviarOrcamento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Bons negócios!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

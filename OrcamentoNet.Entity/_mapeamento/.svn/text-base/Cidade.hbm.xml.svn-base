@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Bairro" table="Bairro">
+
+    <id name="Id" column="Cd_Bairro">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nome" column="Nm_Bairro"/>
+
+  </class>
+  
+  <class name="Cidade" table="Cidade">
+    <id name="Id" column="Cd_Cidade">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nome" column="Nm_Cidade" length="50"  />
+    <property name="Uf" column="Cd_Estado" length="50"  />
+    <property name="Peso" column="Peso" />
+    <property name="EhCapital" column="Eh_Capital" />
+
+    <bag name="Bairros">
+      <key column="Cd_Cidade"/>
+      <one-to-many class="Bairro"/>
+    </bag>
+  </class>
+  
+   
+</hibernate-mapping>

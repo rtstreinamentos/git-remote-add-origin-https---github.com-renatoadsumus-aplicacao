@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Foto" table="Fornecedor_Foto">
+    <id name="Id" column="Cd_Fornecedor_Foto">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nome" column="Nome" length="200"  />
+    <property name="Caminho" column="Caminho" length="200"  />
+    <property name="Titulo" column="Titulo" length="200"  />    
+    <many-to-one name="Fornecedor" column="Cd_Pessoa" class="Fornecedor" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="comprador-detalhe.aspx.cs" Inherits="OrcamentoNet.View.comprador_detalhe" %>
+
+<%@ Register src="controles/DepoimentoOrcamentoOnline.ascx" tagname="DepoimentoOrcamentoOnline" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <div class="FornecedoresRecentes">	
+	<h2>Empresas e Profissionais de Festas e Eventos</h2>
+	<p id="mensagemVazio" runat="server"></p>
+	<ul>
+		<asp:Repeater ID="uxrptFornecedores" runat="server">
+			<ItemTemplate>
+				<li style="margin-bottom: 10px;">
+					<h4><%#Server.HtmlEncode((string)Eval("Nome"))%></h4>
+					<p><%#Server.HtmlEncode(Eval("Descricao").ToString())%></p>
+					<p><strong>Áreas de atuação:</strong></p>
+					<ul class="categoria">
+					<asp:Repeater ID="uxrptSubCategorias" runat="server" DataSource='<%#Eval("SubCategorias")%>'>
+						<ItemTemplate><li><%#Server.HtmlEncode(Eval("Nome").ToString())%></li></ItemTemplate>
+					</asp:Repeater>
+					</ul>
+				</li>
+			</ItemTemplate>
+		</asp:Repeater>
+	</ul>
+</div>
+<h2>Depoimentos:</h2>
+ <uc1:DepoimentoOrcamentoOnline ID="DepoimentoOrcamentoOnline1" runat="server" />
+  <h2>
+            Fornecedores Por Cidade/Estado</h2>
+        <asp:Repeater ID="uxrptEstados" runat="server">
+            <ItemTemplate>
+                <h4>
+                    <%#Eval("Uf")%></h4>
+                <ul class="categoria">
+                    <asp:Repeater ID="uxrptCidades" runat="server" DataSource='<%#Eval("Cidades")%>'>
+                        <ItemTemplate>
+                            <li><a href="/comprador-detalhe-<%#Eval("Url")%>52-<%#Eval("Id")%>.aspx">
+                                <%#Eval("Nome")%></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+   
+    </form>
+</body>
+</html>

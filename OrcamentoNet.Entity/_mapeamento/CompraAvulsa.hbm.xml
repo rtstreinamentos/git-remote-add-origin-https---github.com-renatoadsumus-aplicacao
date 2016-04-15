@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="CompraAvulsa" table="Compra_Avulsa">
+
+    <id name="Id" column="Cd_Compra_Avulsa">
+      <generator class="identity" />
+    </id>
+
+    <property name="Fornecedor" column="Cd_Fornecedor" length="50"  />
+    <property name="Data" column="Dt_Compra" length="200"  />
+   
+  </class>
+
+  <class name="Mensalidade" table="Mensalidade">
+
+    <id name="Id" column="Cd_Mensalidade">
+      <generator class="identity" />
+    </id>
+
+    <property name="Fornecedor" column="Cd_Fornecedor" length="50"  />
+    <property name="Data" column="Dt_Pagamento" length="200"  />
+
+  </class>
+</hibernate-mapping>

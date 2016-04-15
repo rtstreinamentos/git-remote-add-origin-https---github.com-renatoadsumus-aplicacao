@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Orcamento" table="Orcamento">
+    <id name="Id" column="Cd_Orcamento">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nome" column="Nm_Orcamento" length="50"  />
+    <property name="TipoServico" column="Cd_Tipo_Servico" length="50"  />
+
+    <bag name="Categorias" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="Orcamento_Categoria">
+      <key column="Cd_Orcamento"  not-null ="true"/>
+      <many-to-many column="Cd_Categoria" class="Categoria"  />
+    </bag>
+  </class>
+</hibernate-mapping>

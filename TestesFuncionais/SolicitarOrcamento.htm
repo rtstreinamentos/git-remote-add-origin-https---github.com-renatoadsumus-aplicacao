@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>SolicitarOrcamento</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SolicitarOrcamento</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>CadastroPedidoOrcamento.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl09_uxrptSubCategorias_ctl01_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_CidadeDropDownControle1_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_CidadeDropDownControle1_uxddlCidade</td>
+	<td>label=Rio de Janeiro</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtTitulo</td>
+	<td>Desenvolvimento de Site</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtObservacao</td>
+	<td>Quero fazer um site institucional de minha empresa, com aproximadamente 10 páginas. Qual o custo médio e quanto tempo leva? Obrigado!</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Pedido de orçamento realizado com sucesso! Lembramos que o Orçamento Online não recebe nenhum tipo de comissionamento sobre os serviços efetuados ou produtos vendidos e ninguém está autorizado a cobrar por quaisquer serviços ou produtos em nome do site Orçamento Online. Toda a negociação ocorre diretamente entre o comprador e o fornecedor, e o site Orçamento Online não se responsabiliza perante nenhuma das partes pela negociação ocorrida.<br /><br />Bons negócios!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

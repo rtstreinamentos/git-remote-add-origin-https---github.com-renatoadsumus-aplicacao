@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="PedidoOrcamentoFornecedor" table="Pedido_Orcamento_Fornecedor">
+    <id name="Id" column="Cd_Pedido_Orcamento_Fornecedor">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Fornecedor" column="Cd_Pessoa" class="Fornecedor" />
+    <many-to-one name="PedidoOrcamento" column="Cd_Pedido_Orcamento" class="PedidoOrcamento" />
+    <property name="IdInteresse" column="Cd_Interesse" />
+    <property name="IdMotivo" column="Cd_Motivo" />
+    <property name="Data" column="Data" />
+  </class>
+
+
+
+</hibernate-mapping>

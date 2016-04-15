@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<categorias>
+	<categoria>
+		<id>0</id>
+		<nome>
+			Orçamento Online
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece11.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de diversos produtos e serviços para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento online grátis
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de produtos e serviços através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações feitas através do Orçamento Online
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Box, Vidros e Espelhos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de box, vidros e espelhos. Receba cotação de preços de vários fornecedores de box, vidros e espelhos. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-box-vidros-espelhos-19.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Buffet</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamento, festas, aniversários e eventos. Receba cotação de preços de vários fornecedores de buffet para casamento, festas, aniversários e eventos. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-123.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Buffet Japonês</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês e comida japonesa. Receba cotação de preços de vários fornecedores de buffet japonês. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Circuito Fechado de TV (CFTV)</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de circuito fechado de TV (CFTV). Receba cotação de preços de vários fornecedores de circuito fechado de televisão (CFTV). Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-circuito-fechado-televisao-CFTV-169.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Doces e Chocolates</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de doces e chocolates. Receba cotação de preços de vários fornecedores de doces e chocolates. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-doces-chocolates-salgados-56.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Pintura e Pintor Profissional</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de pintura e pintor profissional. Receba cotação de preços de vários fornecedores de pintura e pintor profissional. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-pintura-pintor-40.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>19</id>
+		<nome>
+			Box, Vidros e Espelhos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Box, Vidros e Espelhos
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-box-vidros-espelhos-19.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de box, vidros e espelhos para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de box, vidros e espelhos
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/box-vidros-espelhos
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de box, vidros e espelhos através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de box, vidros e espelhos
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Brasília</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de box, vidros e espelhos em Brasília (DF). Receba cotação de preços de box, vidros e espelhos em Brasília (DF). Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-box-vidros-espelhos-brasilia-19-801.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de box, vidros e espelhos. Receba cotação de preços de box, vidros e espelhos. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-box-vidros-espelhos-19.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+  <categoria>
+    <id>27</id>
+    <nome>
+      Obras, Reformas e Construção
+    </nome>
+    <urlVoceConhece>
+      http://voceconhece.com/
+    </urlVoceConhece>
+    <tooltipVoceConhece>
+      Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+    </tooltipVoceConhece>
+    <nomeExibicaoVoceConhece>
+      fornecedores premium de Obras, Reformas e Pintura
+    </nomeExibicaoVoceConhece>
+    <urlMulticotacao>
+      http://orcamentosgratis.net.br/orcamento-online-obras-reformas-construcao-pintura-27.aspx
+    </urlMulticotacao>
+    <tooltipMulticotacao>
+      Solicitar Orçamento Online Grátis de Obras, Reformas, Construção e Pintura para empresas e profissionais em todo o Brasil.
+    </tooltipMulticotacao>
+    <nomeExibicaoMulticotacao>
+      orçamento de Obras, Reformas e Pintura
+    </nomeExibicaoMulticotacao>
+    <urlHistorico>
+      http://preco.rcmsolucoes.com/cotacao/pintura-pintor-profissional-19
+    </urlHistorico>
+    <tooltipHistorico>
+      Preço e cotação de empresas para obras, reformas, construção e pintura através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+    </tooltipHistorico>
+    <nomeExibicaoHistorico>
+      preços e cotações de obras, reformas, construção e pintura
+    </nomeExibicaoHistorico>
+    <linksInternos>
+      <linkInterno>
+        <nomeExibicao>Rio de Janeiro</nomeExibicao>
+        <tooltip>Solicite orçamento online grátis para casamentos, festas, eventos, 15 anos e aniversários no Rio de Janeiro. Receba cotação de buffet, fotógrafos, DJ, Som, Iluminação e Efeitos Especiais, Bolo de Festa no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-obras-reformas-construcao-pintura-rio-de-janeiro-27-3631.aspx</url>
+      </linkInterno>
+      <linkInterno>
+        <nomeExibicao>São Paulo</nomeExibicao>
+        <tooltip>Solicite orçamento online grátis para casamentos, festas, eventos, 15 anos e aniversários em São Paulo. Receba cotação de buffet, fotógrafos, DJ, Som, Iluminação e Efeitos Especiais, Bolo de Festa em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-obras-reformas-construcao-pintura-sao-paulo-27-5213.aspx</url>
+      </linkInterno>
+      <linkInterno>
+        <nomeExibicao>Todos</nomeExibicao>
+        <tooltip>Solicite orçamento grátis para obras, reformas, construção e pintura. Receba cotação de preços para obras, reformas, construção e pintura. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-obras-reformas-construcao-pintura-27.aspx</url>
+      </linkInterno>
+    </linksInternos>
+  </categoria>
+	<categoria>
+		<id>39</id>
+		<nome>
+			Pedreiro
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de pedreiro
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Pedreiro-39.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de pedreiro para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de pedreiro
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/pedreiro
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de pedreiro para obras e reformas através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de pedreiro
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de pedreiro para obras e reformas. Receba cotação de preços de pedreiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Pedreiro-39.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>40</id>
+		<nome>
+			Pintura e Pintor Profissional
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/indicacao/pinturas-pintores/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de empresas de pintura e pintores profissionais em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			pintores e empresas de pintura premium
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-pintura-pintor-40.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de pintura para empresas e pintores profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de pintura e pintor profissional
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/pintura-pintor-profissional-19
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de serviços de pintura através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de pintura e pintor profissional
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Curitiba</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de pintura e pintor profissional em Curitiba. Receba cotação de preços de pintura e pintor profissional em Curitiba de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-pintura-pintor-curitiba-40-2853.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de pintura e pintor profissional no Rio de Janeiro. Receba cotação de preços de pintura e pintor profissional no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-pintura-pintor-rio-de-janeiro-40-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de pintura e pintor profissional em São Paulo. Receba cotação de preços de pintura e pintor profissional em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-pintura-pintor-sao-paulo-40-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de pintura e pintor profissional. Receba cotação de preços de pintura e pintor profissional de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-pintura-pintor-40.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>52</id>
+		<nome>
+			Festas e Eventos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de festas e eventos
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-festa-casamento-52.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de festas de casamento, 15 anos, aniversário, confraternização e eventos para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de festas e eventos
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/buffet-casamento-festa-evento
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de empresas para  casamentos, festas, eventos e aniversários através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis para casamentos, festas, eventos, 15 anos e aniversários no Rio de Janeiro. Receba cotação de buffet, fotógrafos, DJ, Som, Iluminação e Efeitos Especiais, Bolo de Festa no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-festa-casamento-rio-de-janeiro-52-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis para casamentos, festas, eventos, 15 anos e aniversários em São Paulo. Receba cotação de buffet, fotógrafos, DJ, Som, Iluminação e Efeitos Especiais, Bolo de Festa em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-festa-casamento-sao-paulo-52-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis para casamentos, festas, eventos, 15 anos e aniversários. Receba cotação de preços de pedreiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-festa-casamento-52.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>53</id>
+		<nome>
+			Casa de Festa, Aluguel de Salão ou Espaço
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de empresas de decoração de salões em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de casa de festa, aluguel de salão ou espaço
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Casa-Festa-Aluguel-Salao-Espaco-53.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários, para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/casa-festa-aluguel-salao-espaco
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários, através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários. Receba cotação de preços de casa de festa, aluguel de salão ou espaço para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Casa-Festa-Aluguel-Salao-Espaco-53.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>54</id>
+		<nome>
+			Buffet Japonês
+		</nome>
+		<urlVoceConhece>
+			http://cozinhajaponesa.com.br/comida-japonesa/restaurantes-japoneses-buffet-japones/buffet-japones-domicilio-premium/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Buffet Japonês Premium: comida japonesa em domicílio, para festas, casamentos, aniversários e eventos.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			buffet japonês premium
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-buffet-japones-54.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Buffet de Comida Japonesa em domicílio para festas, casamentos, aniversários e eventos.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de buffet de comida japonesa
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/buffet-comida-japonesa
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de buffet de comida japonesa através de solicitação de orçamento online de buffet de comida japonesa.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de buffet de comida japonesa
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Aniversário</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês para aniversário. Receba cotação de preços de buffet japonês para aniversário de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-aniversario-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Casamento</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês para casamento. Receba cotação de preços de buffet japonês para casamento de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-casamento-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Delivery</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês para delivery. Receba cotação de preços de buffet japonês para delivery de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-delivery-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Domicílio</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês em domicílio. Receba cotação de preços de buffet japonês em domicílio de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-domicilio-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Eventos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês para eventos. Receba cotação de preços de buffet japonês para eventos de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-eventos-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Festas</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês para festas. Receba cotação de preços de buffet japonês para festas de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-festas-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Sushi</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês com sushi. Receba cotação de preços de buffet japonês com sushi de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-sushi-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Sushiman</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de buffet japonês com sushiman. Receba cotação de preços de buffet japonês com sushiman de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>buffet-japones-sushiman-54.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Belo Horizonte</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em Belo Horizonte. Receba cotação de preços de buffet japonês em Belo Horizonte de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-belo-horizonte-54-1606.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Brasília</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em Brasília. Receba cotação de preços de buffet japonês em Brasília de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-brasilia-54-801.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Curitiba</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em Curitiba. Receba cotação de preços de buffet japonês em Curitiba de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-curitiba-54-2853.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Niterói</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em Niterói. Receba cotação de preços de buffet japonês em Niterói de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-niteroi-54-3611.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês no Rio de Janeiro. Receba cotação de preços de buffet japonês no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-rio-de-janeiro-54-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Salvador</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em Salvador. Receba cotação de preços de buffet japonês em Salvador de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-salvador-54-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês em São Paulo. Receba cotação de preços de buffet japonês em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-sao-paulo-54-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet japonês e comida japonesa. Receba cotação de preços de buffet japonês de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-japones-54.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>55</id>
+		<nome>
+			Decoração de Salões
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/indicacao/doce-festa-mesa-chocolate/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de empresas de decoração de salões em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Decoração de Salões
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Decoracao-Saloes-55.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Decoração de Salões para casamentos, festas, eventos e aniversários, para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de decoração de salões para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/decoracao-salao
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de decoração de salões para casamentos, festas, eventos e aniversários, através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de decoração de salões para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de decoração de salões para casamentos, festas, eventos e aniversários. Receba cotação de preços de decoração de salões para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Decoracao-Saloes-55.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>56</id>
+		<nome>
+			Doces e Chocolates
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/indicacao/doce-festa-mesa-chocolate/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de culinaristas para doces e chocolates em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de doces e chocolates
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-doces-chocolates-salgados-56.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de doces e chocolates para casamentos, festas, eventos e aniversários, para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de doces e chocolates para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/doce-chocolate-salgado
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de doces e chocolates para casamentos, festas, eventos e aniversários, através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de doces e chocolates para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de doces e chocolates para casamentos, festas, eventos e aniversários no Rio de Janeiro. Receba cotação de preços de doces e chocolates para casamentos, festas, eventos e aniversários no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-doces-chocolates-salgados-rio-de-janeiro-56-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de doces e chocolates para casamentos, festas, eventos e aniversários em São Paulo. Receba cotação de preços de doces e chocolates para casamentos, festas, eventos e aniversários em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-doces-chocolates-salgados-sao-paulo-56-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de doces e chocolates para casamentos, festas, eventos e aniversários. Receba cotação de preços de doces e chocolates para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-doces-chocolates-salgados-56.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>58</id>
+		<nome>
+			Lembrancinhas e Convites
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de empresas de Lembrancinhas e Convites em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de lembrancinhas e convites
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Lembrancinhas-Convites-58.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Lembrancinhas e Convites para casamentos, festas, eventos e aniversários, para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de Lembrancinhas e Convites para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/lembrancinhas-convites
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Lembrancinhas e Convites para casamentos, festas, eventos e aniversários, através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Lembrancinhas e Convites para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de Lembrancinhas e Convites para casamentos, festas, eventos e aniversários. Receba cotação de preços de lembrancinhas e convites para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Lembrancinhas-Convites-58.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>123</id>
+		<nome>
+			Buffet para Festas e Eventos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-buffet-123.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de buffet para casamentos, festas, eventos e aniversários para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de buffet para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/buffet-casamento-festa-evento
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de buffet para casamentos, festas, eventos e aniversários através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de buffet para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Belo Horizonte</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamentos, festas, eventos e aniversários no Rio de Janeiro. Receba cotação de preços de buffet para casamentos, festas, eventos e aniversários no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-belo-horizonte-123-1606.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamentos, festas, eventos e aniversários no Rio de Janeiro. Receba cotação de preços de buffet para casamentos, festas, eventos e aniversários no Rio de Janeiro de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-rio-de-janeiro-123-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Salvador</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamentos, festas, eventos e aniversários em Salvador. Receba cotação de preços de buffet para casamentos, festas, eventos e aniversários em Salvador de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-salvador-123-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamentos, festas, eventos e aniversários em São Paulo. Receba cotação de preços de buffet para casamentos, festas, eventos e aniversários em São Paulo de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-sao-paulo-123-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de buffet para casamentos, festas, eventos e aniversários. Receba cotação de preços de buffet para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-buffet-123.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>126</id>
+		<nome>
+			Fotógrafos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fotógrafos premium
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-fotografos-126.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de fotógrafos para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de fotógrafos para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/fotografia
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de fotógrafos através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de fotógrafos
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de fotógrafos no Rio de Janeiro. Receba cotação de preços de fotógrafos para casamentos, festas, eventos e aniversários no Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-fotografos-rio-de-janeiro-126-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de fotógrafos no Rio de Janeiro. Receba cotação de preços de fotógrafos para casamentos, festas, eventos e aniversários no Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-fotografia-fotografos-sao-paulo-126-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de fotógrafos. Receba cotação de preços de fotógrafos para casamentos, festas, eventos e aniversários no Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-fotografos-126.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>128</id>
+		<nome>
+			DJ, Som, Iluminação e Efeitos Especiais
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de DJ, Som, Iluminação e Efeitos Especiais
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-DJ-Som-Iluminacao-Efeitos-Especiais-128.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de DJ, Som, Iluminação e Efeitos Especiais para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de DJ, Som, Iluminação e Efeitos Especiais
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/dj-som-iluminacao-efeitos-especiais
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de DJ, Som, Iluminação e Efeitos Especiais através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de DJ, Som, Iluminação e Efeitos Especiais
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de DJ, Som, Iluminação e Efeitos Especiais no Rio de Janeiro. Receba cotação de preços de DJ, Som, Iluminação e Efeitos Especiais no Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-DJ-Som-Iluminacao-Efeitos-Especiais-rio-de-janeiro-128-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Salvador</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de DJ, Som, Iluminação e Efeitos Especiais no Salvador. Receba cotação de preços de DJ, Som, Iluminação e Efeitos Especiais no Salvador. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-DJ-Som-Iluminacao-Efeitos-Especiais-salvador-128-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de DJ, Som, Iluminação e Efeitos Especiais no São Paulo. Receba cotação de preços de DJ, Som, Iluminação e Efeitos Especiais no São Paulo. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-DJ-Som-Iluminacao-Efeitos-Especiais-sao-paulo-128-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de DJ, Som, Iluminação e Efeitos Especiais. Receba cotação de preços de DJ, Som, Iluminação e Efeitos Especiais. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-DJ-Som-Iluminacao-Efeitos-Especiais-128.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>129</id>
+		<nome>
+			Banda ou Músicos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de banda ou músicos para festas e eventos
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Banda-Musicos-129.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de banda ou músicos de festas, eventos e aniversários para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de banda ou músicos para festas, casamentos, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/banda-musicos
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de banda ou músicos para festas através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de banda ou músicos para festas
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de banda ou músicos para festas, aniversários, casamentos e eventos. Receba cotação de preços de banda ou músicos de fornecedores premium. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Banda-Musicos-129.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>130</id>
+		<nome>
+			Bolo de Festa
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de bolo de festa
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Bolo-Festa-130.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de bolo de festa para casamentos, eventos e aniversários para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de bolo de festa para casamentos, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/bolo-festa
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de bolo de festa através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de bolo de festa
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de bolo de festa para aniversários, casamentos e eventos no Rio de Janeiro. Receba cotação de bolo de festa para aniversários, casamentos e eventos de fornecedores premium do Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Bolo-Festa-rio-de-janeiro-130-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Salvador</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de bolo de festa para aniversários, casamentos e eventos em Salvador. Receba cotação de preços de bolo de festa de fornecedores premium em Salvador. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Bolo-Festa-salvador-130-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de bolo de festa para aniversários, casamentos e eventos. Receba cotação de preços de bolo de festa de fornecedores premium. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Bolo-Festa-130.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>142</id>
+		<nome>
+			Filmagens
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Indicação de empresas e profissionais de filmagens em todo o Brasil.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de filmagens
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Filmagens-142.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de filmagens para casamentos, festas, eventos e aniversários, para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de filmagens para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/filmagem
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de filmagens para casamentos, festas, eventos e aniversários, através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de filmagens para casamentos, festas, eventos e aniversários
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis filmagens para casamentos, festas, eventos e aniversários. Receba cotação de preços de filmagens para casamentos, festas, eventos e aniversários de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Filmagens-142.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>143</id>
+		<nome>
+			Mesas, Cadeiras e Toalhas
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de mesas, cadeiras e toalhas
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Mesas-Cadeiras-Toalhas-143.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de mesas, cadeiras e toalhas para casamentos, festas, eventos e aniversários para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de mesas, cadeiras e toalhas para casamentos, festas, eventos e aniversários
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/mesas-cadeiras-toalhas
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de toalhas, mesas e cadeiras através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de cadeiras, mesas e toalhas
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<linkInterno>
+					<nomeExibicao>Belo Horizonte</nomeExibicao>
+					<tooltip>Solicite orçamento grátis de mesas, cadeiras e toalhas para festas, aniversários, casamentos e eventos em Belo Horizonte. Receba cotação de preços de mesas, cadeiras e toalhas de fornecedores premium em Belo Horizonte. Prático, simples, eficaz e grátis!</tooltip>
+					<url>orcamento-online-mesas-cadeiras-Toalhas-belo-horizonte-143-1606.aspx</url>
+				</linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de mesas, cadeiras e toalhas para festas, aniversários, casamentos e eventos no Rio de Janeiro. Receba cotação de preços de mesas, cadeiras e toalhas de fornecedores premium do Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Mesas-Cadeiras-Toalhas-rio-de-janeiro-143-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Salvador</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de mesas, cadeiras e toalhas para festas, aniversários, casamentos e eventos em Salvador. Receba cotação de preços de mesas, cadeiras e toalhas de fornecedores premium em Salvador. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Mesas-Cadeiras-Toalhas-salvador-143-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de mesas, cadeiras e toalhas para festas, aniversários, casamentos e eventos em São Paulo. Receba cotação de preços de mesas, cadeiras e toalhas de fornecedores premium em São Paulo. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-mesas-cadeiras-toalhas-sao-paulo-143-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de mesas, cadeiras e toalhas para festas, aniversários, casamentos e eventos. Receba cotação de preços de mesas, cadeiras e toalhas de fornecedores premium. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Mesas-Cadeiras-Toalhas-143.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+  <categoria>
+    <id>144</id>
+    <nome>
+      Calígrafas
+    </nome>
+    <urlVoceConhece>
+      http://voceconhece.com/
+    </urlVoceConhece>
+    <tooltipVoceConhece>
+      Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+    </tooltipVoceConhece>
+    <nomeExibicaoVoceConhece>
+      fornecedores premium de mesas, cadeiras e toalhas
+    </nomeExibicaoVoceConhece>
+    <urlMulticotacao>
+      http://orcamentosgratis.net.br/orcamento-online-Caligrafas-144.aspx
+    </urlMulticotacao>
+    <tooltipMulticotacao>
+      Solicitar Orçamento Online Grátis de Calígrafas casamentos para empresas e profissionais em todo o Brasil.
+    </tooltipMulticotacao>
+    <nomeExibicaoMulticotacao>
+      orçamento Calígrafas para casamentos
+    </nomeExibicaoMulticotacao>
+    <urlHistorico>
+      http://preco.rcmsolucoes.com/cotacao/Caligrafas
+    </urlHistorico>
+    <tooltipHistorico>
+      Preço e cotação de Calígrafas através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+    </tooltipHistorico>
+    <nomeExibicaoHistorico>
+      preços e cotações de Calígrafas
+    </nomeExibicaoHistorico>
+    <linksInternos>
+      
+      <linkInterno>
+        <nomeExibicao>Todos</nomeExibicao>
+        <tooltip>Solicite orçamento grátis Calígrafas para casamentos e eventos. Receba cotação de preços de Calígrafas de fornecedores premium. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-Caligrafas-144.aspx</url>
+      </linkInterno>
+    </linksInternos>
+  </categoria>
+  <categoria>
+    <id>145</id>
+    <nome>
+      Flores
+    </nome>
+    <urlVoceConhece>
+      http://voceconhece.com/
+    </urlVoceConhece>
+    <tooltipVoceConhece>
+      Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+    </tooltipVoceConhece>
+    <nomeExibicaoVoceConhece>
+      fornecedores premium de Flores
+    </nomeExibicaoVoceConhece>
+    <urlMulticotacao>
+      http://orcamentosgratis.net.br/orcamento-online-Flores-145.aspx
+    </urlMulticotacao>
+    <tooltipMulticotacao>
+      Solicitar Orçamento Online Grátis de Flores para casamentos, festas, eventos, aniversários e 15 anos para empresas e profissionais em todo o Brasil.
+    </tooltipMulticotacao>
+    <nomeExibicaoMulticotacao>
+      orçamento Flores  para casamentos, festas, eventos, aniversários e 15 anos
+    </nomeExibicaoMulticotacao>
+    <urlHistorico>
+      http://preco.rcmsolucoes.com/cotacao/flores-floricultura
+    </urlHistorico>
+    <tooltipHistorico>
+      Preço e cotação de Flores através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+    </tooltipHistorico>
+    <nomeExibicaoHistorico>
+      preços e cotações de Flores
+    </nomeExibicaoHistorico>
+    <linksInternos>
+      <linkInterno>
+        <nomeExibicao>Todos</nomeExibicao>
+        <tooltip>Solicite orçamento grátis Flores para casamentos, festas, eventos, aniversários e 15 anos. Receba cotação de preços de Flores de fornecedores premium. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-Flores-145.aspx</url>
+      </linkInterno>
+    </linksInternos>
+  </categoria>
+	<categoria>
+		<id>169</id>
+		<nome>
+			Circuito Fechado de Televisão (CFTV)
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de CFTV
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-buffet-japones-54.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Buffet de Comida Japonesa em domicílio para festas, casamentos, aniversários e eventos.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de buffet de comida japonesa
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/cftv-circuito-fechado-televisao
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de CFTV (Circuito Fechado de TV) através de solicitação de orçamento online de CFTV para sua segurança.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de circuito fechado de TV (CFTV)
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>São Paulo</nomeExibicao>
+				<tooltip>Solicite orçamento online grátis de CFTV (Circuito Fechado de Televisão) em São Paulo (SP). Receba cotação de preços de circuito fechado de TV (CFTV) de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-circuito-fechado-televisao-CFTV-169-5213.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de CFTV (Circuito Fechado de Televisão). Receba cotação de preços de circuito fechado de TV (CFTV) de vários fornecedores. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-circuito-fechado-televisao-CFTV-169.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>171</id>
+		<nome>
+			Festas e Buffet Infantis
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Festas e Buffet Infantis
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Buffet-Infantil-171.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de buffet e festa infantil para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de buffet e festa infantil
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/buffet-infantil
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de festa e buffet infantil através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de festa e buffet infantil
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Brasília</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de festa e buffet infantil em Brasília. Receba cotação de preços de buffet e festa infantil em Brasília. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Buffet-Infantil-rio-de-janeiro-171-535.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Rio de Janeiro</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de festa e buffet infantil no Rio de Janeiro. Receba cotação de preços de buffet e festa infantil no Rio de Janeiro. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Buffet-Infantil-rio-de-janeiro-171-3631.aspx</url>
+			</linkInterno>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de festa e buffet infantil. Receba cotação de preços de buffet e festa infantil. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Buffet-Infantil-171.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+  <categoria>
+    <id>172</id>
+    <nome>
+      Decoração e Temas Infantis
+    </nome>
+    <urlVoceConhece>
+      http://voceconhece.com/
+    </urlVoceConhece>
+    <tooltipVoceConhece>
+      Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+    </tooltipVoceConhece>
+    <nomeExibicaoVoceConhece>
+      fornecedores premium de Decoração e Temas Infantis
+    </nomeExibicaoVoceConhece>
+    <urlMulticotacao>
+      http://orcamentosgratis.net.br/orcamento-online-orcamento-online-decoracao-festa-infantil-172.aspx
+    </urlMulticotacao>
+    <tooltipMulticotacao>
+      Solicitar Orçamento Online Grátis de Decoração e Temas Infantis para empresas e profissionais em todo o Brasil.
+    </tooltipMulticotacao>
+    <nomeExibicaoMulticotacao>
+      orçamento de Decoração e Temas Infantis
+    </nomeExibicaoMulticotacao>
+    <urlHistorico>
+      http://preco.rcmsolucoes.com/cotacao/decoracao-temas-infantis
+    </urlHistorico>
+    <tooltipHistorico>
+      Preço e cotação de Decoração e Temas Infantis para festas e aniversários através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+    </tooltipHistorico>
+    <nomeExibicaoHistorico>
+      preços e cotações de Decoração e Temas Infantis
+    </nomeExibicaoHistorico>
+    <linksInternos>     
+      <linkInterno>
+        <nomeExibicao>Todos</nomeExibicao>
+        <tooltip>Solicite orçamento grátis de Decoração e Temas Infantis para festas e aniversários . Receba cotação de preços de Decoração e Temas Infantis. Prático, simples, eficaz e grátis!</tooltip>
+        <url>orcamento-online-decoracao-festa-infantil-172.aspx</url>
+      </linkInterno>
+    </linksInternos>
+  </categoria>
+  <categoria>
+    <id>173</id>
+    <nome>
+      Mágicos
+    </nome>
+    <urlVoceConhece>
+      http://voceconhece.com/
+    </urlVoceConhece>
+    <tooltipVoceConhece>
+      Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+    </tooltipVoceConhece>
+    <nomeExibicaoVoceConhece>
+      fornecedores premium de Mágicos para aniversário
+    </nomeExibicaoVoceConhece>
+    <urlMulticotacao>
+      http://orcamentosgratis.net.br/magicos-festa-infantil-173.aspx
+    </urlMulticotacao>
+    <tooltipMulticotacao>
+      Solicitar Orçamento Online Grátis de Mágicos de festas Infantis para empresas e profissionais em todo o Brasil.
+    </tooltipMulticotacao>
+    <nomeExibicaoMulticotacao>
+      orçamento de Mágicos para festas Infantis
+    </nomeExibicaoMulticotacao>
+    <urlHistorico>
+      http://preco.rcmsolucoes.com/cotacao/magicos
+    </urlHistorico>
+    <tooltipHistorico>
+      Preço e cotação de Mágicos para festas Infantis e aniversários através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+    </tooltipHistorico>
+    <nomeExibicaoHistorico>
+      preços e cotações de Mágicos para festas Infantis
+    </nomeExibicaoHistorico>
+    <linksInternos>
+      <linkInterno>
+        <nomeExibicao>Todos</nomeExibicao>
+        <tooltip>Solicite orçamento grátis de Mágicos para festas Infantis e aniversários . Receba cotação de preços de Mágicos para festas Infantis e aniversário. Prático, simples, eficaz e grátis!</tooltip>
+        <url>magicos-festa-infantil-173.aspx</url>
+      </linkInterno>
+    </linksInternos>
+  </categoria>
+	<categoria>
+		<id>174</id>
+		<nome>
+			Animação e Recreação
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Animação e Recreação Festa Infantil
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-animacao-recreacao-174.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Animação e Recreação Festa Infantil para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de Animação e Recreação Festa Infantil
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/buffet-infantil
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Animação e Recreação Festa Infantil através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Animação e Recreação Festa Infantil
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Animação e Recreação Festa Infantil. Receba cotação de preços de Animação e Recreação Festa Infantil. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-animacao-recreacao-174.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>175</id>
+		<nome>
+			Aluguel de Brinquedos
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Aluguel de Brinquedos para Festa Infantil
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Aluguel-Brinquedos-175.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Aluguel de Brinquedos para Festa Infantil para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de Aluguel de Brinquedos para Festa Infantil
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/Aluguel-Brinquedos
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Aluguel de Brinquedos para Festa Infantil através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Aluguel de Brinquedos para Festa Infantil
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Aluguel de Brinquedos para Festa Infantil. Receba cotação de preços de Aluguel de Brinquedos para Festa Infantil. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Aluguel-Brinquedos-175.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>176</id>
+		<nome>
+			Casa de Festa Infantil
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Casa de Festas Infantis
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-Casas-Espacos-Festas-176.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Casa de Festas Infantis em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de Casa de Festas Infantis
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/casa-espaco-festa-infantil
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Casa de Festas Infantis através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Casa de Festas Infantis
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Casa de Festas Infantis. Receba cotação de preços de Casa de Festas Infantis. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-Casas-Espacos-Festas-176.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>181</id>
+		<nome>
+			Assessoria de Eventos e Cerimonialistas
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de assessoria de eventos e cerimonialistas
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-assessoria-eventos-181.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de assessoria de eventos e cerimonialistas para festas, casamentos e eventos corporativos em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de assessoria de eventos e cerimonialistas
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/assessoria-eventos-cerimonialistas
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de assessoria de eventos e cerimonialistas para festas, casamentos e eventos corporativos através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de assessoria de eventos e cerimonialistas
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de assessoria de eventos e cerimonialistas para festas, casamentos e eventos corporativos. Receba cotação de preços de assessoria de eventos e cerimonialistas. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-assessoria-eventos-181.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>182</id>
+		<nome>
+			Pintura e Limpeza de Fachadas Prediais
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de pintura e limpeza de fachadas prediais
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-reforma-fachada-predio-182.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de pintura e limpeza de fachadas prediais para empresas e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de pintura e limpeza de fachadas prediais
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/pintura-limpeza-fachadas-prediais
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de pintura e limpeza de fachadas prediais através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de pintura e limpeza de fachadas prediais
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de pintura e limpeza de fachadas prediais. Receba cotação de preços de pintura e limpeza de fachadas prediais. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-reforma-fachada-predio-182.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>186</id>
+		<nome>
+			Construtoras e Engenharia Civil
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Construção e Engenharia Civil
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-construtoras-186.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de construções e engenharia civil para construtoras e profissionais em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de Construções e Engenharia Civil
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/engenharia-civil
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Construções e Engenharia Civil através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de construções e engenharia civil
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Construções e Engenharia Civil. Receba cotação de preços de construções e engenharia civil. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-construtoras-186.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>194</id>
+		<nome>
+			Bem-casados
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Bem-casados
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-bem-casados-194.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Bem-casados para festas, casamentos e eventos corporativos em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de assessoria de Bem-casados
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/Bem-casados
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Bem-casados para festas, casamentos e eventos corporativos através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Bem-casados
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Bem-casados para festas, casamentos e eventos corporativos. Receba cotação de preços de Bem-casados. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-bem-casados-194.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+	<categoria>
+		<id>195</id>
+		<nome>
+			Topos de Bolo
+		</nome>
+		<urlVoceConhece>
+			http://voceconhece.com/
+		</urlVoceConhece>
+		<tooltipVoceConhece>
+			Você Conhece? Uma rede de indicação de profissionais e empresas em todo o Brasil. Um grupo selecionado dos melhores fornecedores para prestação de serviços, oportunidades de negócio ou busca de parcerias.
+		</tooltipVoceConhece>
+		<nomeExibicaoVoceConhece>
+			fornecedores premium de Topos de Bolo
+		</nomeExibicaoVoceConhece>
+		<urlMulticotacao>
+			http://orcamentosgratis.net.br/orcamento-online-topos-de-bolo-195.aspx
+		</urlMulticotacao>
+		<tooltipMulticotacao>
+			Solicitar Orçamento Online Grátis de Topos de Bolo para festas, casamentos, aniversários, 15 anos e eventos corporativos em todo o Brasil.
+		</tooltipMulticotacao>
+		<nomeExibicaoMulticotacao>
+			orçamento de assessoria de Topos de Bolo
+		</nomeExibicaoMulticotacao>
+		<urlHistorico>
+			http://preco.rcmsolucoes.com/cotacao/Topos-de-Bolo
+		</urlHistorico>
+		<tooltipHistorico>
+			Preço e cotação de Topos de Bolo para festas, casamentos, aniversários, 15 anos e eventos corporativos através de solicitação de orçamento online. Melhor preço e cotação para suas compras.
+		</tooltipHistorico>
+		<nomeExibicaoHistorico>
+			preços e cotações de Topos de Bolo
+		</nomeExibicaoHistorico>
+		<linksInternos>
+			<linkInterno>
+				<nomeExibicao>Todos</nomeExibicao>
+				<tooltip>Solicite orçamento grátis de Topos de Bolo para festas, casamentos, aniversários, 15 anos e eventos corporativos. Receba cotação de preços de Topos de Bolo. Prático, simples, eficaz e grátis!</tooltip>
+				<url>orcamento-online-topos-de-bolo-195.aspx</url>
+			</linkInterno>
+		</linksInternos>
+	</categoria>
+</categorias>

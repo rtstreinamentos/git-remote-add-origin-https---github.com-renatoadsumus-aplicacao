@@ -1,0 +1,10 @@
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\OrcamentoNet.ConviteInicialFornecedores.exe.config
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\OrcamentoNet.ConviteInicialFornecedores.exe
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\OrcamentoNet.ConviteInicialFornecedores.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Release\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Release\OrcamentoNet.ConviteInicialFornecedores.exe
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Release\OrcamentoNet.ConviteInicialFornecedores.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Release\MySql.Data.dll

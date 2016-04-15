@@ -1,0 +1,590 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MySql.Data.MySqlClient;
+using PortalEscolar.Data;
+using OrcamentoNet.Entity;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Common;
+using System.Xml.Linq;
+using OrcamentoNet.Entity.Enum;
+using System.Data;
+using OrcamentoNet.Entity._enum;
+
+namespace OrcamentoNet.LocalService
+{
+    public class LinkInternoService : ILinkInternoService
+    {
+        private IDataContext context;
+
+        public IEstadoService estadoService = new EstadoService();
+
+
+        public LinkInternoService(IDataContext contextData)
+        {
+            context = contextData;
+        }
+
+        private string GerarUrl(Categoria categoria, string urlEstado, string idMes, int idCidade, string termo)
+        {
+            string anoCorrente = "2012";// DateTime.Now.Year.ToString();
+
+            string urlGerada = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome);
+            if (urlEstado != null && urlEstado != "")
+            {
+                urlGerada = urlGerada + urlEstado + "/" + categoria.Id + "/"
+                        + idCidade + "/"
+                        + anoCorrente + "/"
+                        + idMes;
+
+                if (termo != "")
+                {
+                    urlGerada = urlGerada + "/" + termo + ".aspx";
+                }
+                else
+                {
+                    urlGerada = urlGerada + ".aspx";
+                }
+            }
+            else
+                urlGerada = urlGerada + "/" + categoria.Id + "/" + anoCorrente + "/" + idMes + ".aspx";
+
+
+            return urlGerada;
+
+        }
+
+
+
+        public IList<LinkInterno> MontarLinksInternosBairro(Cidade cidade, Categoria categoria, Persona persona)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+            string toolTip = "Empresas, profissionais e oportunidades de negócios ";
+
+            LinkInterno linkInternoEstadoCidade;
+
+            foreach (Bairro bairro in cidade.Bairros)
+            {
+                linkInternoEstadoCidade = new LinkInterno();
+
+                if (persona == Persona.MotorBusca)
+                {
+                    linkInternoEstadoCidade.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(bairro.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id + "-" + bairro.Id + "-" + cidade.Id + ".aspx";
+                    linkInternoEstadoCidade.Nome = bairro.Nome;
+                    linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " " + bairro.Nome + " " + cidade.Nome;
+                }
+                else
+                {
+                    linkInternoEstadoCidade.UrlAmigavel = "orcamento-online-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(bairro.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id + "-" + bairro.Id + "-" + cidade.Id + ".aspx";
+                    linkInternoEstadoCidade.Nome = bairro.Nome;
+                    linkInternoEstadoCidade.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " " + bairro.Nome + " " + cidade.Nome;
+
+                }
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+            }
+
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosDeEstado(Categoria categoria, string termo, Persona persona)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+            List<int> idsEstados = new List<int>();
+            idsEstados.Add(5);
+            idsEstados.Add(7);
+            idsEstados.Add(13);
+            idsEstados.Add(16);
+            idsEstados.Add(17);
+            idsEstados.Add(19);
+            idsEstados.Add(25);
+
+            if (categoria != null)
+            {
+                LinkInterno linkInternoEstadoCidade;
+                string toolTip = "";
+
+                foreach (int idEstado in idsEstados)
+                {
+                    Estado estado = estadoService.ObterEstado(idEstado);
+                    linkInternoEstadoCidade = new LinkInterno();
+
+                    if (persona == Persona.MotorBusca)
+                    {
+                        toolTip = "Empresas, profissionais e oportunidades de negócios ";
+
+                        if (termo != "")
+                        {
+                            linkInternoEstadoCidade.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + estado.Url + "-" + categoria.Id + "-" + idEstado + "/" + termo + ".aspx";
+                        }
+                        else
+                        {
+                            linkInternoEstadoCidade.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + estado.Url + "-" + categoria.Id + "-" + idEstado + ".aspx";
+                        }
+                    }
+
+                    if (persona == Persona.Fornecedor)
+                    {
+                        toolTip = "Cadastro grátis! Receba orçamentos de ";
+
+                        linkInternoEstadoCidade.UrlAmigavel = "cadastro-" + Common.UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + Common.UtilString.GerarUrlParaSeo(estado.Nome) + "-" + categoria.Id.ToString() + "-" + estado.Id.ToString() + ".aspx";
+                    }
+
+                    if (persona == Persona.Comprador)
+                    {
+                        toolTip = "Solicite orçamento online grátis de ";
+
+                        linkInternoEstadoCidade.UrlAmigavel = "orcamento-online-" + Common.UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + Common.UtilString.GerarUrlParaSeo(estado.Nome) + "-" + categoria.Id.ToString() + "-" + estado.Id.ToString() + ".aspx";
+                    }
+
+                    linkInternoEstadoCidade.Nome = estado.Nome;
+                    linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " " + estado.Nome;
+                    linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+                }
+            }
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosDeEstado(Categoria categoria, string urlConcatencao)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+            List<int> idsEstados = new List<int>();
+            idsEstados.Add(5);
+            idsEstados.Add(7);
+            idsEstados.Add(13);
+            idsEstados.Add(16);
+            idsEstados.Add(17);
+            idsEstados.Add(19);
+            idsEstados.Add(25);
+
+            string toolTip = "Faça cotação de Empresas, profissionais e oportunidades de negócios "; ;
+
+            if (categoria != null)
+            {
+                LinkInterno linkInternoEstadoCidade;
+
+                foreach (int idEstado in idsEstados)
+                {
+                    Estado estado = estadoService.ObterEstado(idEstado);
+                    linkInternoEstadoCidade = new LinkInterno();
+
+                    linkInternoEstadoCidade.UrlAmigavel = urlConcatencao + UtilString.GerarUrlParaSeo(categoria.Nome) + estado.Url + "-" + categoria.Id + "-" + idEstado + ".aspx";
+                    linkInternoEstadoCidade.Nome = estado.Nome;
+                    linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " " + estado.Nome;
+                    linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+                }
+            }
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosCidades(Categoria categoria, UF uf, Persona persona)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+            IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == uf).ToList();
+
+            LinkInterno linkInterno;
+
+            foreach (Cidade cidade in cidades)
+            {
+                linkInterno = new LinkInterno();
+
+                if (persona == Persona.MotorBusca)
+                {
+                    linkInterno.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + uf + "-" + categoria.Id + "-" + cidade.Id + ".aspx";
+                    linkInterno.Nome = cidade.Nome;
+                    linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios " + categoria.Nome + " " + cidade.Nome + " " + uf;
+                }
+                if (persona == Persona.Comprador)
+                {
+                    linkInterno.Nome = cidade.Nome + " - " + cidade.Uf.ToString();
+                    linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " em " + cidade.Nome + " (" + cidade.Uf.ToString() + ").";
+                    linkInterno.UrlAmigavel = "orcamento-online-" + Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + Common.UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + cidade.Uf.ToString().ToLower() + "-" + categoria.Id.ToString() + "-" + cidade.Id.ToString() + ".aspx";
+                }
+
+                if (persona == Persona.Fornecedor)
+                {
+                    linkInterno.Nome = cidade.Nome + " - " + cidade.Uf.ToString();
+                    linkInterno.ToolTip = "Cadastro grátis! Receba orçamentos de " + categoria.Nome + " em " + cidade.Nome + " (" + cidade.Uf.ToString() + ").";
+
+                    linkInterno.UrlAmigavel = "cadastro-" + Common.UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + Common.UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id.ToString() + "-" + cidade.Id.ToString() + ".aspx";
+                }
+                linksIntenosEstadoCidades.Add(linkInterno);
+            }
+            return linksIntenosEstadoCidades;
+        }
+        public IList<LinkInterno> MontarLinksInternosCidadeTipoServico(Orcamento orcamento, UF uf)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+            IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == uf).ToList();
+
+            LinkInterno linkInternoEstadoCidade;
+
+            foreach (Cidade cidade in cidades)
+            {
+
+                linkInternoEstadoCidade = new LinkInterno();
+
+                linkInternoEstadoCidade.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + uf + "-" + orcamento.Id + "-" + cidade.Id + ".aspx";
+                linkInternoEstadoCidade.Nome = cidade.Nome;
+                linkInternoEstadoCidade.ToolTip = "Preço para " + orcamento.Nome + " " + cidade.Nome + " " + uf;
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+            }
+
+            return linksIntenosEstadoCidades;
+
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTipoServico(IList<Orcamento> orcamentos)
+        {
+            LinkInterno linkInterno;
+            IList<LinkInterno> linksIntenos = new List<LinkInterno>();
+
+            foreach (Orcamento orcamento in orcamentos)
+            {
+                linkInterno = new LinkInterno();
+
+                linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + orcamento.Id + ".aspx";
+                linkInterno.Nome = orcamento.Nome;
+                linkInterno.ToolTip = "Preço para " + orcamento.Nome;
+                linksIntenos.Add(linkInterno);
+            }
+
+            return linksIntenos;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTipoServicoPorCategoria(Categoria categoria, Orcamento orcamento)
+        {
+            IList<LinkInterno> linksIntenos = new List<LinkInterno>();
+
+            if (categoria.Termo != null && categoria.Termo != "")
+            {
+                IList<string> listaTermos = categoria.Termo.Split(',');
+                foreach (string termo in listaTermos)
+                {
+                    string termoSemEspacosAoRedor = termo.Trim();
+                    LinkInterno linkInterno = new LinkInterno();
+
+                    linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                    linkInterno.Nome = termoSemEspacosAoRedor;
+                    linkInterno.ToolTip = "Preço " + termoSemEspacosAoRedor + " - " + categoria.Nome;
+                    linksIntenos.Add(linkInterno);
+                    linkInterno.Nome = termoSemEspacosAoRedor;
+                }
+            }
+            return linksIntenos;
+        }
+        public IList<LinkInterno> MontarLinksInternosDeEstadoTipoServico(Orcamento orcamento)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+            if (orcamento != null)
+            {
+                List<int> idsEstados = new List<int>();
+                idsEstados.Add(5);
+                idsEstados.Add(7);
+                idsEstados.Add(13);
+                idsEstados.Add(16);
+                idsEstados.Add(17);
+                idsEstados.Add(19);
+                idsEstados.Add(25);
+
+                LinkInterno linkInternoEstadoCidade;
+
+                foreach (int idEstado in idsEstados)
+                {
+                    Estado estado = estadoService.ObterEstado(idEstado);
+                    linkInternoEstadoCidade = new LinkInterno();
+
+                    linkInternoEstadoCidade.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + estado.Url + "-" + orcamento.Id + "-" + idEstado + ".aspx";
+                    linkInternoEstadoCidade.Nome = estado.Nome;
+                    linkInternoEstadoCidade.ToolTip = "Preço para " + orcamento.Nome + " " + estado.Nome;
+                    linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+                }
+            }
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosBairroTipoServico(Orcamento orcamento, Cidade cidade)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+
+            LinkInterno linkInternoEstadoCidade;
+
+            foreach (Bairro bairro in cidade.Bairros)
+            {
+                linkInternoEstadoCidade = new LinkInterno();
+
+                linkInternoEstadoCidade.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + UtilString.GerarUrlParaSeo(bairro.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + orcamento.Id + "-" + bairro.Id + "-" + cidade.Id + ".aspx";
+                linkInternoEstadoCidade.Nome = bairro.Nome;
+                linkInternoEstadoCidade.ToolTip = "Preço para " + orcamento.Nome + " " + bairro.Nome + " " + cidade.Nome;
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+            }
+
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosMesAno(Categoria categoria, int idCidade, string termo)
+        {
+            IList<LinkInterno> linksIntenosMesAno = new List<LinkInterno>();
+            LinkInterno linkInternoMesAno;
+
+            MesService mesService = new MesService();
+
+            string anoCorrente = "2012";
+
+            Estado estado = estadoService.ObterEstado(idCidade);
+
+            foreach (Mes mes in mesService.ObterLista())
+            {
+                linkInternoMesAno = new LinkInterno();
+
+                linkInternoMesAno.UrlAmigavel = this.GerarUrl(categoria, estado.Url, mes.Id, idCidade, termo);
+                linkInternoMesAno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + " - " + mes.Nome + "/" + anoCorrente;
+                linkInternoMesAno.Nome = mes.Nome + "/" + anoCorrente;
+                linksIntenosMesAno.Add(linkInternoMesAno);
+            }
+
+            return linksIntenosMesAno;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosMesAnoPreco(Categoria categoria, int idCidade, string termo)
+        {
+            IList<LinkInterno> linksIntenosMesAno = new List<LinkInterno>();
+            LinkInterno linkInternoMesAno;
+
+            MesService mesService = new MesService();
+
+            IList<string> anos = new List<string>();
+            anos.Add("2012");
+            anos.Add("2013");
+
+            //Estado estado = estadoService.ObterEstado(idCidade);
+
+            if (categoria != null)
+            {
+                foreach (string ano in anos)
+                {
+
+                    foreach (Mes mes in mesService.ObterLista())
+                    {
+                        linkInternoMesAno = new LinkInterno();
+
+                        linkInternoMesAno.UrlAmigavel = "orcamento-online-preco.aspx?ano=" + ano + "&mes=" + mes.Id + "&idcategoria=" + categoria.Id;
+                        linkInternoMesAno.ToolTip = "Receba Orçamentos Grátis de várias Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + " - " + mes.Nome + "/" + ano;
+                        linkInternoMesAno.Nome = mes.Nome + "/" + ano;
+                        linksIntenosMesAno.Add(linkInternoMesAno);
+                    }
+                }
+            }
+
+            return linksIntenosMesAno;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTermoTipoServico(Orcamento orcamento, int idEstado, int idBairro)
+        {
+            IList<LinkInterno> linksIntenosTermo = new List<LinkInterno>();
+            LinkInterno linkInterno;
+
+            Estado estado = estadoService.ObterEstado(idEstado);
+
+            foreach (Categoria categoria in orcamento.Categorias)
+            {
+                linkInterno = new LinkInterno();
+                linkInterno.Nome = categoria.Nome;
+
+                if (estado.Nome == null && estado.Id < 30)
+                {
+                    linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + orcamento.Id + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(categoria.Nome) + ".aspx";
+                    linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + orcamento.Nome;
+                }
+                else
+                {
+                    Cidade cidade = context.Repository<Cidade>().Where(x => x.Id == idEstado).FirstOrDefault();
+
+                    if (cidade != null)
+                    {
+                        if (idBairro != 0)
+                        {
+                            Bairro bairro = cidade.Bairros.Where(x => x.Id == idBairro).FirstOrDefault();
+
+                            linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + bairro.Nome + "  " + cidade.Nome + " - " + orcamento.Nome;
+                            linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + UtilString.GerarUrlParaSeo(bairro.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + orcamento.Id + "-" + bairro.Id + "-" + cidade.Id + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(categoria.Nome) + ".aspx";
+                        }
+                        else
+                        {
+
+                            linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + cidade.Nome + " - " + orcamento.Nome;
+                            linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + orcamento.Id + "-" + cidade.Id + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(categoria.Nome) + ".aspx";
+                        }
+                    }
+                    else
+                    {
+                        linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + estado.Nome + " - " + orcamento.Nome;
+                        linkInterno.UrlAmigavel = "preco-" + UtilString.GerarUrlParaSeo(orcamento.Nome) + "-" + UtilString.GerarUrlParaSeo(estado.Nome) + "-" + orcamento.Id + "-" + estado.Id + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(categoria.Nome) + ".aspx";
+                    }
+                }
+
+                linksIntenosTermo.Add(linkInterno);
+
+            }
+
+            return linksIntenosTermo;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTermo(Categoria categoria, int idEstado, Persona persona, int idBairro)
+        {
+            IList<LinkInterno> linksIntenosTermo = new List<LinkInterno>();
+            LinkInterno linkInterno;
+
+            Estado estado = estadoService.ObterEstado(idEstado);
+
+            if (categoria.Termo != null)
+            {
+                IList<string> listaTermos = categoria.Termo.Split(',');
+
+                foreach (string termo in listaTermos)
+                {
+                    linkInterno = new LinkInterno();
+                    linkInterno.Nome = termo;
+
+                    if (persona == Persona.MotorBusca)
+                    {
+                        Cidade cidade = context.Repository<Cidade>().Where(x => x.Id == idEstado).FirstOrDefault();
+
+                        linkInterno.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(termo) + ".aspx";
+                        linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + " - " + termo;
+
+                        if (estado.Nome != null)
+                        {
+                            linkInterno.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(estado.Nome) + "-" + categoria.Id + "-" + estado.Id + "/" + UtilString.GerarUrlParaSeo(termo) + ".aspx";
+                            linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + estado.Nome + " - " + termo;
+                        }
+
+                        if (cidade != null)
+                        {
+                            if (idBairro != 0)
+                            {
+                                string nomeBairro = cidade.Bairros.Where(x => x.Id == idBairro).FirstOrDefault().Nome;
+
+                                linkInterno.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(nomeBairro) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id + "-" + idBairro + "-" + cidade.Id + "/" + UtilString.GerarUrlParaSeo(termo) + ".aspx";
+                                linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + cidade.Nome + " - " + termo;
+                            }
+                            else
+                            {
+                                linkInterno.UrlAmigavel = "mapa-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id + "-" + cidade.Id + "/" + UtilString.GerarUrlParaSeo(termo) + ".aspx";
+                                linkInterno.ToolTip = "Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + "  " + cidade.Nome + " - " + termo;
+                            }
+                        }
+                    }
+
+                    if (persona == Persona.Comprador)
+                    {
+                        linkInterno.UrlAmigavel = "guia-" + UtilString.GerarUrlParaSeo(categoria.Nome) + "-" + categoria.Id + "/" + UtilString.GerarUrlParaSeo(termo) + ".aspx";
+                        linkInterno.ToolTip = "Guia de Empresas e profissionais em " + categoria.Nome + " - " + termo;
+                    }
+
+
+                    linksIntenosTermo.Add(linkInterno);
+                }
+            }
+            return linksIntenosTermo;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTermoFornecedor(Categoria categoria)
+        {
+            ICategoriaService categoriaService = new CategoriaService(context);
+
+            IList<LinkInterno> linksIntenosTermo = new List<LinkInterno>();
+            LinkInterno linkInterno;
+
+            foreach (Termo termo in categoriaService.ObterTermosFornecedor(categoria.Id))
+            {
+                linkInterno = new LinkInterno();
+                linkInterno.Nome = termo.Nome;
+                linkInterno.ToolTip = "Cadastro grátis! Receba orçamentos de " + termo.Nome;
+                linkInterno.UrlAmigavel = "cadastro-empresa-profissional-" + categoria.Id.ToString() + "/" + Common.UtilString.GerarUrlParaSeo(termo.Nome) + ".aspx";
+                linksIntenosTermo.Add(linkInterno);
+            }
+
+            return linksIntenosTermo;
+
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTermosDaCategoria(Categoria categoria, int idEstado, Bairro bairro, Cidade cidade)
+        {
+            Estado estado = estadoService.ObterEstado(idEstado);
+
+            IList<LinkInterno> listaLinksTermos = new List<LinkInterno>();
+
+            if (categoria != null)
+            {
+                if (categoria.Termo != null && categoria.Termo != "")
+                {
+                    IList<string> listaTermos = categoria.Termo.Split(',');
+                    foreach (string termo in listaTermos)
+                    {
+                        string termoSemEspacosAoRedor = termo.Trim();
+                        LinkInterno linkInterno = new LinkInterno();
+
+                        linkInterno.Nome = termoSemEspacosAoRedor;
+
+                        if (estado.Nome != null)
+                        {
+                            linkInterno.ToolTip = "Solicite orçamento online grátis - " + estado.Nome + " -" + estado.Uf + " de " + categoria.Nome + " para " + termoSemEspacosAoRedor + ".";
+                            linkInterno.UrlAmigavel = Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + UtilString.GerarUrlParaSeo(estado.Nome) + "-" + categoria.Id.ToString() + "-" + estado.Id + "/" + Common.UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                        }
+
+                        if (estado.Nome == null)
+                        {
+                            linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " para " + termoSemEspacosAoRedor + ".";
+                            linkInterno.UrlAmigavel = Common.UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + categoria.Id.ToString() + "/" + Common.UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                        }
+
+                        if (cidade != null && bairro == null)
+                        {
+                            linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " - " + cidade.Nome + " para " + termoSemEspacosAoRedor + ".";
+                            linkInterno.UrlAmigavel = UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id.ToString() + "-" + cidade.Id + "/" + Common.UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                        }
+
+                        if (bairro != null)
+                        {
+                            linkInterno.ToolTip = "Solicite orçamento online grátis de " + categoria.Nome + " - " + bairro.Nome + " para " + termoSemEspacosAoRedor + ".";
+                            linkInterno.UrlAmigavel = UtilString.GerarUrlParaSeo(categoria.UrlMappings) + "-" + UtilString.GerarUrlParaSeo(bairro.Nome) + "-" + UtilString.GerarUrlParaSeo(cidade.Nome) + "-" + categoria.Id.ToString() + "-" + bairro.Id + "-" + cidade.Id + "/" + Common.UtilString.GerarUrlParaSeo(termoSemEspacosAoRedor) + ".aspx";
+                        }
+                        listaLinksTermos.Add(linkInterno);
+                    }
+                    listaLinksTermos = listaLinksTermos.OrderBy(l => l.Nome).ToList();
+                }
+            }
+            return listaLinksTermos;
+
+        }
+
+        public IList<LinkInterno> MontarLinksInternosCidadesCategoria(IList<Cidade> cidades, Categoria categoria)
+        {
+            IList<LinkInterno> linksInternos = new List<LinkInterno>();
+            LinkInterno linkInterno;
+
+
+            foreach (Cidade cidade in cidades)
+            {
+                linkInterno = new LinkInterno();
+                linkInterno.Nome = cidade.Nome;
+                linkInterno.ToolTip = "Guia de " + categoria.Nome + " - " + cidade.Nome;
+                linkInterno.UrlAmigavel = UtilString.GerarUrlParaSeo(categoria.Nome) +
+                                          "-" +
+                                          UtilString.GerarUrlParaSeo(cidade.Nome) +
+                                          "-" + categoria.Id +
+                                          "-" + cidade.Id +
+                                          ".aspx";
+                linksInternos.Add(linkInterno);
+            }
+
+            return linksInternos;
+        }
+    }
+}

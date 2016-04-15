@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>PedidoOrcamento</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PedidoOrcamento</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Outros orçamentos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_CategoriasControle1_uxrptCategorias_ctl00_uxrptSubCategorias_ctl00_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtNome</td>
+	<td>Fabrício Fujikawa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtEmail</td>
+	<td>fabriciofuji@yahoo.com.br</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtDDD</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtTelefone</td>
+	<td>8124 9484</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_CidadeDropDownControle1_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_CidadeDropDownControle1_uxddlCidade</td>
+	<td>label=Rio de Janeiro</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtTitulo</td>
+	<td>Programa de condicionamento corporativo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxtxtObservacao</td>
+	<td>Gostaria de receber um orçamento para um programa de condicionamento físico corporativo. Estamos pensando em oferecer este programa na empresa e gostaríamos de saber quanto ficaria a disponibilização de um professor em dois horários a serem determinados (um de manhã e outro à tarde). <br /><br />Temos local e equipamentos. O profissional deve ser formado e credenciado junto à sua entidade de classe.<br /><br />Muito obrigado.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cpObjetivoPrincipalPagina_OrcamentoFormularioGenerico_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Pedido de Orçamento Enviado!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

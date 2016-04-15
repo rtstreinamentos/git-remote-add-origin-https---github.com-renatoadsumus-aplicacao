@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!--EMAIL_VALIDADO-->
+                <p>
+                    Olá
+                    <!--NOME_FORNECEDOR-->
+                    ,</p>
+                <h2>
+                    <a href="http://orcamentosgratis.net.br/PagSeguro.html">Super Promoção Mensalidade por apenas R$ 9,90</a></h2>
+                    <a href="http://orcamentosgratis.net.br/PagSeguro.html">Clique aqui para realizar o pagamento</a>.
+                
+                    Essa promoção é válida até o dia 04/03. Após essa data voltamos com o valor normal!
+                
+                <p>
+                    Abaixo seguem os detalhes de um novo pedido de orçamento recebido em nosso sistema!</p>
+                <p>
+                    <strong>Título</strong>:
+                    <!--TITULO-->
+                    <br />
+                    <br />
+                    <strong>Cidade/UF</strong>:
+                    <!--CIDADE-->
+                    /<!--UF-->
+                    <br />
+                    <br />
+                    <strong>Descrição</strong>:
+                    <!--OBSERVACAO-->
+                    <br />
+                    <br />
+                    <strong>Solicitante</strong>:
+                    <!--NOME_COMPRADOR-->
+                    <br />
+                    <br />
+                    <strong>Email</strong>:
+                    <!--EMAIL_COMPRADOR_TRUNCADO-->
+                    <br />
+                    <br />
+                    <strong>Telefone</strong>:
+                    <!--TELEFONE_COMPRADOR_TRUNCADO-->
+                    <br />
+                </p>
+                <p>
+                    Para você receber os dados de contato do pedido de orçamento e participar da cotação,
+                    é preciso ser um fornecedor do Orçamento Online.</p>
+                
+                <p>
+                    <!--FOTOS-->
+                </p>
+                <h3>
+                    Problemas para gerenciar os orçamentos enviados!?
+                    <br />
+                    Conheça nossa ferramenta de Controle de Pedidos. É Grátis!!!
+                </h3>
+                <p>
+                    <b>Eu posso gerenciar somente pedidos do Orçamento Online? </b>
+                    <br />
+                    Não. A ferramenta permite que você cadastre e acompanhe pedidos externos.</p>
+                <p>
+                    <b>Como eu acesso a ferramenta de Controle de Pedido?</b><br />
+                    No Painel de Contole no item de últimos pedidos existe um botão chamado Guardar
+                    Pedido , ao clicar o pedido irá diretamente para o item Meus Pedidos com o status
+                    de orçamento Não Enviado . Caso queira cadastrar um pedido externo basta ir para
+                    opção Meus Pedidos e clicar no botão Novo Pedido / Orçamento .
+                </p>
+                <h3>
+                    <!--H3_OPINIAO-->
+                </h3>
+                <p>
+                    <!--OPINIAO_CLIENTE-->
+                </p>
+                <h3>
+                    Divulgue sua página no Facebook é só clicar no botão curtir!
+                </h3>
+                <br />
+                <!--FICHA_TECNICA-->
+                <p>
+                    Qualquer dúvida, estamos à sua disposição.</p>
+                <p>
+                    Atenciosamente,<br />
+                    <strong>Renato Coutinho</strong><br />
+                    Telefones de atendimento: 21-97933-4941<br />
+                    <a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+                        Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+                            Veja nossos vídeos no YouTube</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class MeusDadosPresenter
+    {
+        public IMeusDados View { get; set; }
+
+        [Inject]
+        public IFornecedorCategoriaService fornecedorCategoriaService { get; set; }
+
+        [Inject]
+        public IFornecedorService fornecedorService { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService { get; set; }
+
+        [Inject]
+        public IFotoService fotoService { get; set; }
+
+        [Inject]
+        public IFornecedorAtributoService fornecedorAtributoService { get; set; }
+
+        private void InicializarServico()
+        {
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        public void OnViewInitialized()
+        {
+            InicializarServico();
+        }
+
+        public void CarregarFornecedor()
+        {
+            Fornecedor fornecedor = fornecedorService.ObterPorEmail(View.Email);
+
+            if (fornecedor != null)
+            {
+                View.CarregarFornecedor(fornecedor);
+            }
+        }
+
+        public void Salvar()
+        {
+            IList<string> camposInvalidos = new List<string>();
+
+            Fornecedor fornecedor = fornecedorService.ObterPorEmail(View.Email);
+
+            if (fornecedor != null)
+            {
+                fornecedor.WebSite = View.WebSite;
+                fornecedor.Telefone = View.Telefone;
+                fornecedor.Nome = View.Nome;
+                fornecedor.Descricao = View.Descricao;
+
+                SalvarFotos(fornecedor);
+
+                if (View.AreaServico > 0)
+                {
+                    FornecedorAtributo fornecedorAtributo = new FornecedorAtributo();
+                    fornecedorAtributo.Atributo = 1;
+                    fornecedorAtributo.Fornecedor = fornecedor.Id;
+                    fornecedorAtributo.Condicao = View.AreaServico;
+
+                    fornecedorAtributoService.Salvar(fornecedorAtributo);
+                }
+            }
+        }
+
+        public void SalvarFotos(Fornecedor fornecedor)
+        {            
+            Foto foto;
+
+            foreach (string item in View.Fotos)
+            {
+                foto = new Foto();
+                foto.Caminho = item;
+                foto.Nome = fornecedor.Nome;
+                foto.Titulo = fornecedor.Nome;
+                foto.Fornecedor = fornecedor;
+                fotoService.Inserir(foto);
+            }
+        }
+        public void CalcularPlano()
+        {
+            IList<CategoriaPrioridade> categoriaPrioridade = fornecedorCategoriaService.ObterPorEmail(View.Email);
+
+            if (categoriaPrioridade.Count > 0)
+            {
+                Fornecedor fornecedor = categoriaPrioridade[0].Fornecedor;
+                string faixaCategoria = categoriaService.ObterFaixaCategoria(categoriaPrioridade[0].IdCategoria.Id);
+
+                IList<Cidade> cidades = new List<Cidade>();
+
+                string plano1 = "";
+                string plano2 = "";
+                Boolean ehCapital = false;
+
+                foreach (Cidade cidade in fornecedor.Cidades)
+                {
+                    if (cidade.EhCapital)
+                    {
+                        ehCapital = true;
+                        break;
+                    }
+                }
+
+                if (ehCapital)
+                {
+                    if (faixaCategoria == "A")
+                    {
+                        plano1 = "7,00";
+                        plano2 = "17,00";
+                    }
+
+                    if (faixaCategoria == "B")
+                    {
+                        plano1 = "17,00";
+                        plano2 = "57,00";
+                    }
+
+                    if (faixaCategoria == "C")
+                    {
+                        plano1 = "57,00";
+                        plano2 = "147,00";
+                    }
+                }
+                else
+                {
+                    if (faixaCategoria == "A")
+                    {
+                        plano1 = "5,00";
+                        plano2 = "7,00";
+                    }
+
+                    if (faixaCategoria == "B")
+                    {
+                        plano1 = "7,00";
+                        plano2 = "17,00";
+                    }
+
+                    if (faixaCategoria == "C")
+                    {
+                        plano1 = "17,00";
+                        plano2 = "57,00";
+                    }
+
+                    DateTime dataEntradaDoPlanoEmProducao = DateTime.Parse("22/05/2013");
+
+                    if (fornecedor.DataCadastro < dataEntradaDoPlanoEmProducao)
+                        plano2 = fornecedor.ValorMensalidade.ToString() + ",00";
+                }
+
+                View.ApresentarValoresPlanos(plano1, plano2);
+            }
+        }
+
+        public void AtualizarValorMensalidade()
+        {
+            Fornecedor fornecedor = fornecedorService.ObterPorEmail(View.Email);
+
+            if (fornecedor != null)
+            {
+                fornecedor.ValorMensalidadeAlteracao = View.ValorMensalidade;
+                fornecedor.TipoPessoaAtendimentoAlteracao = View.PessoaTipo;
+            }
+        }
+    }
+}

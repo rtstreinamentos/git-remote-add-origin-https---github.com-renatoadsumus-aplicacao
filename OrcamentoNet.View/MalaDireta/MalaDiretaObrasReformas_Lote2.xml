@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <row>
+      <field name="Nm_Comprador">ROGERIO</field>
+      <field name="Email">saolucassp1@terra.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">adelia</field>
+      <field name="Email">adelia-mari@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Odilon Filho</field>
+      <field name="Email">psicol.odilon@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Mauricio de Carvalho</field>
+      <field name="Email">cmauricio314@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">maricelia</field>
+      <field name="Email">licitacao.fepmvz@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcio G. Araujo</field>
+      <field name="Email">marciograujo@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">larri</field>
+      <field name="Email">larriane.m.lopes@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Elton</field>
+      <field name="Email">suprimentos@facel.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Vagner Freitas</field>
+      <field name="Email">vagner.freitas@cw-opr.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">jalber santos</field>
+      <field name="Email">jalberlu@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Joelmir Roberto</field>
+      <field name="Email">joelmir.nascimento@atento.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Orlando</field>
+      <field name="Email">jorlandofioretti@yahoo.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">bruno</field>
+      <field name="Email">bruno.antonio@live.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">MEIRE REVADAM</field>
+      <field name="Email">contato@grupocecservicos.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">junior</field>
+      <field name="Email">junior.jp_am@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Gleiberson Luiz</field>
+      <field name="Email">gleibersonpbi@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Angela Maria de Miranda Mendes</field>
+      <field name="Email">angela-mmendes@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Sebastiana</field>
+      <field name="Email">semartinscosta@uol.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">ANTONIO JR</field>
+      <field name="Email">nivalantonio@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">LUCIANE OLIVEIRA</field>
+      <field name="Email">lucianeandressa@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">carla</field>
+      <field name="Email">ccabral.s@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Sandra Woo</field>
+      <field name="Email">sandrawoo@uol.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Mariana Lopes da Cunha</field>
+      <field name="Email">marianacunha90@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Bruna Santos</field>
+      <field name="Email">bucabs@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">anicio</field>
+      <field name="Email">chiuaua16@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Eduardo</field>
+      <field name="Email">focuscaixa@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Lobo</field>
+      <field name="Email">loobo2@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcos Medina </field>
+      <field name="Email">medinamrcs@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Helena Colucci</field>
+      <field name="Email">hcolucci@hucff.ufrj.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcelo Fernandes</field>
+      <field name="Email">marcelof-2010@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Bárbara de Miranda Kjaer</field>
+      <field name="Email">barbara.kjaer@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">MARCOS JOSÉ REZENDE</field>
+      <field name="Email">direoria@tecnauto.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">micheli</field>
+      <field name="Email">mychelynha_19@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">PATRICIA COUTO</field>
+      <field name="Email">P.TELEMONT@GMAIL.COM</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Priscila </field>
+      <field name="Email">priscila@alnarquitetos.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">moura</field>
+      <field name="Email">engenheiromoura@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Alexandre Castro.</field>
+      <field name="Email">castro1978@terra.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Henrique Gornic</field>
+      <field name="Email">hgornic@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">CHARLES  BRANDÃO</field>
+      <field name="Email">charles.brandao@ibi.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">cristiane</field>
+      <field name="Email">crismmsouza28@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Lincoln Luiz Weitzel  Eiter</field>
+      <field name="Email">lincolnweitzel@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Carla</field>
+      <field name="Email">carla2104@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Leandro</field>
+      <field name="Email">ledomingues84@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Karine</field>
+      <field name="Email">karine@buzzero.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Georgete</field>
+      <field name="Email">jodaroupa@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">LUIS RODRIGUES DE ARAGÃO</field>
+      <field name="Email">contabil1@kloecknermetals.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Eleonora Barbosa</field>
+      <field name="Email">eleonora.barbosa@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">clube de bocha</field>
+      <field name="Email">jc.domingues@terra.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Simone Domingues</field>
+      <field name="Email">simone_dm@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcos</field>
+      <field name="Email">mvituriano@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Pedro Augusto</field>
+      <field name="Email">paugustooliveira@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Guilherme Puentes</field>
+      <field name="Email">cartespuentes@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Mauro</field>
+      <field name="Email">mauro@macluz.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">isaque</field>
+      <field name="Email">isaque@moraesvelleda.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">JULIANA DE ANDRADE</field>
+      <field name="Email">deandradecorraecastrojuliana@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcelo</field>
+      <field name="Email">marcelo.mazziero@hotmial.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Igreja Pentecostal Deus é Amor</field>
+      <field name="Email">obras@ipda.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">everaldo aparecido de camargo</field>
+      <field name="Email">everaldo_laynara@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Eng. Mucio Martins</field>
+      <field name="Email">suporte.eng.ap@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">fabio</field>
+      <field name="Email">fabiohassui@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Helio Passos</field>
+      <field name="Email">helio_passos@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">leonardo</field>
+      <field name="Email">leo.albieri@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">aline perez vieira </field>
+      <field name="Email">perezmuradazaline@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">erica azevedo</field>
+      <field name="Email">clinitalmed@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">adriana</field>
+      <field name="Email">drikah5@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">daniel</field>
+      <field name="Email">kbcaducker@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Roberto Bonilha</field>
+      <field name="Email">bonilha@blank.ind.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">viviane</field>
+      <field name="Email">vivianecampista@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">gledson jesus</field>
+      <field name="Email">gledson.souza@simpar.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">JCP  SERVIÇOS LTDA</field>
+      <field name="Email">marcelo.costa15@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">aline perez vieira</field>
+      <field name="Email">alinemuradaz@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Alex zanqueta</field>
+      <field name="Email">Lecosopro@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">leticia lopes</field>
+      <field name="Email">lety_msp@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">JORGE MARTINS</field>
+      <field name="Email">jmrcs@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Vinicius</field>
+      <field name="Email">vpmoraes@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Fabio</field>
+      <field name="Email">fabio_josafa@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">edgar</field>
+      <field name="Email">edgar_pizani@live.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">neide</field>
+      <field name="Email">neideborges50@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Rogerio Martins Barbosa</field>
+      <field name="Email">rogeriosoraia@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Ricardo Enes</field>
+      <field name="Email">ricardoenes@globomail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Moises</field>
+      <field name="Email">moisesvjoao@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">rodrigo oliveira de souza</field>
+      <field name="Email">espacokariok2013@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Planavel - Elis de Castro</field>
+      <field name="Email">elis.castro@planavelvp.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marcello</field>
+      <field name="Email">marcellozortea@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">antonio carlos ribeiro</field>
+      <field name="Email">rtonicarlos@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">ricardo</field>
+      <field name="Email">ssc522003@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">vinicius</field>
+      <field name="Email">viniciusesao@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Carlos Alberto</field>
+      <field name="Email">carlos9757@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Rosilene Pacheco França</field>
+      <field name="Email">lene43@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">percy</field>
+      <field name="Email">percyrotger@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Mayra</field>
+      <field name="Email">gerencial.conv@bourbon.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Sergio Franco</field>
+      <field name="Email">frc1259@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Michelly </field>
+      <field name="Email">chellymattos@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Guilherme Assumpção</field>
+      <field name="Email">marambaiasp@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">TOBIAS FILHO</field>
+      <field name="Email">tobias@portelapapeis.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">thiago</field>
+      <field name="Email">thiago.br@globo.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">marcus</field>
+      <field name="Email">sucaram@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Rodolpho</field>
+      <field name="Email">rodolpho_versari@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Artur</field>
+      <field name="Email">artur.t.ramos@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Claudio Ferreira</field>
+      <field name="Email">claudiosferreira@bol.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">nilce</field>
+      <field name="Email">nilce.braga@uol.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Lilia de Lucena Ferreira</field>
+      <field name="Email">llucena@cortexit.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Fábio Bouéri</field>
+      <field name="Email">fb@fbcom.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">José Tadeu de Oliveira</field>
+      <field name="Email">quadrangularavc@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Marize</field>
+      <field name="Email">Mahattnher@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Euclesio</field>
+      <field name="Email">euclesiofinatti@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Karolina Frade Marques</field>
+      <field name="Email">karol_kfm_marques@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">rosacampos</field>
+      <field name="Email">rosa_campos03@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">instituto federal do rio de janeiro- campus são gonçalo</field>
+      <field name="Email">samuel.martins@ifrj.edu.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Felipe</field>
+      <field name="Email">felipevprieto@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">marcos</field>
+      <field name="Email">henriquemarcos@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Bruna</field>
+      <field name="Email">bruna.buonafina@gloriabrasil.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">edinalva </field>
+      <field name="Email">administrativo@sauex.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">IZILDA</field>
+      <field name="Email">izildaam_sp@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">henrique</field>
+      <field name="Email">henrique_adv@outlook.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">MANUEL BASTOS</field>
+      <field name="Email">lineparroz@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Álvaro Vanzella Ribeiro</field>
+      <field name="Email">alz.ribeiro@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">bernadete</field>
+      <field name="Email">dete.migoto@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Aldo</field>
+      <field name="Email">aldoac2@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Audenylle Lobô</field>
+      <field name="Email">audenylle@yahoo.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Paulo</field>
+      <field name="Email">pauloprv@msn.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Fábio Santana</field>
+      <field name="Email">fsantana@fiepe.org.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">ROSANA</field>
+      <field name="Email">rpagamento@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">claudia</field>
+      <field name="Email">claudia.moraes@directlog.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Alexandre</field>
+      <field name="Email">lamotte62@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">elias carvalho</field>
+      <field name="Email">sagelcontrucoes@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Regina Agostini</field>
+      <field name="Email">regina-agostini@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Romulo</field>
+      <field name="Email">romulo.marcial@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">ramiro</field>
+      <field name="Email">guerrero1320@yahoo.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">willian bezerra dos santos</field>
+      <field name="Email">williansantos16@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Reinaldo</field>
+      <field name="Email">reinaldowmadeira@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Cida Cortes-cabeleireira</field>
+      <field name="Email">cc.cortes@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Roberto</field>
+      <field name="Email">camelo@mp.sp.gov.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">JEFFERSON </field>
+      <field name="Email">diamante-j@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Luciano Bittar</field>
+      <field name="Email">Luciano.bittar@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Rosan Garcia</field>
+      <field name="Email">rosan.garcia@salcisne.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Luiz Alberto Sanz</field>
+      <field name="Email">la@sanz.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">HERCILIO</field>
+      <field name="Email">herciliogneto@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Mitty</field>
+      <field name="Email">hart@hart.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">sergio</field>
+      <field name="Email">texgodoy@terra.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">SANDRA</field>
+      <field name="Email">sandra@radial.ind.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Warlem Rodrigues de Jesus</field>
+      <field name="Email">warlemrodrigues@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Antonio</field>
+      <field name="Email">podecha@ibest.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">tatiane</field>
+      <field name="Email">tatysantosfsa@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Aline Carvalho</field>
+      <field name="Email">linny_carvalho@hotmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Julia Bragança</field>
+      <field name="Email">julia.brant@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">lilian</field>
+      <field name="Email">lilianrachid@gmail.com</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Petronio dos santos</field>
+      <field name="Email">Petronio.rosi@ig.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">GLORIA MARQUES</field>
+      <field name="Email">netmarques@bol.com.br</field>
+    </row>
+    <row>
+      <field name="Nm_Comprador">Hugo Souza</field>
+      <field name="Email">hugohugosouza@gmail.com</field>
+    </row>
+    
+</ROOT>

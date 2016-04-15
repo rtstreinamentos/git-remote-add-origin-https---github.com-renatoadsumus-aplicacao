@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OrcamentoNet.IView;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.View
+{
+    public partial class custo_anunciar_parceiro : System.Web.UI.Page, ICusto_Anunciar_Parceiro
+    {
+        Custo_Anunciar_ParceiroPresenter presenter;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presenter = new Custo_Anunciar_ParceiroPresenter();
+            presenter.View = this;
+            presenter.OnViewInitialized();
+            
+            if (!IsPostBack)
+            {
+                presenter.CarregarCategoria();
+            }
+        }
+
+        protected void uxbtnCalcularValor_Click(object sender, EventArgs e)
+        {
+            presenter.CalcularValorMensalidade();
+        }
+
+        #region Propriedades
+
+
+        public IList<int> CidadesDeAtuacao
+        {
+            get { return CidadeListBoxControle1.CidadesDeAtuacao; }
+        }
+
+        public IList<string> Categorias
+        {
+            get
+            {
+                IList<string> categorias = new List<string>();
+
+                foreach (RepeaterItem rptCategoria in uxrptCategorias.Items)
+                {
+                    Repeater rptSubCategoria = new Repeater();
+
+                    rptSubCategoria = ((Repeater)rptCategoria.FindControl("uxrptSubCategorias"));
+
+                    foreach (RepeaterItem subcategoria in rptSubCategoria.Items)
+                    {
+                        CheckBox rdbSubCategoria = ((CheckBox)subcategoria.FindControl("uxchkSubCategoria"));
+
+                        if (rdbSubCategoria.Checked)
+                        {
+                            categorias.Add(((Label)subcategoria.FindControl("uxlblIdCategoria")).Text);
+                        }
+                    }
+                }
+
+                return categorias;
+            }
+        }
+
+        public bool PalavraEhCorreta
+        {
+            get { return CaptchaControle1.PalavraEhCorreta; }
+        }
+
+        public int TipoPessoaAtendimento
+        {
+            get { return int.Parse(uxddlTipoPessoa.SelectedValue); }
+        }
+
+        #endregion
+
+        public void CarregarCategoria(IList<Categoria> categorias)
+        {
+            uxrptCategorias.DataSource = categorias;
+            uxrptCategorias.DataBind();
+        }
+
+        public void CalcularValorMensalidade(double valorMensalidade)
+        {           
+            uxlblValorMensalidade.Text = "Valor da Mensalidade: R$ " + valorMensalidade.ToString();
+        }
+
+        public void ExibirMensagemParteInferior(string mensagem)
+        {
+            uxlblValorMensalidade.Text = mensagem;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+</head>
+<body>
+	<form method="POST" action="http://www.rdstation.com.br/api/1.2/conversions" id="conversion-form">
+	<!-- AQUI você deve inserir seu token único disponível http://www.rdstation.com.br/docs/api -->
+	<input type="hidden" name="token_rdstation" value="a37b4425b5786360fa585f681fd0ff78" />
+	<!-- AQUI você deve definir o identificador da página. Pode ser qualquer nome que identifique a página. -->
+	<input type="hidden" name="identificador" value="cadastro-fornecedor" />
+	<!-- AQUI você deve definir a URL de redirecionamento da página. -->
+	<input type="hidden" name="redirect_to" value="" />
+	<div id="error-container">
+		<p>
+			Preencha corretamente os campos marcados</p>
+	</div>
+	<div class="field">
+		<label>
+			Nome:*</label>
+		<input type="text" name="nome" class="required" />
+	</div>
+	<div class="field">
+		<label>
+			E-mail:*</label>
+		<input type="text" name="email_lead" class="required email" />
+	</div>
+	<div class="actions">
+		<input type="submit" id="cf_submit" value="Enviar" />
+	</div>
+	</form>
+</body>
+</html>

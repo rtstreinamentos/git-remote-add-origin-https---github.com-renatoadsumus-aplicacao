@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OrcamentoNet.IView;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.View
+{
+    public partial class LoginNovo : System.Web.UI.Page, ILogin
+    {
+        LoginPresenter presenter;
+        private Boolean recuperarSenha = false;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presenter = new LoginPresenter();
+            presenter.View = this;
+            presenter.OnViewInitialized();
+
+            if (!IsPostBack)
+            {
+                recuperarSenha = (Request.Params["recuperarSenha"] != null) ? true : false;
+
+                if (recuperarSenha)
+                    multiview01.SetActiveView(viewMenu);
+            }
+
+        }
+
+        protected void uxbtnEnviar_Click(object sender, EventArgs e)
+        {
+            
+                presenter.ValidarAcesso();
+        }
+
+        #region Propriedade
+
+        public string Email
+        {
+            get { return uxtxtEmail.Text; }
+        }
+
+        public string EmailRecuperarSenha
+        {
+            get { return uxtxtRecuperarEmail.Text; }
+        }
+
+        public string Senha
+        {
+            get { return uxtxtSenha.Text; }
+        }
+
+        #endregion
+
+        #region Metodos
+
+        public void CriarSessao(Fornecedor fornecedor)
+        {
+            Session["FornecedorLogado"] = fornecedor;
+            Session["Email"] = uxtxtEmail.Text;
+            Response.Redirect("UltimosPedidosOrcamento.aspx");
+            //multiview01.SetActiveView(viewMenu);
+        }
+
+        public void ExibirMensagem(string p)
+        {
+            uxlblMensagemInferiorRecuperarSenha.Text = p;
+            uxtxtRecuperarEmail.Text = "";
+            
+        }
+
+        #endregion
+
+        protected void uxbtnRecuperarSenha_Click(object sender, EventArgs e)
+        {
+            presenter.RecuperarSenha();
+        }
+    }
+}

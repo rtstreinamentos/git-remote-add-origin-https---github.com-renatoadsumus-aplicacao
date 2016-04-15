@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.Entity;
+using OrcamentoNet.Entity.Enum;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Common;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class CadastroPedidoOrcamentoSimplesPresenter
+    {
+        public ICadastroPedidoOrcamentoSimples View { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService
+        { get; set; }
+
+
+        [Inject]
+        public ICidadeService cidadeService
+        { get; set; }
+
+        [Inject]
+        public IPedidoOrcamentoService pedidoOrcamentoService
+        { get; set; }
+
+        private void InicializarServico()
+        {
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        public void OnViewInitialized()
+        {
+            InicializarServico();
+        }
+
+        public void Salvar()
+        {
+            if (View.IdCidadePedidoOrcamento != 0 && View.IdCategoriaRecebida != 0)
+            {
+                Cidade cidadePedidoOrcamento = cidadeService.Obter(View.IdCidadePedidoOrcamento);
+
+                IList<Categoria> categoriasSelecionadas = categoriaService.ObterSubCategoriasDeUmaCategoria(View.SubCategorias);
+
+                string camposInvalidos = String.Empty;
+
+                if (View.PalavraEhCorreta && categoriasSelecionadas.Count > 0)
+                {
+                    Pessoa comprador = new Pessoa();
+                    comprador.Nome = View.Nome;
+                    comprador.Email = View.Email;
+                    comprador.Cidade = cidadePedidoOrcamento;
+                    comprador.Telefone = View.Telefone;
+					
+					//verifica se está sendo gravado em duplicidade; caso positivo, simplesmente redireciona para sucesso
+					PedidoOrcamento pedidoOrcamento = pedidoOrcamentoService.ObterPedidoOrcamentoPorEmail(View.Email);
+					if (pedidoOrcamento == null)
+					{
+						pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categoriasSelecionadas, View.Observacao, View.Titulo, ref camposInvalidos, cidadePedidoOrcamento);
+						pedidoOrcamentoService.EnviarEmailPedidoOrcamentoSimplificado(pedidoOrcamento);
+					}
+					else
+					{
+						if ((pedidoOrcamento.NomeComprador != View.Nome) ||
+							(pedidoOrcamento.Titulo != View.Titulo) ||
+							(pedidoOrcamento.Observacao != View.Observacao))
+						{
+							pedidoOrcamento = pedidoOrcamentoService.Inserir(comprador, categoriasSelecionadas, View.Observacao, View.Titulo, ref camposInvalidos, cidadePedidoOrcamento);
+							pedidoOrcamentoService.EnviarEmailPedidoOrcamentoSimplificado(pedidoOrcamento);
+						}
+					}
+					View.RedirecionarPaginaSucesso();
+
+                }
+                else
+                {
+                    camposInvalidos = "Preenchimento inválido: Ramo de Atividade";
+                    View.ExibirMensagem("<div class='alert alert_red' id='uxdivAlerta' runat='server'><img height='24' width='24' src='/images/icons/small/white/Alarm%20Bell.png'>Não foi possível salvar os dados. " + camposInvalidos + ".<br />Por favor, corrija e salve novamente.</div>");
+                }
+            }
+            else
+            {
+                View.ExibirMensagem("<div class='alert alert_red' id='uxdivAlerta' runat='server'><img height='24' width='24' src='/images/icons/small/white/Alarm%20Bell.png'>Não foi possível salvar os dados. Cidade <br />Por favor, corrija e salve novamente.</div>");
+
+            }
+        }
+
+        public void CarregarSubCategorias()
+        {
+            Cidade cidade = cidadeService.Obter(View.IdCidadePedidoOrcamento);
+            Categoria categoria = categoriaService.Obter(View.IdCategoriaRecebida,false);
+
+            IList<Categoria> subCategorias;
+
+            if (categoria.Pai.Id == 0)
+                subCategorias = categoriaService.ObterSubCategoriasComFornecedorPorCidade(cidade, categoria.Id);
+            else
+                subCategorias = categoriaService.ObterSubCategoriasComFornecedorPorCidade(cidade, categoria.Pai.Id);
+
+            if (subCategorias.Count == 0)
+                View.ExibirMensagem("Não temos fornecedor cadastrado nessa cidade!");
+
+            View.CarregarSubCategorias(subCategorias);
+        }
+    }
+}

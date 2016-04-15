@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\OrcamentoNet.CommonTest.nunit" total="39" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-05-15" time="15:25:31">
+  <environment nunit-version="2.5.3.9345" clr-version="2.0.50727.4211" os-version="Microsoft Windows NT 6.0.6002 Service Pack 2" platform="Win32NT" cwd="D:\Program Files\NUnit 2.5.3\bin\net-2.0" machine-name="OWNER-PC" user="Owner" user-domain="Owner-PC" />
+  <culture-info current-culture="pt-BR" current-uiculture="ja-JP" />
+  <test-suite name="D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\OrcamentoNet.CommonTest.nunit" executed="True" success="True" time="0.236" asserts="0">
+    <results>
+      <test-suite name="D:\projetos\OrcamentoOnline\OrcamentoNet.CommonTest\bin\Debug\OrcamentoNet.CommonTest.dll" executed="True" success="True" time="0.228" asserts="0">
+        <results>
+          <test-suite name="OrcamentoNet" executed="True" success="True" time="0.223" asserts="0">
+            <results>
+              <test-suite name="CommonTest" executed="True" success="True" time="0.218" asserts="0">
+                <results>
+                  <test-suite name="ValidadorTest" executed="True" success="True" time="0.203" asserts="0">
+                    <results>
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCNPJInvalidoNumerosLetras" executed="True" success="True" time="0.041" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCNPJInvalidoSomenteNumeros" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCNPJValidoNumerosPontos" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCNPJValidoSomenteNumeros" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCNPJVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioInvalido" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioInvalidoMinusculas" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioSemConjunto" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioSemConteudo" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioSemPipe" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarConjuntoObrigatorioValido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCPFInvalidoNumerosLetras" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCPFInvalidoSomenteNumeros" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCPFValidoNumerosPontos" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCPFValidoSomenteNumeros" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarCPFVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarEmailFormatoInvalido" executed="True" success="True" time="0.085" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarEmailTamanho" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarEmailValido" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarEmailVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarLetrasInvalido" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarLetrasValido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarSenhaSemCaracteresEspeciais" executed="True" success="True" time="0.002" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarSenhaSemLetras" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarSenhaSemNumeros" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarSenhaValida" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarSenhaVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTelefoneFormatoInvalido" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTelefoneTamanho" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTelefoneValido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTelefoneVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTextoLivreAntiXSS" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTextoLivreTamanhoMaximo" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTextoLivreTamanhoMinimo" executed="True" success="True" time="0.001" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTextoLivreValido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarTextoLivreVazio" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarXSSInvalido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarXSSValido" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="OrcamentoNet.CommonTest.ValidadorTest.ValidarXSSVazio" executed="True" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,0 +1,138 @@
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/OrcamentoNet2.Master"
+    CodeBehind="UltimosPedidosOrcamento.aspx.cs" Inherits="OrcamentoNet.View.UltimosPedidosOrcamento" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+</asp:Content>
+<asp:Content ID="cpObjetivoPrincipalPagina" ContentPlaceHolderID="cpObjetivoPrincipalPagina"
+    runat="server">
+    <table>
+        <tr>
+            <td>
+                <a href="MeusDados.aspx"><font size="3">Meus Dados </font></a>
+            </td>
+            <td width="29">
+            </td>
+            <td>
+                <a href="UltimosPedidosOrcamento.aspx"><font size="3">Últimos Pedidos</font> </a>
+            </td>
+            <td width="29">
+            </td>
+            <td>
+                <a href="PedidosNaoRespondidos.aspx" title="Veja qual o status dos pedidos"><font
+                    size="3">Status dos Pedidos</font> </a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <h3 id="h3NomeFornecedor" runat="server">
+    </h3>
+    <br />
+    <asp:MultiView ID="multiview01" runat="server" ActiveViewIndex="0">
+        <asp:View ID="viewUltimosPedidos" runat="server">
+            <h4>
+                Veja pedidos de outras áreas que você não está cadastrado:</h4>
+            <asp:DropDownList ID="uxddlCidades" runat="server" OnSelectedIndexChanged="uxddlCidades_SelectedIndexChanged"
+                AppendDataBoundItems="true" AutoPostBack="true">
+                <asp:ListItem Value="0">Selecione</asp:ListItem>
+            </asp:DropDownList>
+            <h1>
+                Últimos Pedidos de Orçamento</h1>
+            <div id="PedidosOrcamentoRecentes">
+                <ul class="iconBulletList">
+                    <asp:Repeater ID="uxrptPedidosOrcamentosDegustacao" runat="server">
+                        <ItemTemplate>
+                            <li>
+                                <img src="/img/marcador-orcamento-online.png" alt="Marcador do Orçamento Online"
+                                    class="fl" />
+                                <h4 style="margin-top: 16px; margin-left: 50px;">
+                                    <%#Server.HtmlEncode(Eval("Titulo").ToString())%>
+                                    - Número Pedido:
+                                    <%# Eval("Id")%>
+                                </h4>
+                                <p>
+                                    <b>Solicitante:</b>
+                                    <%#Server.HtmlEncode(Eval("NomeComprador").ToString())%>...
+                                    <br />
+                                    <b>Email:</b>
+                                    <%#Server.HtmlEncode(Eval("Email").ToString().ToString().Substring(0, 6))%>...@XXX.com
+                                    <br />
+                                    <b>Telefone:</b>
+                                    <%#Server.HtmlEncode(Eval("Telefone").ToString().ToString().Substring(0, 7))%>-XXXX
+                                   
+                                    <br />
+                                    <b>Detalhamento do pedido de orçamento:</b><br />
+                                    <br />
+                                    <%#Server.HtmlEncode(Eval("Observacao").ToString()).Replace(Environment.NewLine, "<br />")%><br />
+                                    <b>Solicitado em</b>
+                                    <%#String.Format("{0:dd/MM/yyyy}", Eval("Data"))%><br />
+                                    <b>Local:</b>
+                                    <%#Server.HtmlEncode(Eval("Cidade.Nome").ToString()) + "/" + Server.HtmlEncode(Eval("Cidade.UF").ToString())%></strong>
+                                    
+                                </p>
+                                <p>
+                                    <a href="UltimosPedidosOrcamento.aspx?idPedido=<%# Eval("Id")%>"><font size="3">Quero
+                                        Participar da Cotação Avulsa</font></a>
+                                    <br />
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+                <ul class="iconBulletList">
+                    <asp:Repeater ID="uxrptPedidosOrcamentosClienteCortesia" runat="server">
+                        <ItemTemplate>
+                            <li>
+                                <img src="/img/marcador-orcamento-online.png" alt="Marcador do Orçamento Online"
+                                    class="fl" />
+                                <h4 style="margin-top: 16px; margin-left: 50px;">
+                                    <%#Server.HtmlEncode(Eval("Titulo").ToString())%>
+                                    - Número Pedido:
+                                    <%# Eval("Id")%>
+                                </h4>
+                                <p>
+                                    <b>Solicitante:</b>
+                                    <%#Server.HtmlEncode(Eval("NomeComprador").ToString())%>
+                                    <br />
+                                    <b>Email:</b>
+                                    <%#Server.HtmlEncode(Eval("Email").ToString())%>
+                                    <br />
+                                    <b>Telefone:</b>
+                                    <%#Server.HtmlEncode(Eval("Telefone").ToString())%>
+                                    <br />
+                                    <b>Operadora:</b>
+                                    <%#Server.HtmlEncode(Eval("TelefoneOperadora").ToString())%>
+                                    <br />
+                                    <b>Detalhamento do pedido de orçamento:</b><br />
+                                    <br />
+                                    <%#Server.HtmlEncode(Eval("Observacao").ToString()).Replace(Environment.NewLine, "<br />")%><br />
+                                    <b>Solicitado em</b>
+                                    <%#String.Format("{0:dd/MM/yyyy}", Eval("Data"))%><br />
+                                    <b>Local:</b>
+                                    <%#Server.HtmlEncode(Eval("Cidade.Nome").ToString()) + "/" + Server.HtmlEncode(Eval("Cidade.UF").ToString())%></strong>
+                                    <br />
+                                    <b>Fotos enviadas do local:</b>
+                                    <asp:Repeater ID="uxptfotos" runat="server" DataSource='<%#Eval("Fotos")%>'>
+                                        <ItemTemplate>
+                                            <br />
+                                            <a href="fotoscomprador/<%# Container.DataItem %>" target="_blank">
+                                                <%# Container.DataItem %></a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </p>
+                                <!-- end productText -->
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <div class="horizontalSep">
+                <!-- -->
+            </div>
+            <!-- Product Buy Button Section Starts Here -->
+            <div class="bigBuyButton">
+            </div>
+        </asp:View>
+        <asp:View ID="viewBoxCompraAvulsa" runat="server">
+            <asp:HyperLink CssClass="ie6SubmitFix" Font-Size="Large" ID="uxhplPagSeguro" runat="server"></asp:HyperLink>
+        </asp:View>
+    </asp:MultiView>
+</asp:Content>

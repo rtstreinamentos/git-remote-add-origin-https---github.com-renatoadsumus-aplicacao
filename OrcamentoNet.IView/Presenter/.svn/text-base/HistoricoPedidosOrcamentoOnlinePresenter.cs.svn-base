@@ -1,0 +1,124 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class HistoricoPedidosOrcamentoOnlinePresenter
+    {
+        public IHistoricoPedidosOrcamentoOnline View { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService { get; set; }
+
+        [Inject]
+        public ICidadeService cidadeService { get; set; }
+
+        [Inject]
+        public IEstadoService estadoService { get; set; }
+
+        private void InicializarServico()
+        {
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        public void OnViewInitialized()
+        {
+            InicializarServico();
+        }
+
+        public void CarregarFormularioSolicitarPedidoOrcamento()
+        {
+            string nomeCidade = "";
+
+            if (View.IdCidade > 0)
+            {
+                Estado estado = estadoService.ObterEstado(View.IdCidade);
+
+                if (estado.Nome != null)
+                {
+                    nomeCidade = estado.Nome;
+                }
+                else
+                {
+                    Cidade cidade = cidadeService.Obter(View.IdCidade);
+
+                    if (View.IdBairro > 0)
+                    {
+                        Bairro bairro = cidade.Bairros.Where(x => x.Id == View.IdBairro).FirstOrDefault();
+
+                        if (bairro != null)
+                            nomeCidade = bairro.Nome + " - " + cidade.Nome;
+                    }
+                    else
+                    {
+                        nomeCidade = cidade.Nome + " " + estado.Nome;
+                    }
+                }
+            }
+
+            Categoria categoria = categoriaService.Obter(View.IdCategoria, false);
+
+            int temaFormulario = 0;
+
+            if (categoria != null)
+            {
+                View.CarregarCategoria(categoria.Nome, nomeCidade, categoria);
+
+                temaFormulario = categoria.Pai.Id;
+
+                if (categoria.Pai.Id == 0)
+                    temaFormulario = categoria.Id;
+
+
+                //Tema não faz sentido para todos os itens da categoria PAI somente a filho
+
+                //Circuito Fechado de Televisão (CFTV) e Sistemas de Segurança
+                if (categoria.Id == 169)
+                {
+                    temaFormulario = 169;
+                }
+
+                //Box, Vidros e Espelhos
+                if (categoria.Id == 19)
+                {
+                    temaFormulario = 19;
+                }
+
+                //Desabilita Lista de Categorias caso esteja sendo chamado uma pagina de formulario
+                View.DesabilitarListaDeCategorias();
+            }
+
+            //Seleciona o TEMA do Formulario
+            switch (temaFormulario)
+            {
+                case 19:
+                    View.HabilitarFormularioVidroEspelho();
+                    break;
+                case 18:
+                    View.HabilitarFormularioCasaDecoracao();
+                    break;
+                case 27:
+                    View.HabilitarFormularioConstrucao();
+                    break;
+                case 52:
+                    View.HabilitarFormularioEventosFestas();
+                    break;
+                case 169:
+                    View.HabilitarFormularioCamerasMonitoradasCFTV();
+                    break;
+                case 112:
+                    View.HabilitarFormularioMudanca();
+                    break;
+                default:
+                    View.HabilitarFormularioGenerico();
+                    break;
+            }
+        }
+    }
+}

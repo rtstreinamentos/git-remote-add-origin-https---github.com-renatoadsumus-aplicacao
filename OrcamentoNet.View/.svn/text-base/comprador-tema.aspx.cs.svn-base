@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections.Specialized;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.IView;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.View
+{
+    public partial class comprador_detalhe : System.Web.UI.Page, IComprador_Detalhe
+    {
+        Comprador_DetalhePresenter presenter;
+        int idCategoria = 0;
+        int idCidade = 0;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presenter = new Comprador_DetalhePresenter();
+            presenter.View = this;
+            presenter.OnViewInitialized();
+
+            if (!IsPostBack)
+            {
+                NameValueCollection queryString = Request.QueryString;
+                String[] array = queryString.AllKeys;
+
+                if (array.Length > 0)
+                {
+                    idCategoria = (Request.QueryString["categoria"] != null) ? Convert.ToInt32(Request.QueryString["categoria"].ToString()) : 0;
+                    idCidade = (Request.QueryString["cidade"] != null) ? Convert.ToInt32(Request.QueryString["cidade"].ToString()) : 0;
+                }
+
+                presenter.CarregarFornecedoresDaAreaAtuacao();
+                presenter.CarregarCidadesDoEstado();
+            }
+        }
+
+        #region Propriedades
+
+        public int IdCategoria
+        {
+            get { return idCategoria; }
+        }
+        public int IdCidade
+        {
+            get { return idCidade; }
+        }
+
+        #endregion
+
+        #region Metodos
+
+        public void CarregarFornecedoresDaAreaAtuacao(IList<Fornecedor> fornecedores)
+        {
+            uxrptFornecedores.DataSource = fornecedores;
+            uxrptFornecedores.DataBind();
+        }
+
+        public void GerarHTML(Categoria categoria)
+        {
+            
+        }
+
+
+        public void CarregarCidadesDoEstado(List<Estado> estados)
+        {
+            uxrptEstados.DataSource = estados;
+            uxrptEstados.DataBind();
+        }
+
+        #endregion
+    }
+}

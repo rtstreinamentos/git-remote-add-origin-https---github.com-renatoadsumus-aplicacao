@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="CategoriaPrioridade" table="Fornecedor_Categoria_Prioridade">
+
+    <id name="Id" column="Cd_Categoria_Prioridade">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="IdCategoria" column="Cd_Categoria" class="Categoria" />
+    <!--<property name="IdCategoria" column="Cd_Categoria" length="45"  />-->
+    <many-to-one name="Fornecedor" column="Cd_Pessoa" class="Fornecedor" />
+    <property name="Prioridade" column="Prioridade" />
+
+  </class>
+</hibernate-mapping>

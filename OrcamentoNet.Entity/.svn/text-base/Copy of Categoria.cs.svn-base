@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace OrcamentoNet.Entity
+{
+    [Serializable]
+    public class Categoria
+    {
+        public virtual int Id { get; set; }
+        public virtual string Nome { get; set; }
+        public virtual string Termo { get; set; }
+        public virtual string Url { get; set; }
+        public virtual string UrlSEO { get; set; }
+        public virtual string UrlFornecedores { get; set; }
+        public virtual string UrlTitle { get; set; }
+        public virtual string UrlMappings { get; set; }       
+        public virtual Categoria Pai { get; set; }
+        public virtual Boolean Ativo { get; set; }
+        public virtual IList<Categoria> SubCategorias { get; set; }
+        public virtual IList<LinkInterno> LinksInternos { get; set; }
+        public virtual double Valor { get; set; }
+    }
+}

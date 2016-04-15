@@ -1,0 +1,932 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DDBAA36-EF4D-40A9-9956-F2D3F8FA74DA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrcamentoNet.View</RootNamespace>
+    <AssemblyName>OrcamentoNet.View</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.50927.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeTextBox, Version=3.3.0.22838, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="InfoGlobo.InjectionFramework.Core, Version=1.1.3467.26836, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\InfoGlobo.InjectionFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelligencia.UrlRewriter, Version=2.0.0.9, Culture=neutral, PublicKeyToken=0573f3650687980d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Burrow.WebUtil, Version=1.0.0.4000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NHibernate.Burrow.WebUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="OrcamentoNet.ByPassCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\OrcamentoNet.ByPassCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sandbox\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="UOL.PagSeguro, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\UOL.PagSeguro.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminAlterarDados.aspx.cs">
+      <DependentUpon>AdminAlterarDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAlterarDados.aspx.designer.cs">
+      <DependentUpon>AdminAlterarDados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCadastroFornecedor.aspx.cs">
+      <DependentUpon>AdminCadastroFornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCadastroFornecedor.aspx.designer.cs">
+      <DependentUpon>AdminCadastroFornecedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPedidoOrcamento.aspx.cs">
+      <DependentUpon>AdminPedidoOrcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPedidoOrcamento.aspx.designer.cs">
+      <DependentUpon>AdminPedidoOrcamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroCategoria.aspx.cs">
+      <DependentUpon>CadastroCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroCategoria.aspx.designer.cs">
+      <DependentUpon>CadastroCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedor.aspx.cs">
+      <DependentUpon>CadastroFornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor.aspx.designer.cs">
+      <DependentUpon>CadastroFornecedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedorSucesso.aspx.cs">
+      <DependentUpon>CadastroFornecedorSucesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedorSucesso.aspx.designer.cs">
+      <DependentUpon>CadastroFornecedorSucesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\MenuAdmin.ascx.cs">
+      <DependentUpon>MenuAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\MenuAdmin.ascx.designer.cs">
+      <DependentUpon>MenuAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioCasaDecoracao.ascx.cs">
+      <DependentUpon>OrcamentoFormularioCasaDecoracao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioCasaDecoracao.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioCasaDecoracao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioFachadaPredial.ascx.cs">
+      <DependentUpon>OrcamentoFormularioFachadaPredial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioFachadaPredial.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioFachadaPredial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioLocacao.ascx.cs">
+      <DependentUpon>OrcamentoFormularioLocacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioLocacao.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioLocacao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CriarPedido.aspx.cs">
+      <DependentUpon>CriarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CriarPedido.aspx.designer.cs">
+      <DependentUpon>CriarPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dicas.aspx.cs">
+      <DependentUpon>Dicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dicas.aspx.designer.cs">
+      <DependentUpon>Dicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaleConosco.aspx.cs">
+      <DependentUpon>FaleConosco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaleConosco.aspx.designer.cs">
+      <DependentUpon>FaleConosco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faq.aspx.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faq.aspx.designer.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historico-pedidos-orcamento-online.aspx.cs">
+      <DependentUpon>historico-pedidos-orcamento-online.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historico-pedidos-orcamento-online.aspx.designer.cs">
+      <DependentUpon>historico-pedidos-orcamento-online.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FornecedorLogado.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guia-temas.aspx.cs">
+      <DependentUpon>guia-temas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guia-empresas-profissionais.aspx.cs">
+      <DependentUpon>guia-empresas-profissionais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guia-empresas-profissionais.aspx.designer.cs">
+      <DependentUpon>guia-empresas-profissionais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CaptchaControle.ascx.cs">
+      <DependentUpon>CaptchaControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CaptchaControle.ascx.designer.cs">
+      <DependentUpon>CaptchaControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CategoriaListaFornecedoresControle.ascx.cs">
+      <DependentUpon>CategoriaListaFornecedoresControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CategoriaListaFornecedoresControle.ascx.designer.cs">
+      <DependentUpon>CategoriaListaFornecedoresControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CategoriasTemaCheckBoxControle.ascx.cs">
+      <DependentUpon>CategoriasTemaCheckBoxControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CategoriasTemaCheckBoxControle.ascx.designer.cs">
+      <DependentUpon>CategoriasTemaCheckBoxControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CidadeListBoxControle.ascx.cs">
+      <DependentUpon>CidadeListBoxControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CidadeListBoxControle.ascx.designer.cs">
+      <DependentUpon>CidadeListBoxControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CidadePedidosPorCategoria.ascx.cs">
+      <DependentUpon>CidadePedidosPorCategoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CidadePedidosPorCategoria.ascx.designer.cs">
+      <DependentUpon>CidadePedidosPorCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\FornecedoresControle2.ascx.cs">
+      <DependentUpon>FornecedoresControle2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\FornecedoresControle2.ascx.designer.cs">
+      <DependentUpon>FornecedoresControle2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\FornecedoresControle.ascx.cs">
+      <DependentUpon>FornecedoresControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\FornecedoresControle.ascx.designer.cs">
+      <DependentUpon>FornecedoresControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\LinksInternosControle.ascx.cs">
+      <DependentUpon>LinksInternosControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\LinksInternosControle.ascx.designer.cs">
+      <DependentUpon>LinksInternosControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\LinksInternosTemaCategoria.ascx.cs">
+      <DependentUpon>LinksInternosTemaCategoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\LinksInternosTemaCategoria.ascx.designer.cs">
+      <DependentUpon>LinksInternosTemaCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\LinksPedidosOrcamentoControle.ascx.cs">
+      <DependentUpon>LinksPedidosOrcamentoControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\LinksPedidosOrcamentoControle.ascx.designer.cs">
+      <DependentUpon>LinksPedidosOrcamentoControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\FornecedorPorCategoriaControle.ascx.cs">
+      <DependentUpon>FornecedorPorCategoriaControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\FornecedorPorCategoriaControle.ascx.designer.cs">
+      <DependentUpon>FornecedorPorCategoriaControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ListaPedidosOrcamentoEspecificos.ascx.cs">
+      <DependentUpon>ListaPedidosOrcamentoEspecificos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ListaPedidosOrcamentoEspecificos.ascx.designer.cs">
+      <DependentUpon>ListaPedidosOrcamentoEspecificos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioBox.ascx.cs">
+      <DependentUpon>OrcamentoFormularioBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioBox.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioCFTV.ascx.cs">
+      <DependentUpon>OrcamentoFormularioCFTV.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioCFTV.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioCFTV.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioConstrucao.ascx.cs">
+      <DependentUpon>OrcamentoFormularioConstrucao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioConstrucao.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioConstrucao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioEspelhoVidro.ascx.cs">
+      <DependentUpon>OrcamentoFormularioEspelhoVidro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioEspelhoVidro.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioEspelhoVidro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioEvento.ascx.cs">
+      <DependentUpon>OrcamentoFormularioEvento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioEvento.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioEvento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioGenerico.ascx.cs">
+      <DependentUpon>OrcamentoFormularioGenerico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioGenerico.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioGenerico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioMudanca.ascx.cs">
+      <DependentUpon>OrcamentoFormularioMudanca.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\OrcamentoFormularioMudanca.ascx.designer.cs">
+      <DependentUpon>OrcamentoFormularioMudanca.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\PedidosOrcamentoControle.ascx.cs">
+      <DependentUpon>PedidosOrcamentoControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\PedidosOrcamentoControle.ascx.designer.cs">
+      <DependentUpon>PedidosOrcamentoControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\RodapeControle.ascx.cs">
+      <DependentUpon>RodapeControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\RodapeControle.ascx.designer.cs">
+      <DependentUpon>RodapeControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro-fornecedores-orcamento-online.aspx.cs">
+      <DependentUpon>cadastro-fornecedores-orcamento-online.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastro-fornecedores-orcamento-online.aspx.designer.cs">
+      <DependentUpon>cadastro-fornecedores-orcamento-online.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacaoEmail.aspx.cs">
+      <DependentUpon>ConfirmacaoEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacaoEmail.aspx.designer.cs">
+      <DependentUpon>ConfirmacaoEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="churrasco-em-casa-domicilio.aspx.cs">
+      <DependentUpon>churrasco-em-casa-domicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="churrasco-em-casa-domicilio.aspx.designer.cs">
+      <DependentUpon>churrasco-em-casa-domicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\DepoimentoOrcamentoOnline.ascx.cs">
+      <DependentUpon>DepoimentoOrcamentoOnline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\DepoimentoOrcamentoOnline.ascx.designer.cs">
+      <DependentUpon>DepoimentoOrcamentoOnline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\RodapeControle2.ascx.cs">
+      <DependentUpon>RodapeControle2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\RodapeControle2.ascx.designer.cs">
+      <DependentUpon>RodapeControle2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EstatisticaPedidos.aspx.cs">
+      <DependentUpon>EstatisticaPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstatisticaPedidos.aspx.designer.cs">
+      <DependentUpon>EstatisticaPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guia-temas.aspx.designer.cs">
+      <DependentUpon>guia-temas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusDados.aspx.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusDados.aspx.designer.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusPedidos.aspx.cs">
+      <DependentUpon>MeusPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusPedidos.aspx.designer.cs">
+      <DependentUpon>MeusPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-comprador.aspx.cs">
+      <DependentUpon>orcamento-online-comprador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-comprador.aspx.designer.cs">
+      <DependentUpon>orcamento-online-comprador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-dicas.aspx.cs">
+      <DependentUpon>orcamento-online-dicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-dicas.aspx.designer.cs">
+      <DependentUpon>orcamento-online-dicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mapa.aspx.cs">
+      <DependentUpon>mapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mapa.aspx.designer.cs">
+      <DependentUpon>mapa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-notificacao-pagamento.aspx.cs">
+      <DependentUpon>orcamento-online-notificacao-pagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-notificacao-pagamento.aspx.designer.cs">
+      <DependentUpon>orcamento-online-notificacao-pagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-pagamento.aspx.cs">
+      <DependentUpon>orcamento-online-pagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-pagamento.aspx.designer.cs">
+      <DependentUpon>orcamento-online-pagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mapa-temas.aspx.cs">
+      <DependentUpon>mapa-temas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mapa-temas.aspx.designer.cs">
+      <DependentUpon>mapa-temas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-pedido-historico.aspx.cs">
+      <DependentUpon>orcamento-online-pedido-historico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-pedido-historico.aspx.designer.cs">
+      <DependentUpon>orcamento-online-pedido-historico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-preco.aspx.cs">
+      <DependentUpon>orcamento-online-preco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-preco.aspx.designer.cs">
+      <DependentUpon>orcamento-online-preco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-termo.aspx.cs">
+      <DependentUpon>orcamento-online-termo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-termo.aspx.designer.cs">
+      <DependentUpon>orcamento-online-termo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-tipo-servico.aspx.cs">
+      <DependentUpon>orcamento-online-tipo-servico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-tipo-servico.aspx.designer.cs">
+      <DependentUpon>orcamento-online-tipo-servico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrcamentoNet2.Master.cs">
+      <DependentUpon>OrcamentoNet2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrcamentoNet2.Master.designer.cs">
+      <DependentUpon>OrcamentoNet2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosNaoRespondidos.aspx.cs">
+      <DependentUpon>PedidosNaoRespondidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosNaoRespondidos.aspx.designer.cs">
+      <DependentUpon>PedidosNaoRespondidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisaPerfilFornecedor.aspx.cs">
+      <DependentUpon>PesquisaPerfilFornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PesquisaPerfilFornecedor.aspx.designer.cs">
+      <DependentUpon>PesquisaPerfilFornecedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisaSatisfacaoCompradorSucesso.aspx.cs">
+      <DependentUpon>PesquisaSatisfacaoCompradorSucesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PesquisaSatisfacaoCompradorSucesso.aspx.designer.cs">
+      <DependentUpon>PesquisaSatisfacaoCompradorSucesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisaSatisfacaoComprador.aspx.cs">
+      <DependentUpon>PesquisaSatisfacaoComprador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PesquisaSatisfacaoComprador.aspx.designer.cs">
+      <DependentUpon>PesquisaSatisfacaoComprador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="custo-anunciar-parceiro.aspx.cs">
+      <DependentUpon>custo-anunciar-parceiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="custo-anunciar-parceiro.aspx.designer.cs">
+      <DependentUpon>custo-anunciar-parceiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ficha_Tecnica.aspx.cs">
+      <DependentUpon>Ficha_Tecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ficha_Tecnica.aspx.designer.cs">
+      <DependentUpon>Ficha_Tecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GerarPalavrasChave.aspx.cs">
+      <DependentUpon>GerarPalavrasChave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GerarPalavrasChave.aspx.designer.cs">
+      <DependentUpon>GerarPalavrasChave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginNovo.aspx.cs">
+      <DependentUpon>LoginNovo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginNovo.aspx.designer.cs">
+      <DependentUpon>LoginNovo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online-fornecedores.aspx.cs">
+      <DependentUpon>orcamento-online-fornecedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online-fornecedores.aspx.designer.cs">
+      <DependentUpon>orcamento-online-fornecedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamento-Online-Pedido.aspx.cs">
+      <DependentUpon>Orcamento-Online-Pedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orcamento-Online-Pedido.aspx.designer.cs">
+      <DependentUpon>Orcamento-Online-Pedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orcamento-online.aspx.cs">
+      <DependentUpon>orcamento-online.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orcamento-online.aspx.designer.cs">
+      <DependentUpon>orcamento-online.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CategoriaListaControle.ascx.cs">
+      <DependentUpon>CategoriaListaControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CategoriaListaControle.ascx.designer.cs">
+      <DependentUpon>CategoriaListaControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\CidadeDropDownControle.ascx.cs">
+      <DependentUpon>CidadeDropDownControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\CidadeDropDownControle.ascx.designer.cs">
+      <DependentUpon>CidadeDropDownControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\MensagemSuperiorControle.ascx.cs">
+      <DependentUpon>MensagemSuperiorControle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\MensagemSuperiorControle.ascx.designer.cs">
+      <DependentUpon>MensagemSuperiorControle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultSucesso.aspx.cs">
+      <DependentUpon>DefaultSucesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultSucesso.aspx.designer.cs">
+      <DependentUpon>DefaultSucesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrcamentoNet.Master.cs">
+      <DependentUpon>OrcamentoNet.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrcamentoNet.Master.designer.cs">
+      <DependentUpon>OrcamentoNet.Master</DependentUpon>
+    </Compile>
+    <Compile Include="post-rdstation.aspx.cs">
+      <DependentUpon>post-rdstation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="post-rdstation.aspx.designer.cs">
+      <DependentUpon>post-rdstation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostBlogForm.aspx.cs">
+      <DependentUpon>PostBlogForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostBlogForm.aspx.designer.cs">
+      <DependentUpon>PostBlogForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoPesquisaSatisfcao.aspx.cs">
+      <DependentUpon>ResultadoPesquisaSatisfcao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultadoPesquisaSatisfcao.aspx.designer.cs">
+      <DependentUpon>ResultadoPesquisaSatisfcao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UltimosPedidosOrcamento.aspx.cs">
+      <DependentUpon>UltimosPedidosOrcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UltimosPedidosOrcamento.aspx.designer.cs">
+      <DependentUpon>UltimosPedidosOrcamento.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminAlterarDados.aspx" />
+    <Content Include="AdminCadastroFornecedor.aspx" />
+    <Content Include="AdminCadastroFornecedor.html" />
+    <Content Include="AdminPedidoOrcamento.aspx" />
+    <Content Include="CadastroCategoria.aspx" />
+    <Content Include="CadastroFornecedor.aspx" />
+    <Content Include="CadastroFornecedorSucesso.aspx" />
+    <Content Include="Categoria.xml" />
+    <Content Include="controles\CaptchaControle.ascx" />
+    <Content Include="controles\CategoriaListaFornecedoresControle.ascx" />
+    <Content Include="controles\CategoriasTemaCheckBoxControle.ascx" />
+    <Content Include="controles\CidadeListBoxControle.ascx" />
+    <Content Include="controles\CidadePedidosPorCategoria.ascx" />
+    <Content Include="controles\FornecedoresControle.ascx" />
+    <Content Include="controles\LinksInternosControle.ascx" />
+    <Content Include="controles\LinksPedidosOrcamentoControle.ascx" />
+    <Content Include="controles\FornecedorPorCategoriaControle.ascx" />
+    <Content Include="controles\ListaPedidosOrcamentoEspecificos.ascx" />
+    <Content Include="controles\OrcamentoFormularioBox.ascx" />
+    <Content Include="controles\OrcamentoFormularioCFTV.ascx" />
+    <Content Include="controles\OrcamentoFormularioConstrucao.ascx" />
+    <Content Include="controles\OrcamentoFormularioEspelhoVidro.ascx" />
+    <Content Include="controles\OrcamentoFormularioEvento.ascx" />
+    <Content Include="controles\OrcamentoFormularioGenerico.ascx" />
+    <Content Include="controles\OrcamentoFormularioMudanca.ascx" />
+    <Content Include="controles\PedidosOrcamentoControle.ascx" />
+    <Content Include="controles\RodapeControle.ascx" />
+    <Content Include="ConfirmacaoEmail.aspx" />
+    <Content Include="AdminCadastroCliente.html" />
+    <Content Include="churrasco-em-casa-domicilio.aspx" />
+    <Content Include="controles\DepoimentoOrcamentoOnline.ascx" />
+    <Content Include="orcamento-online-comprador.aspx" />
+    <Content Include="orcamento-online-dicas.aspx" />
+    <Content Include="mapa.aspx" />
+    <Content Include="orcamento-online-pagamento.aspx" />
+    <Content Include="mapa-temas.aspx" />
+    <Content Include="PesquisaSatisfacaoCompradorSucesso.aspx" />
+    <Content Include="PesquisaSatisfacaoComprador.aspx" />
+    <Content Include="css\ie6.css" />
+    <Content Include="css\master.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\skin.css" />
+    <Content Include="css\Stylesheet1.css" />
+    <Content Include="css\tipsy.css" />
+    <Content Include="custo-anunciar-parceiro.aspx" />
+    <Content Include="Ficha_Tecnica.aspx" />
+    <Content Include="GerarPalavrasChave.aspx" />
+    <Content Include="images\backgrounds\bodyBackground.jpg" />
+    <Content Include="images\backgrounds\checkmark.gif" />
+    <Content Include="images\fullscreen\1.jpg" />
+    <Content Include="images\fullscreen\2.jpg" />
+    <Content Include="images\fullscreen\3.jpg" />
+    <Content Include="images\fullscreen\4.jpg" />
+    <Content Include="images\fullscreen\5.jpg" />
+    <Content Include="images\logo\earth-logo.jpg" />
+    <Content Include="images\logo\flash-logo.png" />
+    <Content Include="images\logo\quicktime-logo.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="img\bigBoxShadow.png" />
+    <Content Include="img\bulletIcon1.png" />
+    <Content Include="img\bulletIcon2.png" />
+    <Content Include="img\bulletIcon3.png" />
+    <Content Include="img\bulletIcon4.png" />
+    <Content Include="img\bulletIcon5.png" />
+    <Content Include="img\bulletIcon6.png" />
+    <Content Include="img\buttonArrow.png" />
+    <Content Include="img\buttonBGOut.png" />
+    <Content Include="img\buttonBGOver.png" />
+    <Content Include="img\checkListBullet.jpg" />
+    <Content Include="img\fechando-negocios-orcamento-online.jpg" />
+    <Content Include="img\footerSeparator.png" />
+    <Content Include="img\horizontalSeparator.jpg" />
+    <Content Include="img\logo-orcamento-online.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\marcador-orcamento-online.png" />
+    <Content Include="img\phoneIcon.png" />
+    <Content Include="img\productBox.jpg" />
+    <Content Include="img\smallBoxShadow.png" />
+    <Content Include="img\social\delicious.png" />
+    <Content Include="img\social\digg.png" />
+    <Content Include="img\social\facebook.png" />
+    <Content Include="img\social\stumbleupon.png" />
+    <Content Include="img\social\twitter.png" />
+    <Content Include="img\submitButton.png" />
+    <Content Include="img\submitButtonOver.png" />
+    <Content Include="img\subscribeButton.png" />
+    <Content Include="img\subscribeButtonOver.png" />
+    <Content Include="img\tipsy.gif" />
+    <Content Include="img\topBG.png" />
+    <Content Include="img\topSeparator.png" />
+    <Content Include="img\videoBoxShadow.png" />
+    <Content Include="img\videoPlaceholder.png" />
+    <Content Include="js\css_browser_selector.js" />
+    <Content Include="js\functions.js" />
+    <Content Include="js\ie6pngFix.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\jquery.tipsy.js" />
+    <Content Include="cadastro-fornecedores-orcamento-online.aspx" />
+    <Content Include="LoginNovo.aspx" />
+    <Content Include="orcamento-online-fornecedores.aspx" />
+    <Content Include="Orcamento-Online-Pedido.aspx" />
+    <Content Include="orcamento-online.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="controles\CategoriaListaControle.ascx" />
+    <Content Include="controles\CidadeDropDownControle.ascx" />
+    <Content Include="controles\MensagemSuperiorControle.ascx" />
+    <Content Include="DefaultSucesso.aspx" />
+    <Content Include="PagSeguro.html" />
+    <Content Include="sitemap.xml" />
+    <Content Include="templateEmail\AutoResposta.htm" />
+    <Content Include="templateEmail\CadastroAtivacao.htm" />
+    <Content Include="templateEmail\CompradorEmailNaoValidado.htm" />
+    <Content Include="templateEmail\PedidoOrcamentoIncompleto.htm" />
+    <Content Include="templateEmail\PesquisaSatisfacaoPreenchidaPorComprador.htm" />
+    <Content Include="templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm" />
+    <Content Include="templateEmail\InformativoFornecedorStatusPedido.htm" />
+    <Content Include="templateEmail\EmailConfirmacaoPagamento.htm" />
+    <Content Include="templateEmail\PesquisaNaoPagamentoFornecedor.htm" />
+    <Content Include="templateEmail\PagamentoFornecedorNaoIdentificado.htm" />
+    <Content Include="templateEmail\LembreteVencimentoFornecedor.htm" />
+    <Content Include="templateEmail\PesquisaOpiniaoFornecedorAtivo.htm" />
+    <Content Include="templateEmail\PesquisaSatisfacaoFornecedor.htm" />
+    <Content Include="templateEmail\InformativoNovosFornecedores.htm" />
+    <Content Include="templateEmail\PedidoOrcamentoWordPress.htm" />
+    <Content Include="templateEmail\InformativoFornecedorNovoPedido.htm" />
+    <Content Include="templateEmail\NovoPedidoOrcamentoSimplificado.htm" />
+    <Content Include="templateEmail\InformativoDePedidosParaFornecedor.htm" />
+    <Content Include="templateEmail\PesquisaSatisfacaoComprador.htm" />
+    <Content Include="WebPRD.config" />
+    <Content Include="_ExcluirArquivosDesnecessariosDeploy.bat">
+    </Content>
+    <Content Include="Hibernate.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrcamentoNet.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrcamentoNet.Common\OrcamentoNet.Common.csproj">
+      <Project>{106E7B95-079A-441F-B443-83543793A49E}</Project>
+      <Name>OrcamentoNet.Common %28OrcamentoNet.Common\OrcamentoNet.Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoNet.Entity\OrcamentoNet.Entity.csproj">
+      <Project>{8A38B797-B22D-402A-AD10-BFCE6DED0098}</Project>
+      <Name>OrcamentoNet.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoNet.IView\OrcamentoNet.IView.csproj">
+      <Project>{706E86D6-C2A2-4820-8FE3-30415AF57C00}</Project>
+      <Name>OrcamentoNet.IView</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controles\RodapeControle2.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controles\MenuAdmin.ascx" />
+    <Content Include="controles\OrcamentoFormularioCasaDecoracao.ascx" />
+    <Content Include="controles\OrcamentoFormularioFachadaPredial.ascx" />
+    <Content Include="controles\OrcamentoFormularioLocacao.ascx" />
+    <Content Include="css\Blog.css" />
+    <Content Include="Faq.aspx" />
+    <Content Include="img\seta.jpg" />
+    <Content Include="img\Yes_check.gif" />
+    <Content Include="js\jquery.mCustomScrollbar.js" />
+    <Content Include="js\plusone.js" />
+    <Content Include="js\solrator-0.2.1.js" />
+    <Content Include="orcamento-online-preco.aspx" />
+    <Content Include="PagSeguro29.html" />
+    <Content Include="CriarPedido.aspx" />
+    <Content Include="Dicas.aspx" />
+    <Content Include="FaleConosco.aspx" />
+    <Content Include="historico-pedidos-orcamento-online.aspx" />
+    <Content Include="guia-temas.aspx" />
+    <Content Include="guia-empresas-profissionais.aspx" />
+    <Content Include="controles\FornecedoresControle2.ascx" />
+    <Content Include="controles\LinksInternosTemaCategoria.ascx" />
+    <Content Include="EstatisticaPedidos.aspx" />
+    <Content Include="images\banner\98261-Banner.jpg" />
+    <Content Include="MeusDados.aspx" />
+    <Content Include="MeusPedidos.aspx" />
+    <Content Include="orcamento-online-notificacao-pagamento.aspx" />
+    <Content Include="orcamento-online-pedido-historico.aspx" />
+    <Content Include="orcamento-online-termo.aspx" />
+    <Content Include="orcamento-online-tipo-servico.aspx" />
+    <Content Include="OrcamentoNet2.Master" />
+    <Content Include="PagSeguro.xml" />
+    <Content Include="PedidosNaoRespondidos.aspx" />
+    <Content Include="PesquisaPerfilFornecedor.aspx" />
+    <Content Include="post-rdstation.aspx" />
+    <Content Include="PostBlogForm.aspx" />
+    <Content Include="ResultadoPesquisaSatisfcao.aspx" />
+    <Content Include="templateEmail\CompraAvulsa.htm" />
+    <Content Include="templateEmail\InformativoFornecedoresAoComprador.htm" />
+    <Content Include="templateEmail\UltimosPedidosDegustacao.htm" />
+    <Content Include="templateEmail\InformativoFornecedorDegustacaoNovoPedidoPromocao.htm" />
+    <Content Include="templateEmail\MalaDireta.htm" />
+    <Content Include="templateEmail\FornecedorPromocaoCompraAvulsa.htm" />
+    <Content Include="templateEmail\InformativoCompradorPedidoComprado.htm" />
+    <Content Include="templateEmail\RecuperarPagamentoNaoRealizado.htm" />
+    <Content Include="templateEmail\RecuperarSenha.htm" />
+    <Content Include="templateEmail\SolicitacaoPagamento.htm" />
+    <Content Include="UltimosPedidosOrcamento.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>53618</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

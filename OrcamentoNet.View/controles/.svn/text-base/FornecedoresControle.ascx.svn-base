@@ -1,0 +1,71 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FornecedoresControle.ascx.cs"
+	Inherits="OrcamentoNet.View.controles.FornecedoresControle" %>
+<div class="horizontalSep">
+	<!-- -->
+</div>
+<!-- Product Bullet List Section Starts Here -->
+
+<div class="FornecedoresRecentes">
+	<h2>
+		Empresas Recomendadas:</h2>
+	<p id="P1" runat="server">
+	</p>
+	<ul>
+		<asp:Repeater ID="Repeater1" runat="server">
+			<ItemTemplate>
+				<li style="margin-bottom: 10px;">
+					<h4>
+						<%#Server.HtmlEncode((string)Eval("Nome"))%></h4>
+					<p>
+						<%#Server.HtmlEncode(Eval("Descricao").ToString())%></p>
+					<p>
+						<strong>Áreas de atuação:</strong></p>
+					<ul class="categoria">
+						<asp:Repeater ID="uxrptSubCategorias" runat="server" DataSource='<%#Eval("SubCategorias")%>'>
+							<ItemTemplate>
+								<li>
+									<%#Server.HtmlEncode(Eval("Nome").ToString())%></li></ItemTemplate>
+						</asp:Repeater>
+					</ul>
+					<p style="text-align: right;">
+					<a href="fornecedor-<%#Server.HtmlEncode(Eval("UrlFichaTecnica").ToString())%>">ver ficha completa</a></p>
+					
+					
+				</li>
+			</ItemTemplate>
+		</asp:Repeater>
+	</ul>
+</div>
+
+
+<div class="FornecedoresRecentes">
+	<h2>
+		Últimas Empresas e Profissionais cadastrados</h2>
+	<p id="mensagemVazio" runat="server">
+	</p>
+	<ul>
+		<asp:Repeater ID="uxrptFornecedores" runat="server">
+			<ItemTemplate>
+				<li style="margin-bottom: 10px;">
+					<h4>
+						<%#Server.HtmlEncode((string)Eval("Nome"))%></h4>
+					<p>
+						<%#Server.HtmlEncode(Eval("Descricao").ToString())%></p>
+					<p>
+						<strong>Áreas de atuação:</strong></p>
+					<ul class="categoria">
+						<asp:Repeater ID="uxrptSubCategorias" runat="server" DataSource='<%#Eval("SubCategorias")%>'>
+							<ItemTemplate>
+								<li>
+									<%#Server.HtmlEncode(Eval("Nome").ToString())%></li></ItemTemplate>
+						</asp:Repeater>
+					</ul>
+					<p style="text-align: right;">
+					<a href="<%#Server.HtmlEncode(Eval("UrlFichaTecnica").ToString())%>">ver ficha completa</a></p>
+					
+					
+				</li>
+			</ItemTemplate>
+		</asp:Repeater>
+	</ul>
+</div>

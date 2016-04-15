@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://multicotacao.orcamentos.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá <!--NOME_COMPRADOR-->,</p>
+                <p>
+                    Sabemos o quanto é frustrante deixar de ser atendido em uma solicitação, por isso entendemos que precisamos falar a verdade.</p>
+				<p>
+					Após pesquisarmos nosso cadastro, verificamos que ainda não possuímos fornecedores credenciados para o ramo de atividade e cidade de seu pedido de orçamento. Usaremos as informações de seu pedido para buscarmos fornecedores para você e faremos o possível para atendê-lo(a), porém talvez você não receba respostas.</p>
+                <p>
+                    Estamos trabalhando para aumentar nosso portfolio de fornecedores, sempre com foco na qualidade dos serviços prestados!</p>
+                <p>
+                    Atenciosamente,<br />
+                    <strong>Fabrício Fujikawa & Renato Coutinho</strong><br />
+                    Cel: 21-8124-9484 e 21-7933-4941<br />
+                    Orçamento Online <a href='http://multicotacao.orcamentos.net.br/'>http://multicotacao.orcamentos.net.br/</a><br />
+                    Indique parceiros e fornecedores para nosso site. <a href='http://voceconhece.com/cadastro-de-fornecedor/' target="_blank">Você Conhece?</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

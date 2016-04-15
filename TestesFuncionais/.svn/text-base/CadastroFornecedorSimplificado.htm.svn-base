@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>CadastroFornecedorSimplificado</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CadastroFornecedorSimplificado</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/CadastroFornecedor.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxtxtNome</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtNome</td>
+	<td>Fabricio Yutaka Fujikawa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtEmail</td>
+	<td>emailFornecedorNaoExiste@orcamentos.net.br</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtDDD</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtTelefone</td>
+	<td>81249484</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl00_uxrptSubCategorias_ctl00_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_CategoriasControle1_uxrptCategorias_ctl01_uxrptSubCategorias_ctl00_uxchkSubCategoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrptCidades_ctl00_uxchkCidade</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrptCidades_ctl90_uxchkCidade</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Cadastro Realizado com Sucesso!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

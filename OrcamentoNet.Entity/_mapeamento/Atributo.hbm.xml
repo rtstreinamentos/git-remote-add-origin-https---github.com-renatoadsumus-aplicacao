@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="Atributo" table="Atributos">
+    <id name="Id" column="Cd_Atributo">
+      <generator class="identity" />
+    </id>
+   
+    <property name="Nome" column="Nome" length="200"  />
+    
+
+  </class>
+</hibernate-mapping>

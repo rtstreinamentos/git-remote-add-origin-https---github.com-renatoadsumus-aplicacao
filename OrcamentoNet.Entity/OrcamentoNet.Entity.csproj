@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A38B797-B22D-402A-AD10-BFCE6DED0098}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrcamentoNet.Entity</RootNamespace>
+    <AssemblyName>OrcamentoNet.Entity</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bairro.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriaPrioridade.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="CompraAvulsa.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="Atributo.cs" />
+    <Compile Include="FornecedorAtributo.cs" />
+    <Compile Include="Foto.cs" />
+    <Compile Include="LinkInterno.cs" />
+    <Compile Include="Mensalidade.cs" />
+    <Compile Include="Mes.cs" />
+    <Compile Include="Opiniao.cs" />
+    <Compile Include="Orcamento.cs" />
+    <Compile Include="OrcamentoFornecedor.cs" />
+    <Compile Include="PedidoEstatistica.cs" />
+    <Compile Include="PedidoOrcamento.cs" />
+    <Compile Include="PedidoOrcamentoFornecedor.cs" />
+    <Compile Include="Pessoa.cs" />
+    <Compile Include="PostBlog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Termo.cs" />
+    <Compile Include="_enum\ClassificacaoPedido.cs" />
+    <Compile Include="_enum\PedidoStatus.cs" />
+    <Compile Include="_enum\PedidoCompradorStatus.cs" />
+    <Compile Include="_enum\PedidoStatusFornecedor.cs" />
+    <Compile Include="_enum\Persona.cs" />
+    <Compile Include="_enum\PessoaStatus.cs" />
+    <Compile Include="_enum\PessoaTipo.cs" />
+    <Compile Include="_enum\TipoServico.cs" />
+    <Compile Include="_enum\UF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Pessoa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Cidade.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_diagramas\DominioOrcamento.cd" />
+    <None Include="_diagramas\DominioPedidoOrcamento.cd" />
+    <None Include="_diagramas\DominioPessoa.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Categoria.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\PedidoOrcamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Opiniao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Foto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrcamentoNet.Common\OrcamentoNet.Common.csproj">
+      <Project>{106E7B95-079A-441F-B443-83543793A49E}</Project>
+      <Name>OrcamentoNet.Common %28OrcamentoNet.Common\OrcamentoNet.Common%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\PedidoEstatistica.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\CategoriaPrioridade.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Termo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Orcamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\CompraAvulsa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\PostBlog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\OrcamentoFornecedor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\PedidoOrcamentoFornecedor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\Atributo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_mapeamento\FornecedorAtributo.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

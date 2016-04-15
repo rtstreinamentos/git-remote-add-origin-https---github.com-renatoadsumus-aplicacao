@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:53618/" />
+<title>CadastroDadosBasicosPF_ValidacaoClientSide</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CadastroDadosBasicosPF_ValidacaoClientSide</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/CadastroDadosBasicos.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator8</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxrdbTipoPessoa_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator6</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtCnpjCpf</td>
+	<td>01401969780</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator7</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtNome</td>
+	<td>Fabrício Yutaka Fujikawa</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator3</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtEmail</td>
+	<td>dd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_regexpEmail</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtEmail</td>
+	<td>fabriciofuji@yahoo.com.br</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator9</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtDDD</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator10</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtTelefone</td>
+	<td>81249484</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlEstado</td>
+	<td>label=RJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//option[@value='RJ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>ctl00_cphGeral_uxddlCidade</td>
+	<td>label=Rio de Janeiro</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//option[@value='3631']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator4</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtSenha</td>
+	<td>123456x!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_RequiredFieldValidator5</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtSenha2</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>ctl00_cphGeral_uxbtnSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ctl00_cphGeral_CompareValidator1</td>
+	<td>exact:*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ctl00_cphGeral_uxtxtSenha2</td>
+	<td>123456x!</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

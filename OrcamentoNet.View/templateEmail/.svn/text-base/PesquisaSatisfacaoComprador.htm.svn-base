@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pesquisa de Satisfação do Orçamento Online - Compradores</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá, <!--NOME-->!</p>
+                <p>
+                    Há alguns dias, você fez um pedido de orçamento conosco.<br />
+                    Por favor, dedique 5 minutos de sua atenção para nos dar um retorno.<br />
+                    Lembre-se de que há pessoas trabalhando, dedicando tempo e esforço para sua solicitação.<br />
+                    Muito obrigado!</p>
+                <p>
+                    Você pode responder as perguntas abaixo, ou neste link: <a href="<!--URL-->"><!--URL--></a> .</p>
+                <p>
+                    <strong>1) Qual o status do pedido?</strong><br />
+                    (  ) Já fechei.<br />
+                    (  ) Estou analisando os orçamentos.<br />
+                    (  ) Não recebi orçamentos.<br />
+                    (  ) Desisti, não vou contratar.<br /><br />
+
+                    <strong>2) O que foi bom?</strong><br /><br /><br />
+
+                    <strong>3) O que pode ser melhorado?</strong><br /><br /><br />
+
+                    <strong>4) Gostou do Orçamento Online?</strong><br />
+                    (  ) sim<br />
+                    (  ) não<br />
+                </p>
+				<p>
+					Atenciosamente,<br />
+					<strong> Renato Coutinho</strong><br />
+					Telefones de atendimento: 21-97933-4941<br />
+					<a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+						Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+							Veja nossos vídeos no YouTube</a></p>
+			</td>
+        </tr>
+    </table>
+</body>
+</html> 

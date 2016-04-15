@@ -1,0 +1,1030 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Xml.Linq;
+using MySql.Data.MySqlClient;
+using PortalEscolar.Data;
+using OrcamentoNet.Common;
+using OrcamentoNet.Entity;
+using OrcamentoNet.Entity.Enum;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Entity._enum;
+
+namespace OrcamentoNet.LocalService
+{
+    public class PedidoOrcamentoService : IPedidoOrcamentoService
+    {
+        private IDataContext context;
+
+        public PedidoOrcamentoService(IDataContext contextData)
+        {
+            context = contextData;
+        }
+
+        #region Métodos Privados
+        private void AdicionarCampoInvalido(ref string camposInvalidos, string novoCampoInvalido)
+        {
+            if (!String.IsNullOrEmpty(camposInvalidos)) camposInvalidos += ", ";
+            camposInvalidos = camposInvalidos + novoCampoInvalido;
+        }
+
+        public string CategoriasDoPedidoSeparadasPorVirgula(PedidoOrcamento pedidoOrcamento)
+        {
+            string categorias = String.Empty;
+            try
+            {
+                foreach (Categoria categoria in pedidoOrcamento.Categorias)
+                {
+                    if (!String.IsNullOrEmpty(categorias))
+                    {
+                        categorias += ", " + categoria.Nome;
+                    }
+                    else
+                    {
+                        categorias = categoria.Nome;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+            return categorias;
+        }
+
+        #endregion
+
+        #region Métodos Públicos
+
+        public void AssinarLista(string nome, string email)
+        {
+            try
+            {
+                INewsletterService newsletterService = new NewsletterService();
+                newsletterService.AssinarLista(nome, email);
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+        }
+
+        public bool AutorizarAcesso(int idPedido, string email)
+        {
+            PedidoOrcamento pedidoOrcamento = null;
+            try
+            {
+                pedidoOrcamento = context.Repository<PedidoOrcamento>()
+                    .Where(x => x.Id == idPedido &&
+                                x.Email == email)
+                    .FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+            return (pedidoOrcamento != null);
+        }
+
+        public bool EnviarEmailPedidoOrcamentoSimplificado(PedidoOrcamento pedidoOrcamento)
+        {
+            try
+            {
+                string categorias = this.CategoriasDoPedidoSeparadasPorVirgula(pedidoOrcamento);
+
+                Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                chavesValores.Add("<!--NOME-->", pedidoOrcamento.NomeComprador);
+                chavesValores.Add("<!--TELEFONE-->", pedidoOrcamento.Telefone);
+                chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+                chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+                chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+                chavesValores.Add("<!--CATEGORIA-->", categorias);
+                chavesValores.Add("<!--URL-->", Config.UrlSite + "ConfirmacaoEmail.aspx?email=" + pedidoOrcamento.Email + "&id=" + pedidoOrcamento.Id.ToString());
+
+                string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailNovoPedidoOrcamentoSimplificado);
+                return Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, pedidoOrcamento.Email, htmlEmail, Config.NomeAplicacao + " - novo pedido de orçamento", true, false, null, "");
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+                return false;
+            }
+        }
+
+        public void EnviarEmailPedidoOrcamentoParaWordPress(PedidoOrcamento pedidoOrcamento)
+        {
+            try
+            {
+                string backLinkMulticotacao = String.Empty;
+                string urlMulticotacao = String.Empty;
+                string tooltipMulticotacao = String.Empty;
+                string nomeExibicaoMulticotacao = String.Empty;
+
+                string backLinkVoceConhece = String.Empty;
+                string urlVoceConhece = String.Empty;
+                string tooltipVoceConhece = String.Empty;
+                string nomeExibicaoVoceConhece = String.Empty;
+
+                ICategoriaService categoriaService = new CategoriaService(context);
+
+                foreach (Categoria item in pedidoOrcamento.Categorias)
+                {
+                    var categoria = categoriaService.ObterXMLCategoria(item.Id);
+
+                    foreach (var registro in categoria)
+                    {
+                        try
+                        {
+                            urlVoceConhece = registro.Element("urlVoceConhece").Value;
+                            tooltipVoceConhece = registro.Element("tooltipVoceConhece").Value;
+                            nomeExibicaoVoceConhece = registro.Element("nomeExibicaoVoceConhece").Value;
+                            backLinkVoceConhece = "Conheça os <a href='" + urlVoceConhece.Trim() + "' target='_blank' title='" + tooltipVoceConhece.Trim() + "'>" + nomeExibicaoVoceConhece.Trim() + "</a> que participam desta cotação de preços.";
+
+                            urlMulticotacao = registro.Element("urlMulticotacao").Value;
+                            tooltipMulticotacao = registro.Element("tooltipMulticotacao").Value;
+                            nomeExibicaoMulticotacao = registro.Element("nomeExibicaoMulticotacao").Value;
+                            backLinkMulticotacao = "Solicite você também um <a href='" + urlMulticotacao.Trim() + "' target='_blank' title='" + tooltipMulticotacao.Trim() + "'>" + nomeExibicaoMulticotacao.Trim() + "</a>.";
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.GravarLog(ex.Message);
+                        }
+                    }
+
+                    if (String.IsNullOrEmpty(backLinkMulticotacao)) backLinkMulticotacao = "Orçamento Online - <a href='http://multicotacao.orcamentos.net.br/' title='Solicite orçamento online grátis de diversos produtos e serviços em todo o Brasil' target='_blank'>http://multicotacao.orcamentos.net.br/</a>";
+                    if (String.IsNullOrEmpty(backLinkVoceConhece)) backLinkVoceConhece = "Você Conhece - <a href='http://voceconhece.com/' title='Conheça indicação de profissionais e empresas em todo o Brasil' target='_blank'>http://voceconhece.com/</a>";
+
+                    Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                    chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador.Trim());
+                    chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome.Trim());
+                    chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+                    chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Trim().Replace(Environment.NewLine, "<br />"));
+                    chavesValores.Add("<!--CATEGORIA-->", item.Nome.Trim());
+                    chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo.Trim());
+                    chavesValores.Add("<!--BACKLINK_MULTICOTACAO-->", backLinkMulticotacao);
+                    chavesValores.Add("<!--BACKLINK_VOCECONHECE-->", backLinkVoceConhece);
+
+                    CidadeService cidadeService = new CidadeService(context);
+                    string nomeCidade = pedidoOrcamento.Cidade.Nome.Trim();
+                    if (!String.IsNullOrEmpty(nomeCidade))
+                    {
+                        chavesValores.Add("<!--TAGS-->", nomeCidade);
+                    }
+
+                    string textoDoPost = Email.ObterHTML(chavesValores, Config.TemplateEmailPedidoOrcamentoParaWordPress);
+
+                    string tituloDoPost = item.Nome.Trim() + ": Preço de " + item.Nome.Trim() + " para " + pedidoOrcamento.Titulo.Trim() + " em " + pedidoOrcamento.Cidade.Nome.Trim() + " (" + pedidoOrcamento.Cidade.Uf.ToString().Trim() + ")";
+
+                    //Fabrício - forçado para "orcamentos.net@gmail.com", devido à necessidade de autenticação no 
+                    //domínio @oficial.blog.br quando o destinatário é do SMPT de @oficial.blog.br
+                    Email.EnviarEmail("orcamentos.net@gmail.com", "orcamentos.net@gmail.com", Config.EmailPostWordPress, textoDoPost, tituloDoPost, false, true, null, String.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+        }
+
+        public void NotificarFornecedorPorEmailNovoPedidoOrcamento(PedidoOrcamento pedidoOrcamento)
+        {
+            try
+            {
+                string categorias = this.CategoriasDoPedidoSeparadasPorVirgula(pedidoOrcamento);
+
+                IFornecedorService fornecedorService = new FornecedorService(context);
+
+                if (pedidoOrcamento.Fornecedores != null && pedidoOrcamento.Fornecedores.Count > 0)
+                {
+                    foreach (Fornecedor fornecedor in pedidoOrcamento.Fornecedores)
+                    {
+                        string statusEmail = "(<strong>validado!</strong>)";
+
+<<<<<<< .mine
+                        Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                        chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador);
+                        chavesValores.Add("<!--EMAIL_COMPRADOR-->", pedidoOrcamento.Email);
+=======
+						Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+						chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador);
+						chavesValores.Add("<!--EMAIL_COMPRADOR-->", pedidoOrcamento.Email);
+>>>>>>> .r1566
+
+<<<<<<< .mine
+                        if (pedidoOrcamento.Status == PedidoStatus.EmailValidado)
+                            chavesValores.Add("<!--STATUS_EMAIL-->", statusEmail);
+=======
+						if (pedidoOrcamento.Status == PedidoStatus.EmailValidado)
+						{
+							chavesValores.Add("<!--STATUS_EMAIL-->", statusEmail);
+						}
+
+						chavesValores.Add("<!--TELEFONE_COMPRADOR-->", pedidoOrcamento.Telefone);
+						chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+						chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+						chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+						chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+						chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+						chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+						chavesValores.Add("<!--CATEGORIA-->", categorias);
+>>>>>>> .r1566
+
+                        chavesValores.Add("<!--TELEFONE_COMPRADOR-->", pedidoOrcamento.Telefone);
+                        chavesValores.Add("<!--NOME-->", fornecedor.Nome);
+                        chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+                        chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+                        chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+                        chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+                        chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+                        chavesValores.Add("<!--CATEGORIA-->", categorias);
+
+<<<<<<< .mine
+                        string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailInformativoFornecedorDeNovoPedidoOrcamento);
+                        Email.EnviarEmail(Config.EmailAdministrador, pedidoOrcamento.Email, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, false, null, "");
+                    }
+                }
+                else
+                {
+                    IList<Fornecedor> fornecedores =
+                        fornecedorService.ObterFornecedoresParaUmPedidoDeOrcamento(pedidoOrcamento);
+                    foreach (Fornecedor fornecedor in fornecedores)
+                    {
+                        string statusEmail = "(<strong>Email Validado!</strong>)";
+=======
+						Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+						chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador);
+						chavesValores.Add("<!--EMAIL_COMPRADOR-->", pedidoOrcamento.Email);
+>>>>>>> .r1566
+
+<<<<<<< .mine
+                        Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                        chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador);
+                        chavesValores.Add("<!--EMAIL_COMPRADOR-->", pedidoOrcamento.Email);
+=======
+						if (pedidoOrcamento.Status == PedidoStatus.EmailValidado)
+						{
+							chavesValores.Add("<!--STATUS_EMAIL-->", statusEmail);
+						}
+
+						chavesValores.Add("<!--TELEFONE_COMPRADOR-->", pedidoOrcamento.Telefone);
+						chavesValores.Add("<!--NOME_FORNECEDOR-->", fornecedor.Nome);
+						chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+						chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+						chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+						chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+						chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+						chavesValores.Add("<!--CATEGORIA-->", categorias);
+						chavesValores.Add("<!--URL-->", Config.UrlSite + "orcamento-online-pagamento.aspx?valor=" + fornecedor.ValorMensalidade + "&id=" + fornecedor.Id);
+>>>>>>> .r1566
+
+                        if (pedidoOrcamento.Status == PedidoStatus.EmailValidado)
+                            chavesValores.Add("<!--STATUS_EMAIL-->", statusEmail);
+
+                        chavesValores.Add("<!--TELEFONE_COMPRADOR-->", pedidoOrcamento.Telefone);
+                        chavesValores.Add("<!--NOME_FORNECEDOR-->", fornecedor.Nome);
+                        chavesValores.Add("<!--VALOR_MENSALIDADE-->", fornecedor.ValorMensalidade.ToString());
+                        chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+                        chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+                        chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+                        chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+                        chavesValores.Add("<!--CATEGORIA-->", categorias);
+                        chavesValores.Add("<!--URL-->", Config.UrlSite + "orcamento-online-pagamento.aspx?valor=" + fornecedor.ValorMensalidade + "&id=" + fornecedor.Id);
+
+                        string htmlEmail = "";
+                        string emailReply = pedidoOrcamento.Email;
+
+                        //Monta o HTML de Cliente
+                        if (fornecedor.Status == Status.Cliente)
+                        {
+                            chavesValores.Add("<!--ID-->", fornecedor.Id.ToString());
+                            htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailInformativoFornecedorDeNovoPedidoOrcamento);
+
+                            if (fornecedor.MensagemAutoResposta != null && fornecedor.MensagemAutoResposta != "")
+                            {
+                                chavesValores.Add("<!--FICHA_TECNICA-->", Config.UrlSite + "Ficha_Tecnica.aspx?n=" + fornecedor.Id);
+                                chavesValores.Add("<!--MENSAGEM-->", fornecedor.MensagemAutoResposta);
+                                chavesValores.Add("<!--FORNECEDOR-->", fornecedor.Nome);
+                                chavesValores.Add("<!--EMAIL-->", fornecedor.Email);
+                                chavesValores.Add("<!--TELEFONE-->", fornecedor.Telefone);
+                                string htmlEmailAutoResposta = Email.ObterHTML(chavesValores, Config.TemplateEmailAutoResposta);
+                                Email.EnviarEmail(fornecedor.Email, fornecedor.Email, pedidoOrcamento.Email, htmlEmailAutoResposta, "Resposta ao seu pedido de Orçamento de " + pedidoOrcamento.Titulo, false, false, null, fornecedor.Email);
+                            }
+                        }
+                        else
+                        {
+                            htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailInformativoFornecedorDegustacaoDeNovoPedidoOrcamento);
+                            emailReply = Config.EmailAdministrador;
+                        }
+
+                        //Esse fornecedor usuara o SMTP Default
+                        if (fornecedor.Id == 98005)
+                        {
+                            Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, true, null, "");
+                        }
+                        else
+                        {
+                            Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, false, null, "");
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Retorna uma lista de pedidos de orçamento com status Em Aberto
+        /// </summary>
+        /// <param name="subCategorias"></param>
+        /// <returns></returns>
+        public PedidoOrcamento Inserir(ref string camposInvalidos, PedidoOrcamento pedidoOrcamento)
+        {
+            if (!this.ValidarDados(ref camposInvalidos
+                , pedidoOrcamento.Categorias
+                , pedidoOrcamento.Titulo
+                , pedidoOrcamento.Observacao)) return null;
+
+            try
+            {
+                pedidoOrcamento.Data = DateTime.Now;
+                pedidoOrcamento.StatusPedidoComprador = 0;
+                pedidoOrcamento.Status = PedidoStatus.EmailNaoValidado;
+
+<<<<<<< .mine
+                context.Insert(pedidoOrcamento);
+                context.Commit();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+                return null;
+            }
+=======
+		public IList<PedidoOrcamento> ObterPedidosOrcamentoUltimaHora(DateTime dataHoraReferencia) {
+			IList<PedidoOrcamento> pedidosOrcamento = null;
+			try
+			{
+				DateTime dataHoraInicio = dataHoraReferencia.AddHours(-1);
+				DateTime dataHoraFim = dataHoraReferencia;
+				pedidosOrcamento = context.Repository<PedidoOrcamento>()
+					.Where(x => x.Data >= dataHoraInicio &&
+								x.Data < dataHoraFim)
+					.ToList();
+			}
+			catch (Exception ex)
+			{
+				Log.GravarLog(ex.Message);
+			}
+			return pedidosOrcamento;
+		}
+>>>>>>> .r1566
+
+            return pedidoOrcamento;
+        }
+
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoUltimaHora(DateTime dataHoraReferencia)
+        {
+            IList<PedidoOrcamento> pedidosOrcamento = null;
+            try
+            {
+                DateTime dataHoraInicio = dataHoraReferencia.AddHours(-1);
+                DateTime dataHoraFim = dataHoraReferencia;
+                pedidosOrcamento = context.Repository<PedidoOrcamento>()
+                    .Where(x => x.Data >= dataHoraInicio &&
+                                x.Data < dataHoraFim
+                                && x.Status == PedidoStatus.EmailValidado)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+            return pedidosOrcamento;
+        }
+
+        public PedidoOrcamento Obter(int id)
+        {
+            PedidoOrcamento pedidoOrcamento = null;
+            try
+            {
+                pedidoOrcamento = new PedidoOrcamento();
+                pedidoOrcamento = context.Repository<PedidoOrcamento>().Where(x => x.Id == id).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+
+            return pedidoOrcamento;
+        }
+
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoParaInformarStatusAosFornecedores()
+        {
+            IList<PedidoOrcamento> pedidosOrcamento = null;
+            try
+            {
+                DateTime dataAtualizacao = DateTime.Today.AddDays(-1);
+                pedidosOrcamento = context.Repository<PedidoOrcamento>()
+                    .Where(x => x.PesquisaRevisada == true &&
+                                x.DataAlteracao >= dataAtualizacao)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+            return pedidosOrcamento;
+        }
+
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoPorData(DateTime dataPedidoOrcamento)
+        {
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().ToList()
+                .Where(x => x.Data.DayOfYear == dataPedidoOrcamento.DayOfYear && x.Data.Year == dataPedidoOrcamento.Year).ToList();
+
+            return pedidos;
+        }
+
+
+        public IList<PedidoOrcamento> ObterUltimosPedidosOrcamento(int quantidadeRegistros, string termoPesquisa)
+        {
+            if (String.IsNullOrEmpty(termoPesquisa))
+            {
+                return context.Repository<PedidoOrcamento>().Take(quantidadeRegistros).OrderByDescending(x => x.Data).ToList();
+            }
+            else
+            {
+                return context.Repository<PedidoOrcamento>().Where(x => x.Observacao.Contains(termoPesquisa) || x.Titulo.Contains(termoPesquisa)).Take(quantidadeRegistros).OrderByDescending(x => x.Data).ToList();
+            }
+        }
+
+
+        public IList<PedidoOrcamento> ObterUltimosPedidosOrcamentoPorCategoriaMes(int quantidadeRegistros, int idCategoria, int idMes, int idCidade, string termoPesquisa)
+        {
+            Categoria categoria = context.Repository<Categoria>().Where(x => x.Id == idCategoria).FirstOrDefault();
+
+<<<<<<< .mine
+            IList<PedidoOrcamento> pedidos;
+
+            IList<PedidoOrcamento> ultimosPedidos = new List<PedidoOrcamento>();
+
+            if (idCidade != 0)
+            {
+                pedidos = this.ObterUltimosPedidosOrcamentoPorMesCidade(idMes, idCidade);
+            }
+            else
+            {
+                pedidos = context.Repository<PedidoOrcamento>().ToList().Where(y => y.Data.Month == idMes && y.Data.Year == DateTime.Now.Year).ToList();
+            }
+=======
+			if (idCidade != 0)
+			{
+				pedidos = this.ObterUltimosPedidosOrcamentoPorMesCidade(idMes, idCidade);
+			}
+			else
+			{
+				pedidos = context.Repository<PedidoOrcamento>().ToList().Where(y => y.Data.Month == idMes && y.Data.Year == DateTime.Now.Year).ToList();
+			}
+>>>>>>> .r1566
+
+			foreach (PedidoOrcamento itemPedidoOrcamento in pedidos.OrderByDescending(x => x.Data))
+			{
+				foreach (Categoria itemCategoria in categoria.SubCategorias)
+				{
+					if (ultimosPedidos.Count <= quantidadeRegistros && (itemPedidoOrcamento.Observacao.Contains(termoPesquisa) || itemPedidoOrcamento.Titulo.Contains(termoPesquisa)) && itemPedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidos.Contains(itemPedidoOrcamento))
+					{
+						ultimosPedidos.Add(itemPedidoOrcamento);
+					}
+				}
+			}
+			return ultimosPedidos;
+		}
+
+        private IList<PedidoOrcamento> ObterUltimosPedidosOrcamentoPorMesCidade(int idMes, int idCidade)
+        {
+            string uf = Enum.GetName(typeof(UF), idCidade);
+            IList<PedidoOrcamento> ultimosPedidos = new List<PedidoOrcamento>();
+
+            if (uf != "Selecione")
+            {
+                IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == (UF)Enum.Parse(typeof(UF), uf)).ToList();
+                IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().ToList().Where(y => y.Data.Month == idMes && y.Data.Year == DateTime.Now.Year).ToList();
+
+                foreach (PedidoOrcamento pedidoOrcamento in pedidos)
+                {
+                    foreach (Cidade cidade in cidades)
+                    {
+                        if (pedidoOrcamento.Cidade == cidade)
+                        {
+                            ultimosPedidos.Add(pedidoOrcamento);
+                        }
+                    }
+                }
+            }
+            return ultimosPedidos;
+        }
+        /// <summary>
+        /// Retorna os ultimos pedidos do Tema ou de uma Categoria
+        /// </summary>
+        /// <param name="quantidadeRegistros"></param>
+        /// <param name="idCategoria"></param>
+        /// <param name="termoPesquisa"></param>
+        /// <returns></returns>
+        public IList<PedidoOrcamento> ObterUltimosPedidosOrcamentoPorCategoriaOuTema(int quantidadeRegistros, int idCategoria, string termoPesquisa)
+        {
+            Categoria categoria = context.Repository<Categoria>().Where(x => x.Id == idCategoria).FirstOrDefault();
+
+            DateTime dataIncio = DateTime.Now.AddDays(-50);
+            IList<PedidoOrcamento> pedidos = pedidos = context.Repository<PedidoOrcamento>().Where(y => y.Data > dataIncio).OrderByDescending(x => x.Data).ToList();
+
+            //Se for o tema retorna ultimos pedidos do tema e por Termo
+            if (categoria != null && categoria.Pai.Id == 0)
+            {
+                IList<PedidoOrcamento> ultimosPedidos = new List<PedidoOrcamento>();
+
+                foreach (PedidoOrcamento itemPedidoOrcamento in pedidos)
+                {
+                    foreach (Categoria itemCategoria in categoria.SubCategorias)
+                    {
+
+                        if ((itemPedidoOrcamento.Observacao.Contains(termoPesquisa) || itemPedidoOrcamento.Titulo.Contains(termoPesquisa)) && ultimosPedidos.Count <= quantidadeRegistros && itemPedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidos.Contains(itemPedidoOrcamento))
+                        {
+                            ultimosPedidos.Add(itemPedidoOrcamento);
+                        }
+                    }
+                }
+
+                return ultimosPedidos;
+            }
+            else
+            {
+                return pedidos.Where(y => y.Categorias.Contains(categoria) && (y.Observacao.Contains(termoPesquisa) || y.Titulo.Contains(termoPesquisa))).Take(quantidadeRegistros).OrderByDescending(x => x.Data).ToList();
+            }
+
+        }
+        /// <summary>
+        /// Retorna ultimos pedidos de um Tema e Estado ou Uma Categoria e Uma cidade
+        /// </summary>
+        /// <param name="quantidadeRegistros"></param>
+        /// <param name="idCategoria"></param>
+        /// <param name="idCidade"></param>
+        /// <param name="termoPesquisa"></param>
+        /// <returns></returns>
+        public IList<PedidoOrcamento> ObterUltimosPedidosOrcamentoPorCategoriaPorCidadeOuEstado(int quantidadeRegistros, int idCategoria, int idCidade, string termoPesquisa)
+        {
+            Categoria categoria = context.Repository<Categoria>().Where(x => x.Id == idCategoria).FirstOrDefault();
+
+            DateTime dataIncio = DateTime.Now.AddDays(-50);
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().Where(y => y.Data > dataIncio).OrderByDescending(x => x.Data).ToList();
+
+<<<<<<< .mine
+            string uf = Enum.GetName(typeof(UF), idCidade);
+            List<PedidoOrcamento> ultimosPedidos = new List<PedidoOrcamento>();
+=======
+			string uf = Enum.GetName(typeof(UF), idCidade);
+			List<PedidoOrcamento> ultimosPedidosDoEstado = new List<PedidoOrcamento>();
+
+			if (uf != null)
+			{
+				IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == (UF)Enum.Parse(typeof(UF), uf)).ToList();
+>>>>>>> .r1566
+
+            //TODA CATEGORIA DE TODO ESTADO
+            if (uf != null)
+            {
+                IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == (UF)Enum.Parse(typeof(UF), uf)).ToList();
+
+                foreach (PedidoOrcamento pedidoOrcamento in pedidos)
+                {
+                    foreach (Cidade cidade in cidades)
+                    {
+                        foreach (Categoria itemCategoria in categoria.SubCategorias)
+                        {
+                            if (ultimosPedidos.Count < quantidadeRegistros && (pedidoOrcamento.Observacao.Contains(termoPesquisa) || pedidoOrcamento.Titulo.Contains(termoPesquisa)) && pedidoOrcamento.Cidade == cidade && pedidoOrcamento.Categorias.Contains(itemCategoria))
+                            {
+                                ultimosPedidos.Add(pedidoOrcamento);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //TODA CATEGORIA DE UMA CIDADE
+                if (categoria.Id == 0)
+                {
+                    foreach (PedidoOrcamento pedidoOrcamento in pedidos.Where(x => x.Cidade.Id == idCidade))
+                    {
+                        foreach (Categoria itemCategoria in categoria.SubCategorias)
+                        {
+                            if (ultimosPedidos.Count < quantidadeRegistros && pedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidos.Contains(pedidoOrcamento))
+                            {
+                                ultimosPedidos.Add(pedidoOrcamento);
+                            }
+                        }
+                    }
+                }
+                //
+                else
+                {
+                    foreach (PedidoOrcamento pedidoOrcamento in pedidos.Where(x => x.Cidade.Id == idCidade))
+                    {
+                        if (ultimosPedidos.Count < quantidadeRegistros && pedidoOrcamento.Categorias.Contains(categoria) && !ultimosPedidos.Contains(pedidoOrcamento))
+                        {
+                            ultimosPedidos.Add(pedidoOrcamento);
+                        }
+                    }
+                }
+            }
+
+            return ultimosPedidos;
+        }
+
+        public void RemoverPedidosOrcamentoDuplicados()
+        {
+            MySqlConnection conexao = null;
+            MySqlCommand comando = null;
+
+            try
+            {
+                conexao = new MySqlConnection(Config.ConexaoBanco);
+                conexao.Open();
+                comando = new MySqlCommand(@"DELETE FROM	PEDIDO_ORCAMENTO
+											WHERE 		CD_PEDIDO_ORCAMENTO IN
+											(
+											SELECT 		CD_PEDIDO_ORCAMENTO
+											FROM
+											(
+											SELECT		CD_PEDIDO_ORCAMENTO
+											FROM		PEDIDO_ORCAMENTO
+											GROUP BY	DATE(DT_CADASTRO)
+													, NM_COMPRADOR
+													, EMAIL
+													, TITULO
+													, OBSERVACAO
+													, CD_CATEGORIA
+											HAVING		COUNT(CD_PEDIDO_ORCAMENTO)>=2
+											) AS PEDIDO_ORCAMENTO_TEMP
+											);", conexao);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+            }
+            finally
+            {
+                if (comando != null) comando.Dispose();
+                if (conexao != null)
+                {
+                    if (conexao.State == System.Data.ConnectionState.Open) conexao.Close();
+                    conexao.Dispose();
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Valida os campos em server side
+        /// </summary>
+        /// <param name="camposInvalidos">Nomes dos campos inválidos, concatenados por ','</param>
+        /// <returns></returns>
+        public bool ValidarDados(ref string camposInvalidos
+            , IList<Categoria> subCategorias
+            , string titulo
+            , string descricao)
+        {
+            try
+            {
+                ValidadorDados validador = new ValidadorDados();
+                camposInvalidos = String.Empty;
+
+                if (subCategorias == null)
+                {
+                    this.AdicionarCampoInvalido(ref camposInvalidos, "Ramo de Atividade");
+                }
+
+                if (!validador.ValidarTextoLivre(titulo, 5, 100))
+                {
+                    this.AdicionarCampoInvalido(ref camposInvalidos, "Título");
+                }
+
+                if (!validador.ValidarXSS(descricao))
+                {
+                    this.AdicionarCampoInvalido(ref camposInvalidos, "Descrição");
+                }
+
+                if (!String.IsNullOrEmpty(camposInvalidos))
+                {
+                    camposInvalidos = "Preenchimento inválido: " + camposInvalidos;
+                }
+
+                return (camposInvalidos == String.Empty);
+            }
+
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+                return false;
+            }
+        }
+
+        public PedidoOrcamento ObterPedidoOrcamentoPorEmail(string email)
+        {
+            return context.Repository<PedidoOrcamento>().Where(x => x.Email == email).OrderByDescending(x => x.Id).FirstOrDefault();
+        }
+
+        public PedidoOrcamento ObterPedidoOrcamentoPorEmailId(string email, int idPedido)
+        {
+            return context.Repository<PedidoOrcamento>().Where(x => x.Email == email && x.Id == idPedido).FirstOrDefault();
+        }
+
+<<<<<<< .mine
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoPorIntervaloDeData(DateTime dataIncio, DateTime dataFim)
+        {
+            return context.Repository<PedidoOrcamento>().Where(x => x.Data >= dataIncio && x.Data <= dataFim && x.Status == PedidoStatus.EmailValidado).ToList();
+        }
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoPorDataAlteracao(DateTime dateTime)
+        {
+            return context.Repository<PedidoOrcamento>().ToList().Where(x => x.DataAlteracao.DayOfYear == dateTime.DayOfYear && x.StatusPedidoComprador != 0).ToList();
+        }
+=======
+		public IList<PedidoOrcamento> ObterPedidosOrcamentoPorIntervaloDeData(DateTime dataIncio, DateTime dataFim) {
+			return context.Repository<PedidoOrcamento>().Where(x => x.Data >= dataIncio && x.Data <= dataFim).ToList();
+		}
+		public IList<PedidoOrcamento> ObterPedidosOrcamentoPorDataAlteracao(DateTime dateTime) {
+			return context.Repository<PedidoOrcamento>().ToList().Where(x => x.DataAlteracao.DayOfYear == dateTime.DayOfYear && x.StatusPedidoComprador != 0).ToList();
+		}
+>>>>>>> .r1566
+
+        public PedidoOrcamento Inserir(PedidoOrcamento pedidoOrcamento)
+        {
+            string camposInvalidos = String.Empty;
+
+            if (!this.ValidarDados(ref camposInvalidos
+                , pedidoOrcamento.Categorias
+                , pedidoOrcamento.Titulo
+                , pedidoOrcamento.Observacao)) return null;
+
+            try
+            {
+                pedidoOrcamento.Data = DateTime.Now;
+                pedidoOrcamento.StatusPedidoComprador = 0;
+                pedidoOrcamento.Status = PedidoStatus.EmailNaoValidado;
+                context.Insert(pedidoOrcamento);
+            }
+            catch
+            {
+                pedidoOrcamento = null;
+            }
+
+            return pedidoOrcamento;
+        }
+
+        public bool ResponderPesquisaSatisfacao(ref string camposInvalidos, string email, int idPedidoOrcamento, int idStatus, string opiniaoComprador, string pontosMelhoria, int gostou, bool pesquisaRevisada)
+        {
+            try
+            {
+                ValidadorDados validador = new ValidadorDados();
+                camposInvalidos = String.Empty;
+
+                if (opiniaoComprador.Trim() != String.Empty)
+                {
+                    if (!validador.ValidarTextoLivre(opiniaoComprador, 8, 500))
+                    {
+                        this.AdicionarCampoInvalido(ref camposInvalidos, "O que foi bom");
+                    }
+                }
+                if (pontosMelhoria.Trim() != String.Empty)
+                {
+                    if (!validador.ValidarTextoLivre(pontosMelhoria, 8, 500))
+                    {
+                        this.AdicionarCampoInvalido(ref camposInvalidos, "O que pode ser melhorado");
+                    }
+                }
+                if (!String.IsNullOrEmpty(camposInvalidos))
+                {
+                    camposInvalidos = "Preenchimento inválido: " + camposInvalidos;
+                    return false;
+                }
+                else
+                {
+                    // verifica se já foi respondida
+                    PedidoOrcamento pedidoOrcamento = this.ObterPedidoOrcamentoPorEmailId(email, idPedidoOrcamento);
+                    if (pedidoOrcamento.PesquisaRespondida)
+                    {
+                        camposInvalidos = "Pesquisa já respondida.";
+                        return false;
+                    }
+
+                    pedidoOrcamento.StatusPedidoComprador = idStatus;
+                    pedidoOrcamento.OpiniaoComprador = opiniaoComprador;
+                    pedidoOrcamento.PontosMelhoria = pontosMelhoria;
+                    pedidoOrcamento.Gostou = (gostou == 1);
+                    pedidoOrcamento.PesquisaRespondida = true;
+                    pedidoOrcamento.DataAlteracao = DateTime.Today;
+                    pedidoOrcamento.PesquisaRevisada = pesquisaRevisada;
+
+                    string categorias = this.CategoriasDoPedidoSeparadasPorVirgula(pedidoOrcamento);
+                    Dictionary<string, string> chavesValores = new Dictionary<string, string>();
+                    chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+                    chavesValores.Add("<!--NOME_COMPRADOR-->", pedidoOrcamento.NomeComprador);
+                    chavesValores.Add("<!--EMAIL_COMPRADOR-->", pedidoOrcamento.Email);
+                    chavesValores.Add("<!--TELEFONE_COMPRADOR-->", pedidoOrcamento.Telefone);
+                    chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
+                    chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
+                    chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
+                    chavesValores.Add("<!--CATEGORIA-->", categorias);
+
+                    switch (pedidoOrcamento.StatusPedidoComprador)
+                    {
+                        case 1:
+                            chavesValores.Add("<!--STATUS_PEDIDO-->", "Não recebi orçamentos.");
+                            break;
+                        case 2:
+                            chavesValores.Add("<!--STATUS_PEDIDO-->", "Já fechei.");
+                            break;
+                        case 3:
+                            chavesValores.Add("<!--STATUS_PEDIDO-->", "Estou analisando os orçamentos.");
+                            break;
+                        case 4:
+                            chavesValores.Add("<!--STATUS_PEDIDO-->", "Desisti, não vou contratar.");
+                            break;
+                    }
+
+                    chavesValores.Add("<!--OPINIAO_CLIENTE-->", pedidoOrcamento.OpiniaoComprador.Replace(Environment.NewLine, "<br />"));
+                    chavesValores.Add("<!--PONTOS_MELHORIA-->", pedidoOrcamento.PontosMelhoria.Replace(Environment.NewLine, "<br />"));
+                    if (pedidoOrcamento.Gostou)
+                    {
+                        chavesValores.Add("<!--GOSTOU-->", "Sim.");
+                    }
+                    else
+                    {
+                        chavesValores.Add("<!--GOSTOU-->", "Não.");
+                    }
+                    string htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailPesquisaSatisfacaoPreenchidaPorComprador);
+                    //Fabrício - forçado para "orcamentos.net@gmail.com", devido à necessidade de autenticação no 
+                    //domínio @oficial.blog.br quando o destinatário é do SMPT de @oficial.blog.br
+                    Email.EnviarEmail("orcamentos.net@gmail.com", "orcamentos.net@gmail.com", Config.EmailAdministrador, htmlEmail, "Pesquisa de Satisfação - Comprador - " + pedidoOrcamento.NomeComprador, false, true, null, String.Empty);
+                    return true;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Log.GravarLog(ex.Message);
+                return false;
+            }
+        }
+
+        public IList<PedidoOrcamento> ObterComComentariosEstadoCidadePorCategoria(int quantidadeDePedidos, int idCategoria, int idCidade, int idMes)
+        {
+            Categoria categoria = context.Repository<Categoria>().Where(x => x.Id == idCategoria).FirstOrDefault();
+            IList<PedidoOrcamento> ultimosPedidosComDepoimento = new List<PedidoOrcamento>();
+
+            string uf = Enum.GetName(typeof(UF), idCidade);
+
+            if (idMes != 0)
+            {
+                ultimosPedidosComDepoimento = ObterUltimosPedidosDoMes(quantidadeDePedidos, idMes, categoria);
+            }
+
+            if (categoria.Pai.Id == 0 && uf != null)
+            {
+                ultimosPedidosComDepoimento = ObterUltimosPedidosPorEstado(quantidadeDePedidos, categoria, uf);
+            }
+
+            if (uf == null)
+            {
+                ultimosPedidosComDepoimento = ObterUltimosDepoimentosPorCidade(quantidadeDePedidos, categoria, idCidade);
+            }
+
+            return ultimosPedidosComDepoimento.OrderByDescending(x => x.Data).ToList();
+        }
+
+        private IList<PedidoOrcamento> ObterUltimosPedidosPorEstado(int quantidadeDePedidos, Categoria categoria, string uf)
+        {
+            IList<PedidoOrcamento> ultimosPedidosComDepoimento = new List<PedidoOrcamento>();
+
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().Where(x => x.PesquisaRevisada == true && x.OpiniaoComprador != "" && x.Gostou == true).Take(200).ToList();
+
+            IList<Cidade> cidades = context.Repository<Cidade>().Where(x => x.Uf == (UF)Enum.Parse(typeof(UF), uf)).ToList();
+
+            foreach (PedidoOrcamento pedidoOrcamento in pedidos)
+            {
+                foreach (Cidade cidade in cidades)
+                {
+                    foreach (Categoria itemCategoria in categoria.SubCategorias)
+                    {
+                        if (ultimosPedidosComDepoimento.Count < quantidadeDePedidos && pedidoOrcamento.Cidade == cidade && pedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidosComDepoimento.Contains(pedidoOrcamento))
+                        {
+                            ultimosPedidosComDepoimento.Add(pedidoOrcamento);
+                        }
+                    }
+                }
+            }
+
+            return ultimosPedidosComDepoimento;
+        }
+
+        private IList<PedidoOrcamento> ObterUltimosDepoimentosPorCidade(int quantidadeDePedidos, Categoria categoria, int idCidade)
+        {
+            IList<PedidoOrcamento> ultimosPedidosComDepoimento = new List<PedidoOrcamento>();
+
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().Where(x => x.PesquisaRevisada == true && x.OpiniaoComprador != "" && x.Gostou == true && x.Cidade.Id == idCidade).Take(200).ToList();
+
+            //Cidade cidade = context.Repository<Cidade>().Where(x => x.Id == idCidade).FirstOrDefault();
+
+            foreach (PedidoOrcamento pedidoOrcamento in pedidos)
+            {
+                foreach (Categoria itemCategoria in categoria.SubCategorias)
+                {
+                    if (ultimosPedidosComDepoimento.Count < quantidadeDePedidos && pedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidosComDepoimento.Contains(pedidoOrcamento))
+                    {
+                        ultimosPedidosComDepoimento.Add(pedidoOrcamento);
+                    }
+                }
+            }
+
+            return ultimosPedidosComDepoimento;
+        }
+
+        private IList<PedidoOrcamento> ObterUltimosPedidosDoMes(int quantidadeDePedidos, int idMes, Categoria categoria)
+        {
+            IList<PedidoOrcamento> ultimosPedidosComDepoimento = new List<PedidoOrcamento>();
+
+            IList<PedidoOrcamento> pedidos;
+            pedidos = context.Repository<PedidoOrcamento>().ToList().Where(x => x.Data.Month == idMes).ToList().Where(x => x.PesquisaRevisada == true && x.OpiniaoComprador != "" && x.Gostou == true).Take(200).ToList();
+
+            foreach (PedidoOrcamento pedidoOrcamento in pedidos)
+            {
+                foreach (Categoria itemCategoria in categoria.SubCategorias)
+                {
+                    if (ultimosPedidosComDepoimento.Count < quantidadeDePedidos && pedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidosComDepoimento.Contains(pedidoOrcamento))
+                    {
+                        ultimosPedidosComDepoimento.Add(pedidoOrcamento);
+                    }
+                }
+            }
+            return pedidos;
+        }
+
+        public IList<PedidoOrcamento> ObterComComentarios(int quantidadeDePedidos, int idCategoria)
+        {
+            if (idCategoria > 0)
+            {
+                Categoria categoria = context.Repository<Categoria>().Where(x => x.Id == idCategoria).FirstOrDefault();
+
+                IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().Where(x => x.PesquisaRevisada == true && x.OpiniaoComprador != "" && x.Gostou == true).Take(200).ToList();
+
+                IList<PedidoOrcamento> ultimosPedidosComDepoimento = new List<PedidoOrcamento>();
+
+                foreach (Categoria itemCategoria in categoria.SubCategorias)
+                {
+                    foreach (PedidoOrcamento itemPedidoOrcamento in pedidos)
+                    {
+                        if (ultimosPedidosComDepoimento.Count <= quantidadeDePedidos && itemPedidoOrcamento.Categorias.Contains(itemCategoria) && !ultimosPedidosComDepoimento.Contains(itemPedidoOrcamento))
+                        {
+                            ultimosPedidosComDepoimento.Add(itemPedidoOrcamento);
+                        }
+                    }
+                }
+
+                if ((ultimosPedidosComDepoimento != null) && (ultimosPedidosComDepoimento.Count > 0))
+                {
+                    ultimosPedidosComDepoimento = ultimosPedidosComDepoimento.OrderByDescending(x => x.Data).ToList();
+                }
+                return ultimosPedidosComDepoimento.OrderByDescending(x => x.Data).ToList();
+            }
+            else
+            {
+
+                return context.Repository<PedidoOrcamento>().Where(x => x.PesquisaRevisada == true && x.OpiniaoComprador != "" && x.Gostou == true).Take(quantidadeDePedidos).OrderByDescending(x => x.Data).ToList();
+            }
+        }
+
+        public PedidoOrcamento ObterUltimoPedidoDoEmail(string emailComprador)
+        {
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().Where(x => x.Email == emailComprador).ToList();
+
+            return pedidos[pedidos.Count - 1];
+        }
+        public IList<PedidoOrcamento> ObterPedidosOrcamentoPorDataStatus(DateTime dataPedidoOrcamento, PedidoStatus status)
+        {
+            IList<PedidoOrcamento> pedidos = context.Repository<PedidoOrcamento>().ToList()
+               .Where(x => x.Data.DayOfYear == dataPedidoOrcamento.DayOfYear && x.Data.Year == dataPedidoOrcamento.Year && x.Status == status).ToList();
+
+            return pedidos;
+        }
+
+        #endregion
+
+    }
+}
+
+

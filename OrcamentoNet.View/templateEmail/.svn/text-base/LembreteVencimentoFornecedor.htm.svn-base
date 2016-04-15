@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá <!--NOME-->,</p>
+                <p>
+                    Como tem sido o <strong>Orçamento Online</strong> para seus negócios? Temos conseguido
+                    trazer boas oportunidades de venda?</p>
+                <p>
+                    Precisamos lembrar que seu cadastro <strong>vence no dia <!--DATA_RENOVACAO--></strong>.</p>
+                <p>
+                    Se você está satisfeito(a) e deseja <strong>contar conosco como sua força de venda pela
+                        internet</strong>, oferecemos as opções abaixo. Para efetuar o pagamento, é só clicar no link desejado e seguir as instruções (o pagamento é feito pelo PagSeguro e pode ser por Cartão de Crédito, Boleto ou Transferência Bancária):</p>
+				<p>
+					- <strong>Plano mensal</strong>: <a href="<!--URL-->">R$ <!--VALOR_MENSALIDADE--></a>
+					<br />
+					<br />
+					- <strong>Promoção pague 3 e ganhe 1 mês grátis</strong>: <a href="<!--URL_3MESES--> "> R$ <!--VALOR_3MESES--></a>
+					<br />
+					<br />
+					- <strong>Promoção pague 8 e ganhe 4 meses grátis</strong>: <a href="<!--URL_8MESES--> "> R$ <!--VALOR_8MESES--></a>
+				</p>
+				<h3>
+                    Veja o que os clientes estão falando do Orçamento Online:</h3>
+                <p>
+                    <!--OPINIAO_CLIENTE-->
+                </p>
+				<p>
+					Atenciosamente,<br />
+					<strong>Renato Coutinho</strong><br />
+					Telefones de atendimento: 21-97933-4941<br />
+					<a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+						Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+							Veja nossos vídeos no YouTube</a></p>
+			</td>
+        </tr>
+    </table>
+</body>
+</html>

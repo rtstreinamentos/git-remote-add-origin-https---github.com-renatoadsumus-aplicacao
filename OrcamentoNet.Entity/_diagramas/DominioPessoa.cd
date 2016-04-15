@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OrcamentoNet.Entity.Pessoa">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACCAAAgCAAAAAAAIAQAACAACAAAIAACAAAAAEIEAI=</HashCode>
+      <FileName>Pessoa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cidade" />
+      <Property Name="PessoaStatus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OrcamentoNet.Entity.Fornecedor">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <AssociationLine Name="Cidades" Type="OrcamentoNet.Entity.Cidade" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="4.375" />
+        <Point X="7.25" Y="3.738" />
+        <Point X="9.135" Y="3.738" />
+        <Point X="9.135" Y="1.562" />
+        <Point X="8.25" Y="1.562" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Fornecedor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cidades" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="OrcamentoNet.Entity.Cidade">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Cidade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Uf" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="OrcamentoNet.Entity.Enum.UF" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KACEADCAEABIEmBgABABAAAgQIEAQABAAAAAAADBQAA=</HashCode>
+      <FileName>_enum\UF.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OrcamentoNet.Entity.Enum.PessoaStatus">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_enum\PessoaStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,928 @@
+/******************************* General Styles *******************************/
+body {
+	background: url("../img/topBG.png") 0 0 repeat-x;
+	font-family: Arial, Tahoma, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.fl {float: left;}
+.fr {float: right;}
+
+.cl {clear: left;}
+.cr {clear: right;}
+.cb {clear: both;}
+
+p {
+	color: #6f7986;
+	line-height: 1.5em;
+	margin-bottom: 10px;
+}
+
+	p a {
+		text-decoration: none;
+		color: #2b92fa; /* The skin color - This can be changed if you are going for a diferent color scheme */
+	}
+
+	p a:hover {
+		text-decoration: none;
+		background-color: #2b92fa; /* The skin color - This can be changed if you are going for a diferent color scheme */
+		color: white;
+	}
+	
+h1, h2, h3, h4 {
+	font-family: 'Droid Sans', 'Arial', sans-serif;
+	color: #2b92fa; /* The skin color - This can be changed if you are going for a diferent color scheme */
+	margin-bottom: 15px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+h4 {
+	font-size: 14px;
+}
+
+div#mainWrapper {
+	width: 960px;
+	margin: 0 auto;	
+}
+
+div.horizontalSepNegativo {
+	background: url("../img/horizontalSeparator.jpg") top center no-repeat;
+	width: 960px;
+	height: 55px;
+	margin-top: 35px;
+	margin: -100px;
+}
+
+div.horizontalSep {
+	background: url("../img/horizontalSeparator.jpg") top center no-repeat;
+	width: 960px;
+	height: 55px;
+	margin-top: 35px;
+	
+}
+
+a.buttonLink, a.buttonLinkWithImage {
+	background: url("../img/buttonBGOut.png") 0 0 repeat-x;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	font-size: 18px;
+	color: white;
+	padding: 10px 10px;
+	text-decoration: none;
+ 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    
+    position: relative;
+}
+
+a.buttonLink:hover, a.buttonLinkWithImage:hover {
+	background: url("../img/buttonBGOver.png") 0 0 repeat-x;
+}
+
+a.buttonLinkWithImage {
+	padding: 10px 60px 10px 30px;
+}
+
+	a.buttonLinkWithImage img {
+		position: absolute;
+		right: 20px;
+		top: 9px;
+	}
+
+/******************************* Top Section Styles *******************************/
+div#topWrapper {
+	overflow: hidden;
+	height: 114px;
+}
+
+div.logo {
+	padding-top: 14px;
+}
+
+div.topSeparator {
+	background: url("../img/topSeparator.png") left center no-repeat;
+	margin: 14px 10px 0 30px;
+	height: 79px;
+	width: 22px;
+}
+
+ul.socialNav {
+	margin-top: 44px;
+}
+
+	ul.socialNav li {
+		display: inline;
+		margin-right: 5px;
+	}
+
+div.topPhoneNumber {
+	background: url("../img/phoneIcon.png") left center no-repeat;
+	padding-left: 50px;	
+	margin-top: 35px;
+	color: #46494c;
+	font-family: "Droid Sans", "Arial", sans-serif;
+}
+
+	div.topPhoneNumber p {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+
+	div.topPhoneNumber span {
+		font-size: 18px;
+	}
+
+
+
+/******************************* Product Heading Styles *******************************/
+div.productHeadingType1, div.productHeadingType2, div.productHeadingType3, div.productHeadingType4 {
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+.productImg {
+	margin-right: 20px;
+}
+
+p.productDescription {
+	font-family: "Droid Sans", "Arial", sans-serif;
+	font-size: 14px;
+}
+
+ul.checkList {
+	font-family: "Droid Sans", "Arial", sans-serif;
+	font-size: 14px;
+	color: #2b333d;
+	margin-top: 20px;
+}
+
+	div.productHeadingType1 ul.checkList li, div.productHeadingType2 ul.checkList li {
+		background: url("../img/checkListBullet.jpg") left top no-repeat;
+		float: left;
+		padding-left: 24px;
+		width: 150px;
+		margin-left: 20px;
+		margin-bottom: 10px;
+	}
+
+div.productHeadingType1 .productText, div.productHeadingType2 .productText {
+	width: 400px;
+}
+
+div.productHeadingType1 .productPrice, div.productHeadingType2 .productPrice {
+	width: 249px;
+	background: url("../img/smallBoxShadow.png") bottom center no-repeat;
+	padding: 0 0 24px 17px;
+}
+
+div.productHeadingType1 .productPriceContainer, div.productHeadingType2 .productPriceContainer {
+	border: 5px solid #f4f6f7;
+	text-align: center;
+	padding: 10px 0 0 0;
+	width: 220px;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+}
+
+	div.productHeadingType1 .productPriceContainer p, div.productHeadingType2 .productPriceContainer p {
+		font-size: 14px;
+	}
+
+	div.productHeadingType1 .productPriceContainer span {
+		font-size: 50px;
+		color: #00aeff; /* The skin color - This can be changed if you are going for a diferent color scheme */
+	}
+
+	div.productHeadingType2 .productPriceContainer span {
+		font-size: 30px;
+		color: #00aeff; /* The skin color - This can be changed if you are going for a diferent color scheme */
+	}
+
+div#buttonDarkBG {
+	background-color: #2b333d;
+	padding: 30px 0 30px 0;
+}
+
+
+/******************************* Product Heading Type 3 Styles *******************************/
+div.submitButtonDarkBG {
+	background-color: #2b333d;
+	padding: 42px 30px;
+}
+
+div.productHeadingType3 .productText {
+	width: 600px;
+}
+
+	div.productHeadingType3 .productText h1, div.productHeadingType3 .productText p {
+		margin-left: 20px;
+	}
+
+div.productHeadingType3 .productLargeBox {
+	width: 677px;
+	background: url("../img/bigBoxShadow.png") bottom center no-repeat;
+	padding: 0 0 24px 17px;
+}
+
+div.productHeadingType3 .productTrialForm {
+	border: 5px solid #f4f6f7;
+	text-align: center;
+	width: 650px;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	background-color: white;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    margin-top: 20px;
+}
+div.productHeadingType3 .productTrialForm3 a
+{
+	font-size:14px;
+	margin-left:20px;
+}
+div.productHeadingType3 .productTrialForm3 {
+	border: 5px solid #f4f6f7;
+	text-align: left;
+	width: 650px;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	background-color: white;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    margin-top: -20px;
+}
+
+div.frm-solicitar-orcamento ul {
+	margin-top: 20px;
+	text-align: left;
+}
+
+	div.frm-solicitar-orcamento ul li {
+		text-align: left;
+		margin: 0 0 10px 20px;
+		overflow: hidden;
+	}
+	
+		div.frm-solicitar-orcamento ul li label, div.sugestoesOrcamentos label {
+			display: block;
+			font-family: "Droid Sans", "Arial", sans-serif;
+			font-size: 14px;
+			color: #6f7986;
+			margin-top: 11px;
+		}
+
+div.frm-solicitar-orcamento input[type='text'] {
+	border: 1px solid #d3d6d9;
+	width: 230px;
+	height: 31px;
+	padding: 4px 10px 2px 10px;
+	background-color: #e7ebed;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 12px;
+    font-family: "Droid Sans", "Arial", sans-serif;
+}
+
+div.frm-solicitar-orcamento input[type='text']:hover {
+	border: 1px solid #b2b8be;
+	background-color: #f1f5f7;
+}
+
+div.frm-solicitar-orcamento input[type='submit'] {
+	background: url("../img/buttonBGOut.png") 0 0 repeat-x;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	font-size: 18px;
+	color: white;
+	padding: 10px 30px;
+	text-decoration: none;
+ 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    
+    position: relative;
+}
+
+div.frm-solicitar-orcamento input[type='submit']:hover {
+	background: url("../img/buttonBGOver.png") 0 0 repeat-x;
+}
+
+div.frm-solicitar-orcamento .secaoEnviar 
+{
+    background-color: #2B333D;
+    clear: both;
+    margin: 50px 140px 10px 140px;
+    padding: 10px;
+}
+
+form#trialForm ul {
+	margin-top: 20px;
+}
+
+	form#trialForm ul li {
+		text-align: left;
+		margin: 0 0 10px 20px;
+		overflow: hidden;
+	}
+	
+		form#trialForm ul li label {
+			display: block;
+			float: left;
+			width: 140px;
+			font-family: "Droid Sans", "Arial", sans-serif;
+			font-size: 14px;
+			color: #6f7986;
+			margin-top: 11px;
+		}
+
+form#trialForm input[type='text'] {
+	border: 1px solid #d3d6d9;
+	width: 230px;
+	height: 31px;
+	padding: 4px 10px 2px 10px;
+	background-color: #e7ebed;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 12px;
+    font-family: "Droid Sans", "Arial", sans-serif;
+}
+
+form#trialForm input[type='text']:hover {
+	border: 1px solid #b2b8be;
+	background-color: #f1f5f7;
+}
+
+form#trialForm input[type='submit'] {
+	background: url("../img/buttonBGOut.png") 0 0 repeat-x;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	font-size: 18px;
+	color: white;
+	padding: 10px 30px;
+	text-decoration: none;
+ 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    
+    position: relative;
+}
+
+form#trialForm input[type='submit']:hover {
+	background: url("../img/buttonBGOver.png") 0 0 repeat-x;
+}
+
+
+/******************************* Product Heading Type 4 Styles *******************************/
+div.productHeadingType4 .productText {
+	width: 400px;
+}
+
+div.productHeadingType4 .productVideo {
+	width: 523px;
+	background: url("../img/videoBoxShadow.png") bottom center no-repeat;
+	padding: 0 0 24px 17px;
+}
+
+div.productHeadingType4 .productVideoContainer {
+	border: 5px solid #f4f6f7;
+	text-align: center;
+	width: 500px;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	background-color: white;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+}
+
+div.newsletterContainer {
+	border: 5px solid #f4f6f7;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    
+    background-color: #eff1f3;
+    
+    padding: 15px 20px;
+    margin-top: 20px;
+}
+
+	div.newsletterContainer input[type='text'] {
+		border: 1px solid #d3d6d9;
+		width: 220px;
+		height: 31px;
+		padding: 4px 10px 2px 10px;
+		background-color: white;
+	
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    -khtml-border-radius: 5px;
+	    border-radius: 5px;
+	    
+	    font-size: 12px;
+	    font-family: "Droid Sans", "Arial", sans-serif;
+	}
+	
+	div.newsletterContainer input[type='text']:hover {
+		border: 1px solid #b4bac0;
+	}
+
+
+/******************************* Product Bullet List Styles *******************************/
+ul.iconBulletList {
+	overflow: hidden;
+}
+
+	ul.iconBulletList li {
+		width: 450px;
+		float: left;
+		margin: 0 30px 20px 0;
+	}
+
+		ul.iconBulletList li h2 {
+			margin-top: 10px;
+			margin-left: 70px;
+		}
+
+		ul.iconBulletList li p {
+			margin-left: 70px;
+		}
+
+
+
+/******************************* Product Tabs Styles *******************************/
+div.tabbedArea {
+	border: 5px solid #f4f6f7;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    
+    margin-bottom: 50px;
+}
+
+div.tabHeading {
+	background-color: #eff1f3;
+	padding: 30px 30px 20px 30px;
+	overflow: hidden;
+}
+
+div.tabContainer {
+	padding: 30px;
+}
+
+div.tabContent {
+	overflow: hidden;
+}
+
+ul.tabs li {
+	float: left;
+	margin-right: 5px;
+}
+
+	ul.tabs li a {
+	    -moz-border-radius: 8px;
+	    -webkit-border-radius: 8px;
+	    -khtml-border-radius: 8px;
+	    border-radius: 8px;
+	    
+	    padding: 20px 20px 30px 20px;
+	    font-size: 16px;
+	    font-family: "Droid Sans", "Arial", sans-serif;
+	    color: #9198a2;
+	    text-decoration: none;
+	    background-color: #e7eaed;
+	}
+
+	ul.tabs li a:hover {
+	    color: #737981;
+	}
+	
+	ul.tabs li.active {
+		border-right: none;
+	}
+	
+	ul.tabs li.active a {
+		background-color: white;
+		color: #2b333d;
+	}
+
+div.tabContent ul.iconBulletList li {
+	width: 400px;
+}
+
+
+/******************************* Product Testimonials Styles *******************************/
+div.testimonialContainer {
+	border: 5px solid #f4f6f7;
+	font-family: "Droid Sans", "Arial", sans-serif;
+	
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+img.testimonialIcon {
+	margin: 40px 0 0 30px;
+}
+
+div#boxHeading {
+	background-color: #eff1f3;
+	padding: 30px;
+}
+
+	div#boxHeading h3 {
+		color: #46494c;
+		margin-bottom: 0;
+	}
+	
+ul.testimonials {
+	margin: 30px;
+	overflow: hidden;
+}
+
+ul.testimonials li {
+	font-size: 18px;
+	color: #6f7986;
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+	ul.testimonials li span {
+		font-size: 14px;
+		color: #2b92fa; /* The skin color - This can be changed if you are going for a diferent color scheme */
+		font-style: normal;
+	}
+	
+
+	
+/******************************* Product Buy Button Styles *******************************/
+div.bigBuyButton {
+	text-align: center;
+	margin: 50px 0;
+}
+
+
+
+/******************************* Footer Section Styles *******************************/
+div.footerMenu {
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+div.footerSeparator {
+	background: url("../img/footerSeparator.png") left center no-repeat;
+	margin: 0px 20px 0 30px;
+	height: 135px;
+	width: 22px;
+}
+
+div#socialMedia {
+	width: 230px;
+}
+
+	div#socialMedia ul.socialNav {
+		margin-top: 20px;
+	}
+	
+div#subscribe {
+	width: 330px;
+	overflow: hidden;
+}
+
+	div#subscribe form {
+		margin-top: 20px;
+	}
+	
+	div#subscribe form input[type="text"] {
+		border: 1px solid #d3d6d9;
+		width: 240px;
+		height: 31px;
+		padding: 4px 10px 2px 10px;
+		background-color: #e7ebed;
+
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    -khtml-border-radius: 5px;
+	    border-radius: 5px;
+	    
+	    font-size: 12px;
+	    font-family: "Droid Sans", "Arial", sans-serif;
+	}
+
+	div#subscribe form input[type="text"]:hover {
+		border: 1px solid #b2b8be;
+		background-color: #f1f5f7;
+	}
+
+div#contactInformation {
+	width: 230px;
+}
+
+	div#socialMedia h3, div#subscribe h3, div#contactInformation h3 {
+		color: #46494c;
+	}
+	
+div#footerInformation {
+	background-color: #eff1f3;
+	text-align: center;
+	padding: 25px 0;
+	border-top: 1px solid #d1d8dc;
+}
+
+	div#footerInformation p {
+		margin-bottom: 0;
+	}
+	
+	
+	
+/******************************* CSS Styles Targetting Different Browsers *******************************/
+.ff2 div#subscribe form input[type="text"] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ff2 form#trialForm input[type='submit'] {
+	padding: 10px 20px;
+}
+
+.ff2 div.newsletterContainer input[type='text'], .ff3 div.newsletterContainer input[type='text'], .ie8 div.newsletterContainer input[type='text'], .ie7 div.newsletterContainer input[type='text'] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ff2 form#trialForm input[type='text'], .ff3 form#trialForm input[type='text'], .ie7 form#trialForm input[type='text'] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ff3 div#subscribe form input[type="text"] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ff3 form#trialForm input[type='submit'] {
+	padding: 10px 20px;
+}
+
+.ff3_6 div#subscribe form input[type="text"], .ff3_6 form#trialForm input[type='text'], .ff3_6 div.newsletterContainer input[type='text'] {
+	padding: 2px 10px 0px 10px;
+	height: 36px;
+}
+
+.ie7 div#subscribe form input[type="text"] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ie7 div.testimonials {
+    margin: 50px 0;
+}
+
+.ie7 form#trialForm input[type='submit'] {
+	padding: 10px 20px;
+	width: 150px;
+}
+
+
+.ie7 div.tabHeading {
+	padding: 0;
+	height: 68px;
+}
+
+.ie7 ul.tabs li {
+	float: left;
+    padding: 20px;
+    margin-top: 15px;
+    margin-right: -30px;   
+}
+
+
+.ie8 div#subscribe form input[type="text"], .ie8 form#trialForm input[type='text'] {
+	padding: 12px 10px 0px 10px;
+	height: 26px;
+}
+
+.ie8 form#trialForm input[type='submit'] {
+	padding: 10px 20px;
+}
+
+/******************************* Estilos Customizados *******************************/
+div.tipos-orcamentos {
+	clear: both;
+	height: 80px;
+}
+
+div.tipos-orcamentos ul.checkList li {
+	background: url("../img/checkListBullet.jpg") left top no-repeat;
+	float: left;
+	padding-left: 24px;
+	width: 150px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+li.sugestoesOrcamentos table tr td
+{
+    padding: 2px;
+}
+
+li.sugestoesOrcamentos table tr td label
+{
+    color: #000000;
+    display: inline;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+div.FornecedoresRecentes ul
+{
+	overflow: hidden;
+}
+	div.FornecedoresRecentes ul li {
+		color: #6F7986;
+		float: left;
+		margin: 10px 30px 4px 0;
+		width: 450px;
+	}
+		div.FornecedoresRecentes ul li ul li
+		{
+			margin-left: 10px;
+			margin-top: 0;
+		}
+	
+	div.FornecedoresRecentes h3 {
+		margin-top: 24px;
+	}
+	
+	
+	/******************************* Admin Meus Pedidos *******************************/
+	.btn-success {
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+background-color: #5bb65b;
+background-repeat: repeat-x;
+	background-image: linear-gradient(to bottom,#62c462,#51a351);
+	border-left-color: #51a351;
+	border-right-color: #51a351;
+	border-top-color: #51a351;
+	border-bottom-color: #387038;
+}
+
+/******************************* Default Nova Imagem *******************************/
+
+.imagemPersona {
+margin: 25px auto 80px;
+background-image: url(https://cdn.optimizely.com/img/342698587/4e60fe4484354b1b877033e8da7f6b4e.png);
+left: 0px;
+top: 0px;
+width: 100%;
+height: 440px;
+background-position: -70px -55px;
+background-repeat: no-repeat;
+background-attachment: scroll;
+}
+
+.section {
+display: inline-block;
+margin-bottom: 6.25em;
+width: 100%;
+}
+
+.welcome-new {
+top: 120px;
+right: 40px;
+width: 60%;
+height: 69px;
+font-size: 3.2em;
+position: absolute;
+clear: both;
+text-align: right;
+}
+.welcome {
+color: #083d59;
+font-size: 3.1875em;
+text-align: center;
+text-shadow: #fff 1px 1px 0, #ededed 2px 2px 0;
+margin: 1.17647058823529em 0;
+}
+
+.text-description-banner {
+border-color: rgb(255, 255, 255);
+color: rgb(55, 74, 117);
+font-family: Helvetica, Georgia, serif;
+font-weight: normal;
+position: absolute;
+right: 40px;
+width: auto;
+top: 270px;
+height: auto;
+font-size: 27px;
+text-align: right;
+clear: both;
+}
+
+.cta-top p {
+color: #005c8c;
+font-size: 1.5em;
+line-height: 1.25em;
+max-width: 23em;
+}
+
+.destaque .grid {
+		margin-left: 0;
+		width:100%;
+	}
+	
+	
+	.menuLogin a {
+float: right;
+list-style: none;
+margin-top: 1em;
+
+-webkit-border-radius: .22222222222222em;
+-moz-border-radius: .22222222222222em;
+-ms-border-radius: .22222222222222em;
+-o-border-radius: .22222222222222em;
+border-bottom: 0 none;
+-webkit-box-shadow: #fff 1px 1px 0, #e5e5e5 2px 2px 0;
+-moz-box-shadow: #fff 1px 1px 0, #e5e5e5 2px 2px 0;
+margin-top: 30px;
+padding-right:10px;
+font-size:20px;
+text-decoration: none;
+color:#2b92fa;
+	
+}
+
+.login a
+{background: #007dbe url(https://simplest-meuspedidos-arquivos.s3.amazonaws.com/static/site/images/arrow-right.png) no-repeat right center;
+	color: #fff;
+	padding: .22222222222222em 2.5em .22222222222222em .77777777777778em;
+}
+
+
+.menu li {
+    font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.menu {
+    list-style: none outside none;
+}
+
+
+.menuLogin a:hover, .menu .active a {
+    border-color: #72C5F1;
+}

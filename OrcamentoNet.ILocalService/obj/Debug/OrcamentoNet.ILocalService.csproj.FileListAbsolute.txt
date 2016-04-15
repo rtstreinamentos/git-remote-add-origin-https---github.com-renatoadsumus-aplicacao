@@ -1,0 +1,13 @@
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.ILocalService.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.ILocalService.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.Entity.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\PerceptiveMCAPI.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\PerceptiveMCAPI.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.Entity.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\bin\Debug\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\obj\Debug\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\obj\Debug\OrcamentoNet.ILocalService.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ILocalService\obj\Debug\OrcamentoNet.ILocalService.pdb

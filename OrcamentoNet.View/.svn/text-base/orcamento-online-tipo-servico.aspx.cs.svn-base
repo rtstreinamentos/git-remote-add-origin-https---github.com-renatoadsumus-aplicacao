@@ -1,0 +1,129 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OrcamentoNet.Entity;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.IView;
+using System.Web.UI.HtmlControls;
+
+namespace OrcamentoNet.View
+{
+    public partial class orcamento_online_tipo_servico : System.Web.UI.Page, IOrcamento_Online_Tipo_Servico
+    {
+        Orcamento_Online_Tipo_ServicoPresenter presenter;
+        private List<Termo> termos;
+        private int idTipoOrcamento;
+        private int idCidadeRecebida;
+        private int idCategoriaRecebida;
+        private int idBairro;
+        private string termo;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presenter = new Orcamento_Online_Tipo_ServicoPresenter();
+            presenter.View = this;
+            presenter.OnViewInitialized();
+
+            idTipoOrcamento = (Request.Params["idTipoOrcamento"] != null) ? Int32.Parse(Request.Params["idTipoOrcamento"]) : 0;
+            idCidadeRecebida = (Request.Params["cidade"] != null) ? Int32.Parse(Request.Params["cidade"]) : 0;
+            idCategoriaRecebida = (Request.Params["categoria"] != null) ? Int32.Parse(Request.Params["categoria"]) : 0;
+            idBairro = (Request.Params["bairro"] != null) ? Int32.Parse(Request.Params["bairro"]) : 0;
+            termo = (Request.Params["termo"] != null) ? (Request.Params["termo"]) : "";
+
+            if (!IsPostBack)
+            {
+                presenter.HabilitarFormulario();
+                presenter.GerarHeaderHTML();
+                presenter.MontarLinksInternos();
+            }
+        }
+
+        #region Propriedades
+
+        public int IdTipoServicoOrcamento
+        {
+            get { return idTipoOrcamento; }
+        }
+
+        public int IdCidadeRecebida
+        {
+            get { return idCidadeRecebida; }
+        }
+
+        public int IdCategoriaRecebida
+        {
+            get { return idCategoriaRecebida; }
+        }
+
+        public int IdBairroRecebido
+        {
+            get { return idBairro; }
+        }
+
+        public string TermoRecebido
+        {
+            get { return termo; }
+        }
+        #endregion
+
+        #region Metodos
+
+        public void HabilitarFormularioEventosFestas()
+        {
+            OrcamentoFormularioConstrucao.Visible = false;
+            OrcamentoFormularioEvento.Visible = true;
+        }
+
+        public void HabilitarFormularioConstrucao()
+        {
+            OrcamentoFormularioEvento.Visible = false;
+            OrcamentoFormularioConstrucao.Visible = true;
+
+        }
+        public void MontarLinksInternosDeEstado(IList<LinkInterno> linksInternosEstadoCidade)
+        {
+            uxrptLinksEstadoCidade.DataSource = linksInternosEstadoCidade;
+            uxrptLinksEstadoCidade.DataBind();
+        }
+
+        public void MontarLinksInternosTermo(IList<LinkInterno> linksInternosTermo)
+        {
+            uxrptLinksTermo.DataSource = linksInternosTermo;
+            uxrptLinksTermo.DataBind();
+        }
+
+        public void MontarLinksInternosTipoServico(IList<LinkInterno> linksInternosTipoServico)
+        {
+            uxrptLinksPorServico.DataSource = linksInternosTipoServico;
+            uxrptLinksPorServico.DataBind();
+        }
+        public void GerarHeaderHTML(string tipoServico, string nomeCidade, string h3LinkInterno)
+        {
+            string titleDaPagina = "Preço de " + tipoServico + " " + nomeCidade + "- Orçamentos Grátis!";
+
+            Page.Title = titleDaPagina;
+            uxTituloH1.InnerText = titleDaPagina;
+
+
+            HtmlMeta metaHtml = new HtmlMeta();
+            metaHtml.Name = "description";
+            metaHtml.Content = "Receba orçamentos de várias empresas para " + tipoServico + nomeCidade + ". Solicite um orçamento grátis!";
+
+            Page.Header.Controls.Add(metaHtml);
+
+
+            metaHtml = new HtmlMeta();
+            metaHtml.Name = "keywords";
+            metaHtml.Content = tipoServico + "," + nomeCidade;
+            Page.Header.Controls.Add(metaHtml);
+
+            uxH3TituloLinksInterno.InnerText = h3LinkInterno;
+
+            //ExibirMensagem("<p class='productDescription'>Faça sua cotação de preços de <strong>" + tipoServico + "</strong> no Orçamento Online. Seu <strong>pedido de orçamento</strong> será enviado aos nossos fornecedores, que enviarão as cotações de preços diretamente para você. De graça!</p>");
+        }
+        #endregion       
+    }
+}

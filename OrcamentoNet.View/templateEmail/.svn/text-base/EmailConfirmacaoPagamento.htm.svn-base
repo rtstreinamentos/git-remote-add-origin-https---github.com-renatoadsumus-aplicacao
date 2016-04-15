@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pesquisa de Satisfação do Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá,
+                    <!--NOME-->
+                    !</p>
+                <p>
+                    Confirmamos o pagamento referente aos serviços do <strong>Orçamento Online</strong>.
+                    Seu próximo vencimento será em
+                    <!--DATA_VENCIMENTO-->
+                    .</p>
+                    <h3>
+                        Divulgue sua página no Facebook é só clicar no botão curtir!
+                    </h3>
+                <p>
+                    
+                    Abaixo o link para sua página personalizada
+                    <br />
+                    <a href="<!--FICHA_TECNICA-->" target="_blank">
+                        <!--FICHA_TECNICA-->
+                    </a>
+                </p>
+                <p>
+                    Você gostaria de reforçar a divulgação de algum tipo de seus serviços? É só nos
+                    informar que podemos dar ênfase nas campanhas de links patrocinados.</p>
+                <p>
+                    E, lembre-se, sempre indique para nós <strong>o que tem achado de nosso sistema</strong>.
+                    Ajude-nos a mudar o que pode ser melhorado e indique o que está dando certo.</p>
+                <p>
+                    Muito obrigado e bons negócios!</p>
+                <p>
+                    Atenciosamente,<br />
+                    <strong>Renato Coutinho</strong><br />
+                    Telefones de atendimento: 21-97933-4941<br />
+                    <a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+                        Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+                            Veja nossos vídeos no YouTube</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

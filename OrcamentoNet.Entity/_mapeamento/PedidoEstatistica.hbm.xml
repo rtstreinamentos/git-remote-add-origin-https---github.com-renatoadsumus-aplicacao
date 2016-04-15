@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="OrcamentoNet.Entity"
+				   assembly="OrcamentoNet.Entity">
+  <class name="PedidoEstatistica" table="Pedido_Orcamento_Estatistica">
+    <id name="Id" column="Cd_Pedido_Orcamento_Estatistica">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Cidade" column="Cd_Cidade" class="Cidade" />
+    <many-to-one name="Categoria" column="Cd_Categoria" class="Categoria" />
+
+    <property name="QuantidadePedidos" column="Quantidade_Pedido" />
+    <property name="QuantidadeFornecedores" column="Quantidade_Fornecedor"  />
+    <property name="Mes" column="Cd_Mes" />
+    <property name="Ano" column="Ano" />
+    
+
+   
+  </class>
+</hibernate-mapping>

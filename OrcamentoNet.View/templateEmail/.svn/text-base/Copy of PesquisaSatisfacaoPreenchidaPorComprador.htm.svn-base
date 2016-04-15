@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pesquisa de Satisfação do Orçamento Online - Comprador</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+				<p>
+					<strong>1) Qual o status do pedido?</strong><br />
+					<!--STATUS_PEDIDO--><br />
+					<br />
+					<strong>2) O que foi bom?</strong><br />
+					<!--OPINIAO_CLIENTE--><br />
+					<br />
+					<strong>3) O que pode ser melhorado?</strong><br />
+					<!--PONTOS_MELHORIA--><br />
+					<br />
+					<strong>4) Gostou do Orçamento Online?</strong><br />
+					<!--GOSTOU--><br />
+				</p>
+				<p>
+					<strong>Título</strong>: <!--TITULO--><br /><br />
+					<strong>Cidade/UF</strong>: <!--CIDADE-->/<!--UF--><br /><br />
+					<strong>Solicitante</strong>: <!--NOME_COMPRADOR--><br /><br />
+					<strong>Email</strong>: <!--EMAIL_COMPRADOR--><br /><br />
+					<strong>Descrição</strong>: <!--OBSERVACAO--><br /><br />
+					<strong>Telefone</strong>: <!--TELEFONE_COMPRADOR-->
+				</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html> 

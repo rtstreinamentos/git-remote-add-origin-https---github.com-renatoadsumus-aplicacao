@@ -1,0 +1,1 @@
+mysql --user=orcamentonet --database=orcamentonet --password=flamengo < RecriarBanco.sql

@@ -1,0 +1,9 @@
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\OrcamentoNet.CommonTest.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\OrcamentoNet.CommonTest.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\nunit.framework.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\bin\Release\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\obj\Release\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\obj\Release\OrcamentoNet.CommonTest.dll
+C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.CommonTest\obj\Release\OrcamentoNet.CommonTest.pdb

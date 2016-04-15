@@ -1,0 +1,126 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using OrcamentoNet.ILocalService;
+using InfoGlobo.InjectionFramework.Core;
+using OrcamentoNet.Entity;
+
+namespace OrcamentoNet.IView.Presenter
+{
+    public class PedidosOrcamentoControlePresenter
+    {
+        public IPedidosOrcamentoControle View { get; set; }
+
+        [Inject]
+        public IPedidoOrcamentoService pedidoOrcamentoService
+        { get; set; }
+
+        [Inject]
+        public ICategoriaService categoriaService
+        { get; set; }
+
+
+        [Inject]
+        public IOrcamentoService orcamentoService
+        { get; set; }
+
+        [Inject]
+        public ICidadeService cidadeService
+        { get; set; }
+
+        private void InicializarServico()
+        {
+            StandardKernel k = new StandardKernel(new CustomModule());
+            k.Inject(this);
+        }
+
+        public void OnViewInitialized()
+        {
+            InicializarServico();
+        }
+
+        /// <summary>
+        /// Carrega os ultimos pedidos de Orçamentos na tela - Pode carregar todos ultimos pedidos, ultimos pedidos por categoria e ultimos pedidos por categoria e cidade
+        /// </summary>
+        public void CarregarPedidosOrcamentos()
+        {
+            int quantidadePedidosOrcamentos = View.QuantidadePedidos;
+            string termoPesquisa = Common.UtilString.GerarPalavraTermoPesquisa(View.TermoPesquisa);
+
+            int idCategoria = View.IdCategoria;
+
+            if (View.IdTipoOrcamento != 0)
+            {
+                if (idCategoria == 0 && View.IdTipoOrcamento < 9)
+                    idCategoria = 52;
+
+                if (idCategoria == 0 && View.IdTipoOrcamento > 9)
+                    idCategoria = 27;
+
+                Orcamento orcamento = orcamentoService.Obter(View.IdTipoOrcamento);
+                if (orcamento != null)
+                {
+                    string[] oracmentoTipo = orcamento.Nome.Split(' ');
+
+                    termoPesquisa = oracmentoTipo[0];
+
+                    if (oracmentoTipo.Length > 1)
+                        termoPesquisa = oracmentoTipo[1];
+
+                }
+            }
+
+            IList<PedidoOrcamento> pedidosOrcamentos = new List<PedidoOrcamento>();
+
+            bool naoCarregouUltimos = true;
+
+            //Carrega ultimos pedidos independente da Categoria,Cidade ou Mês
+            if (idCategoria == 0 && naoCarregouUltimos)
+            {
+                pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamento(quantidadePedidosOrcamentos, termoPesquisa);
+                naoCarregouUltimos = false;
+            }
+
+            //Carrega ultimos pedidos de uma Categoria,Cidade e Mês
+            if (View.Mes != 0 && naoCarregouUltimos)
+            {
+                Categoria categoria = categoriaService.Obter(idCategoria, false);
+                //pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamentoPorCategoriaMes(quantidadePedidosOrcamentos, categoria, View.Mes, View.IdCidade);
+                naoCarregouUltimos = false;
+            }
+
+            //Carrega ultimos pedidos de uma Categoria
+            if (View.IdCidade == 0 && naoCarregouUltimos)
+            {
+                pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamentoPorCategoriaOuTema(quantidadePedidosOrcamentos, idCategoria, termoPesquisa);
+                naoCarregouUltimos = false;
+            }
+
+            //Carrega ultimos pedidos de um Estado ou Cidade / Tema Por termo de pesquisa
+            if (naoCarregouUltimos)
+            {
+                pedidosOrcamentos = pedidoOrcamentoService.ObterUltimosPedidosOrcamentoPorCategoriaPorCidadeOuEstado(quantidadePedidosOrcamentos, idCategoria, View.IdCidade, termoPesquisa);
+            }
+
+            if (View.IdBairro != 0)
+            {
+                Cidade cidade = cidadeService.Obter(View.IdCidade);
+                string nomeBairro = cidade.Bairros.Where(x => x.Id == View.IdBairro).FirstOrDefault().Nome;
+                //pedidosOrcamentos = pedidosOrcamentos.Where(x => x.Observacao.Contains(nomeBairro) || x.Titulo.Contains(nomeBairro)).ToList();
+            }
+            View.CarregarPedidosOrcamentos(pedidosOrcamentos);
+
+
+        }
+
+        public void CarregarPedidosOrcamentosComFoto()
+        {
+            int idCategoria = View.IdCategoria;
+
+            IList<PedidoOrcamento> pedidosComFoto = pedidoOrcamentoService.ObterUltimosPedidosPorCategoriaComImagem(idCategoria);
+
+            View.CarregarPedidosOrcamentoComFoto(pedidosComFoto);
+        }
+    }
+}

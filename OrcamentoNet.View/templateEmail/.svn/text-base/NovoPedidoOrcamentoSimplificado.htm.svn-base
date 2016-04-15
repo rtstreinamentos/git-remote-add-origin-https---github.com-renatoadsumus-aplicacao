@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orçamento Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="http://orcamentosgratis.net.br/img/logo-orcamento-online.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Olá
+                    <!--NOME-->
+                    ,</p>
+                <p>
+                    Seu pedido de orçamento foi cadastrado com sucesso!</p>
+                <p>
+                    <a href="<!--URL-->"><strong>Clique aqui para confirmar seu endereço de e-mail e enviar
+                        seu pedido de orçamento aos fornecedores</strong></a>.</p>
+                <p>
+                    <strong>Importante: nós podemos ligar para você</strong> para validar seu pedido
+                    de orçamento.</p>
+                <p>
+                    <a href="http://orcamentosgratis.net.br/Dicas.aspx"><strong>Antes de contratar um serviço, veja nossas dicas!</strong></a>
+                </p>
+                <p>
+                    <strong>Telefone</strong>:
+                    <!--TELEFONE-->
+                    <br />
+                    <br />
+                    <strong>Cidade/UF</strong>:
+                    <!--CIDADE-->
+                    /<!--UF-->
+                    <br />
+                    <br />
+                    <strong>Descrição</strong>:<br />
+                    <!--OBSERVACAO-->
+                </p>
+                <p>
+                    <!--FOTOS-->
+                </p>
+                <p>
+                    <!--FORNECEDORES-->
+                </p>
+                <p>
+                <!--POSTS-->
+                </p>
+                <p>
+                    Bons negócios!</p>
+                <p>
+                    Atenciosamente,<br />
+                    <strong>Renato Coutinho</strong><br />
+                    Telefones de atendimento: 21-97933-4941<br />
+                    <a href='http://orcamentosgratis.net.br/'>Orçamento Online</a> - <a href="https://www.facebook.com/OrcamentoOnline">
+                        Curta nossa página no Facebook</a> - <a href="http://www.youtube.com/channel/UC4gLdLeWAVt6UYKy4H2zU_g/videos?view=0&flow=grid">
+                            Veja nossos vídeos no YouTube</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

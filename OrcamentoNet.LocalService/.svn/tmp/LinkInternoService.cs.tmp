@@ -1,0 +1,170 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MySql.Data.MySqlClient;
+using PortalEscolar.Data;
+using OrcamentoNet.Entity;
+using OrcamentoNet.ILocalService;
+using OrcamentoNet.Common;
+using System.Xml.Linq;
+using OrcamentoNet.Entity.Enum;
+using System.Data;
+
+namespace OrcamentoNet.LocalService
+{
+    public class LinkInternoService : ILinkInternoService
+    {
+        private IDataContext context;
+
+
+        public LinkInternoService(IDataContext contextData)
+        {
+            context = contextData;
+        }
+
+        public string GerarUrlParaSeo(string nomeSemTratamento)
+        {
+            if (String.IsNullOrEmpty(nomeSemTratamento)) return String.Empty;
+
+            string nomeAmigavel = nomeSemTratamento.Replace(",", String.Empty);
+
+            string[] listaNomesCategorias = nomeAmigavel.Split(' ');
+
+            List<string> listaNomesCategoriasModificadas = new List<string>();
+            for (int i = 0; i < listaNomesCategorias.Length; i++)
+            {
+                if (listaNomesCategorias[i].Length > 1) listaNomesCategoriasModificadas.Add(listaNomesCategorias[i]);
+            }
+
+            nomeAmigavel = String.Join("-", listaNomesCategoriasModificadas.ToArray());
+            nomeAmigavel = nomeAmigavel.ToLower();
+            nomeAmigavel = UtilString.RemoverAcentos(nomeAmigavel);
+
+            return nomeAmigavel;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosDeEstado(Categoria categoria)
+        {
+            IList<LinkInterno> linksIntenosEstadoCidades = new List<LinkInterno>();
+
+            if (categoria.Pai.Id == 0)
+            {
+                LinkInterno linkInternoEstadoCidade;
+                string toolTip = "Empresas, profissionais e oportunidades de negócios ";
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(5) + categoria.Id + "-5" + ".aspx";
+                linkInternoEstadoCidade.Nome = "Bahia-BA";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " na Bahia-BA";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(7) + categoria.Id + "-7" + ".aspx";
+                linkInternoEstadoCidade.Nome = "Brasília-DF";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " em Brasília-DF";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(13) + categoria.Id + "-13" + ".aspx";
+                linkInternoEstadoCidade.Nome = "Minas Gerais-MG";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " em Minas Gerais-MG";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(16) + categoria.Id + "-16" + ".aspx";
+                linkInternoEstadoCidade.Nome = "Paraná-PR";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " no Paraná-PR";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(19) + categoria.Id + "-19" + ".aspx";
+                linkInternoEstadoCidade.Nome = "Rio de Janeiro-RJ";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " no Rio de Janeiro-RJ";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+
+                linkInternoEstadoCidade = new LinkInterno();
+                linkInternoEstadoCidade.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(25) + categoria.Id + "-25" + ".aspx";
+                linkInternoEstadoCidade.Nome = "São Paulo-SP";
+                linkInternoEstadoCidade.ToolTip = toolTip + categoria.Nome + " em São Paulo-SP";
+                linksIntenosEstadoCidades.Add(linkInternoEstadoCidade);
+            }
+            return linksIntenosEstadoCidades;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosMesAno(Categoria categoria, int idCidade)
+        {
+
+            IList<LinkInterno> linksIntenosMesAno = new List<LinkInterno>();
+            LinkInterno linkInternoMesAno;
+
+            string anoCorrente = DateTime.Now.Year.ToString();
+
+            MesService mesService = new MesService();
+
+            foreach (Mes mes in mesService.ObterLista())
+            {
+                linkInternoMesAno = new LinkInterno();
+
+                if (idCidade == 0)
+                    linkInternoMesAno.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + "/" + categoria.Id + "/" + anoCorrente + "/" + mes.Id + ".aspx";
+                else
+                    linkInternoMesAno.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + ObterUrlEstado(idCidade) + "/" + categoria.Id + "/" + idCidade + "/" + anoCorrente + "/" + mes.Id + ".aspx";
+
+                linkInternoMesAno.ToolTip = " Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + " - " + mes.Nome + "/" + anoCorrente;
+                linkInternoMesAno.Nome = mes.Nome + "/" + anoCorrente;
+                linksIntenosMesAno.Add(linkInternoMesAno);
+            }
+
+            return linksIntenosMesAno;
+        }
+
+        public IList<LinkInterno> MontarLinksInternosTermo(Categoria categoria)
+        {
+            IList<LinkInterno> linksIntenosTermo = new List<LinkInterno>();
+            LinkInterno linkInterno;
+
+            if (categoria.Termo != null)
+            {
+                IList<string> listaTermos = categoria.Termo.Split(',');
+
+                foreach (string termo in listaTermos)
+                {
+                    linkInterno = new LinkInterno();
+                    linkInterno.UrlAmigavel = "mapa-" + this.GerarUrlParaSeo(categoria.Nome) + "-" + categoria.Id + "/" + this.GerarUrlParaSeo(termo) + ".aspx";
+                    linkInterno.ToolTip = " Empresas, profissionais e oportunidades de negócios em " + categoria.Nome + " - " + termo;
+                    linkInterno.Nome = termo;
+                    linksIntenosTermo.Add(linkInterno);
+                }
+            }
+
+            return linksIntenosTermo;
+        }
+
+        private string ObterUrlEstado(int idEstado)
+        {
+            string urlEstado = "";
+
+            if (idEstado == 5)
+                urlEstado = "-bahia-ba-";
+
+            if (idEstado == 7)
+                urlEstado = "-brasilia-df-";            
+
+            if (idEstado == 13)
+                urlEstado = "-minas-gerais-mg-";
+
+            if (idEstado == 16)
+                urlEstado = "-parana-pr-";
+
+            if (idEstado == 19)
+                urlEstado = "-rio-de-janeiro-rj-";
+
+            if (idEstado == 25)
+                urlEstado = "-sao-paulo-sp-";
+
+            return urlEstado;
+        }    
+
+    }
+}

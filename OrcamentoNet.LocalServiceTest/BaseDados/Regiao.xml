@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://tempuri.org/Model.xsd">
+  <Regiao>
+    <Id>1</Id>
+    <Nome>Zona Sul</Nome>
+  </Regiao>
+</Model>

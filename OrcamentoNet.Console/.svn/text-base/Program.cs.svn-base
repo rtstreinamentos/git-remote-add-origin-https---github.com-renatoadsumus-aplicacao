@@ -1,0 +1,256 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using OrcamentoNet.IView.Presenter;
+using OrcamentoNet.Common;
+using System.Data;
+using MySql.Data.MySqlClient;
+
+namespace OrcamentoNet.Console
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MalaDiretaPresenter malaDiretaPresenter = new MalaDiretaPresenter();
+
+            //malaDiretaPresenter.EnviarEmailMalaDireta();
+
+            NHibernate.Burrow.BurrowFramework nhibernate = new NHibernate.Burrow.BurrowFramework();
+            nhibernate.InitWorkSpace();
+
+            ServicoNotificarFornecedorPresenter presenter = new ServicoNotificarFornecedorPresenter();
+            presenter.OnViewInitialized();
+            nhibernate.CloseWorkSpace();
+            
+        }
+
+        private static void ObterClientes()
+        {
+            FireBirdConexao conn = new FireBirdConexao();
+            MySqlConnection conexao = conn.ObterConexao();
+            string comandoSTR = "SELECT * FROM pessoa where Cd_Pessoa in(97787)";
+
+            MySqlCommand comando = new MySqlCommand(comandoSTR, conexao);
+
+            DataSet ds = new DataSet();
+            MySqlDataAdapter adp = new MySqlDataAdapter(comando);
+            adp.Fill(ds, "Responsavel");
+
+            foreach (DataRow linha in ds.Tables["Responsavel"].Rows)
+            {
+                Salvar(linha[0].ToString(),
+                     linha[1].ToString(),
+                     linha[2].ToString(),
+                     linha[3].ToString(),
+                     linha[4].ToString(),
+                     linha[5].ToString(),
+                     linha[7].ToString(),
+                     linha[8].ToString(),
+                     linha[9].ToString(),
+                     linha[10].ToString()
+                     , linha[12].ToString()
+                     , linha[13].ToString(),
+                     linha[14].ToString()
+                     , linha[15].ToString());
+            }
+
+        }
+
+        private static void Salvar(string id2, string id, string nome, string dataNascimento, string responsavel, string matricula, string funcionario, string eamil, string endereco, string num, string complemento, string dataCadastro, string dataAtualizacao,string valor)
+        {
+            MySQLConexao conn = new MySQLConexao();
+            MySqlConnection conexao = conn.ObterConexao();
+
+            MySqlCommand comando = new MySqlCommand("insert into Pessoa (Cd_Pessoa,Nm_Pessoa,Dt_Alteracao,Dt_Cadastro,Email,Telefone,Cd_Status,WebSite,Valor_Mensalidade,Descricao,Indicacao,Auto_Resposta,Cd_Tipo_Pessoa_Atendimento,Senha,Cd_Tipo_Pessoa_Atendimento_Alteracao,Valor_Mensalidade_Alteracao)" +
+            "VALUES(?Id,?Nm_Pessoa,?Dt_Alteracao,?Dt_Cadastro,?Email,?Telefone,?Cd_Status,?WebSite,?Valor_Mensalidade,?Descricao,?Indicacao,?Auto_Resposta,?Cd_Tipo_Pessoa_Atendimento,?Senha,?Cd_Tipo_Pessoa_Atendimento_Alteracao,?Valor_Mensalidade_Alteracao)", conexao);
+            comando.Parameters.AddWithValue("?Id", id2.Trim());
+            comando.Parameters.AddWithValue("?Nm_Pessoa", id.Trim());
+            comando.Parameters.AddWithValue("?Dt_Alteracao", DateTime.Parse(nome));
+            comando.Parameters.AddWithValue("?Dt_Cadastro", DateTime.Parse(dataNascimento));
+            comando.Parameters.AddWithValue("?Email", responsavel.Trim());
+            comando.Parameters.AddWithValue("?Telefone", matricula.Trim());
+            comando.Parameters.AddWithValue("?Cd_Status", "3");
+            comando.Parameters.AddWithValue("?WebSite", funcionario.Trim());
+            comando.Parameters.AddWithValue("?Valor_Mensalidade", eamil.Trim());
+            comando.Parameters.AddWithValue("?Descricao", endereco.Trim());
+            comando.Parameters.AddWithValue("?Indicacao", num.Trim());
+            comando.Parameters.AddWithValue("?Cd_Tipo_Pessoa_Atendimento", complemento.Trim());
+            comando.Parameters.AddWithValue("?Auto_Resposta", "");
+            comando.Parameters.AddWithValue("?Senha", dataCadastro.Trim());
+            comando.Parameters.AddWithValue("?Cd_Tipo_Pessoa_Atendimento_Alteracao", dataAtualizacao.Trim());
+            comando.Parameters.AddWithValue("?Valor_Mensalidade_Alteracao", valor.Trim());
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            conn.fecha_Conexao();
+        }
+
+
+    }
+
+    public class MySQLConexao
+    {
+
+        string strConexao = "Server=mysql.rcmsolucoes.com;Database=rcmsolucoes07;Uid=rcmsolucoes07;Pwd=orcamento10;Port=3306;";
+
+        private MySqlConnection conexao;//OBJETO CONEXÃO
+        ///
+        /// Construtor
+        ///  Recebe como parametro os dados para conexão
+        ///
+        public MySQLConexao()
+        {
+
+            //seta a string de conexão
+            set_strConexao(strConexao);
+
+            // configura a conexão
+            faz_Conexao();
+        }
+
+        ///
+        /// Configura a Conexão
+        ///  Passa para o construtor da classe FbConnection
+
+        ///  os dados para conexão
+        ///
+
+        private void faz_Conexao()
+        {
+            this.conexao = new MySqlConnection(get_strConexao());
+            abre_Conexao();
+        }
+
+        ///
+        /// Abre a conexão com o banco de dados
+
+        ///
+        public void abre_Conexao()
+        {
+
+            this.conexao.Open();
+        }
+        ///
+        /// Fecha a conexão com o banco de dados
+        ///
+
+        public void fecha_Conexao()
+        {
+            this.conexao.Close();
+        }
+
+        ///
+        /// Retorna uma conexao com o banco de dados
+        ///
+
+        public MySqlConnection ObterConexao()
+        {
+            return this.conexao;
+        }
+
+        ///
+        /// Seta os dados da conexão recebidos
+        /// pelo construtor
+        ///      
+        public void set_strConexao(string strConexao)
+        {
+            this.strConexao = strConexao;
+        }
+        ///
+        /// Retorna a string com os dados
+        /// para conexao
+        ///
+        public string get_strConexao()
+        {
+            return this.strConexao;
+        }
+    }
+
+    public class FireBirdConexao
+    {
+        //Local  
+
+        string strConexao = "Server=localhost;Database=orcamentonet;Uid=root;Pwd=flamengo;Port=3306;";
+        // private string strConexao = "Server=localhost;User=SYSDBA;Password=masterkey;Database=C:\\PortalEscolar\\GES_IEFM.fdb";//STRING PARA CONEXÃO
+        private MySqlConnection conexao;//OBJETO CONEXÃO
+        ///
+        /// Construtor
+        ///  Recebe como parametro os dados para conexão
+        ///
+        public FireBirdConexao()
+        {
+
+            //seta a string de conexão
+            set_strConexao(strConexao);
+
+            // configura a conexão
+            faz_Conexao();
+        }
+
+
+        ///
+        /// Configura a Conexão
+        ///  Passa para o construtor da classe FbConnection
+
+        ///  os dados para conexão
+        ///
+
+        private void faz_Conexao()
+        {
+            this.conexao = new MySqlConnection(get_strConexao());
+            abre_Conexao();
+        }
+
+        ///
+        /// Abre a conexão com o banco de dados
+
+        ///
+        public void abre_Conexao()
+        {
+
+            this.conexao.Open();
+        }
+        ///
+        /// Fecha a conexão com o banco de dados
+        ///
+
+        public void fecha_Conexao()
+        {
+            this.conexao.Close();
+        }
+
+        ///
+        /// Retorna uma conexao com o banco de dados
+        ///
+
+        public MySqlConnection ObterConexao()
+        {
+            return this.conexao;
+        }
+
+        ///
+        /// Seta os dados da conexão recebidos
+        /// pelo construtor
+        ///      
+        public void set_strConexao(string strConexao)
+        {
+            this.strConexao = strConexao;
+        }
+        ///
+        /// Retorna a string com os dados
+        /// para conexao
+        ///
+        public string get_strConexao()
+        {
+            return this.strConexao;
+        }
+    }
+}
