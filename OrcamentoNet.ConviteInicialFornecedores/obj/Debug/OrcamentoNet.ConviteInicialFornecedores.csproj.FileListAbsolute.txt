@@ -8,3 +8,13 @@ C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\OrcamentoNet.ConviteInicialFornecedores.exe
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\OrcamentoNet.ConviteInicialFornecedores.pdb
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\MySql.Data.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\OrcamentoNet.ConviteInicialFornecedores.exe.config
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\OrcamentoNet.ConviteInicialFornecedores.exe
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\OrcamentoNet.ConviteInicialFornecedores.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\MySql.Data.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\bin\Debug\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\OrcamentoNet.ConviteInicialFornecedores.exe
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.ConviteInicialFornecedores\obj\Debug\OrcamentoNet.ConviteInicialFornecedores.pdb

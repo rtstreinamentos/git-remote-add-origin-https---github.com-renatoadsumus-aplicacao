@@ -90,7 +90,7 @@ namespace OrcamentoNet.IView.Presenter
 
                 //TODO: está travando a geração do sitemap. Fazer refactoring
                 // às 5h da manhã roda os serviços de frequência diária
-                if (DateTime.Now.Hour == 9)
+                if (DateTime.Now.Hour == 19)
                 {
                     //Envia Email Cobrando dos Fornecedores Explicação Por Que Não Teve Interesse
                     EnviarEmailParaForncedoresQueNaoResponderamOsPedidos();
@@ -102,7 +102,7 @@ namespace OrcamentoNet.IView.Presenter
                    this.AtualizarSiteMap();
                 }              
 
-                if (DateTime.Now.Hour == 10)
+                if (DateTime.Now.Hour == 19)
                 {
                   
 
@@ -124,7 +124,7 @@ namespace OrcamentoNet.IView.Presenter
                 }
 
                 // às 9h da manhã roda os serviços de frequência diária
-                if (DateTime.Now.Hour == 10)
+                if (DateTime.Now.Hour == 19)
                 {
                     this.EnviarEmailPesquisaSatisfacaoComprador();
                     //Envia um Email de Pesquisa de Satisfação para fornecedores cadastrados há 7, 37, 97 e 187 dias

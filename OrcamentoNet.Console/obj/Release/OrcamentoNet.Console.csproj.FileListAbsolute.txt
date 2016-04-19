@@ -45,3 +45,6 @@ C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Console\obj\Release\OrcamentoNet.Cons
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Console\obj\Release\OrcamentoNet.Console.pdb
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Console\bin\Release\MySql.Data.dll
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Console\bin\Release\System.Web.DataVisualization.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Console\bin\Release\OrcamentoNet.Console.exe.config
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Console\obj\Release\OrcamentoNet.Console.exe
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Console\obj\Release\OrcamentoNet.Console.pdb

@@ -8,7 +8,7 @@ namespace OrcamentoNet.Common
     public class Config
     {
 #if DEBUG
-        public static string CaminhoFisico { get { return @"C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\"; } }
+        public static string CaminhoFisico { get { return @"C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.View\"; } }
         public static string ConexaoBanco { get { return @"Datasource=localhost;Database=orcamentos;uid=root;pwd=flamengo;Pooling=false;default command timeout=30;Connection Timeout=15;"; } }
         //public static string ConexaoBanco { get { return @"Datasource=mysql.rcmsolucoes.com;Database=rcmsolucoes07;uid=rcmsolucoes07;pwd=orcamento10"; } }
 

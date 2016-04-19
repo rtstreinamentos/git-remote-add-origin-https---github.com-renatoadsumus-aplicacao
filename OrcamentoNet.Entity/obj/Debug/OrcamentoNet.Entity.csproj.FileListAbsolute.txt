@@ -6,3 +6,11 @@ C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Entity\bin\Debug\OrcamentoNet.Common.
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Entity\obj\Debug\ResolveAssemblyReference.cache
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Entity\obj\Debug\OrcamentoNet.Entity.dll
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Entity\obj\Debug\OrcamentoNet.Entity.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\bin\Debug\OrcamentoNet.Entity.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\bin\Debug\OrcamentoNet.Entity.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\bin\Debug\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\bin\Debug\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\bin\Debug\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\obj\Debug\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\obj\Debug\OrcamentoNet.Entity.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Entity\obj\Debug\OrcamentoNet.Entity.pdb

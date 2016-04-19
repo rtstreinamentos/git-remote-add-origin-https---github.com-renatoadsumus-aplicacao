@@ -303,14 +303,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrcamentoNet.Common.dll" size="27648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrcamentoNet.Common.dll" size="28160">
       <assemblyIdentity name="OrcamentoNet.Common" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>jzq9xdAtUtxqFmGOV+yl5iQlxes=</dsig:DigestValue>
+        <dsig:DigestValue>n1R6X+8V2F7U+z/yvA6OIdZG3GI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -322,7 +322,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>C7iTBNRvcipMaBULwgAQvprWfJ0=</dsig:DigestValue>
+        <dsig:DigestValue>x0ZOPsojZKcPwT6xTbEqc5Jr8Mo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -334,19 +334,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Wu+joHD4Eb/CHQI5eWZnt1U8H+s=</dsig:DigestValue>
+        <dsig:DigestValue>ufZH5mo31XzQn4ZbVIJ6r+R2T0Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrcamentoNet.ILocalService.dll" size="13824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrcamentoNet.ILocalService.dll" size="14336">
       <assemblyIdentity name="OrcamentoNet.ILocalService" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>EEKY0hXz3VuuHOYaifcHI3Q7OQc=</dsig:DigestValue>
+        <dsig:DigestValue>kMh4/FzrKWe1kD3SSAWIGFrWM9Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -358,7 +358,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1ALMXYPWriIDzGEA45hRvwvVaAY=</dsig:DigestValue>
+        <dsig:DigestValue>oWmOEOSyiVyn8j66TzjdTG3h5ig=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -370,7 +370,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>r0PnIEioLL0AGecvcxGs0y/a7sI=</dsig:DigestValue>
+        <dsig:DigestValue>a31SYPpsrCmlvP8T3cAQ1xgyuBQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

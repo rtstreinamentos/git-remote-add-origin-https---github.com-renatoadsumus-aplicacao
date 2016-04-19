@@ -4897,3 +4897,25 @@ Nome do parâmetro: value
 2016-04-11 13:59:22,574 [9] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Invalid Cast (check your mapping for property type mismatches); setter of OrcamentoNet.Entity.Fornecedor
 2016-04-15 17:06:11,822 [7] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
 Nome do parâmetro: index
+2016-04-19 09:51:34,985 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+2016-04-19 09:52:00,329 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\PedidoOrcamentoSemFornecedor.htm'.
+2016-04-19 09:52:08,231 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2016-04-19 09:53:13,393 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Falha ao enviar email.
+2016-04-19 09:53:13,419 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2016-04-19 09:54:16,450 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Falha ao enviar email.
+2016-04-19 09:54:16,466 [8] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2016-04-19 09:54:54,589 [9] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+2016-04-19 09:59:00,834 [9] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+2016-04-19 10:01:21,809 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+2016-04-19 10:03:28,714 [9] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+2016-04-19 10:04:33,123 [7] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Referência de objeto não definida para uma instância de um objeto.
+2016-04-19 10:05:05,690 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Referência de objeto não definida para uma instância de um objeto.
+2016-04-19 10:05:50,352 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Referência de objeto não definida para uma instância de um objeto.
+2016-04-19 10:05:51,961 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\PedidoOrcamentoSemFornecedor.htm'.
+2016-04-19 10:05:56,195 [10] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\InformativoFornecedorDegustacaoNovoPedido.htm'.
+2016-04-19 10:58:36,450 [7] ERROR - Arquivo: C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\Log.cs - Linha: 22 - Método: GravarLog - Não foi possível localizar uma parte do caminho 'C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\templateEmail\InformativoFornecedorNovoPedido.htm'.

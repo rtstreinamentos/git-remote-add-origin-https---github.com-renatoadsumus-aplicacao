@@ -447,6 +447,7 @@ namespace OrcamentoNet.LocalService
                     chavesValores.Add("<!--CIDADE-->", pedidoOrcamento.Cidade.Nome);
                     chavesValores.Add("<!--UF-->", pedidoOrcamento.Cidade.Uf.ToString());
                     chavesValores.Add("<!--TITULO-->", pedidoOrcamento.Titulo);
+                    chavesValores.Add("<!--CLASSIFICACAO-->", pedidoOrcamento.ClassificacaoPedido.ToString());
                     chavesValores.Add("<!--OBSERVACAO-->", pedidoOrcamento.Observacao.Replace(Environment.NewLine, "<br />"));
 
                     string htmlEmail = "";

@@ -222,23 +222,27 @@ namespace OrcamentoNet.LocalService
 
                     foreach (Categoria categoria in fornecedor.SubCategorias)
                     {
-                        if (!fornecedoresDaCategoria.Contains(fornecedor) && pedidoOrcamento.Categorias.Contains(categoria))
+                        if (pedidoOrcamento.Categorias.Contains(categoria))
                         {
-                            if (atributosFornecedor != null)
+                            if (atributosFornecedor != null && atributosFornecedor.Count > 0)
                             {
                                 if (valorAtributoPedido >= atributosFornecedor[0].Condicao)
                                 {
                                     fornecedoresDaCategoria.Add(fornecedor);
                                     idsFornecedores.Add(fornecedor.Id);
+                                    break;
                                 }
+
                             }
                             else
                             {
 
                                 fornecedoresDaCategoria.Add(fornecedor);
                                 idsFornecedores.Add(fornecedor.Id);
+                                break;
                             }
                         }
+
                     }
                 }
 

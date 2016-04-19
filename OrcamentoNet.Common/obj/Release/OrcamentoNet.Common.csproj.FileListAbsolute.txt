@@ -5,3 +5,10 @@ C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\bin\Release\Owasp.Esapi.dll
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\obj\Release\ResolveAssemblyReference.cache
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\obj\Release\OrcamentoNet.Common.dll
 C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.Common\obj\Release\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\bin\Release\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\bin\Release\OrcamentoNet.Common.pdb
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\bin\Release\log4net.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\bin\Release\Owasp.Esapi.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\obj\Release\ResolveAssemblyReference.cache
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\obj\Release\OrcamentoNet.Common.dll
+C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.Common\obj\Release\OrcamentoNet.Common.pdb
