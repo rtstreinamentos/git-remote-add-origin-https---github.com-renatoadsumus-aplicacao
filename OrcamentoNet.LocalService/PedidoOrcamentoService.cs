@@ -477,7 +477,7 @@ namespace OrcamentoNet.LocalService
                     chavesValores.Add("<!--FORNECEDORES-->", htmlNomeFornecedores);
                     string htmlEmailRespostaComprador = Email.ObterHTML(chavesValores, Config.TemplateInformativoFornecedoresAoComprador);
 
-                    Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, pedidoOrcamento.Email, htmlEmailRespostaComprador, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, true, null, "");
+                    Email.EnviarEmail(Config.EmailAdministrador, Config.EmailAdministrador, pedidoOrcamento.Email, htmlEmailRespostaComprador, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", true, true, null, "");
                 }
 
                 if (fornecedores.Count == 0)
