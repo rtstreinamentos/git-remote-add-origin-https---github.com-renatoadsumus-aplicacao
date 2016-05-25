@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 				   namespace="OrcamentoNet.Entity"
 				   assembly="OrcamentoNet.Entity">
-  <class name="PedidoOrcamento" table="Pedido_Orcamento">
+  <class name="PedidoOrcamento" table="pedido_orcamento">
     <id name="Id" column="Cd_Pedido_Orcamento">
       <generator class="identity" />
     </id>
@@ -32,12 +32,12 @@
     <property name="Ano" column="Ano" />
     <property name="Mes" column="Mes" />
     
-    <bag name="Categorias" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Pedido_Orcamento_Categoria">
+    <bag name="Categorias" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="pedido_orcamento_categoria">
       <key column="Cd_Pedido_Orcamento" />
       <many-to-many column="Cd_Categoria" class="Categoria"/>
     </bag>
 
-    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Pedido_Orcamento_Foto">
+    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="pedido_orcamento_foto">
       <key column="Cd_Pedido_Orcamento" />
       <element column="url" type="string" />
     </bag>   

@@ -11,10 +11,11 @@
 					Seu objetivo é:
 				</label>
 				<asp:DropDownList ID="uxddlPretensao" runat="server">
-					<asp:ListItem Value="0">Selecionar</asp:ListItem>
-					<asp:ListItem Value="1">apenas ter noção de preços</asp:ListItem>
-					<asp:ListItem Value="2">contratar o serviço</asp:ListItem>
-				</asp:DropDownList>
+                                             <asp:ListItem Value="0">Selecionar</asp:ListItem>
+                                            <asp:ListItem Value="1">contratar o serviço em até 60 dias</asp:ListItem>
+                                            <asp:ListItem Value="2">contratar o serviço mais de 60 dias</asp:ListItem>
+                                            <asp:ListItem Value="3">apenas ter noção de preços</asp:ListItem>
+                                        </asp:DropDownList>
 				<br />
 				<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="uxddlPretensao"
 					ErrorMessage="" InitialValue="0" Text="Seu objetivo deve ser informado." />

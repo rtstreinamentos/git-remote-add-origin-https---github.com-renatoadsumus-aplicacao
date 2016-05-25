@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 				   namespace="OrcamentoNet.Entity"
 				   assembly="OrcamentoNet.Entity">
-  <class name="Bairro" table="Bairro">
+  <class name="Bairro" table="bairro">
 
     <id name="Id" column="Cd_Bairro">
       <generator class="identity" />
@@ -12,7 +12,7 @@
 
   </class>
   
-  <class name="Cidade" table="Cidade">
+  <class name="Cidade" table="cidade">
     <id name="Id" column="Cd_Cidade">
       <generator class="identity" />
     </id>

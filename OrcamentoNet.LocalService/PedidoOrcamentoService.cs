@@ -340,7 +340,7 @@ namespace OrcamentoNet.LocalService
                     //htmlEmail = Email.ObterHTML(chavesValores, Config.TemplateEmailInformativoFornecedorDegustacaoDeNovoPedidoOrcamentoPromocao);
                     emailReply = Config.EmailAdministrador;
 
-                    Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, false, null, "");
+                    Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", true, false, null, "");
 
                 }
             }
@@ -467,7 +467,7 @@ namespace OrcamentoNet.LocalService
                         Email.EnviarEmail(fornecedor.Email, fornecedor.Email, pedidoOrcamento.Email, htmlEmailAutoResposta, "Resposta ao seu pedido de Orçamento de " + pedidoOrcamento.Titulo, false, true, null, fornecedor.Email);
                     }
 
-                    Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", false, true, null, "");
+                    Email.EnviarEmail(Config.EmailAdministrador, emailReply, fornecedor.Email, htmlEmail, Config.NomeAplicacao + " - " + pedidoOrcamento.Titulo + " - " + pedidoOrcamento.NomeComprador + " (" + pedidoOrcamento.Id.ToString() + ")", true, true, null, "");
                 }
 
                 if (htmlNomeFornecedores != "")

@@ -12,16 +12,15 @@ namespace OrcamentoNet.Common
         public static string ConexaoBanco { get { return @"Datasource=localhost;Database=orcamentos;uid=root;pwd=flamengo;Pooling=false;default command timeout=30;Connection Timeout=15;"; } }
         //public static string ConexaoBanco { get { return @"Datasource=mysql.rcmsolucoes.com;Database=rcmsolucoes07;uid=rcmsolucoes07;pwd=orcamento10"; } }
 
-        //public static string UrlSite { get { return "http://localhost:53618/"; } }
-        //public static string UrlSite { get { return "http://multicotacao.rcmsolucoes.com/"; } }
+        //public static string UrlSite { get { return "http://localhost:53618/"; } }       
          public static string UrlSite { get { return "http://orcamentosgratis.net.br/"; } }
 
         public static int PausaTestesMilissegundos { get { return 4000; } }
 #else
 
-        public static string CaminhoFisico { get { return @"C:\inetpub\wwwroot\"; } }
-        //public static string CaminhoFisico { get { return @"D:\\web\\localuser\\orcamentosgratis\\www\\"; } }
-        //public static string CaminhoFisico { get { return @"C:\Projeto\OrcamentoNet\trunk\OrcamentoNet.View\"; } }
+        //public static string CaminhoFisico { get { return @"C:\inetpub\wwwroot\"; } }
+        public static string CaminhoFisico { get { return @"D:\\web\\localuser\\orcamentosgratis\\www\\"; } }
+        //public static string CaminhoFisico { get { return @"C:\Projeto\OrcamentoNet\trunk\git-remote-add-origin-https---github.com-renatoadsumus-aplicacao.git\OrcamentoNet.View\"; } }
        // public static string CaminhoFisico { get { return "D:\\web\\localuser\\rcmsolucoes\\www\\multicotacao\\"; } }
         //public static string ConexaoBanco { get { return @"Datasource=mysql.rcmsolucoes.com;Database=rcmsolucoes07;uid=rcmsolucoes07;pwd=orcamento10"; } }
         //public static string ConexaoBanco { get { return @"Datasource=mysql.orcamentosgratis.net.br;Database=orcamentos;uid=orcamentos;pwd=orcamento10"; } }
@@ -45,10 +44,13 @@ namespace OrcamentoNet.Common
         //public static string[,] ServidoresSmtp = { { "smtp.oficial.blog.br", "25", "webmaster@oficial.blog.br", "w3bm4st3r@" }
         //                                         , { "smtp.elasticemail.com", "2525", "webmaster@orcamentos.net.br", "d179ceab-f4f3-47ac-b32e-8ca0d53c3259" } 
         //, { "smtp.rcmsolucoes.com", "25", "renato@rcmsolucoes.com", "flamengo" } };
+       
+        //public static string[,] ServidoresSmtp = { { "smtp.gmail.com", "587", "orcamentos.net@gmail.com", "plmokn21@!" }
+        //, { "smtp.elasticemail.com", "2525", "renatoadsumus@gmail.com", "6d2f07d2-f677-428b-8894-81d269aede1e" } };
+
         public static string[,] ServidoresSmtp = { { "smtp.gmail.com", "587", "orcamentos.net@gmail.com", "plmokn21@!" }
-        , { "smtp.elasticemail.com", "2525", "renatoadsumus@gmail.com", "6d2f07d2-f677-428b-8894-81d269aede1e" } };
-        //public static string[,] ServidoresSmtp = { { "smtp.elasticemail.com", "2525", "renatoadsumus@gmail.com", "4fbec39a-A315-4b29-a2e7-6962e911ed58" }
-        //                                          , { "smtp.elasticemail.com", "2525", "renatoadsumus@gmail.com", "4fbec39a-A315-4b29-a2e7-6962e911ed58" } };
+        , { "smtp.gmail.com", "587", "renatoadsumus@gmail.com", "1234qwer!@" } };
+
         public static string TemplateEmailAutoResposta { get { return CaminhoFisico + @"templateEmail\AutoResposta.htm"; } }
         public static string TemplateInformativoFornecedoresAoComprador { get { return CaminhoFisico + @"templateEmail\InformativoFornecedoresAoComprador.htm"; } }
         public static string TemplateEmailConfirmandoPagamento { get { return CaminhoFisico + @"templateEmail\EmailConfirmacaoPagamento.htm"; } }

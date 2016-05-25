@@ -260,3 +260,4 @@ Nome do parâmetro: input
 2016-04-14 14:15:23,538 [11] ERROR LogInFile Falha ao enviar email.
 2016-04-14 14:17:19,182 [4] ERROR LogInFile Falha ao enviar email.
 2016-04-14 14:32:42,271 [12] ERROR LogInFile Falha ao enviar email.
+2016-05-23 15:50:32,945 [4] ERROR LogInFile Begin failed with SQL exception

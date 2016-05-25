@@ -65,7 +65,7 @@ namespace OrcamentoNet.View
 
         public void HabilitarFormularioCamerasMonitoradasCFTV()
         {
-            Response.Redirect("/orcamento-online-cftv.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+            //Response.Redirect("/orcamento-online-cftv.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
 
             OrcamentoFormularioGenerico.Visible = false;
             OrcamentoFormularioCFTV1.Visible = true;
@@ -76,24 +76,24 @@ namespace OrcamentoNet.View
 
         public void HabilitarFormularioEventosFestas()
         {
-            Response.Redirect("/orcamento-online-evento.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+            //Response.Redirect("/orcamento-online-evento.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
 
-            //OrcamentoFormularioGenerico.Visible = false;
-            //OrcamentoFormularioEvento.Visible = true;
-            //uxTrocarFormulario.Visible = true;
-            //uxOrcamentosMaisPopulares.Visible = false;
-            //OrcamentoFormularioCasaDecoracao1.Visible = false;
+            OrcamentoFormularioGenerico.Visible = false;
+            OrcamentoFormularioEvento.Visible = true;
+            uxTrocarFormulario.Visible = true;
+            uxOrcamentosMaisPopulares.Visible = false;
+            OrcamentoFormularioCasaDecoracao1.Visible = false;
         }
 
         public void HabilitarFormularioConstrucao()
         {
-            Response.Redirect("/orcamento-online-obras-reformas.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+            //Response.Redirect("/orcamento-online-obras-reformas.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
 
-            //OrcamentoFormularioGenerico.Visible = false;
-            //OrcamentoFormularioConstrucao.Visible = true;
-            //uxTrocarFormulario.Visible = true;
-            //uxOrcamentosMaisPopulares.Visible = false;
-            //OrcamentoFormularioCasaDecoracao1.Visible = false;
+            OrcamentoFormularioGenerico.Visible = false;
+            OrcamentoFormularioConstrucao.Visible = true;
+            uxTrocarFormulario.Visible = true;
+            uxOrcamentosMaisPopulares.Visible = false;
+            OrcamentoFormularioCasaDecoracao1.Visible = false;
         }
 
         public void HabilitarFormularioGenerico()
@@ -106,7 +106,7 @@ namespace OrcamentoNet.View
             }
             else
             {
-                Response.Redirect("/orcamento-online-generico.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+                //Response.Redirect("/orcamento-online-generico.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
 
                 OrcamentoFormularioGenerico.Visible = true;
                 uxOrcamentosMaisPopulares.Visible = false;
@@ -117,13 +117,13 @@ namespace OrcamentoNet.View
 
         public void HabilitarFormularioFachadasPredias()
         {
-            Response.Redirect("/orcamento-online-limpeza-fachada.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
-            //OrcamentoFormularioFachadaPredial1.Visible = true;
-            //OrcamentoFormularioGenerico.Visible = false;
-            //OrcamentoFormularioEspelhoVidro1.Visible = false;
-            //uxTrocarFormulario.Visible = true;
-            //uxOrcamentosMaisPopulares.Visible = false;
-            //OrcamentoFormularioCasaDecoracao1.Visible = false;
+           // Response.Redirect("/orcamento-online-limpeza-fachada.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+            OrcamentoFormularioFachadaPredial1.Visible = true;
+            OrcamentoFormularioGenerico.Visible = false;
+            OrcamentoFormularioEspelhoVidro1.Visible = false;
+            uxTrocarFormulario.Visible = true;
+            uxOrcamentosMaisPopulares.Visible = false;
+            OrcamentoFormularioCasaDecoracao1.Visible = false;
         }
 
         public void HabilitarFormularioMudanca()
@@ -137,13 +137,13 @@ namespace OrcamentoNet.View
 
         public void HabilitarFormularioVidroEspelho()
         {
-            Response.Redirect("/orcamento-online-espelho-vidro.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
+            //Response.Redirect("/orcamento-online-espelho-vidro.aspx?categoria=" + idCategoriaRecebida + "&cidade=" + idCidade + "&termo=" + termoPesquisa + "&bairro=" + idBairroRecebido);
 
-            //OrcamentoFormularioGenerico.Visible = false;
-            //OrcamentoFormularioEspelhoVidro1.Visible = true;
-            //uxTrocarFormulario.Visible = true;
-            //uxOrcamentosMaisPopulares.Visible = false;
-            //OrcamentoFormularioCasaDecoracao1.Visible = false;
+            OrcamentoFormularioGenerico.Visible = false;
+            OrcamentoFormularioEspelhoVidro1.Visible = true;
+            uxTrocarFormulario.Visible = true;
+            uxOrcamentosMaisPopulares.Visible = false;
+            OrcamentoFormularioCasaDecoracao1.Visible = false;
         }
 
         public void HabilitarFormularioCasaDecoracao()

@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 				   namespace="OrcamentoNet.Entity"
 				   assembly="OrcamentoNet.Entity">
-  <class name="Fornecedor" table="Pessoa">
+  <class name="Fornecedor" table="pessoa">
     <id name="Id" column="Cd_Pessoa">
       <generator class="identity" />
     </id>
@@ -25,13 +25,13 @@
     <property name="MensagemAutoResposta" column="Auto_Resposta" length="100"/>
     <property name="EnviadoPorUltimo" column="Enviado_Ultimo" />
     
-    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Fornecedor_Foto">
+    <bag name="Fotos" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="fornecedor_foto">
       <key column="Cd_Pessoa"  not-null ="true"/>
       <many-to-many column="Cd_Fornecedor_Foto" class="Foto"/>
 
     </bag>
 
-    <bag name="Cidades" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="Fornecedor_Cidade">
+    <bag name="Cidades" inverse="false"  lazy="false" fetch="subselect" cascade="all" table="fornecedor_cidade">
       <key column="Cd_Pessoa"  not-null ="true"/>
       <many-to-many column="Cd_Cidade" class="Cidade"/>
 
@@ -53,7 +53,7 @@
     </bag>-->
     
 
-    <bag name="SubCategorias" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="Fornecedor_Categoria">
+    <bag name="SubCategorias" inverse="false"  lazy="false" cascade="all" fetch="subselect" table="fornecedor_categoria">
       <key column="Cd_Pessoa"  not-null ="true"/>
       <many-to-many column="Cd_Categoria" class="Categoria" order-by="Nm_Categoria ASC" />
     </bag>

@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 				   namespace="OrcamentoNet.Entity"
 				   assembly="OrcamentoNet.Entity">
-  <class name="OrcamentoFornecedor" table="Orcamento_Fornecedor">
+  <class name="OrcamentoFornecedor" table="orcamento_fornecedor">
     <id name="Id" column="Cd_Orcamento_Fornecedor">
       <generator class="identity" />
     </id>

@@ -1,10 +1,10 @@
 <publishData>
   <publishTarget publishUrl="C:\Publicar\">
     <file relUrl="CriarPedido.aspx" publishTime="02/21/2014 19:56:40" />
-    <file relUrl="bin/OrcamentoNet.LocalService.pdb" publishTime="04/17/2016 19:45:22" />
+    <file relUrl="bin/OrcamentoNet.LocalService.pdb" publishTime="05/24/2016 12:19:51" />
     <file relUrl="bin/UOL.PagSeguro.dll" publishTime="12/14/2010 22:44:28" />
     <file relUrl="templateEmail/LembreteVencimentoFornecedor.htm" publishTime="04/04/2014 13:33:06" />
-    <file relUrl="orcamento-online-termo.aspx" publishTime="03/13/2014 21:31:18" />
+    <file relUrl="img/seta.jpg" publishTime="03/13/2014 21:53:09" />
     <file relUrl="controles/ListaPedidosOrcamentoEspecificos.ascx" publishTime="08/09/2012 22:12:30" />
     <file relUrl="images/banner/98261-Banner.jpg" publishTime="04/11/2013 08:52:11" />
     <file relUrl="js/ie6pngFix.js" publishTime="08/09/2012 22:12:23" />
@@ -29,8 +29,7 @@
     <file relUrl="bin/NHibernate.dll" publishTime="03/27/2012 20:44:58" />
     <file relUrl="images/prettyPhoto/facebook/btnPrevious.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="css/ie6.css" publishTime="02/21/2014 15:02:27" />
-    <file relUrl="bin/OrcamentoNet.LocalService.dll" publishTime="04/17/2016 19:45:23" />
-    <file relUrl="images/prettyPhoto/dark_square/contentPattern.png" publishTime="08/09/2012 22:12:33" />
+    <file relUrl="bin/OrcamentoNet.LocalService.dll" publishTime="05/24/2016 12:19:51" />
     <file relUrl="templateEmail/InformativoFornecedorStatusPedido.htm" publishTime="04/04/2014 13:33:06" />
     <file relUrl="img/topSeparator.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="controles/CategoriasTemaCheckBoxControle.ascx" publishTime="08/09/2012 22:12:30" />
@@ -39,24 +38,18 @@
     <file relUrl="orcamento-online-dicas.aspx" publishTime="09/15/2012 19:36:21" />
     <file relUrl="images/fullscreen/2.jpg" publishTime="08/09/2012 22:12:36" />
     <file relUrl="img/productBox.jpg" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="images/prettyPhoto/light_rounded/btnPrevious.png" publishTime="08/09/2012 22:12:33" />
     <file relUrl="img/footerSeparator.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="controles/CidadeListBoxControle.ascx" publishTime="01/09/2013 15:52:00" />
-    <file relUrl="Faq.aspx" publishTime="01/22/2016 08:06:10" />
     <file relUrl="bin/NHibernate.Burrow.WebUtil.dll" publishTime="03/27/2012 20:44:59" />
     <file relUrl="cadastro-fornecedores-orcamento-online.aspx" publishTime="04/02/2015 10:35:16" />
     <file relUrl="bin/Castle.DynamicProxy2.dll" publishTime="03/27/2012 20:44:59" />
     <file relUrl="MeusPedidos.aspx" publishTime="04/01/2014 17:42:25" />
-    <file relUrl="templateEmail/MalaDireta.htm" publishTime="04/04/2014 13:33:06" />
     <file relUrl="templateEmail/InformativoFornecedoresAoComprador.htm" publishTime="05/22/2014 08:36:13" />
     <file relUrl="ConfirmacaoEmail.aspx" publishTime="03/23/2014 10:25:14" />
     <file relUrl="templateEmail/RecuperarPagamentoNaoRealizado.htm" publishTime="04/04/2014 13:33:01" />
-    <file relUrl="bin/Intelligencia.UrlRewriter.dll" publishTime="03/27/2012 20:44:59" />
-    <file relUrl="bin/OrcamentoNet.ILocalService.pdb" publishTime="04/17/2016 19:45:20" />
+    <file relUrl="bin/OrcamentoNet.ILocalService.pdb" publishTime="05/24/2016 12:19:50" />
     <file relUrl="orcamento-online-pedido-historico.aspx" publishTime="05/22/2013 08:49:29" />
-    <file relUrl="templateEmail/UltimosPedidosDegustacao.htm" publishTime="04/18/2014 09:41:43" />
     <file relUrl="LoginNovo.aspx" publishTime="04/14/2016 15:58:09" />
-    <file relUrl="bin/MySql.Data.dll" publishTime="03/27/2012 20:44:56" />
     <file relUrl="img/marcador-orcamento-online.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="templateEmail/PesquisaSatisfacaoFornecedor.htm" publishTime="04/04/2014 13:33:14" />
     <file relUrl="bin/NHibernate.Burrow.dll" publishTime="03/27/2012 20:44:59" />
@@ -64,10 +57,9 @@
     <file relUrl="templateEmail/InformativoCompradorPedidoComprado.htm" publishTime="04/04/2014 13:33:06" />
     <file relUrl="novo-fornecedore-passo3.aspx" publishTime="10/17/2014 09:50:24" />
     <file relUrl="images/prettyPhoto/light_square/default_thumbnail.gif" publishTime="08/09/2012 22:12:34" />
-    <file relUrl="AdminCadastroFornecedor.aspx" publishTime="12/21/2015 09:14:16" />
     <file relUrl="img/subscribeButtonOver.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/fullscreen/1.jpg" publishTime="08/09/2012 22:12:36" />
-    <file relUrl="bin/OrcamentoNet.View.dll" publishTime="04/17/2016 19:45:29" />
+    <file relUrl="bin/OrcamentoNet.View.dll" publishTime="05/24/2016 12:19:54" />
     <file relUrl="img/social/facebook.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/prettyPhoto/facebook/contentPatternLeft.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="images/prettyPhoto/facebook/contentPatternRight.png" publishTime="08/09/2012 22:12:34" />
@@ -77,18 +69,18 @@
     <file relUrl="images/fullscreen/3.jpg" publishTime="08/09/2012 22:12:36" />
     <file relUrl="controles/OrcamentoFormularioMudanca.ascx" publishTime="02/23/2013 07:53:12" />
     <file relUrl="images/prettyPhoto/dark_square/loader.gif" publishTime="08/09/2012 22:12:33" />
-    <file relUrl="orcamento-online-pagamento.aspx" publishTime="01/25/2014 10:15:16" />
     <file relUrl="bin/PerceptiveMCAPI.dll" publishTime="03/27/2012 20:44:56" />
+    <file relUrl="EstatisticaPedidos.aspx" publishTime="04/02/2014 17:43:40" />
     <file relUrl="img/topBG.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="js/plusone.js" publishTime="03/29/2014 08:35:00" />
     <file relUrl="js/solrator-0.2.1.js" publishTime="03/29/2014 08:34:00" />
     <file relUrl="images/prettyPhoto/dark_square/sprite.png" publishTime="08/09/2012 22:12:33" />
-    <file relUrl="bin/OrcamentoNet.IView.pdb" publishTime="04/17/2016 19:45:25" />
+    <file relUrl="bin/OrcamentoNet.IView.pdb" publishTime="05/24/2016 12:19:51" />
     <file relUrl="img/social/digg.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="img/logo-orcamento-online.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="templateEmail/PesquisaNaoPagamentoFornecedor.htm" publishTime="04/04/2014 13:33:05" />
     <file relUrl="Hibernate.cfg.xml" publishTime="08/09/2012 22:12:38" />
-    <file relUrl="bin/OrcamentoNet.View.pdb" publishTime="04/17/2016 19:45:29" />
+    <file relUrl="bin/OrcamentoNet.View.pdb" publishTime="05/24/2016 12:19:54" />
     <file relUrl="images/logo/flash-logo.png" publishTime="08/09/2012 22:12:32" />
     <file relUrl="controles/LinksInternosControle.ascx" publishTime="02/27/2013 21:31:42" />
     <file relUrl="images/prettyPhoto/dark_rounded/contentPattern.png" publishTime="08/09/2012 22:12:33" />
@@ -96,33 +88,36 @@
     <file relUrl="controles/LinksPedidosOrcamentoControle.ascx" publishTime="08/09/2012 22:12:30" />
     <file relUrl="images/logo/quicktime-logo.gif" publishTime="08/09/2012 22:12:32" />
     <file relUrl="bin/Iesi.Collections.dll" publishTime="03/27/2012 20:44:57" />
-    <file relUrl="img/Yes_check.gif" publishTime="03/13/2014 21:41:43" />
     <file relUrl="bin/PortalEscolar.Data.dll" publishTime="03/27/2012 20:44:57" />
     <file relUrl="images/prettyPhoto/facebook/contentPatternBottom.png" publishTime="08/09/2012 22:12:34" />
+    <file relUrl="images/prettyPhoto/facebook/sprite.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="images/fullscreen/5.jpg" publishTime="08/09/2012 22:12:36" />
     <file relUrl="controles/CaptchaControle.ascx" publishTime="08/09/2012 22:12:30" />
-    <file relUrl="css/prettyPhoto.css" publishTime="08/09/2012 22:12:37" />
     <file relUrl="Categoria.xml" publishTime="03/23/2014 10:25:15" />
+    <file relUrl="templateEmail/FornecedorPromocaoCompraAvulsa.htm" publishTime="04/04/2014 13:33:06" />
     <file relUrl="controles/OrcamentoFormularioCFTV.ascx" publishTime="07/21/2013 09:24:32" />
     <file relUrl="controles/CategoriaListaFornecedoresControle.ascx" publishTime="08/09/2012 22:12:30" />
     <file relUrl="PesquisaSatisfacaoCompradorSucesso.aspx" publishTime="05/28/2014 17:46:29" />
-    <file relUrl="img/horizontalSeparator.jpg" publishTime="08/09/2012 22:12:22" />
+    <file relUrl="orcamento-online-obras-reformas.aspx" publishTime="04/14/2016 14:35:07" />
     <file relUrl="js/css_browser_selector.js" publishTime="08/09/2012 22:12:23" />
     <file relUrl="controles/FornecedoresControle2.ascx" publishTime="10/05/2012 08:46:56" />
     <file relUrl="WebPRD.config" publishTime="02/11/2014 18:03:41" />
     <file relUrl="templateEmail/PesquisaSatisfacaoComprador.htm" publishTime="04/04/2014 13:33:05" />
     <file relUrl="img/bigBoxShadow.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="templateEmail/InformativoDePedidosParaFornecedor.htm" publishTime="04/04/2014 13:33:06" />
-    <file relUrl="templateEmail/InformativoFornecedorNovoPedido.htm" publishTime="04/13/2016 13:24:20" />
+    <file relUrl="templateEmail/InformativoFornecedorNovoPedido.htm" publishTime="04/17/2016 21:42:12" />
     <file relUrl="cadastro-fornecedores-orcamento-online_old.aspx" publishTime="04/02/2015 10:36:28" />
+    <file relUrl="img/bulletIcon6.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="img/videoPlaceholder.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/fullscreen/4.jpg" publishTime="08/09/2012 22:12:36" />
+    <file relUrl="PagSeguro29.html" publishTime="03/23/2014 10:25:09" />
     <file relUrl="css/master.css" publishTime="11/02/2014 14:46:53" />
     <file relUrl="GerarPalavrasChave.aspx" publishTime="08/09/2012 22:12:39" />
     <file relUrl="img/bulletIcon1.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="templateEmail/CobrarExplicacaoFornecedorPedidoNaoRespondido.htm" publishTime="02/13/2016 08:20:39" />
     <file relUrl="controles/OrcamentoFormularioConstrucao.ascx" publishTime="02/23/2014 09:13:52" />
-    <file relUrl="Web.config" publishTime="04/02/2015 09:29:09" />
+    <file relUrl="Web.config" publishTime="05/23/2016 15:48:38" />
+    <file relUrl="controles/FornecedoresControle.ascx" publishTime="06/01/2014 08:59:04" />
     <file relUrl="templateEmail/NovoPedidoOrcamentoSimplificado.htm" publishTime="04/12/2016 17:19:41" />
     <file relUrl="orcamento-online-tipo-servico.aspx" publishTime="01/25/2014 10:15:16" />
     <file relUrl="MeusDados.aspx" publishTime="04/12/2016 10:40:13" />
@@ -137,49 +132,53 @@
     <file relUrl="images/backgrounds/bodyBackground.jpg" publishTime="08/09/2012 22:12:35" />
     <file relUrl="templateEmail/InformativoNovosFornecedores.htm" publishTime="11/02/2014 14:55:37" />
     <file relUrl="img/buttonBGOver.png" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="js/jquery.prettyPhoto.js" publishTime="08/09/2012 22:12:23" />
     <file relUrl="images/prettyPhoto/light_rounded/sprite.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="img/bulletIcon3.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/prettyPhoto/light_square/sprite.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="img/bulletIcon5.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="controles/LinksInternosTemaCategoria.ascx" publishTime="11/07/2012 08:33:17" />
     <file relUrl="FaleConosco.aspx" publishTime="03/23/2014 10:25:11" />
+    <file relUrl="img/social/twitter.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="controles/OrcamentoFormularioBox.ascx" publishTime="03/21/2013 09:01:20" />
     <file relUrl="images/prettyPhoto/light_rounded/default_thumbnail.gif" publishTime="08/09/2012 22:12:34" />
+    <file relUrl="orcamento-online-termo.aspx" publishTime="03/13/2014 21:31:18" />
     <file relUrl="PesquisaSatisfacaoComprador.aspx" publishTime="01/25/2014 10:15:14" />
     <file relUrl="PostBlogForm.aspx" publishTime="07/11/2014 14:46:43" />
-    <file relUrl="bin/OrcamentoNet.ByPassCache.dll" publishTime="03/05/2013 21:31:38" />
+    <file relUrl="templateEmail/CompradorEmailNaoValidado.htm" publishTime="04/04/2014 13:33:07" />
     <file relUrl="churrasco-em-casa-domicilio.aspx" publishTime="05/14/2013 08:38:44" />
     <file relUrl="orcamento-online-notificacao-pagamento.aspx" publishTime="01/03/2013 10:13:44" />
     <file relUrl="bin/NHibernate.ByteCode.Castle.dll" publishTime="03/27/2012 20:44:58" />
     <file relUrl="templateEmail/SolicitacaoPagamento.htm" publishTime="04/04/2014 13:32:56" />
-    <file relUrl="controles/OrcamentoFormularioLocacao.ascx" publishTime="04/06/2013 08:20:51" />
+    <file relUrl="js/jquery.prettyPhoto.js" publishTime="08/09/2012 22:12:23" />
     <file relUrl="orcamento-online-limpeza-fachada.aspx" publishTime="04/14/2016 14:35:45" />
     <file relUrl="CadastroCategoria.aspx" publishTime="04/26/2014 09:39:07" />
     <file relUrl="images/logo/earth-logo.jpg" publishTime="08/09/2012 22:12:32" />
+    <file relUrl="post-rdstation.aspx" publishTime="02/14/2013 14:47:22" />
     <file relUrl="bin/NHibernate.Linq.dll" publishTime="03/27/2012 20:44:56" />
     <file relUrl="images/prettyPhoto/facebook/default_thumbnail.gif" publishTime="08/09/2012 22:12:34" />
     <file relUrl="css/Blog.css" publishTime="03/29/2014 08:42:41" />
     <file relUrl="img/bulletIcon4.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="mapa.aspx" publishTime="05/22/2013 08:49:29" />
-    <file relUrl="img/seta.jpg" publishTime="03/13/2014 21:53:09" />
     <file relUrl="images/prettyPhoto/light_square/btnPrevious.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="images/prettyPhoto/dark_rounded/btnNext.png" publishTime="08/09/2012 22:12:33" />
+    <file relUrl="controles/OrcamentoFormularioLocacao.ascx" publishTime="04/06/2013 08:20:51" />
     <file relUrl="_ExcluirArquivosDesnecessariosDeploy.bat" publishTime="03/14/2014 22:44:30" />
     <file relUrl="PagSeguro.xml" publishTime="03/01/2014 09:51:36" />
-    <file relUrl="orcamento-online-casa-decoracao.aspx" publishTime="04/12/2016 10:44:25" />
     <file relUrl="templateEmail/PesquisaOpiniaoFornecedorAtivo.htm" publishTime="04/04/2014 13:33:05" />
     <file relUrl="images/prettyPhoto/dark_square/default_thumbnail.gif" publishTime="08/09/2012 22:12:33" />
-    <file relUrl="bin/OrcamentoNet.Common.dll" publishTime="04/17/2016 19:45:15" />
+    <file relUrl="bin/OrcamentoNet.Common.dll" publishTime="05/24/2016 12:19:49" />
     <file relUrl="controles/OrcamentoFormularioEspelhoVidro.ascx" publishTime="05/14/2013 08:55:51" />
     <file relUrl="img/videoBoxShadow.png" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="PagSeguro29.html" publishTime="03/23/2014 10:25:09" />
+    <file relUrl="CadastroFornecedorSucesso.aspx" publishTime="03/23/2014 10:25:15" />
+    <file relUrl="templateEmail/UltimosPedidosDegustacao.htm" publishTime="04/18/2014 09:41:43" />
     <file relUrl="orcamento-online-cftv.aspx" publishTime="04/12/2016 10:46:24" />
     <file relUrl="sitemap.xml" publishTime="08/05/2015 08:37:14" />
+    <file relUrl="images/backgrounds/checkmark.gif" publishTime="08/09/2012 22:12:35" />
     <file relUrl="templateEmail/CadastroAtivacao.htm" publishTime="04/04/2014 13:33:07" />
     <file relUrl="img/checkListBullet.jpg" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="bin/OrcamentoNet.Entity.dll" publishTime="04/17/2016 19:45:19" />
-    <file relUrl="img/bulletIcon6.png" publishTime="08/09/2012 22:12:22" />
+    <file relUrl="bin/Castle.Core.dll" publishTime="03/27/2012 20:44:59" />
+    <file relUrl="bin/OrcamentoNet.Entity.dll" publishTime="05/24/2016 12:19:50" />
+    <file relUrl="bin/OrcamentoNet.ByPassCache.dll" publishTime="03/05/2013 21:31:38" />
     <file relUrl="controles/OrcamentoFormularioEvento.ascx" publishTime="03/23/2014 09:16:08" />
     <file relUrl="images/prettyPhoto/dark_square/btnNext.png" publishTime="08/09/2012 22:12:33" />
     <file relUrl="js/jquery-1.4.4.min.js" publishTime="08/09/2012 22:12:23" />
@@ -196,23 +195,24 @@
     <file relUrl="AdminAlterarDados.aspx" publishTime="01/25/2014 10:15:20" />
     <file relUrl="css/tipsy.css" publishTime="08/09/2012 22:12:37" />
     <file relUrl="bin/Owasp.Esapi.dll" publishTime="03/27/2012 20:44:57" />
-    <file relUrl="bin/Castle.Core.dll" publishTime="03/27/2012 20:44:59" />
+    <file relUrl="Faq.aspx" publishTime="01/22/2016 08:06:10" />
     <file relUrl="templateEmail/EmailConfirmacaoPagamento.htm" publishTime="04/04/2014 13:33:06" />
-    <file relUrl="bin/OrcamentoNet.Common.pdb" publishTime="04/17/2016 19:45:15" />
+    <file relUrl="bin/OrcamentoNet.Common.pdb" publishTime="05/24/2016 12:19:49" />
     <file relUrl="images/prettyPhoto/facebook/contentPatternTop.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="mapa-temas.aspx" publishTime="05/22/2013 08:49:29" />
     <file relUrl="img/phoneIcon.png" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="controles/FornecedoresControle.ascx" publishTime="06/01/2014 08:59:04" />
-    <file relUrl="templateEmail/CompradorEmailNaoValidado.htm" publishTime="04/04/2014 13:33:07" />
+    <file relUrl="templateEmail/MalaDireta.htm" publishTime="04/04/2014 13:33:06" />
+    <file relUrl="bin/Intelligencia.UrlRewriter.dll" publishTime="03/27/2012 20:44:59" />
     <file relUrl="OrcamentoNet2.Master" publishTime="04/10/2014 15:33:59" />
     <file relUrl="templateEmail/PesquisaSatisfacaoPreenchidaPorComprador.htm" publishTime="03/23/2014 10:24:31" />
     <file relUrl="orcamento-online-fornecedores.aspx" publishTime="05/14/2013 08:38:44" />
-    <file relUrl="bin/OrcamentoNet.ILocalService.dll" publishTime="04/17/2016 19:45:20" />
+    <file relUrl="bin/OrcamentoNet.ILocalService.dll" publishTime="05/24/2016 12:19:50" />
     <file relUrl="css/reset.css" publishTime="03/13/2014 22:18:16" />
     <file relUrl="controles/OrcamentoFormularioGenerico.ascx" publishTime="02/06/2014 21:38:14" />
     <file relUrl="guia-empresas-profissionais.aspx" publishTime="05/22/2013 08:49:29" />
     <file relUrl="DefaultSucesso.aspx" publishTime="03/23/2014 10:25:12" />
     <file relUrl="novo-fornecedore-passo1.aspx" publishTime="10/17/2014 10:58:26" />
+    <file relUrl="bin/Hibernate.cfg.xml" publishTime="08/09/2012 22:12:38" />
     <file relUrl="manutencao.aspx" publishTime="09/16/2014 13:17:14" />
     <file relUrl="controles/DepoimentoOrcamentoOnline.ascx" publishTime="10/05/2012 08:46:56" />
     <file relUrl="img/buttonBGOut.png" publishTime="08/09/2012 22:12:22" />
@@ -222,18 +222,18 @@
     <file relUrl="img/tipsy.gif" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/prettyPhoto/dark_rounded/loader.gif" publishTime="08/09/2012 22:12:33" />
     <file relUrl="img/fechando-negocios-orcamento-online.jpg" publishTime="08/09/2012 22:12:22" />
-    <file relUrl="bin/OrcamentoNet.IView.dll" publishTime="04/17/2016 19:45:25" />
+    <file relUrl="bin/OrcamentoNet.IView.dll" publishTime="05/24/2016 12:19:52" />
     <file relUrl="bin/FreeTextBox.dll" publishTime="11/10/2010 12:41:20" />
     <file relUrl="img/subscribeButton.png" publishTime="08/09/2012 22:12:22" />
     <file relUrl="bin/Intelligencia.UrlRewriter.xml" publishTime="03/27/2012 20:44:56" />
-    <file relUrl="img/social/twitter.png" publishTime="08/09/2012 22:12:22" />
+    <file relUrl="css/prettyPhoto.css" publishTime="08/09/2012 22:12:37" />
     <file relUrl="controles/RodapeControle.ascx" publishTime="07/14/2014 10:08:45" />
     <file relUrl="bin/AjaxControlToolkit.pdb" publishTime="03/27/2012 20:44:56" />
     <file relUrl="bin/System.Web.DataVisualization.dll" publishTime="05/18/2012 08:22:54" />
-    <file relUrl="CadastroFornecedorSucesso.aspx" publishTime="03/23/2014 10:25:15" />
+    <file relUrl="img/horizontalSeparator.jpg" publishTime="08/09/2012 22:12:22" />
     <file relUrl="images/prettyPhoto/dark_rounded/sprite.png" publishTime="08/09/2012 22:12:33" />
-    <file relUrl="templateEmail/FornecedorPromocaoCompraAvulsa.htm" publishTime="04/04/2014 13:33:06" />
-    <file relUrl="post-rdstation.aspx" publishTime="02/14/2013 14:47:22" />
+    <file relUrl="img/Yes_check.gif" publishTime="03/13/2014 21:41:43" />
+    <file relUrl="bin/MySql.Data.dll" publishTime="03/27/2012 20:44:56" />
     <file relUrl="templateEmail/InformativoFornecedorDegustacaoNovoPedido.htm" publishTime="04/28/2014 16:00:11" />
     <file relUrl="templateEmail/PagamentoFornecedorNaoIdentificado.htm" publishTime="04/04/2014 13:33:06" />
     <file relUrl="bin/CookComputing.XmlRpcV2.dll" publishTime="03/27/2012 20:44:56" />
@@ -242,19 +242,19 @@
     <file relUrl="css/skin.css" publishTime="08/09/2012 22:12:37" />
     <file relUrl="js/jquery.tipsy.js" publishTime="08/09/2012 22:12:23" />
     <file relUrl="Orcamento-Online-Pedido.aspx" publishTime="03/06/2014 19:59:47" />
-    <file relUrl="bin/OrcamentoNet.Entity.pdb" publishTime="04/17/2016 19:45:19" />
+    <file relUrl="bin/OrcamentoNet.Entity.pdb" publishTime="05/24/2016 12:19:50" />
     <file relUrl="controles/MensagemSuperiorControle.ascx" publishTime="08/09/2012 22:12:30" />
     <file relUrl="images/prettyPhoto/dark_rounded/btnPrevious.png" publishTime="08/09/2012 22:12:33" />
     <file relUrl="bin/pt/AjaxControlToolkit.resources.dll" publishTime="03/27/2012 20:44:52" />
     <file relUrl="UltimosPedidosOrcamento.aspx" publishTime="04/14/2016 16:15:21" />
     <file relUrl="controles/CategoriaListaControle.ascx" publishTime="07/14/2014 14:59:05" />
-    <file relUrl="bin/Hibernate.cfg.xml" publishTime="08/09/2012 22:12:38" />
+    <file relUrl="orcamento-online-casa-decoracao.aspx" publishTime="04/12/2016 10:44:25" />
     <file relUrl="images/prettyPhoto/dark_square/btnPrevious.png" publishTime="08/09/2012 22:12:33" />
-    <file relUrl="images/prettyPhoto/facebook/sprite.png" publishTime="08/09/2012 22:12:34" />
-    <file relUrl="EstatisticaPedidos.aspx" publishTime="04/02/2014 17:43:40" />
+    <file relUrl="orcamento-online-pagamento.aspx" publishTime="01/25/2014 10:15:16" />
+    <file relUrl="images/prettyPhoto/dark_square/contentPattern.png" publishTime="08/09/2012 22:12:33" />
     <file relUrl="bin/log4net.dll" publishTime="03/27/2012 20:44:59" />
-    <file relUrl="orcamento-online-obras-reformas.aspx" publishTime="04/14/2016 14:35:07" />
-    <file relUrl="images/backgrounds/checkmark.gif" publishTime="08/09/2012 22:12:35" />
+    <file relUrl="images/prettyPhoto/light_rounded/btnPrevious.png" publishTime="08/09/2012 22:12:33" />
+    <file relUrl="AdminCadastroFornecedor.aspx" publishTime="12/21/2015 09:14:16" />
     <file relUrl="images/prettyPhoto/facebook/btnNext.png" publishTime="08/09/2012 22:12:34" />
     <file relUrl="templateEmail/RecuperarSenha.htm" publishTime="04/04/2014 13:32:58" />
     <file relUrl="controles/MenuAdmin.ascx" publishTime="04/10/2014 17:59:10" />
