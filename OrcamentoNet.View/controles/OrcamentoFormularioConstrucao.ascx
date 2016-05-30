@@ -138,6 +138,18 @@
                 </asp:RequiredFieldValidator>
             </li>
             <li>
+                                    <label>
+                                    Imóvel está habitado:
+                                    </label>
+                                    <asp:DropDownList ID="uxddlHabitado" runat="server">
+                                            <asp:ListItem Value="0">Selecionar</asp:ListItem>
+                                            <asp:ListItem>Sim</asp:ListItem>
+                                            <asp:ListItem>Não</asp:ListItem>
+                                        </asp:DropDownList>
+                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="uxddlHabitado"
+                                            ErrorMessage="" InitialValue="0" Text="Deve informar se o imóvel está habitado" />
+                                    </li>
+            <li>
                 <label>
                     Acrescente mais detalhes sobre os serviços:</label>
                 <asp:TextBox CssClass="ie6SubmitFix" ID="uxtxtObservacao" runat="server" TextMode="MultiLine"

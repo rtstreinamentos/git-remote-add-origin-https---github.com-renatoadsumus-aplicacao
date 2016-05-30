@@ -43,12 +43,12 @@ namespace OrcamentoNet.View.controles
 
         #region Propriedades
 
+
         public PessoaTipo PessoaTipo
         {
             get
             {
-                string tipoPessoa = Enum.GetName(typeof(PessoaTipo), uxddlTipoPessoa.SelectedValue);
-                return (PessoaTipo)Enum.Parse(typeof(PessoaTipo), tipoPessoa);
+                return (PessoaTipo)Enum.Parse(typeof(PessoaTipo), uxddlTipoPessoa.SelectedValue);
             }
         }
 
@@ -92,27 +92,32 @@ namespace OrcamentoNet.View.controles
         {
             get
             {
-                string htmlTipoPessoa = Environment.NewLine + "Contratante: " + uxddlTipoPessoa.SelectedItem;
-                string htmlLigacao = Environment.NewLine + "Prefere ligações no período: " + uxddlLigacao.SelectedValue;
-                string htmlVisitaTecnica = Environment.NewLine + ObterHtmlVisita();
-                string hmtlObservacao = Environment.NewLine + uxtxtObservacao.Text + Environment.NewLine + Environment.NewLine;
+                string htmlTipoPessoa = Environment.NewLine + "Contratante: " + uxddlTipoPessoa.SelectedItem + ";";
+                string htmlLigacao = Environment.NewLine + "Prefere ligações no período: " + uxddlLigacao.SelectedValue + ";";
+                string htmlVisitaTecnica = Environment.NewLine + ObterHtmlVisita() + ";";
+                string hmtlObservacao = Environment.NewLine + "Descrição: " + uxtxtObservacao.Text + ";" + Environment.NewLine + Environment.NewLine;
+                string htmlMaterias = "Materiais: " + uxddlMaterias.SelectedValue + ";" + Environment.NewLine;
+                string htmlHabitado = Environment.NewLine + "Imóvel habitado:" + uxddlHabitado.SelectedValue + ";";
+                string htmlTipoImovel = "Tipo de imóvel: " + uxddlTipoImovel.SelectedValue + ";" + Environment.NewLine;
+                string htmlMetrosQuadrados = "Metros quadrados (aproximado): " + uxtxtTamanho.Text + ";";
 
-                if (String.IsNullOrEmpty(uxtxtLocalObra.Text.Trim()))
+                string htmlBairro = Environment.NewLine + "Bairro, região ou local: " + uxtxtLocalObra.Text + ";" + Environment.NewLine;
+                string htmlResultado = htmlTipoPessoa + hmtlObservacao + htmlMaterias + htmlTipoImovel + htmlMetrosQuadrados + htmlHabitado + htmlLigacao + htmlVisitaTecnica;
+
+                if (!String.IsNullOrEmpty(uxtxtLocalObra.Text.Trim()))
                 {
 
-                    return htmlTipoPessoa + hmtlObservacao + "Materiais: " + uxddlMaterias.SelectedValue + Environment.NewLine + "Tipo de imóvel: " + uxddlTipoImovel.SelectedValue + Environment.NewLine + "Metros quadrados (aproximado): " + uxtxtTamanho.Text + htmlLigacao + htmlVisitaTecnica;
+                    htmlResultado = htmlResultado + htmlBairro;
 
                 }
-                else
-                {
-                    return htmlTipoPessoa + hmtlObservacao + "Bairro, região ou local: " + uxtxtLocalObra.Text + Environment.NewLine + "Materiais: " + uxddlMaterias.SelectedValue + Environment.NewLine + "Tipo de imóvel: " + uxddlTipoImovel.SelectedValue + Environment.NewLine + "Metros quadrados (aproximado): " + uxtxtTamanho.Text + htmlLigacao + htmlVisitaTecnica;
-                }
+                return htmlResultado;
+
             }
         }
 
         public bool PalavraEhCorreta
         {
-            get { return CaptchaControle1.PalavraEhCorreta; }
+            get { return true; }
         }
 
         public IList<string> SubCategorias
@@ -126,7 +131,7 @@ namespace OrcamentoNet.View.controles
         public int IdCategoriaRecebida
         {
             get { return idCategoriaRecebida; }
-        }
+        }        
 
         public IList<Termo> Termos
         {
@@ -142,6 +147,7 @@ namespace OrcamentoNet.View.controles
         {
             get { return uxtxtDDD.Text + "-" + uxtxtTelefone.Text; }
         }
+
 
         public string TelefoneOperadora
         {
@@ -159,10 +165,6 @@ namespace OrcamentoNet.View.controles
         {
             if (Session["PedidoGravado"] == null)
             {
-                Session["PedidoGravado"] = "GRAVADO";
-
-                Session.Timeout = 2;
-
                 presenter.Salvar();
             }
         }
